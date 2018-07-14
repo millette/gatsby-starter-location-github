@@ -11,18 +11,19 @@ class Redirect extends PureComponent {
     const { pathname } = props.location
 
     // Skip build, Browsers only
-    if (typeof window !== 'undefined') {
-      const detected =
-        window.localStorage.getItem('language') ||
-        browserLang({
-          languages: langKeys,
-          fallback: 'en'
-        })
-
-      const newUrl = withPrefix(`/${detected}${pathname}`)
-      window.localStorage.setItem('language', detected)
-      window.location.replace(newUrl)
+    if (typeof window === 'undefined') {
+      return
     }
+    const detected =
+      window.localStorage.getItem('language') ||
+      browserLang({
+        languages: langKeys,
+        fallback: 'en'
+      })
+
+    const newUrl = withPrefix(`/${detected}${pathname}`)
+    window.localStorage.setItem('language', detected)
+    window.location.replace(newUrl)
   }
 
   render () {
