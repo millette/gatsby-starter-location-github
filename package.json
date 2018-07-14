@@ -3,11 +3,14 @@
   "description": "Local GitHub directory.",
   "version": "0.0.0",
   "dependencies": {
+    "browser-lang": "^0.0.1",
     "gatsby": "next",
     "gatsby-plugin-react-helmet": "next",
+    "intl": "^1.2.5",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-intl": "^2.4.0"
   },
   "keywords": ["gatsby", "starter", "github"],
   "lint-staged": {
