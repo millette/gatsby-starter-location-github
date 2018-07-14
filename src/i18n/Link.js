@@ -2,9 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
-const I18nLink = ({ to, children, ...rest }, { language }) => {
+const I18nLink = ({ to, children, lng, ...rest }, { language }) => {
   const { locale } = language
-  const toWithLang = locale ? `/${language.locale}${to}` : `${to}`
+
+  // const toWithLang = locale ? `/${language.locale}${to}` : `${to}`
+  let toWithLang
+
+  if (lng) {
+    toWithLang = `/${lng}${to}`
+  } else {
+    toWithLang = locale ? `/${language.locale}${to}` : `${to}`
+  }
   return (
     <Link to={toWithLang} {...rest}>
       {children}
