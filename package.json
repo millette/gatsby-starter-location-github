@@ -22,6 +22,8 @@
     "precommit": "lint-staged"
   },
   "devDependencies": {
+    "bootstrap": "^4.1.2",
+    "gatsby-plugin-sass": "^2.0.0-beta.5",
     "gh-pages": "^1.2.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.2.0",
