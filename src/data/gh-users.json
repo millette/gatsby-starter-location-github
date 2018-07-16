@@ -1,0 +1,144 @@
+{
+  "rateLimit": {
+    "cost": 1,
+    "limit": 5000,
+    "nodeCount": 525,
+    "remaining": 4998,
+    "resetAt": "2018-07-16T17:20:12Z"
+  },
+  "search": {
+    "userCount": 103,
+    "pageInfo": {
+      "endCursor": "Y3Vyc29yOjU=",
+      "hasNextPage": true,
+      "hasPreviousPage": false,
+      "startCursor": "Y3Vyc29yOjE="
+    },
+    "edges": [
+      {
+        "node": {
+          "name": "Landry Ngoya",
+          "login": "foxkin",
+          "databaseId": 40372298,
+          "location": "Tokyo,Kinshasa",
+          "createdAt": "2018-06-18T21:58:31Z",
+          "isHireable": false,
+          "websiteUrl": "https://www.linkedin.com/in/landry-ngoya-1a4b4362",
+          "starredRepositories": {
+            "edges": []
+          },
+          "repositoriesContributedTo": {
+            "totalCount": 0,
+            "edges": []
+          }
+        }
+      },
+      {
+        "node": {}
+      },
+      {
+        "node": {
+          "name": "Axel KAPITA ",
+          "login": "axelkapita",
+          "databaseId": 39138929,
+          "location": "Kinshasa",
+          "createdAt": "2018-05-09T21:24:01Z",
+          "isHireable": false,
+          "websiteUrl": "",
+          "starredRepositories": {
+            "edges": []
+          },
+          "repositoriesContributedTo": {
+            "totalCount": 2,
+            "edges": [
+              {
+                "node": {
+                  "forkCount": 0,
+                  "stargazers": {
+                    "totalCount": 0,
+                    "edges": []
+                  },
+                  "primaryLanguage": null,
+                  "nameWithOwner": "axelkapita/demo_git"
+                }
+              },
+              {
+                "node": {
+                  "forkCount": 0,
+                  "stargazers": {
+                    "totalCount": 0,
+                    "edges": []
+                  },
+                  "primaryLanguage": null,
+                  "nameWithOwner": "axelkapita/activite"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node": {
+          "name": "Black Knight",
+          "login": "brucembayo",
+          "databaseId": 38949737,
+          "location": "Kinshasa, DRC",
+          "createdAt": "2018-05-03T13:11:11Z",
+          "isHireable": false,
+          "websiteUrl": "",
+          "starredRepositories": {
+            "edges": []
+          },
+          "repositoriesContributedTo": {
+            "totalCount": 1,
+            "edges": [
+              {
+                "node": {
+                  "forkCount": 0,
+                  "stargazers": {
+                    "totalCount": 0,
+                    "edges": []
+                  },
+                  "primaryLanguage": {
+                    "name": "JavaScript"
+                  },
+                  "nameWithOwner": "brucembayo/enketo-transformer"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node": {
+          "name": "José N'Sele",
+          "login": "kingjoesoul",
+          "databaseId": 38202447,
+          "location": "Kinshasa, DRC",
+          "createdAt": "2018-04-09T06:01:07Z",
+          "isHireable": true,
+          "websiteUrl": "kassongo@aqili.com",
+          "starredRepositories": {
+            "edges": []
+          },
+          "repositoriesContributedTo": {
+            "totalCount": 1,
+            "edges": [
+              {
+                "node": {
+                  "forkCount": 0,
+                  "stargazers": {
+                    "totalCount": 0,
+                    "edges": []
+                  },
+                  "primaryLanguage": null,
+                  "nameWithOwner": "kingjoesoul/reimagined-engine"
+                }
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}
