@@ -1,6 +1,9 @@
 module.exports = {
   pathPrefix: '/gatsby-starter-location-github',
   siteMetadata: {
+    language: {
+      fallback: 'en'
+    },
     title: 'Gatsby Default Starter'
   },
   plugins: [

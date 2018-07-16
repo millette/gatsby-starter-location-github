@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { IntlProvider, addLocaleData } from 'react-intl'
 import { localeData } from './locales'
+import { siteMetadata } from '../../gatsby-config'
+
+const { language: { fallback } } = siteMetadata
 
 addLocaleData(localeData)
 
@@ -33,7 +36,7 @@ export default ComposedComponent => {
 
     render () {
       const { language } = this.state
-      const locale = language.locale || 'en'
+      const locale = language.locale || fallback
       const messages = require(`./locales/${locale}.js`) // eslint-disable-line
 
       return (

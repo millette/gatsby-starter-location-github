@@ -2,6 +2,9 @@ import React, { PureComponent } from 'react'
 import { withPrefix } from 'gatsby-link'
 import browserLang from 'browser-lang'
 import { languages } from './index'
+import { siteMetadata } from '../../gatsby-config'
+
+const { language: { fallback } } = siteMetadata
 
 class Redirect extends PureComponent {
   constructor (props) {
@@ -18,7 +21,7 @@ class Redirect extends PureComponent {
       window.localStorage.getItem('language') ||
       browserLang({
         languages: langKeys,
-        fallback: 'en'
+        fallback
       })
 
     const newUrl = withPrefix(`/${detected}${pathname}`)
