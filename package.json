@@ -5,7 +5,7 @@
   "dependencies": {
     "browser-lang": "^0.0.1",
     "gatsby": "^2.0.0-beta.53",
-    "gatsby-plugin-react-helmet": "3.0.0-beta.3",
+    "gatsby-plugin-react-helmet": "^3.0.0-beta.3",
     "gatsby-source-filesystem": "^2.0.1-beta.8",
     "gatsby-transformer-json": "^2.1.1-beta.2",
     "intl": "^1.2.5",
