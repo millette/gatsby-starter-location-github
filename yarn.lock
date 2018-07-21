@@ -2935,6 +2935,10 @@ del@^3.0.0:
     pify "^3.0.0"
     rimraf "^2.2.8"
 
+delay@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/delay/-/delay-3.0.0.tgz#97fc5c21028e20616e822ab11838c648808534eb"
+
 delayed-stream@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
@@ -4131,9 +4135,9 @@ gatsby-transformer-json@^2.1.1-beta.2:
     "@babel/runtime" "7.0.0-beta.51"
     bluebird "^3.5.0"
 
-gatsby@^2.0.0-beta.53:
-  version "2.0.0-beta.53"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.0-beta.53.tgz#13d2489343a05b72a4038a8085427cf93476a4b3"
+gatsby@^2.0.0-beta.54:
+  version "2.0.0-beta.54"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.0-beta.54.tgz#77c9830cb3e002d89a514d5f19ba1ec39fdb7da6"
   dependencies:
     "@babel/code-frame" "7.0.0-beta.51"
     "@babel/core" "7.0.0-beta.51"
@@ -4331,16 +4335,21 @@ gh-pages@^1.2.0:
     graceful-fs "4.1.11"
     rimraf "^2.6.2"
 
-ghraphql@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/ghraphql/-/ghraphql-0.3.0.tgz#3c57330ebc00cd89940e734610d9036233a2b20a"
+ghraphql@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/ghraphql/-/ghraphql-0.4.0.tgz#5f87219ec073ce90c952076169a6a8b3abc7c84b"
   dependencies:
+    debug "^3.1.0"
+    delay "^3.0.0"
     got "^8.3.2"
     lodash.deburr "^4.1.0"
     lodash.uniq "^4.5.0"
+    lodash.uniqby "^4.7.0"
     marked "^0.4.0"
     marked-terminal "^3.0.0"
     meow "^5.0.0"
+    p-retry "^2.0.0"
+    progress "^2.0.0"
 
 glob-base@^0.3.0:
   version "0.3.0"
@@ -5842,6 +5851,10 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
+lodash.uniqby@^4.7.0:
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/lodash.uniqby/-/lodash.uniqby-4.7.0.tgz#d99c07a669e9e6d24e1362dfe266c67616af1302"
+
 lodash@4, lodash@^4.0.0, lodash@^4.11.1, lodash@^4.13.1, lodash@^4.17.10, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@~4.17.10:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
@@ -6800,6 +6813,12 @@ p-locate@^2.0.0:
 p-map@^1.1.1:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/p-map/-/p-map-1.2.0.tgz#e4e94f311eabbc8633a1e79908165fca26241b6b"
+
+p-retry@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/p-retry/-/p-retry-2.0.0.tgz#b97f1f4d6d81a3c065b2b40107b811e995c1bfba"
+  dependencies:
+    retry "^0.12.0"
 
 p-timeout@^1.1.1:
   version "1.2.1"
@@ -8176,6 +8195,10 @@ restore-cursor@^2.0.0:
 ret@~0.1.10:
   version "0.1.15"
   resolved "https://registry.yarnpkg.com/ret/-/ret-0.1.15.tgz#b8a4825d5bdb1fc3f6f53c2bc33f81388681c7bc"
+
+retry@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/retry/-/retry-0.12.0.tgz#1b42a6266a21f07421d1b0b54b7dc167b01c013b"
 
 rgb-regex@^1.0.1:
   version "1.0.1"
