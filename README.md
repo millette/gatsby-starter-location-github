@@ -1,6 +1,6 @@
-# gatsby-starter-default
+# gatsby-starter-location-github
 
-The default Gatsby starter.
+The local GitHub directory starter.
 
 For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
 
@@ -9,22 +9,20 @@ For an overview of the project structure please refer to the [Gatsby documentati
 Make sure that you have the Gatsby CLI program installed:
 
 ```sh
-npm install --global gatsby-cli
+npm install --global gatsby-cli@next
 ```
 
 And run from your CLI:
 
 ```sh
-gatsby new gatsby-example-site
+gatsby new gatsby-starter-location-github https://github.com/millette/gatsby-starter-location-github#prod
 ```
 
 Then you can run it by:
 
 ```sh
-cd gatsby-example-site
-gatsby develop
+cd gatsby-starter-location-github
+gatsby dev
 ```
 
 ## Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
