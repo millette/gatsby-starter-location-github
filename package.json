@@ -22,6 +22,7 @@
     "*.{js,json,md}": ["prettier-standard", "git add"]
   },
   "scripts": {
+    "ghraphql": "ghraphql",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
