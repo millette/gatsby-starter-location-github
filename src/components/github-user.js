@@ -28,7 +28,7 @@ const GithubUser = props => {
           {`https://github.com/${props.login}`}
         </a>
         {/* if props.bio is truthy, show it in a paragraph */}
-        {props.bio && <p>{props.bio}</p>}
+        {props.bio && <p className='card-text'>{props.bio}</p>}
         <dl className='row'>
           <dt className='col-6'>Location</dt>
           <dd className='col-6'>{props.location}</dd>
@@ -39,8 +39,23 @@ const GithubUser = props => {
               <dd className='col-6'>{props.websiteUrl}</dd>
             </Fragment>
           )}
+
+          {props.email && (
+            <Fragment>
+              <dt className='col-6'>Email</dt>
+              <dd className='col-6'>{props.email}</dd>
+            </Fragment>
+          )}
+
           <dt className='col-6'>Créé</dt>
           <dd className='col-6'>{props.createdAt}</dd>
+
+          {props.company && (
+            <Fragment>
+              <dt className='col-6'>Compagnie</dt>
+              <dd className='col-6'>{props.company}</dd>
+            </Fragment>
+          )}
 
           {/* Here, we're testing length > 0
               since the number 0 is not falsy in this context.

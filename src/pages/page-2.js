@@ -158,6 +158,9 @@ export const query = graphql`
             name
             login
             databaseId
+            bio
+            company
+            email
             location
             createdAt
             starredRepositories {
