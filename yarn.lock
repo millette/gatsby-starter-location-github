@@ -1836,7 +1836,7 @@ boom@2.x.x:
   dependencies:
     hoek "2.x.x"
 
-bootstrap@^4.1.2:
+bootstrap@4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.1.2.tgz#aee2a93472e61c471fc79fb475531dcbc87de326"
 
@@ -4111,9 +4111,9 @@ gatsby-react-router-scroll@^2.0.0-beta.3:
     scroll-behavior "^0.9.9"
     warning "^3.0.0"
 
-gatsby-source-filesystem@^2.0.1-beta.9:
-  version "2.0.1-beta.9"
-  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.0.1-beta.9.tgz#512b13b8cf1e41186168526ff745320c780a81f9"
+gatsby-source-filesystem@^2.0.1-beta.10:
+  version "2.0.1-beta.10"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.0.1-beta.10.tgz#f357ac909bc97aea2a99e8cca9d6bd31da8bdc2b"
   dependencies:
     "@babel/runtime" "7.0.0-beta.52"
     better-queue "^3.8.7"
@@ -4135,9 +4135,9 @@ gatsby-transformer-json@^2.1.1-beta.3:
     "@babel/runtime" "7.0.0-beta.52"
     bluebird "^3.5.0"
 
-gatsby@^2.0.0-beta.56:
-  version "2.0.0-beta.56"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.0-beta.56.tgz#8688984e233788e2350f5c1a7111a29badbf575b"
+gatsby@^2.0.0-beta.59:
+  version "2.0.0-beta.59"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.0-beta.59.tgz#6fa058631f7ddbdaf45510bfd9cae6a419188395"
   dependencies:
     "@babel/code-frame" "7.0.0-beta.52"
     "@babel/core" "7.0.0-beta.52"
