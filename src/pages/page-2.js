@@ -58,9 +58,11 @@ class SecondPage extends Component {
       .filter(filtering2)
       .map(x => ({
         ...x,
-        languages: x.repoLanguages
-          .map(({ name, count }) => `${name} (${count})`)
-          .join(', ')
+        languages:
+          x.repoLanguages &&
+          x.repoLanguages
+            .map(({ name, count }) => `${name} (${count})`)
+            .join(', ')
       }))
 
     return (
