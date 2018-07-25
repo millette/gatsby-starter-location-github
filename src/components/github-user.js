@@ -41,19 +41,19 @@ const GithubUser = props => {
             since the number 0 is not falsy in this context.
             Otherwise, 0 would be shown instead of nothing or the following span. */}
         {props.starredRepositories &&
-          props.starredRepositories.edges.length > 0 && (
+          props.starredRepositories.length > 0 && (
           <span>
             <dt>Étoiles</dt>
             {/* Here, we want it displayed, even if it's 0 although the previous test would prevent 0 */}
-            <dd>{props.starredRepositories.edges.length} dépots</dd>
+            <dd>{props.starredRepositories.length} dépots</dd>
           </span>
         )}
 
         {props.repositoriesContributedTo &&
-          props.repositoriesContributedTo.edges.length > 0 && (
+          props.repositoriesContributedTo.length > 0 && (
           <span>
             <dt>Contribué à</dt>
-            <dd>{props.repositoriesContributedTo.edges.length} dépots</dd>
+            <dd>{props.repositoriesContributedTo.length} dépots</dd>
             {props.languages && (
               <span>
                 <dt>Langages</dt>
