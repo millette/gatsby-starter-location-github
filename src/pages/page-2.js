@@ -110,7 +110,13 @@ class SecondPage extends Component {
               </button>
             ))}
           </div>
-          <div>{users.map(x => <GithubUser key={x.databaseId} {...x} />)}</div>
+          <div className='row'>
+            {users.map(x => (
+              <div className='col-sm-6 col-md-6 col-xl-4'>
+                <GithubUser key={x.databaseId} {...x} />
+              </div>
+            ))}
+          </div>
         </div>
       </Layout>
     )
