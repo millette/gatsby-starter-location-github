@@ -25,4 +25,6 @@ cd gatsby-starter-location-github
 gatsby dev
 ```
 
-## Deploy
+## See also
+
+Depends on [ghraphql](https://github.com/millette/ghraphql) to fetch GitHub data.
