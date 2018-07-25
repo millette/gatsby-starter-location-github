@@ -100,7 +100,10 @@ class SecondPage extends Component {
           <div>
             {availableLanguages.map(x => (
               <button
-                className='btn btn-primary'
+                style={{ margin: '0.25rem' }}
+                className={`btn btn-sm btn-primary${
+                  this.state.filter === x.name ? ' active' : ''
+                }`}
                 type='button'
                 data-key={x.name}
                 onClick={this.click}
@@ -112,7 +115,7 @@ class SecondPage extends Component {
           </div>
           <div className='row'>
             {users.map(x => (
-              <div className='col-sm-6 col-md-6 col-xl-4'>
+              <div className='col-sm-6 col-md-6 col-lg-4'>
                 <GithubUser key={x.databaseId} {...x} />
               </div>
             ))}
