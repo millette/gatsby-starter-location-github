@@ -6,7 +6,7 @@ For an overview of the project structure please refer to the [Gatsby documentati
 
 ## Install
 
-Make sure that you have the Gatsby CLI program installed:
+Make sure that you have the Gatsby CLI program installed, we're using Gatsby v2 (in beta):
 
 ```sh
 npm install --global gatsby-cli@next
