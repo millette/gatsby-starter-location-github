@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 const I18nLink = ({ to, children, lng, ...rest }, { language }) => {
-  const { locale } = language
+  // const { locale } = language
 
   const toWithLang = lng
     ? `/${lng}${to}`
-    : locale ? `/${language.locale}${to}` : `${to}`
+    : language && language.locale ? `/${language.locale}${to}` : `${to}`
 
   return (
     <Link to={toWithLang} {...rest}>
