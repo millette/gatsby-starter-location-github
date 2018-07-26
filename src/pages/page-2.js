@@ -1,12 +1,18 @@
+// npm
 import React, { Fragment, Component } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { withIntl, Link } from '../i18n'
 import { graphql } from 'gatsby'
 
+// self
 import Layout from '../components/layout'
 import GithubUser from '../components/github-user'
+import Footer from '../components/footer'
 
 const PER_PAGE = 24
+
+const LANGUAGE_TYPE = 'repoLanguages'
+// const LANGUAGE_TYPE = 'starLanguages'
 
 class SecondPage extends Component {
   constructor (props) {
@@ -15,10 +21,10 @@ class SecondPage extends Component {
     this.allUsers = props.data.allDataJson.edges[0].node.users.map(x => ({
       ...x,
       languages:
-        x.repoLanguages &&
-        x.repoLanguages
-          .map(({ name, count }) => `${name} (${count})`)
-          .join(', ')
+        x[LANGUAGE_TYPE] &&
+        x[LANGUAGE_TYPE].map(({ name, count }) => `${name} (${count})`).join(
+          ', '
+        )
     }))
 
     this.state = {
@@ -52,10 +58,10 @@ class SecondPage extends Component {
         return true
       }
       let ok = false
-      if (!x.repoLanguages) {
+      if (!x[LANGUAGE_TYPE]) {
         return false
       }
-      x.repoLanguages.forEach(y => {
+      x[LANGUAGE_TYPE].forEach(y => {
         if (y.name === this.state.filter) {
           ok = true
         }
@@ -70,8 +76,9 @@ class SecondPage extends Component {
       return x.isHireable
     }
 
-    const availableLanguages = this.props.data.allDataJson.edges[0].node
-      .repoLanguages
+    const availableLanguages = this.props.data.allDataJson.edges[0].node[
+      LANGUAGE_TYPE
+    ]
 
     const usersImp = this.allUsers.filter(filtering).filter(filtering2)
 
@@ -79,98 +86,105 @@ class SecondPage extends Component {
 
     return (
       <Layout>
-        <h1>
-          <FormattedMessage id='welcome2' />
-        </h1>
-        <ul>
-          <li>
-            <Link to='/'>
-              <FormattedMessage id='goback' />
-            </Link>
-          </li>
-          <li>
-            <Link to='/' lng='fr'>
-              francais, accueil
-            </Link>
-          </li>
-          <li>
-            <Link to='/' lng='en'>
-              english, front
-            </Link>
-          </li>
-        </ul>
-        <div>
-          <p>
-            <button
-              className='btn btn-secondary'
-              type='button'
-              onClick={this.clickAvailable}
-            >
-              Dispo? {this.state.onlyAvailable ? 'OUI' : 'Peu importe'}
-            </button>
-          </p>
-          <ul className='list-inline'>
-            <li className='list-inline-item'>
-              <button
-                className={`m-1 btn btn-sm btn-primary${
-                  this.state.filter ? '' : ' active'
-                }`}
-                type='button'
-                onClick={this.click}
-                key='ALL'
-              >
-                Tous
-              </button>
+        <div className='container'>
+          <h1>
+            <FormattedMessage id='welcome2' />
+          </h1>
+
+          <ul>
+            <li>
+              <Link to='/'>
+                <FormattedMessage id='goback' />
+              </Link>
             </li>
-            {availableLanguages.map(x => (
-              <li key={x.name} className='list-inline-item'>
+            <li>
+              <Link to='/' lng='fr'>
+                francais, accueil
+              </Link>
+            </li>
+            <li>
+              <Link to='/' lng='en'>
+                english, front
+              </Link>
+            </li>
+          </ul>
+
+          <div>
+            <p>
+              <button
+                className='btn btn-secondary'
+                type='button'
+                onClick={this.clickAvailable}
+              >
+                Dispo? {this.state.onlyAvailable ? 'OUI' : 'Peu importe'}
+              </button>
+            </p>
+            <ul className='list-inline'>
+              <li className='list-inline-item'>
                 <button
                   className={`m-1 btn btn-sm btn-primary${
-                    this.state.filter === x.name ? ' active' : ''
+                    this.state.filter ? '' : ' active'
                   }`}
                   type='button'
-                  data-key={x.name}
                   onClick={this.click}
+                  key='ALL'
                 >
-                  {x.name}&nbsp;({x.count})
+                  Tous
                 </button>
               </li>
-            ))}
-          </ul>
-          <h3>
-            {users.length} utilisateurs{' '}
-            <small>sur {this.allUsers.length}</small>
-          </h3>
-
-          {users.length ? (
-            <Fragment>
-              <div className='row'>
-                {users.map(x => (
-                  <div
-                    key={x.databaseId}
-                    className='col-sm-6 col-md-6 col-lg-4'
+              {availableLanguages.map(x => (
+                <li key={x.name} className='list-inline-item'>
+                  <button
+                    className={`m-1 btn btn-sm btn-primary${
+                      this.state.filter === x.name ? ' active' : ''
+                    }`}
+                    type='button'
+                    data-key={x.name}
+                    onClick={this.click}
                   >
-                    <GithubUser {...x} />
-                  </div>
-                ))}
-              </div>
+                    {x.name}&nbsp;({x.count})
+                  </button>
+                </li>
+              ))}
+            </ul>
+            <h3>
+              {users.length} utilisateurs{' '}
+              <small>sur {this.allUsers.length}</small>
+            </h3>
 
-              {usersImp.length > this.state.last && (
-                <button
-                  onClick={this.clickMore}
-                  className='mt-4 w-100 btn btn-info'
-                  type='button'
-                >
-                  Afficher plus de résultats
-                </button>
-              )}
-            </Fragment>
-          ) : (
-            <div className='col'>
-              <p>Aucun résultat.</p>
-            </div>
-          )}
+            {users.length ? (
+              <Fragment>
+                <div className='row'>
+                  {users.map(x => (
+                    <div
+                      key={x.databaseId}
+                      className='col-sm-6 col-md-6 col-lg-4'
+                    >
+                      <GithubUser {...x} />
+                    </div>
+                  ))}
+                </div>
+
+                {usersImp.length > this.state.last && (
+                  <button
+                    onClick={this.clickMore}
+                    className='mt-4 w-100 btn btn-info'
+                    type='button'
+                  >
+                    Afficher plus de résultats
+                  </button>
+                )}
+              </Fragment>
+            ) : (
+              <div className='col'>
+                <p>Aucun résultat.</p>
+              </div>
+            )}
+          </div>
         </div>
+        <Footer>
+          <p className='card-text'>Marvoulous</p>
+        </Footer>
       </Layout>
     )
   }
