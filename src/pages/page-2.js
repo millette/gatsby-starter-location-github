@@ -81,7 +81,13 @@ class SecondPage extends Component {
   }
 
   click ({ target: { dataset } }) {
-    this.setState({ last: PER_PAGE, filter: dataset && dataset.key })
+    if (!this.state.filter && !dataset.key) {
+      return
+    }
+    this.setState({
+      last: PER_PAGE,
+      filter: dataset && dataset.key !== this.state.filter && dataset.key
+    })
   }
 
   filtering (x) {
