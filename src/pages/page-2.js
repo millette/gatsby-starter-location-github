@@ -101,7 +101,9 @@ class SecondPage extends Component {
             <li className='list-inline-item'>
               <button
                 style={{ margin: '0.25rem 0.125rem' }}
-                className='btn btn-sm btn-primary'
+                className={`btn btn-sm btn-primary${
+                  this.state.filter ? '' : ' active'
+                }`}
                 type='button'
                 onClick={this.click}
                 key='ALL'
