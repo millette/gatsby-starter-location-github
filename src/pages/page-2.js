@@ -22,7 +22,7 @@ class SecondPage extends Component {
   }
 
   click (ev) {
-    const filter = ev.target.dataset.key !== 'Tous' && ev.target.dataset.key
+    const filter = ev.target.dataset.key && ev.target.dataset.key
     this.setState({ filter })
   }
 
@@ -97,24 +97,38 @@ class SecondPage extends Component {
               Dispo? {this.state.onlyAvailable ? 'OUI' : 'Peu importe'}
             </button>
           </p>
-          <div>
-            {availableLanguages.map(x => (
+          <ul className='list-inline'>
+            <li className='list-inline-item'>
               <button
-                style={{ margin: '0.25rem' }}
-                className={`btn btn-sm btn-primary${
-                  this.state.filter === x.name ? ' active' : ''
-                }`}
+                style={{ margin: '0.25rem 0.125rem' }}
+                className='btn btn-sm btn-primary'
                 type='button'
-                data-key={x.name}
                 onClick={this.click}
-                key={x.name}
+                key='ALL'
               >
-                {x.name}&nbsp;({x.count})
+                Tous
               </button>
+            </li>
+            {availableLanguages.map(x => (
+              <li className='list-inline-item'>
+                <button
+                  style={{ margin: '0.25rem 0.125rem' }}
+                  className={`btn btn-sm btn-primary${
+                    this.state.filter === x.name ? ' active' : ''
+                  }`}
+                  type='button'
+                  data-key={x.name}
+                  onClick={this.click}
+                  key={x.name}
+                >
+                  {x.name}&nbsp;({x.count})
+                </button>
+              </li>
             ))}
-          </div>
+          </ul>
+          <h3>{users.length} utilisateurs</h3>
           <div className='row'>
-            {users.map(x => (
+            {users.slice(0, 24).map(x => (
               <div className='col-sm-6 col-md-6 col-lg-4'>
                 <GithubUser key={x.databaseId} {...x} />
               </div>
