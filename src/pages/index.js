@@ -8,7 +8,7 @@ import Layout from '../components/layout'
 import Footer from '../components/footer'
 
 const IndexPage = () => (
-  <Layout>
+  <Layout header='false'>
     <div className='container'>
       <h1>
         <FormattedMessage id='welcome' />

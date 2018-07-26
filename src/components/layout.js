@@ -3,12 +3,13 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+import { Link } from '../i18n'
 
 // self
 import Header from './header'
 import './layout.scss'
 
-const Layout = ({ container, children, data }) => (
+const Layout = ({ header, container, children, data }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -28,7 +29,15 @@ const Layout = ({ container, children, data }) => (
             { name: 'keywords', content: 'sample, something' }
           ]}
         />
-        <Header siteTitle={data.site.siteMetadata.title} />
+        {header ? (
+          <Header siteTitle={data.site.siteMetadata.title} />
+        ) : (
+          <div className='container'>
+            <h1 className='jumbotron-heading'>
+              <Link to='/'>{data.site.siteMetadata.title}</Link>
+            </h1>
+          </div>
+        )}
         <div className={container || ''}>{children}</div>
       </Fragment>
     )}
