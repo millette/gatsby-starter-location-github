@@ -32,8 +32,8 @@
     "precommit": "lint-staged"
   },
   "devDependencies": {
-    "bootstrap": "4.1.2",
-    "bootswatch": "^4.1.2",
+    "bootstrap": "4.1.3",
+    "bootswatch": "4.1.3",
     "gatsby-plugin-sass": "^2.0.0-beta.6",
     "gh-pages": "^1.2.0",
     "ghraphql": "^0.6.0",
