@@ -28,6 +28,11 @@ const Layout = ({ children, data }) => (
         />
         <Header siteTitle={data.site.siteMetadata.title} />
         <div className='container'>{children}</div>
+        <footer className='container-fluid card mt-5'>
+          <div className='card-body row justify-content-center'>
+            <p className='card-text'>Hello world, ciao!</p>
+          </div>
+        </footer>
       </Fragment>
     )}
   />
