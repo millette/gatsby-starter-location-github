@@ -42,8 +42,5 @@
     "node-sass": "^4.9.2",
     "prettier-standard": "^8.0.1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  }
+  "repository": "millette/gatsby-starter-location-github"
 }
