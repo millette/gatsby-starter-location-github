@@ -9,6 +9,7 @@
     "gatsby-source-filesystem": "^2.0.1-beta.10",
     "gatsby-transformer-json": "^2.1.1-beta.3",
     "intl": "^1.2.5",
+    "lodash-es": "^4.17.10",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-helmet": "^5.2.0",
@@ -26,7 +27,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
-    "dev": "gatsby develop",
+    "dev": "gatsby develop --port 8001",
     "format": "prettier-standard '**/*.+(js|json|md)'",
     "precommit": "lint-staged"
   },
