@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Fragment, Component } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { withIntl, Link } from '../i18n'
 import { graphql } from 'gatsby'
@@ -6,15 +6,35 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import GithubUser from '../components/github-user'
 
+const PER_PAGE = 24
+
 class SecondPage extends Component {
   constructor (props) {
     super(props)
+
+    this.allUsers = props.data.allDataJson.edges[0].node.users.map(x => ({
+      ...x,
+      languages:
+        x.repoLanguages &&
+        x.repoLanguages
+          .map(({ name, count }) => `${name} (${count})`)
+          .join(', ')
+    }))
+
     this.state = {
       filter: false,
-      onlyAvailable: false
+      onlyAvailable: false,
+      last: PER_PAGE
     }
     this.click = this.click.bind(this)
+    this.clickMore = this.clickMore.bind(this)
     this.clickAvailable = this.clickAvailable.bind(this)
+  }
+
+  clickMore (ev) {
+    this.setState({
+      last: this.state.last + PER_PAGE
+    })
   }
 
   clickAvailable (ev) {
@@ -23,7 +43,7 @@ class SecondPage extends Component {
 
   click (ev) {
     const filter = ev.target.dataset.key && ev.target.dataset.key
-    this.setState({ filter })
+    this.setState({ last: PER_PAGE, filter })
   }
 
   render () {
@@ -53,17 +73,9 @@ class SecondPage extends Component {
     const availableLanguages = this.props.data.allDataJson.edges[0].node
       .repoLanguages
 
-    const users = this.props.data.allDataJson.edges[0].node.users
-      .filter(filtering)
-      .filter(filtering2)
-      .map(x => ({
-        ...x,
-        languages:
-          x.repoLanguages &&
-          x.repoLanguages
-            .map(({ name, count }) => `${name} (${count})`)
-            .join(', ')
-      }))
+    const usersImp = this.allUsers.filter(filtering).filter(filtering2)
+
+    const users = usersImp.slice(0, this.state.last)
 
     return (
       <Layout>
@@ -100,8 +112,7 @@ class SecondPage extends Component {
           <ul className='list-inline'>
             <li className='list-inline-item'>
               <button
-                style={{ margin: '0.25rem 0.125rem' }}
-                className={`btn btn-sm btn-primary${
+                className={`m-1 btn btn-sm btn-primary${
                   this.state.filter ? '' : ' active'
                 }`}
                 type='button'
@@ -112,30 +123,53 @@ class SecondPage extends Component {
               </button>
             </li>
             {availableLanguages.map(x => (
-              <li className='list-inline-item'>
+              <li key={x.name} className='list-inline-item'>
                 <button
-                  style={{ margin: '0.25rem 0.125rem' }}
-                  className={`btn btn-sm btn-primary${
+                  className={`m-1 btn btn-sm btn-primary${
                     this.state.filter === x.name ? ' active' : ''
                   }`}
                   type='button'
                   data-key={x.name}
                   onClick={this.click}
-                  key={x.name}
                 >
                   {x.name}&nbsp;({x.count})
                 </button>
               </li>
             ))}
           </ul>
-          <h3>{users.length} utilisateurs</h3>
-          <div className='row'>
-            {users.slice(0, 24).map(x => (
-              <div className='col-sm-6 col-md-6 col-lg-4'>
-                <GithubUser key={x.databaseId} {...x} />
+          <h3>
+            {users.length} utilisateurs{' '}
+            <small>sur {this.allUsers.length}</small>
+          </h3>
+
+          {users.length ? (
+            <Fragment>
+              <div className='row'>
+                {users.map(x => (
+                  <div
+                    key={x.databaseId}
+                    className='col-sm-6 col-md-6 col-lg-4'
+                  >
+                    <GithubUser {...x} />
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+
+              {usersImp.length > this.state.last && (
+                <button
+                  onClick={this.clickMore}
+                  className='mt-4 w-100 btn btn-info'
+                  type='button'
+                >
+                  Afficher plus de résultats
+                </button>
+              )}
+            </Fragment>
+          ) : (
+            <div className='col'>
+              <p>Aucun résultat.</p>
+            </div>
+          )}
         </div>
       </Layout>
     )

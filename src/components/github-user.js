@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 
 const GithubUser = props => {
   return (
-    <div className='card' style={{ marginTop: '2rem' }}>
+    <div className='card mt-4'>
       <a
         target='_blank'
         rel='noopener noreferrer'
