@@ -3,6 +3,7 @@ import React, { Fragment, Component } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { withIntl, Link } from '../i18n'
 import { graphql } from 'gatsby'
+import { deburr } from 'lodash-es'
 
 // self
 import Layout from '../components/layout'
@@ -14,73 +15,99 @@ const PER_PAGE = 24
 const LANGUAGE_TYPE = 'repoLanguages'
 // const LANGUAGE_TYPE = 'starLanguages'
 
+const normalizeLoc = loc => deburr(loc.trim()).toLowerCase()
+
 class SecondPage extends Component {
   constructor (props) {
     super(props)
 
-    this.allUsers = props.data.allDataJson.edges[0].node.users.map(x => ({
-      ...x,
-      languages:
-        x[LANGUAGE_TYPE] &&
-        x[LANGUAGE_TYPE].map(({ name, count }) => `${name} (${count})`).join(
-          ', '
-        )
-    }))
+    this.allUsers = props.data.allDataJson.edges[0].node.users
+      .map(x => ({
+        ...x,
+        languages:
+          x[LANGUAGE_TYPE] &&
+          x[LANGUAGE_TYPE].map(({ name, count }) => `${name} (${count})`).join(
+            ', '
+          )
+      }))
+      .map(x => ({ ...x, deburredLocation: normalizeLoc(x.location) }))
 
     this.state = {
       filter: false,
       onlyAvailable: false,
-      last: PER_PAGE
+      last: PER_PAGE,
+      location: '',
+      deburredLocation: ''
     }
     this.click = this.click.bind(this)
     this.clickMore = this.clickMore.bind(this)
     this.clickAvailable = this.clickAvailable.bind(this)
+    this.locationFilter = this.locationFilter.bind(this)
+    this.filtering = this.filtering.bind(this)
+    this.filtering2 = this.filtering2.bind(this)
+    this.filtering3 = this.filtering3.bind(this)
   }
 
-  clickMore (ev) {
+  locationFilter ({ target: { value } }) {
+    this.setState({
+      location: value,
+      deburredLocation: normalizeLoc(value)
+    })
+  }
+
+  clickMore () {
     this.setState({
       last: this.state.last + PER_PAGE
     })
   }
 
-  clickAvailable (ev) {
+  clickAvailable () {
     this.setState({ onlyAvailable: !this.state.onlyAvailable })
   }
 
-  click (ev) {
-    const filter = ev.target.dataset.key && ev.target.dataset.key
-    this.setState({ last: PER_PAGE, filter })
+  click ({ target: { dataset } }) {
+    this.setState({ last: PER_PAGE, filter: dataset && dataset.key })
+  }
+
+  filtering (x) {
+    if (!this.state.filter) {
+      return true
+    }
+    let ok = false
+    if (!x[LANGUAGE_TYPE]) {
+      return false
+    }
+    x[LANGUAGE_TYPE].forEach(y => {
+      if (y.name === this.state.filter) {
+        ok = true
+      }
+    })
+    return ok
+  }
+
+  filtering2 (x) {
+    if (!this.state.onlyAvailable) {
+      return true
+    }
+    return x.isHireable
+  }
+
+  filtering3 (x) {
+    if (!this.state.deburredLocation) {
+      return true
+    }
+    return x.deburredLocation.indexOf(this.state.deburredLocation) !== -1
   }
 
   render () {
-    const filtering = x => {
-      if (!this.state.filter) {
-        return true
-      }
-      let ok = false
-      if (!x[LANGUAGE_TYPE]) {
-        return false
-      }
-      x[LANGUAGE_TYPE].forEach(y => {
-        if (y.name === this.state.filter) {
-          ok = true
-        }
-      })
-      return ok
-    }
-
-    const filtering2 = x => {
-      if (!this.state.onlyAvailable) {
-        return true
-      }
-      return x.isHireable
-    }
-
     const availableLanguages = this.props.data.allDataJson.edges[0].node[
       LANGUAGE_TYPE
     ]
 
-    const usersImp = this.allUsers.filter(filtering).filter(filtering2)
+    const usersImp = this.allUsers
+      .filter(this.filtering)
+      .filter(this.filtering2)
+      .filter(this.filtering3)
 
     const users = usersImp.slice(0, this.state.last)
 
@@ -147,9 +174,23 @@ class SecondPage extends Component {
                 </li>
               ))}
             </ul>
+            <label>
+              Lieu:{' '}
+              <input
+                type='text'
+                value={this.state.location}
+                onChange={this.locationFilter}
+              />
+            </label>
+            {this.state.deburredLocation}
             <h3>
-              {users.length} utilisateurs{' '}
-              <small>sur {this.allUsers.length}</small>
+              {users.length} utilisateurs affichés{' '}
+              <small>
+                sur {usersImp.length} sélectionnés
+                {this.allUsers.length !== usersImp.length && (
+                  <span>, {this.allUsers.length} en tout</span>
+                )}
+              </small>
             </h3>
 
             {users.length ? (
