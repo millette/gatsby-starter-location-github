@@ -11,7 +11,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sass',
       options: {
-        precision: 8
+        precision: 8 // required by bootstrap
       }
     },
     'gatsby-transformer-json',
@@ -21,6 +21,14 @@ module.exports = {
         name: 'data',
         path: `${__dirname}/src/data/`
       }
+      /*
+    },
+    {
+      resolve: 'gatsby-plugin-webpack-bundle-analyzer',
+      options: {
+        analyzerPort: 8008,
+      }
+    */
     }
   ]
 }
