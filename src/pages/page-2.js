@@ -15,7 +15,7 @@ const PER_PAGE = 24
 const LANGUAGE_TYPE = 'repoLanguages'
 // const LANGUAGE_TYPE = 'starLanguages'
 
-const normalizeLoc = loc => deburr(loc.trim()).toLowerCase()
+const normalizeLoc = loc => deburr((loc || '').trim()).toLowerCase()
 
 class SecondPage extends Component {
   constructor (props) {
@@ -30,22 +30,37 @@ class SecondPage extends Component {
             ', '
           )
       }))
-      .map(x => ({ ...x, deburredLocation: normalizeLoc(x.location) }))
+      .map(x => ({
+        ...x,
+        deburredName: `${normalizeLoc(x.name)} ${normalizeLoc(x.login)}`,
+        deburredLocation: normalizeLoc(x.location)
+      }))
 
     this.state = {
       filter: false,
       onlyAvailable: false,
       last: PER_PAGE,
       location: '',
-      deburredLocation: ''
+      deburredLocation: '',
+      name: '',
+      deburredName: ''
     }
     this.click = this.click.bind(this)
     this.clickMore = this.clickMore.bind(this)
     this.clickAvailable = this.clickAvailable.bind(this)
     this.locationFilter = this.locationFilter.bind(this)
+    this.nameFilter = this.nameFilter.bind(this)
     this.filtering = this.filtering.bind(this)
     this.filtering2 = this.filtering2.bind(this)
     this.filtering3 = this.filtering3.bind(this)
+    this.filtering4 = this.filtering4.bind(this)
+  }
+
+  nameFilter ({ target: { value } }) {
+    this.setState({
+      name: value,
+      deburredName: normalizeLoc(value)
+    })
   }
 
   locationFilter ({ target: { value } }) {
@@ -99,6 +114,13 @@ class SecondPage extends Component {
     return x.deburredLocation.indexOf(this.state.deburredLocation) !== -1
   }
 
+  filtering4 (x) {
+    if (!this.state.deburredName) {
+      return true
+    }
+    return x.deburredName.indexOf(this.state.deburredName) !== -1
+  }
+
   render () {
     const availableLanguages = this.props.data.allDataJson.edges[0].node[
       LANGUAGE_TYPE
@@ -108,6 +130,7 @@ class SecondPage extends Component {
       .filter(this.filtering)
       .filter(this.filtering2)
       .filter(this.filtering3)
+      .filter(this.filtering4)
 
     const users = usersImp.slice(0, this.state.last)
 
@@ -174,6 +197,15 @@ class SecondPage extends Component {
                 </li>
               ))}
             </ul>
+            <label>
+              Nom:{' '}
+              <input
+                type='text'
+                value={this.state.name}
+                onChange={this.nameFilter}
+              />
+            </label>
+            <br />
             <label>
               Lieu:{' '}
               <input
