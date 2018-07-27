@@ -281,17 +281,14 @@ export const query = graphql`
             version
             processedAt
           }
-
           repoLanguages {
             name
             count
           }
-
           starLanguages {
             name
             count
           }
-
           users {
             starLanguages {
               name
@@ -309,24 +306,6 @@ export const query = graphql`
             email
             location
             createdAt
-            starredRepositories {
-              starredAt
-              nameWithOwner
-              primaryLanguage
-            }
-            repositoriesContributedTo {
-              nameWithOwner
-              forkCount
-              primaryLanguage
-              stargazersCount
-              stargazers {
-                starredAt
-                createdAt
-                login
-                databaseId
-                location
-              }
-            }
             repositoriesContributedToCount
             fetchedAt
             isHireable
