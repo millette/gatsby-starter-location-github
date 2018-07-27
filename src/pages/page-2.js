@@ -13,6 +13,11 @@ import Footer from '../components/footer'
 const PER_PAGE = 24
 // const LANGUAGE_TYPE = 'starLanguages'
 const LANGUAGE_TYPE = 'repoLanguages'
+
+// see also:
+// https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar
+// https://developer.mozilla.org/en-US/docs/Web/CSS/-ms-overflow-style
+// https://github.com/vitch/jScrollPane (find a React equivalent)
 const LANGUAGE_BAR = {
   whiteSpace: 'nowrap',
   paddingBottom: '1rem',
