@@ -21,6 +21,13 @@ class SecondPage extends Component {
   constructor (props) {
     super(props)
 
+    this.allLanguageColors = {}
+    props.data.allLanguageColorsJson.edges
+      .map(({ node }) => node)
+      .forEach(({ name, fg, bg }) => {
+        this.allLanguageColors[name] = { bg, fg }
+      })
+
     this.allUsers = props.data.allDataJson.edges[0].node.users
       .map(x => ({
         ...x,
@@ -178,12 +185,11 @@ class SecondPage extends Component {
             <ul className='list-inline'>
               <li className='list-inline-item'>
                 <button
-                  className={`m-1 btn btn-sm btn-primary${
-                    this.state.filter ? '' : ' active'
+                  className={`btn badge badge-primary${
+                    this.state.filter ? ' badge-pill' : ' active'
                   }`}
                   type='button'
                   onClick={this.click}
-                  key='ALL'
                 >
                   Tous
                 </button>
@@ -191,8 +197,16 @@ class SecondPage extends Component {
               {availableLanguages.map(x => (
                 <li key={x.name} className='list-inline-item'>
                   <button
-                    className={`m-1 btn btn-sm btn-primary${
-                      this.state.filter === x.name ? ' active' : ''
+                    style={
+                      this.allLanguageColors[x.name]
+                        ? {
+                          background: this.allLanguageColors[x.name].bg,
+                          color: this.allLanguageColors[x.name].fg
+                        }
+                        : { background: '#fff', color: '#000' }
+                    }
+                    className={`btn badge${
+                      this.state.filter === x.name ? ' active' : ' badge-pill'
                     }`}
                     type='button'
                     data-key={x.name}
@@ -311,6 +325,15 @@ export const query = graphql`
             isHireable
             websiteUrl
           }
+        }
+      }
+    }
+    allLanguageColorsJson {
+      edges {
+        node {
+          name
+          fg
+          bg
         }
       }
     }
