@@ -1,6 +1,7 @@
 {
   "name": "gatsby-starter-location-github",
   "description": "Local GitHub directory.",
+  "license": "AGPL-3.0",
   "version": "0.0.0",
   "dependencies": {
     "browser-lang": "^0.0.1",
