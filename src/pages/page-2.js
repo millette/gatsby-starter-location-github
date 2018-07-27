@@ -26,6 +26,32 @@ const LANGUAGE_BAR = {
 
 const normalize = loc => deburr((loc || '').trim()).toLowerCase()
 
+const sortFns = {
+  joined: (a, b) => {
+    const na = a.createdAt
+    const nb = b.createdAt
+    if (na > nb) {
+      return 1
+    }
+    if (na < nb) {
+      return -1
+    }
+    return 0
+  },
+  name: (a, b) => (a.name || a.login).localeCompare(b.name || b.login),
+  nRepos: (a, b) => {
+    const na = a.repositoriesContributedToCount
+    const nb = b.repositoriesContributedToCount
+    if (na > nb) {
+      return 1
+    }
+    if (na < nb) {
+      return -1
+    }
+    return 0
+  }
+}
+
 class SecondPage extends Component {
   constructor (props) {
     super(props)
@@ -59,7 +85,9 @@ class SecondPage extends Component {
       location: '',
       deburredLocation: '',
       name: '',
-      deburredName: ''
+      deburredName: '',
+      sort: 'joined',
+      reverse: true
     }
     this.click = this.click.bind(this)
     this.clickMore = this.clickMore.bind(this)
@@ -70,6 +98,31 @@ class SecondPage extends Component {
     this.filtering2 = this.filtering2.bind(this)
     this.filtering3 = this.filtering3.bind(this)
     this.filtering4 = this.filtering4.bind(this)
+    this.changeOrder = this.changeOrder.bind(this)
+    this.changeOrder666 = this.changeOrder666.bind(this)
+  }
+
+  changeOrder ({ target: { value } }) {
+    console.log('changeOrder', value)
+    if (value === this.state.sort) {
+      return
+    }
+    this.setState({
+      sort: value,
+      reverse: value === 'nRepos' || value === 'joined'
+    })
+  }
+
+  /*
+  changeOrder666 () {
+    console.log('changeOrder666')
+    this.setState({ reverse: !this.state.reverse })
+  }
+  */
+
+  changeOrder666 ({ target: { checked } }) {
+    console.log('changeOrder666', checked)
+    this.setState({ reverse: checked })
   }
 
   nameFilter ({ target: { value } }) {
@@ -153,8 +206,11 @@ class SecondPage extends Component {
       .filter(this.filtering2)
       .filter(this.filtering3)
       .filter(this.filtering4)
+      .sort(sortFns[this.state.sort])
 
-    const users = usersImp.slice(0, this.state.last)
+    const users = this.state.reverse
+      ? usersImp.reverse().slice(0, this.state.last)
+      : usersImp.slice(0, this.state.last)
 
     return (
       <Layout>
@@ -191,6 +247,22 @@ class SecondPage extends Component {
                 Dispo? {this.state.onlyAvailable ? 'OUI' : 'Peu importe'}
               </button>
             </p>
+            <label>
+              Tri:{' '}
+              <select onChange={this.changeOrder}>
+                <option value='joined'>Date d’inscription</option>
+                <option value='name'>Nom (ou login)</option>
+                <option value='nRepos'>Nombre de dépots</option>
+              </select>
+            </label>{' '}
+            <label>
+              Inverser l’ordre{' '}
+              <input
+                type='checkbox'
+                checked={this.state.reverse}
+                onChange={this.changeOrder666}
+              />
+            </label>
             <ul className='list-inline' style={LANGUAGE_BAR}>
               <li className='list-inline-item'>
                 <button
@@ -221,7 +293,8 @@ class SecondPage extends Component {
                     data-key={x.name}
                     onClick={this.click}
                   >
-                    {x.name}&nbsp;({x.count})
+                    {/* {x.name}&nbsp;({x.count}) */}
+                    {x.name}
                   </button>
                 </li>
               ))}
@@ -253,7 +326,6 @@ class SecondPage extends Component {
                 )}
               </small>
             </h3>
-
             {users.length ? (
               <Fragment>
                 <div className='row'>
