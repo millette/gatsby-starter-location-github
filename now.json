@@ -1,5 +1,6 @@
 {
-  "name": "rollo-iran",
+  "name": "rollo-gatsby",
   "type": "static",
+  "files": ["src/data/gh-users.json", "src/data/language-colors.json"],
   "public": true
 }
