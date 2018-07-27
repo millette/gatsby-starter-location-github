@@ -11,11 +11,15 @@ import GithubUser from '../components/github-user'
 import Footer from '../components/footer'
 
 const PER_PAGE = 24
-
-const LANGUAGE_TYPE = 'repoLanguages'
 // const LANGUAGE_TYPE = 'starLanguages'
+const LANGUAGE_TYPE = 'repoLanguages'
+const LANGUAGE_BAR = {
+  whiteSpace: 'nowrap',
+  paddingBottom: '1rem',
+  overflowX: 'scroll'
+}
 
-const normalizeLoc = loc => deburr((loc || '').trim()).toLowerCase()
+const normalize = loc => deburr((loc || '').trim()).toLowerCase()
 
 class SecondPage extends Component {
   constructor (props) {
@@ -39,8 +43,8 @@ class SecondPage extends Component {
       }))
       .map(x => ({
         ...x,
-        deburredName: `${normalizeLoc(x.name)} ${normalizeLoc(x.login)}`,
-        deburredLocation: normalizeLoc(x.location)
+        deburredName: `${normalize(x.name)} ${normalize(x.login)}`,
+        deburredLocation: normalize(x.location)
       }))
 
     this.state = {
@@ -66,14 +70,14 @@ class SecondPage extends Component {
   nameFilter ({ target: { value } }) {
     this.setState({
       name: value,
-      deburredName: normalizeLoc(value)
+      deburredName: normalize(value)
     })
   }
 
   locationFilter ({ target: { value } }) {
     this.setState({
       location: value,
-      deburredLocation: normalizeLoc(value)
+      deburredLocation: normalize(value)
     })
   }
 
@@ -182,7 +186,7 @@ class SecondPage extends Component {
                 Dispo? {this.state.onlyAvailable ? 'OUI' : 'Peu importe'}
               </button>
             </p>
-            <ul className='list-inline'>
+            <ul className='list-inline' style={LANGUAGE_BAR}>
               <li className='list-inline-item'>
                 <button
                   className={`btn badge badge-primary${
