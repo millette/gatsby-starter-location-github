@@ -3,6 +3,7 @@
 node_modules
 yarn-error.log
 src/data/gh-users.json
+src/data/language-colors.json
 
 # Build directory
 /public
