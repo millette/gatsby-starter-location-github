@@ -74,12 +74,11 @@ const GithubUser = props => {
             </Fragment>
           )}
 
-          {props.repositoriesContributedTo &&
-            props.repositoriesContributedTo.length > 0 && (
+          {props.repositoriesContributedToCount && (
             <Fragment>
               <dt className='col-6 col-xl-4'>Contribs</dt>
               <dd className='col-6 col-xl-8'>
-                {props.repositoriesContributedTo.length} dépots
+                {props.repositoriesContributedToCount} dépots
               </dd>
               {props.languages && (
                 <Fragment>
