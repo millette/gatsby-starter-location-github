@@ -4,14 +4,24 @@ import { FormattedMessage } from 'react-intl'
 import { withIntl, Link } from '../i18n'
 import { graphql } from 'gatsby'
 import { deburr } from 'lodash-es'
-import { SimpleImg, initSimpleImg } from 'react-simple-img'
+// import { SimpleImg, initSimpleImg } from 'react-simple-img'
 // import { SimpleImg, SimpleImgProvider } from 'react-simple-img'
 // import { SimpleImgProvider } from 'react-simple-img'
+// import { initSimpleImg } from 'react-simple-img'
 
 // self
 import Layout from '../components/layout'
 import GithubUser from '../components/github-user'
 import Footer from '../components/footer'
+
+/*
+// run once at your root component or at file which calls `ReactDOM.render`
+console.log('Calling initSimpleImg() ?')
+if (typeof window !== 'undefined') {
+  console.log('YES! Call initSimpleImg()')
+  initSimpleImg({ threshold: 0.5 })
+}
+*/
 
 // const LANGUAGE_TYPE = 'starLanguages'
 const LANGUAGE_TYPE = 'repoLanguages'
@@ -57,10 +67,10 @@ const sortFns = {
 
 class SecondPage extends Component {
   constructor (props) {
-    console.log('Calling initSimpleImg')
-    initSimpleImg({ threshold: 0.5 })
+    // console.log('Calling initSimpleImg')
+    // initSimpleImg({ threshold: 0.5 })
     super(props)
-    this.sss = SimpleImg
+    // this.sss = SimpleImg
 
     this.allLanguageColors = {}
     props.data.allLanguageColorsJson.edges
@@ -110,6 +120,7 @@ class SecondPage extends Component {
 
   /*
   componentDidMount () {
+    console.log('Calling initSimpleImg()')
     initSimpleImg({ threshold: 0.5 })
   }
   */
@@ -346,7 +357,7 @@ class SecondPage extends Component {
                       key={x.databaseId}
                       className='col-sm-6 col-md-6 col-lg-4'
                     >
-                      <GithubUser {...x} SimpleImg={this.sss} />
+                      <GithubUser {...x} />
                     </div>
                   ))}
                 </div>
