@@ -4,6 +4,9 @@ import { FormattedMessage } from 'react-intl'
 import { withIntl, Link } from '../i18n'
 import { graphql } from 'gatsby'
 import { deburr } from 'lodash-es'
+import { SimpleImg, initSimpleImg } from 'react-simple-img'
+// import { SimpleImg, SimpleImgProvider } from 'react-simple-img'
+// import { SimpleImgProvider } from 'react-simple-img'
 
 // self
 import Layout from '../components/layout'
@@ -54,7 +57,10 @@ const sortFns = {
 
 class SecondPage extends Component {
   constructor (props) {
+    console.log('Calling initSimpleImg')
+    initSimpleImg({ threshold: 0.5 })
     super(props)
+    this.sss = SimpleImg
 
     this.allLanguageColors = {}
     props.data.allLanguageColorsJson.edges
@@ -102,8 +108,14 @@ class SecondPage extends Component {
     this.changeOrder666 = this.changeOrder666.bind(this)
   }
 
+  /*
+  componentDidMount () {
+    initSimpleImg({ threshold: 0.5 })
+  }
+  */
+
   changeOrder ({ target: { value } }) {
-    console.log('changeOrder', value)
+    // console.log('changeOrder', value)
     if (value === this.state.sort) {
       return
     }
@@ -121,7 +133,7 @@ class SecondPage extends Component {
   */
 
   changeOrder666 ({ target: { checked } }) {
-    console.log('changeOrder666', checked)
+    // console.log('changeOrder666', checked)
     this.setState({ reverse: checked })
   }
 
@@ -334,7 +346,7 @@ class SecondPage extends Component {
                       key={x.databaseId}
                       className='col-sm-6 col-md-6 col-lg-4'
                     >
-                      <GithubUser {...x} />
+                      <GithubUser {...x} SimpleImg={this.sss} />
                     </div>
                   ))}
                 </div>
@@ -364,6 +376,7 @@ class SecondPage extends Component {
   }
 }
 
+// export default withIntl(SimpleImgProvider(SecondPage, { threshold: 0.5 }))
 export default withIntl(SecondPage)
 
 export const query = graphql`
