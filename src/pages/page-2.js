@@ -10,9 +10,9 @@ import Layout from '../components/layout'
 import GithubUser from '../components/github-user'
 import Footer from '../components/footer'
 
-const PER_PAGE = 24
 // const LANGUAGE_TYPE = 'starLanguages'
 const LANGUAGE_TYPE = 'repoLanguages'
+const PER_PAGE = 12
 
 // see also:
 // https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar
