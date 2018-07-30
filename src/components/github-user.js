@@ -1,5 +1,9 @@
 // npm
 import React, { Fragment } from 'react'
+import { SimpleImg, initSimpleImg } from 'react-simple-img'
+
+// run once at your root component or at file which calls `ReactDOM.render`
+initSimpleImg({ threshold: 0.5 })
 
 const GithubUser = props => {
   return (
@@ -9,11 +13,10 @@ const GithubUser = props => {
         rel='noopener noreferrer'
         href={`https://github.com/${props.login}`}
       >
-        <img
-          className='card-img-top'
-          src={`https://avatars3.githubusercontent.com/u/${
-            props.databaseId
-          }?s=460&v=4`}
+        <SimpleImg
+          imgClassName='card-img-top'
+          placeholder='linear-gradient(rgb(30, 87, 153) 0%, rgb(125, 185, 232) 100%)'
+          src={`https://avatars3.githubusercontent.com/u/${props.databaseId}`}
           alt={`Avatar de ${props.name || props.login}`}
         />
       </a>
