@@ -1,10 +1,12 @@
 // npm
 import React from 'react'
 import { Link } from '../i18n'
+import logo from '../assets/images/logo.png'
 
 const Header = ({ siteTitle }) => (
   <section className='jumbotron text-center'>
     <div className='container'>
+      <img src={logo} alt='logo' />
       <h1 className='jumbotron-heading'>
         <Link to='/'>{siteTitle}</Link>
       </h1>
