@@ -4,24 +4,11 @@ import { FormattedMessage } from 'react-intl'
 import { withIntl, Link } from '../i18n'
 import { graphql } from 'gatsby'
 import { deburr } from 'lodash-es'
-// import { SimpleImg, initSimpleImg } from 'react-simple-img'
-// import { SimpleImg, SimpleImgProvider } from 'react-simple-img'
-// import { SimpleImgProvider } from 'react-simple-img'
-// import { initSimpleImg } from 'react-simple-img'
 
 // self
 import Layout from '../components/layout'
 import GithubUser from '../components/github-user'
 import Footer from '../components/footer'
-
-/*
-// run once at your root component or at file which calls `ReactDOM.render`
-console.log('Calling initSimpleImg() ?')
-if (typeof window !== 'undefined') {
-  console.log('YES! Call initSimpleImg()')
-  initSimpleImg({ threshold: 0.5 })
-}
-*/
 
 // const LANGUAGE_TYPE = 'starLanguages'
 const LANGUAGE_TYPE = 'repoLanguages'
@@ -67,11 +54,7 @@ const sortFns = {
 
 class SecondPage extends Component {
   constructor (props) {
-    // console.log('Calling initSimpleImg')
-    // initSimpleImg({ threshold: 0.5 })
     super(props)
-    // this.sss = SimpleImg
-
     this.allLanguageColors = {}
     props.data.allLanguageColorsJson.edges
       .map(({ node }) => node)
@@ -115,18 +98,10 @@ class SecondPage extends Component {
     this.filtering3 = this.filtering3.bind(this)
     this.filtering4 = this.filtering4.bind(this)
     this.changeOrder = this.changeOrder.bind(this)
-    this.changeOrder666 = this.changeOrder666.bind(this)
+    this.changeOrderReverse = this.changeOrderReverse.bind(this)
   }
-
-  /*
-  componentDidMount () {
-    console.log('Calling initSimpleImg()')
-    initSimpleImg({ threshold: 0.5 })
-  }
-  */
 
   changeOrder ({ target: { value } }) {
-    // console.log('changeOrder', value)
     if (value === this.state.sort) {
       return
     }
@@ -136,15 +111,7 @@ class SecondPage extends Component {
     })
   }
 
-  /*
-  changeOrder666 () {
-    console.log('changeOrder666')
-    this.setState({ reverse: !this.state.reverse })
-  }
-  */
-
-  changeOrder666 ({ target: { checked } }) {
-    // console.log('changeOrder666', checked)
+  changeOrderReverse ({ target: { checked } }) {
     this.setState({ reverse: checked })
   }
 
@@ -283,7 +250,7 @@ class SecondPage extends Component {
               <input
                 type='checkbox'
                 checked={this.state.reverse}
-                onChange={this.changeOrder666}
+                onChange={this.changeOrderReverse}
               />
             </label>
             <ul className='list-inline' style={LANGUAGE_BAR}>
@@ -387,7 +354,6 @@ class SecondPage extends Component {
   }
 }
 
-// export default withIntl(SimpleImgProvider(SecondPage, { threshold: 0.5 }))
 export default withIntl(SecondPage)
 
 export const query = graphql`

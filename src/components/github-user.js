@@ -1,6 +1,5 @@
 // npm
 import React, { Fragment } from 'react'
-// import { SimpleImg } from 'react-simple-img'
 import { SimpleImg, initSimpleImg } from 'react-simple-img'
 
 // run once at your root component or at file which calls `ReactDOM.render`
@@ -11,7 +10,6 @@ if (typeof window !== 'undefined') {
 }
 
 const GithubUser = props => {
-  // const { SimpleImg } = props
   return (
     <div className='card mt-4'>
       <a
