@@ -7,6 +7,7 @@ import { Link } from '../i18n'
 
 // self
 import Header from './header'
+import Nav from './nav.js'
 import './layout.scss'
 
 // FIXME: GraphQL should not hardcode languages
@@ -59,13 +60,7 @@ const Layout = ({ header, container, children, data }, ctx) => (
               subTitle={data.site.siteMetadata.language[locale].subtitle}
             />
           ) : (
-            <div className='container'>
-              <h1 className='jumbotron-heading'>
-                <Link to='/'>
-                  {data.site.siteMetadata.language[locale].title}
-                </Link>
-              </h1>
-            </div>
+            <Nav />
           )}
           <div className={container || ''}>{children}</div>
         </Fragment>
