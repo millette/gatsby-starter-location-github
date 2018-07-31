@@ -2,9 +2,16 @@ module.exports = {
   pathPrefix: '/gatsby-starter-location-github',
   siteMetadata: {
     language: {
-      fallback: 'en'
-    },
-    title: 'Gatsby Default Starter'
+      fallback: 'en',
+      en: {
+        title: 'RolloDevs — Iran (en)',
+        subtitle: 'Your locally sourced developper directory'
+      },
+      fr: {
+        title: 'RolloDevs — Iran (fr)',
+        subtitle: 'Votre source de développeurs locaux'
+      }
+    }
   },
   plugins: [
     'gatsby-plugin-react-helmet',
