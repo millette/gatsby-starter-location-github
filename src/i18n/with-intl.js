@@ -37,10 +37,36 @@ export default ComposedComponent => {
     render () {
       const { language } = this.state
       const locale = language.locale || fallback
-      const messages = require(`./locales/${locale}.js`) // eslint-disable-line
 
+      let messages
+      let messages2
+
+      try {
+        messages = require(`./locales/${locale}.js`) // eslint-disable-line
+      } catch (e) {
+        console.error('EEE:', e)
+        if (!messages) {
+          messages = {}
+        }
+      }
+
+      try {
+        messages2 = require(`../../custom/locales/${locale}.js`) // eslint-disable-line
+        /*
+        console.log(Date.now())
+        console.log('MESSAGES:', messages)
+        console.log('MESSAGES2:', messages2)
+        console.log('MESSAGES3:', m3)
+        */
+      } catch (e2) {
+        console.error('EEE2:', e2)
+        if (!messages2) {
+          messages2 = {}
+        }
+      }
+      const m3 = { ...messages, ...messages2 }
       return (
-        <IntlProvider locale={locale} messages={messages}>
+        <IntlProvider locale={locale} messages={m3}>
           <ComposedComponent {...this.props} />
         </IntlProvider>
       )
