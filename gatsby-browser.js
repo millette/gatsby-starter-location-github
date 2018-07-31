@@ -6,7 +6,9 @@
 
 // You can delete this file if you're not using it
 
+/*
 exports.onRouteUpdateDelayed = ({ location, action }) => {
   console.log('onRouteUpdateDelayed location', location)
   console.log('onRouteUpdateDelayed action', action)
 }
+*/
