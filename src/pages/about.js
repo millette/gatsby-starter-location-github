@@ -30,28 +30,6 @@ const About = () => (
             english, front
           </Link>
         </li>
-
-        <li>
-          <Link to='/was-index/' lng='fr'>
-            francais, was-index
-          </Link>
-        </li>
-        <li>
-          <Link to='/was-index/' lng='en'>
-            english, was-index
-          </Link>
-        </li>
-
-        <li>
-          <Link to='/was-page-2/' lng='fr'>
-            francais, was-page-2
-          </Link>
-        </li>
-        <li>
-          <Link to='/was-page-2/' lng='en'>
-            english, was-page-2
-          </Link>
-        </li>
       </ul>
     </div>
     <Footer>
