@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[9],{217:function(e,t,a){"use strict";a.r(t);var n=a(1),l=a.n(n),s=a(218),c=a(220);t.default=function(){return l.a.createElement(s.a,null,l.a.createElement("div",{className:"container"},l.a.createElement("h1",null,"NOT FOUND"),l.a.createElement("p",null,"You just hit a route that doesn't exist... the sadness.")),l.a.createElement(c.a,null,l.a.createElement("p",{className:"card-text"},"Marvoulous")))}}}]);
+//# sourceMappingURL=component---src-pages-404-js-502b6b1c63c8a015088e.js.map
