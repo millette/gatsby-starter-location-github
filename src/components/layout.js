@@ -9,6 +9,8 @@ import { Link } from '../i18n'
 import Header from './header'
 import './layout.scss'
 
+// FIXME: GraphQL should not hardcode languages
+// but use an array instead
 const Layout = ({ header, container, children, data }, ctx) => (
   <StaticQuery
     query={graphql`

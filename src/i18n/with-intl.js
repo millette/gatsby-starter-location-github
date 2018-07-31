@@ -42,8 +42,10 @@ export default ComposedComponent => {
     render () {
       const { language } = this.state
       const locale = language.locale || fallback
+      // FIXME: use GraphQL instead?
       let messages = require(`./locales/${locale}.js`) // eslint-disable-line
       try {
+        // FIXME: use GraphQL instead?
         const overrides = require(`../../custom/locales/${locale}.js`) // eslint-disable-line
         messages = { ...messages, ...overrides }
       } catch (e) {
