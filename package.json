@@ -25,6 +25,7 @@
     "*.{js,json,md}": ["prettier-standard", "git add"]
   },
   "scripts": {
+    "lint": "standard",
     "ghraphql": "ghraphql",
     "build": "gatsby build",
     "serve": "gatsby serve",
@@ -42,7 +43,8 @@
     "husky": "^0.14.3",
     "lint-staged": "^7.2.0",
     "node-sass": "^4.9.2",
-    "prettier-standard": "^8.0.1"
+    "prettier-standard": "^8.0.1",
+    "standard": "^11.0.1"
   },
   "repository": "millette/gatsby-starter-location-github"
 }
