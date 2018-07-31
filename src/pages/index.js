@@ -211,18 +211,13 @@ class FrontPage extends Component {
 
           <ul>
             <li>
-              <Link to='/'>
-                <FormattedMessage id='goback' />
+              <Link to='/about/' lng='fr'>
+                francais, about
               </Link>
             </li>
             <li>
-              <Link to='/' lng='fr'>
-                francais, accueil
-              </Link>
-            </li>
-            <li>
-              <Link to='/' lng='en'>
-                english, front
+              <Link to='/about/' lng='en'>
+                english, about
               </Link>
             </li>
           </ul>
