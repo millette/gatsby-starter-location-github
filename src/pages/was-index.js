@@ -18,27 +18,27 @@ const IndexPage = () => (
       </p>
       <ul>
         <li>
-          <Link to='/new-front/' lng='fr'>
-            francais, new-front
+          <Link to='/' lng='fr'>
+            francais, front
           </Link>
         </li>
         <li>
-          <Link to='/new-front/' lng='en'>
-            english, new-front
+          <Link to='/' lng='en'>
+            english, front
           </Link>
         </li>
         <li>
-          <Link to='/page-2/'>
+          <Link to='/was-page-2/'>
             <FormattedMessage id='gopage2' />
           </Link>
         </li>
         <li>
-          <Link to='/page-2/' lng='fr'>
+          <Link to='/was-page-2/' lng='fr'>
             francais, page 2
           </Link>
         </li>
         <li>
-          <Link to='/page-2/' lng='en'>
+          <Link to='/was-page-2/' lng='en'>
             english, page 2
           </Link>
         </li>

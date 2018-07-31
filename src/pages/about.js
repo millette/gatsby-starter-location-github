@@ -1,5 +1,5 @@
 // npm
-import React, { Fragment, Component } from 'react'
+import React from 'react'
 import { FormattedMessage } from 'react-intl'
 import { withIntl, Link } from '../i18n'
 

@@ -30,9 +30,9 @@ const Header = ({ siteTitle, subTitle }) => (
       </div>
       <div className='row'>
         <div className='column mx-auto'>
-          <button type='button' className='btn btn-info btn-lg'>
+          <Link to='/about/' className='btn btn-info btn-lg'>
             Find out more
-          </button>
+          </Link>
         </div>
       </div>
     </div>
