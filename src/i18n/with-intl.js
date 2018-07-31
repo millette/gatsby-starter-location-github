@@ -1,9 +1,14 @@
+// npm
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { IntlProvider, addLocaleData } from 'react-intl'
+
+// self
 import { localeData } from './locales'
+// FIXME: should probably use GraphQL instead
 import { siteMetadata } from '../../gatsby-config'
 
+// FIXME: should probably use GraphQL for this
 const { language: { fallback } } = siteMetadata
 
 addLocaleData(localeData)
@@ -37,36 +42,15 @@ export default ComposedComponent => {
     render () {
       const { language } = this.state
       const locale = language.locale || fallback
-
-      let messages
-      let messages2
-
+      let messages = require(`./locales/${locale}.js`) // eslint-disable-line
       try {
-        messages = require(`./locales/${locale}.js`) // eslint-disable-line
+        const overrides = require(`../../custom/locales/${locale}.js`) // eslint-disable-line
+        messages = { ...messages, ...overrides }
       } catch (e) {
-        console.error('EEE:', e)
-        if (!messages) {
-          messages = {}
-        }
+        // expected if there are no overrides
       }
-
-      try {
-        messages2 = require(`../../custom/locales/${locale}.js`) // eslint-disable-line
-        /*
-        console.log(Date.now())
-        console.log('MESSAGES:', messages)
-        console.log('MESSAGES2:', messages2)
-        console.log('MESSAGES3:', m3)
-        */
-      } catch (e2) {
-        console.error('EEE2:', e2)
-        if (!messages2) {
-          messages2 = {}
-        }
-      }
-      const m3 = { ...messages, ...messages2 }
       return (
-        <IntlProvider locale={locale} messages={m3}>
+        <IntlProvider locale={locale} messages={messages}>
           <ComposedComponent {...this.props} />
         </IntlProvider>
       )
