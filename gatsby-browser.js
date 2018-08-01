@@ -12,3 +12,10 @@ exports.onRouteUpdateDelayed = ({ location, action }) => {
   console.log('onRouteUpdateDelayed action', action)
 }
 */
+
+/*
+exports.onRouteUpdate = ({ location, action }) => {
+  console.log('new pathname', location)
+  console.log('action', action)
+}
+*/

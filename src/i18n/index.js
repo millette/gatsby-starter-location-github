@@ -1,4 +1,4 @@
-import Link from './Link'
+import Link from './link'
 import withIntl from './with-intl'
 import { languages, localeData } from './locales'
 

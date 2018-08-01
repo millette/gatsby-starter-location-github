@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { withPrefix } from 'gatsby-link'
+import { withPrefix } from 'gatsby'
 import browserLang from 'browser-lang'
 import { languages } from './index'
 import { siteMetadata } from '../../gatsby-config'
