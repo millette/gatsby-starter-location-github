@@ -5,6 +5,7 @@ import { withPrefix } from 'gatsby'
 // self
 import { Link } from '../i18n'
 import tinylogo from '../assets/images/tinier-rollo-logo.png'
+import { getPageTitleID } from '../utils'
 
 class Nav extends Component {
   constructor (props) {
@@ -19,6 +20,9 @@ class Nav extends Component {
 
   render () {
     const { pageContext } = this.props
+
+    const pageTitleStr = getPageTitleID(pageContext)
+
     const languageSwitch =
       pageContext &&
       pageContext.languages &&
@@ -53,12 +57,20 @@ class Nav extends Component {
           </button>
           <div className='collapse navbar-collapse' id='navbarText'>
             <ul className='navbar-nav mr-auto'>
-              <li className='nav-item active'>
+              <li
+                className={`nav-item${
+                  pageTitleStr === 'about' ? ' active' : ''
+                }`}
+              >
                 <Link className='nav-link' to='/about/'>
                   About <span className='sr-only'>(current)</span>
                 </Link>
               </li>
-              <li className='nav-item'>
+              <li
+                className={`nav-item${
+                  pageTitleStr === 'contact' ? ' active' : ''
+                }`}
+              >
                 <Link className='nav-link' to='/contact/'>
                   Contact
                 </Link>
