@@ -7,29 +7,28 @@ import { FormattedMessage } from 'react-intl'
 // self
 import Header from './header'
 import Nav from './nav.js'
+import { getPageTitleID } from '../utils'
 import './layout.scss'
 
 const Layout = ({ messages, header, container, children }, ctx) => {
-  const pageContext = ctx.language || { originalPath: '' }
-  const pageTitleID = `${pageContext.originalPath
-    .replace(/^\/+/, '')
-    .replace(/\/+$/, '')
-    .replace(/\/+/g, '-') || 'index'}.title`
-
   if (!messages) {
     messages = {}
   }
-  const pageTitle = messages[pageTitleID] ? ` — ${messages[pageTitleID]}` : ''
+  const pageTitleStr = getPageTitleID(ctx.language)
+  const pageTitleID = pageTitleStr && `${pageTitleStr}.title`
+  const pageTitle =
+    pageTitleID && messages[pageTitleID] ? ` — ${messages[pageTitleID]}` : ''
+  const pageContext = ctx.language || {}
+  const helmetProps = {
+    title: `${messages.title}${pageTitle}`
+  }
+  if (messages.subtitle) {
+    helmetProps.meta = [{ name: 'description', content: messages.subtitle }]
+  }
 
   return (
     <Fragment>
-      <Helmet
-        title={`${messages.title}${pageTitle}`}
-        meta={[
-          { name: 'description', content: 'Sample' },
-          { name: 'keywords', content: 'sample, something' }
-        ]}
-      />
+      <Helmet {...helmetProps} />
       {header ? (
         <Header
           pageContext={pageContext}
