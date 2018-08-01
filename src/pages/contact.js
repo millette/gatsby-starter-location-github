@@ -8,12 +8,11 @@ import Footer from '../components/footer'
 import { withIntl, Link } from '../i18n'
 
 const Contact = ({ messages }) => (
-  <Layout messages={messages || {}}>
+  <Layout messages={messages}>
     <div className='container'>
       <h1>
         <FormattedMessage id='contact.title' />
       </h1>
-
       <ul>
         <li>
           <Link to='/'>

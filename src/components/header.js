@@ -7,11 +7,9 @@ import Nav from './nav.js'
 import { Link } from '../i18n'
 import logo from '../assets/images/logo.png'
 
-//  navbar-expand-lg navbar-light bg-light
 const Header = ({ pageContext, siteTitle, subTitle }) => (
   <Fragment>
     <Nav pageContext={pageContext} />
-
     <section className='jumbotron'>
       <div className='container'>
         <div className='row text-center'>

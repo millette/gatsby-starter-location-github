@@ -34,7 +34,6 @@ class Nav extends Component {
           </a>
         ))
 
-    console.log('NAV pageContext:', pageContext)
     return (
       <nav className='navbar navbar-expand-sm navbar-dark bg-primary'>
         <div className='container'>

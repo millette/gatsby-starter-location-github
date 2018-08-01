@@ -55,7 +55,6 @@ const sortFns = {
 class FrontPage extends Component {
   constructor (props) {
     super(props)
-    console.log('FRONTPAGE PROPS:', props)
     this.allLanguageColors = {}
     props.data.allLanguageColorsJson.edges
       .map(({ node }) => node)
@@ -100,15 +99,6 @@ class FrontPage extends Component {
     this.filtering4 = this.filtering4.bind(this)
     this.changeOrder = this.changeOrder.bind(this)
     this.changeOrderReverse = this.changeOrderReverse.bind(this)
-  }
-
-  componentDidMount () {
-    console.log('MOUNTED')
-    // force an update if the URL changes
-    this.props.history.listen(() => {
-      console.log('FORCE!')
-      return this.forceUpdate()
-    })
   }
 
   changeOrder ({ target: { value } }) {
@@ -213,7 +203,7 @@ class FrontPage extends Component {
       : usersImp.slice(0, this.state.last)
 
     return (
-      <Layout header messages={this.props.messages || {}}>
+      <Layout header messages={this.props.messages}>
         <div className='container'>
           <h1>
             <FormattedMessage id='welcome2' />

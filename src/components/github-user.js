@@ -3,9 +3,7 @@ import React, { Fragment } from 'react'
 import { SimpleImg, initSimpleImg } from 'react-simple-img'
 
 // run once at your root component or at file which calls `ReactDOM.render`
-console.log('Calling initSimpleImg() ?')
 if (typeof window !== 'undefined') {
-  console.log('YES! Call initSimpleImg()')
   initSimpleImg({ threshold: 0.5 })
 }
 
