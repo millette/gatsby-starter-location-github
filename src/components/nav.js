@@ -1,26 +1,20 @@
 // npm
 import React, { Component } from 'react'
 import { Link } from '../i18n'
-import { withPrefix, push } from 'gatsby'
-// import { withPrefix } from 'gatsby'
+import { withPrefix } from 'gatsby'
 
 // self
 import tinylogo from '../assets/images/tinier-rollo-logo.png'
 
-// const { push } = Link
-
 class Nav extends Component {
   constructor (props) {
     super(props)
-
-    this.switchLanguage = this.switchLanguage.bind(this)
+    this.state = { showLanguages: false }
+    this.toggleLanguages = this.toggleLanguages.bind(this)
   }
 
-  switchLanguage (ev) {
-    const v2 = withPrefix(ev.target.value)
-    // FIXME: poor man's language switch, why won't gatsby's push() work?
-    // window.location = v2
-    push(v2)
+  toggleLanguages (ev) {
+    this.setState({ showLanguages: !this.showLanguages })
   }
 
   render () {
@@ -29,13 +23,13 @@ class Nav extends Component {
       pageContext &&
       pageContext.languages &&
       pageContext.languages.map(({ text, value }) => (
-        <option
+        <a
+          className='dropdown-item'
           key={value}
-          selected={value === pageContext.locale}
-          value={`/${value}${pageContext.originalPath}`}
+          href={`/${value}${withPrefix(pageContext.originalPath)}`}
         >
           {text}
-        </option>
+        </a>
       ))
 
     console.log('NAV pageContext:', pageContext)
@@ -69,14 +63,30 @@ class Nav extends Component {
                 </Link>
               </li>
             </ul>
-            <form className='form-inline'>
-              <select
-                onChange={this.switchLanguage}
-                className='custom-select custom-select-sm'
-              >
-                {languageSwitch}
-              </select>
-            </form>
+            {languageSwitch && (
+              <ul className='navbar-nav'>
+                <li className='nav-item dropdown'>
+                  <button
+                    onClick={this.toggleLanguages}
+                    type='button'
+                    className='btn btn-primary nav-link dropdown-toggle'
+                    id='navbarDropdown'
+                    aria-haspopup='true'
+                    aria-expanded='false'
+                  >
+                    Switch language
+                  </button>
+                  <div
+                    className={`dropdown-menu${
+                      this.state.showLanguages ? ' show' : ''
+                    }`}
+                    aria-labelledby='navbarDropdown'
+                  >
+                    {languageSwitch}
+                  </div>
+                </li>
+              </ul>
+            )}
           </div>
         </div>
       </nav>

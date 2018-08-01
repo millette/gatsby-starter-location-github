@@ -101,6 +101,15 @@ class FrontPage extends Component {
     this.changeOrderReverse = this.changeOrderReverse.bind(this)
   }
 
+  componentDidMount () {
+    console.log('MOUNTED')
+    // force an update if the URL changes
+    this.props.history.listen(() => {
+      console.log('FORCE!')
+      return this.forceUpdate()
+    })
+  }
+
   changeOrder ({ target: { value } }) {
     if (value === this.state.sort) {
       return
@@ -211,13 +220,13 @@ class FrontPage extends Component {
 
           <ul>
             <li>
-              <Link to='/about/' lng='fr'>
-                francais, about
+              <Link to='/' lng='fr'>
+                francais, front
               </Link>
             </li>
             <li>
-              <Link to='/about/' lng='en'>
-                english, about
+              <Link to='/' lng='en'>
+                english, front
               </Link>
             </li>
           </ul>
