@@ -1,5 +1,4 @@
-/* eslint-disable global-require */
-
+// FIXME: make languages configurable
 const localeData = [
   ...require('react-intl/locale-data/en'),
   ...require('react-intl/locale-data/fr')
@@ -7,5 +6,8 @@ const localeData = [
 
 module.exports = {
   localeData,
-  languages: [{ value: 'en', text: 'English' }, { value: 'fr', text: 'French' }]
+  languages: [
+    { value: 'en', text: 'English' },
+    { value: 'fr', text: 'Français' }
+  ]
 }
