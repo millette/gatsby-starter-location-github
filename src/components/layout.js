@@ -16,6 +16,9 @@ const Layout = ({ messages, header, container, children }, ctx) => {
     .replace(/\/+$/, '')
     .replace(/\/+/g, '-') || 'index'}.title`
 
+  if (!messages) {
+    messages = {}
+  }
   const pageTitle = messages[pageTitleID] ? ` — ${messages[pageTitleID]}` : ''
 
   return (
