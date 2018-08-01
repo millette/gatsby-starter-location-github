@@ -11,7 +11,8 @@ import './layout.scss'
 
 // FIXME: GraphQL should not hardcode languages
 // but use an array instead
-const Layout = ({ header, container, children, data }, ctx) => (
+// { languages, locale, originalPath }
+const Layout = ({ pageContext, header, container, children, data }, ctx) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -33,17 +34,12 @@ const Layout = ({ header, container, children, data }, ctx) => (
       }
     `}
     render={data => {
-      /*
-      console.log('DATA2', typeof data)
-      if (data) {
-        console.log('DATA2-keys', Object.keys(data))
-      }
-      */
       const locale =
         (ctx && ctx.language && ctx.language.locale) ||
         data.site.siteMetadata.language.fallback ||
         'en'
 
+      const pageContext = ctx.language || {}
       return (
         <Fragment>
           <Helmet
@@ -55,11 +51,12 @@ const Layout = ({ header, container, children, data }, ctx) => (
           />
           {header ? (
             <Header
+              pageContext={pageContext}
               siteTitle={data.site.siteMetadata.language[locale].title}
               subTitle={data.site.siteMetadata.language[locale].subtitle}
             />
           ) : (
-            <Nav />
+            <Nav pageContext={pageContext} />
           )}
           <div className={container || ''}>{children}</div>
         </Fragment>

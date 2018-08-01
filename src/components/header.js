@@ -8,9 +8,9 @@ import logo from '../assets/images/logo.png'
 import Nav from './nav.js'
 
 //  navbar-expand-lg navbar-light bg-light
-const Header = ({ siteTitle, subTitle }) => (
+const Header = ({ pageContext, siteTitle, subTitle }) => (
   <Fragment>
-    <Nav />
+    <Nav pageContext={pageContext} />
 
     <section className='jumbotron'>
       <div className='container'>
