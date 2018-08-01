@@ -1,6 +1,6 @@
 // npm
 import React from 'react'
-import { FormattedMessage } from 'react-intl'
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 
 // self
 import Layout from '../components/layout'
@@ -10,26 +10,30 @@ import { withIntl, Link } from '../i18n'
 const About = ({ messages }) => (
   <Layout messages={messages}>
     <div className='container'>
-      <h1>
+      <h1 className='mt-3'>
         <FormattedMessage id='about.title' />
       </h1>
-      <ul>
-        <li>
-          <Link to='/'>
-            <FormattedMessage id='goback' />
+      <div className='row'>
+        <div className='col-md'>
+          <FormattedHTMLMessage id='about.col1.html' />
+        </div>
+        <div className='col-md'>
+          <FormattedHTMLMessage id='about.col2.html' />
+        </div>
+      </div>
+
+      <div className='mt-5 row justify-content-around'>
+        <div className='col-md-4'>
+          <Link className='btn btn-primary btn-lg btn-block' to='/'>
+            <FormattedMessage id='about.front' />
           </Link>
-        </li>
-        <li>
-          <Link to='/' lng='fr'>
-            francais, accueil
+        </div>
+        <div className='col-md-4'>
+          <Link className='btn btn-success btn-lg btn-block' to='/contact/'>
+            <FormattedMessage id='about.contact' />
           </Link>
-        </li>
-        <li>
-          <Link to='/' lng='en'>
-            english, front
-          </Link>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
     <Footer>
       <p className='card-text'>Marvoulous</p>
