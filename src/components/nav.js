@@ -1,9 +1,9 @@
 // npm
 import React, { Component } from 'react'
-import { Link } from '../i18n'
 import { withPrefix } from 'gatsby'
 
 // self
+import { Link } from '../i18n'
 import tinylogo from '../assets/images/tinier-rollo-logo.png'
 
 class Nav extends Component {
@@ -14,7 +14,7 @@ class Nav extends Component {
   }
 
   toggleLanguages (ev) {
-    this.setState({ showLanguages: !this.showLanguages })
+    this.setState({ showLanguages: !this.state.showLanguages })
   }
 
   render () {
@@ -22,15 +22,17 @@ class Nav extends Component {
     const languageSwitch =
       pageContext &&
       pageContext.languages &&
-      pageContext.languages.map(({ text, value }) => (
-        <a
-          className='dropdown-item'
-          key={value}
-          href={`${withPrefix(`${value}${pageContext.originalPath}`)}`}
-        >
-          {text}
-        </a>
-      ))
+      pageContext.languages
+        .filter(({ value }) => value !== pageContext.locale)
+        .map(({ text, value }) => (
+          <a
+            className='dropdown-item'
+            key={value}
+            href={`${withPrefix(`${value}${pageContext.originalPath}`)}`}
+          >
+            {text}
+          </a>
+        ))
 
     console.log('NAV pageContext:', pageContext)
     return (
@@ -77,7 +79,7 @@ class Nav extends Component {
                     Switch language
                   </button>
                   <div
-                    className={`dropdown-menu${
+                    className={`bg-primary dropdown-menu${
                       this.state.showLanguages ? ' show' : ''
                     }`}
                     aria-labelledby='navbarDropdown'
