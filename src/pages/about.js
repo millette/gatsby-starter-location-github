@@ -7,11 +7,11 @@ import Layout from '../components/layout'
 import Footer from '../components/footer'
 import { withIntl, Link } from '../i18n'
 
-const About = () => (
-  <Layout>
+const About = ({ messages }) => (
+  <Layout messages={messages || {}}>
     <div className='container'>
       <h1>
-        <FormattedMessage id='welcome2' />
+        <FormattedMessage id='about.title' />
       </h1>
 
       <ul>

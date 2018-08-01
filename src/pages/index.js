@@ -55,6 +55,7 @@ const sortFns = {
 class FrontPage extends Component {
   constructor (props) {
     super(props)
+    console.log('FRONTPAGE PROPS:', props)
     this.allLanguageColors = {}
     props.data.allLanguageColorsJson.edges
       .map(({ node }) => node)
@@ -212,7 +213,7 @@ class FrontPage extends Component {
       : usersImp.slice(0, this.state.last)
 
     return (
-      <Layout header>
+      <Layout header messages={this.props.messages || {}}>
         <div className='container'>
           <h1>
             <FormattedMessage id='welcome2' />
