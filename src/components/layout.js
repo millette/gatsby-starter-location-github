@@ -10,7 +10,7 @@ import Nav from './nav.js'
 import { getPageTitleID } from '../utils'
 import './layout.scss'
 
-const Layout = ({ messages, header, container, children }, ctx) => {
+const Layout = ({ messages, header, children }, ctx) => {
   if (!messages) {
     messages = {}
   }
@@ -38,7 +38,7 @@ const Layout = ({ messages, header, container, children }, ctx) => {
       ) : (
         <Nav pageContext={pageContext} />
       )}
-      <div className={container || ''}>{children}</div>
+      {children}
     </Fragment>
   )
 }
