@@ -26,7 +26,7 @@ class Nav extends Component {
         <a
           className='dropdown-item'
           key={value}
-          href={`/${value}${withPrefix(pageContext.originalPath)}`}
+          href={`${withPrefix(`${value}${pageContext.originalPath}`)}`}
         >
           {text}
         </a>
