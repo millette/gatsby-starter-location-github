@@ -4,7 +4,10 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
+// core
 const path = require('path')
+
+// self
 const { languages } = require('./src/i18n/locales')
 
 exports.onCreatePage = ({ page, actions }) => {

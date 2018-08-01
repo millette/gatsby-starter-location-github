@@ -1,7 +1,11 @@
+// npm
 import React, { PureComponent } from 'react'
 import { withPrefix } from 'gatsby'
 import browserLang from 'browser-lang'
+
+// self
 import { languages } from './index'
+// FIXME: should probably use GraphQL instead
 import { siteMetadata } from '../../gatsby-config'
 
 const { language: { fallback } } = siteMetadata
