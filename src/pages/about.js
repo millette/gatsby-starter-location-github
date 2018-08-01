@@ -1,11 +1,11 @@
 // npm
 import React from 'react'
 import { FormattedMessage } from 'react-intl'
-import { withIntl, Link } from '../i18n'
 
 // self
 import Layout from '../components/layout'
 import Footer from '../components/footer'
+import { withIntl, Link } from '../i18n'
 
 const About = () => (
   <Layout>

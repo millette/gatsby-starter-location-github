@@ -1,7 +1,6 @@
 // npm
 import React, { Fragment, Component } from 'react'
 import { FormattedMessage } from 'react-intl'
-import { withIntl, Link } from '../i18n'
 import { graphql } from 'gatsby'
 import { deburr } from 'lodash-es'
 
@@ -9,6 +8,7 @@ import { deburr } from 'lodash-es'
 import Layout from '../components/layout'
 import GithubUser from '../components/github-user'
 import Footer from '../components/footer'
+import { withIntl, Link } from '../i18n'
 
 // const LANGUAGE_TYPE = 'starLanguages'
 const LANGUAGE_TYPE = 'repoLanguages'

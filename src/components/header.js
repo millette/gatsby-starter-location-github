@@ -1,11 +1,11 @@
 // npm
 import React, { Fragment } from 'react'
-import { Link } from '../i18n'
 import { FormattedMessage } from 'react-intl'
 
 // self
-import logo from '../assets/images/logo.png'
 import Nav from './nav.js'
+import { Link } from '../i18n'
+import logo from '../assets/images/logo.png'
 
 //  navbar-expand-lg navbar-light bg-light
 const Header = ({ pageContext, siteTitle, subTitle }) => (
