@@ -18,9 +18,12 @@ const Layout = ({ messages, header, children }, ctx) => {
   const pageTitle =
     pageTitleID && messages[pageTitleID] ? ` — ${messages[pageTitleID]}` : ''
   const pageContext = ctx.language || {}
-  const helmetProps = {
-    title: `${messages.title}${pageTitle}`
+  const helmetProps = {}
+
+  if (messages.title) {
+    helmetProps.title = `${messages.title}${pageTitle}`
   }
+
   if (messages.subtitle) {
     helmetProps.meta = [{ name: 'description', content: messages.subtitle }]
   }
