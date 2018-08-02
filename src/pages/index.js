@@ -1,6 +1,6 @@
 // npm
 import React, { Fragment, Component } from 'react'
-import { FormattedMessage } from 'react-intl'
+// import { FormattedMessage } from 'react-intl'
 import { graphql } from 'gatsby'
 import { deburr } from 'lodash-es'
 
@@ -8,7 +8,8 @@ import { deburr } from 'lodash-es'
 import Layout from '../components/layout'
 import GithubUser from '../components/github-user'
 import Footer from '../components/footer'
-import { withIntl, Link } from '../i18n'
+// import { withIntl, Link } from '../i18n'
+import { withIntl } from '../i18n'
 
 // const LANGUAGE_TYPE = 'starLanguages'
 const LANGUAGE_TYPE = 'repoLanguages'
@@ -205,23 +206,6 @@ class FrontPage extends Component {
     return (
       <Layout header messages={this.props.messages}>
         <div className='container'>
-          <h1>
-            <FormattedMessage id='welcome2' />
-          </h1>
-
-          <ul>
-            <li>
-              <Link to='/' lng='fr'>
-                francais, front
-              </Link>
-            </li>
-            <li>
-              <Link to='/' lng='en'>
-                english, front
-              </Link>
-            </li>
-          </ul>
-
           <div>
             <p>
               <button
