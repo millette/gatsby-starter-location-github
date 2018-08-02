@@ -11,15 +11,22 @@ import { LanguageSwitch } from '.'
 class Nav extends Component {
   constructor (props) {
     super(props)
-    this.state = { showLanguages: false }
+    this.state = {
+      showLanguages: false,
+      showMenu: false
+    }
     this.toggleLanguages = this.toggleLanguages.bind(this)
+    this.toggleMenu = this.toggleMenu.bind(this)
+  }
+
+  toggleMenu () {
+    this.setState({ showMenu: !this.state.showMenu })
   }
 
   toggleLanguages () {
     this.setState({ showLanguages: !this.state.showLanguages })
   }
 
-  // FIXME: burger should open the menu on small screens
   render () {
     const { pageContext } = this.props
     const pageTitleStr = getPageTitleID(pageContext)
@@ -30,17 +37,27 @@ class Nav extends Component {
             <img src={tinylogo} alt='tiny logo RoLLodeQc' />
           </Link>
           <button
+            onClick={this.toggleMenu}
             className='navbar-toggler'
             type='button'
-            data-toggle='collapse'
-            data-target='#navbarText'
             aria-controls='navbarText'
-            aria-expanded='false'
+            aria-expanded={this.state.showMenu ? 'true' : 'false'}
             aria-label='Toggle navigation'
           >
-            <span className='navbar-toggler-icon' />
+            {this.state.showMenu ? (
+              <span className='p-2' aria-hidden='true'>
+                &times;
+              </span>
+            ) : (
+              <span className='navbar-toggler-icon' />
+            )}
           </button>
-          <div className='collapse navbar-collapse' id='navbarText'>
+          <div
+            className={`collapse navbar-collapse${
+              this.state.showMenu ? ' show' : ''
+            }`}
+            id='navbarText'
+          >
             <ul className='navbar-nav mr-auto'>
               <li
                 className={`nav-item${
