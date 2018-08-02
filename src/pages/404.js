@@ -3,6 +3,7 @@ import React from 'react'
 
 // self
 import { Layout, Footer } from '../components'
+import { withIntl } from '../i18n'
 
 // FIXME: translate 404 page
 const NotFoundPage = () => (
@@ -18,4 +19,4 @@ const NotFoundPage = () => (
   </Layout>
 )
 
-export default NotFoundPage
+export default withIntl(NotFoundPage)
