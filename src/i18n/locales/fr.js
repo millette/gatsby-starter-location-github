@@ -41,6 +41,7 @@ module.exports = {
 `,
   'contact.col3': 'Pour contacter un développeur, consultez notre {directory}',
   'contact.directory': 'répertoire',
+  'contact.title': 'Contactez nous',
 
   'about.title': 'À propos',
   'about.col1.html': `
@@ -58,7 +59,11 @@ module.exports = {
   <li>liste</li>
 </ul>
 `,
-  'contact.title': 'Contactez nous',
+
+  '404.title': 'PAGE NON TROUVÉE',
+  '404.text':
+    'Vous avez trouvé un chemin qui ne mène nul part… Quelle tristesse.',
+
   'nav.contact': 'Contact',
   'nav.about': 'À propos',
   'nav.current': '(actuelle)',

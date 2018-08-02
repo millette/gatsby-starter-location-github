@@ -1,16 +1,20 @@
 // npm
 import React from 'react'
+import { FormattedMessage } from 'react-intl'
 
 // self
 import { Layout, Footer } from '../components'
 import { withIntl } from '../i18n'
 
-// FIXME: translate 404 page
 const NotFoundPage = () => (
   <Layout>
     <div className='container'>
-      <h1>NOT FOUND</h1>
-      <p>You just hit a route that doesn’t exist... the sadness.</p>
+      <h1 className='mt-3'>
+        <FormattedMessage id='404.title' />
+      </h1>
+      <p>
+        <FormattedMessage id='404.text' />
+      </p>
     </div>
 
     <Footer>

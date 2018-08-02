@@ -38,15 +38,9 @@ module.exports = {
   <a href='mailto:{email}'>{email}</a>
 </p>
 `,
-
   'contact.col3': 'To contact a developer, consult our {directory}',
   'contact.directory': 'directory',
-
-  // 'contact.col2.html': 'Hello {email}',
-  /*
-  'contact.col1.html': '',
-  'contact.col3.html': '',
-  */
+  'contact.title': 'Contact us',
 
   'about.title': 'About us',
   'about.col1.html': `
@@ -60,7 +54,10 @@ module.exports = {
 <p>And second paragraph.</p>
 <p>And More, as you wish.</p>
   `,
-  'contact.title': 'Contact us',
+
+  '404.title': 'NOT FOUND',
+  '404.text': 'You just hit a route that doesn’t exist… the sadness.',
+
   'nav.contact': 'Contact',
   'nav.about': 'About',
   'nav.current': '(current)',
