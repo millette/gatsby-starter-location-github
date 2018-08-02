@@ -12,6 +12,36 @@
 module.exports = {
   title: 'RolloDevs — développeurs d’Iran',
   subtitle: 'Votre source de développeurs locaux',
+
+  'contact.emailInput': 'Adresse email',
+  'contact.emailHelp': 'Nous ne partagerons jamais votre adresse à un tier.',
+  'contact.subjectInput': 'Sujet',
+  'contact.commentInput': 'Commentaire',
+  'contact.commentHelp':
+    'N’oubliez pas d’inscrire votre adresse email si vous attendez une réponse.',
+  'contact.submitForm': 'Envoyer',
+
+  'contact.col1.html': `
+<p>
+  N’hésitez pas à nous contacter si vous avez des questions ou ou des
+  suggestions.
+</p>
+`,
+  'contact.col2.html': `
+<p>
+  Utilisez notre formulaire ou envoyez nous un email:<br />
+  <a href='mailto:{email}'>{email}</a>
+</p>
+`,
+  'contact.col2b.html': `
+<p>
+  Envoyez nous un email:<br />
+  <a href='mailto:{email}'>{email}</a>
+</p>
+`,
+  'contact.col3': 'Pour contacter un développeur, consultez notre {directory}',
+  'contact.directory': 'répertoire',
+
   'about.title': 'À propos',
   'about.col1.html': `
 <p>Francais bla bla.</p>
