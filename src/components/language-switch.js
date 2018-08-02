@@ -20,7 +20,7 @@ const LanguageSwitch = ({ showLanguages, toggleLanguages, pageContext }) => {
       ))
 
   if (!languageSwitch) {
-    return
+    return false
   }
 
   return (
