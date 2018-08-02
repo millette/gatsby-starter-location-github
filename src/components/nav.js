@@ -1,12 +1,12 @@
 // npm
 import React, { Component } from 'react'
-import { withPrefix } from 'gatsby'
 import { FormattedMessage } from 'react-intl'
 
 // self
 import { Link } from '../i18n'
 import tinylogo from '../assets/images/tinier-rollo-logo.png'
 import { getPageTitleID } from '../utils'
+import LanguageSwitch from './language-switch'
 
 class Nav extends Component {
   constructor (props) {
@@ -15,30 +15,13 @@ class Nav extends Component {
     this.toggleLanguages = this.toggleLanguages.bind(this)
   }
 
-  toggleLanguages (ev) {
+  toggleLanguages () {
     this.setState({ showLanguages: !this.state.showLanguages })
   }
 
   render () {
     const { pageContext } = this.props
-
     const pageTitleStr = getPageTitleID(pageContext)
-
-    const languageSwitch =
-      pageContext &&
-      pageContext.languages &&
-      pageContext.languages
-        .filter(({ value }) => value !== pageContext.locale)
-        .map(({ text, value }) => (
-          <a
-            className='dropdown-item'
-            key={value}
-            href={`${withPrefix(`${value}${pageContext.originalPath}`)}`}
-          >
-            {text}
-          </a>
-        ))
-
     return (
       <nav className='navbar navbar-expand-sm navbar-dark bg-primary'>
         <div className='container'>
@@ -87,30 +70,11 @@ class Nav extends Component {
                 </Link>
               </li>
             </ul>
-            {languageSwitch && (
-              <ul className='navbar-nav'>
-                <li className='nav-item dropdown'>
-                  <button
-                    onClick={this.toggleLanguages}
-                    type='button'
-                    className='btn btn-primary nav-link dropdown-toggle'
-                    id='navbarDropdown'
-                    aria-haspopup='true'
-                    aria-expanded='false'
-                  >
-                    <FormattedMessage id='nav.switchLanguage' />
-                  </button>
-                  <div
-                    className={`bg-primary dropdown-menu${
-                      this.state.showLanguages ? ' show' : ''
-                    }`}
-                    aria-labelledby='navbarDropdown'
-                  >
-                    {languageSwitch}
-                  </div>
-                </li>
-              </ul>
-            )}
+            <LanguageSwitch
+              showLanguages={this.state.showLanguages}
+              toggleLanguages={this.toggleLanguages}
+              pageContext={pageContext}
+            />
           </div>
         </div>
       </nav>
