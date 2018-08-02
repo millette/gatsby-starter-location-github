@@ -6,7 +6,7 @@ import { FormattedMessage } from 'react-intl'
 import { Link } from '../i18n'
 import tinylogo from '../assets/images/tinier-rollo-logo.png'
 import { getPageTitleID } from '../utils'
-import LanguageSwitch from './language-switch'
+import { LanguageSwitch } from '.'
 
 class Nav extends Component {
   constructor (props) {
@@ -19,6 +19,7 @@ class Nav extends Component {
     this.setState({ showLanguages: !this.state.showLanguages })
   }
 
+  // FIXME: burger should open the menu on small screens
   render () {
     const { pageContext } = this.props
     const pageTitleStr = getPageTitleID(pageContext)

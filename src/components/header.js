@@ -3,7 +3,7 @@ import React, { Fragment } from 'react'
 import { FormattedMessage } from 'react-intl'
 
 // self
-import Nav from './nav.js'
+import { Nav } from '.'
 import { Link } from '../i18n'
 import logo from '../assets/images/logo.png'
 

@@ -3,8 +3,7 @@ import React from 'react'
 import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 
 // self
-import Layout from '../components/layout'
-import Footer from '../components/footer'
+import { Layout, Footer } from '../components'
 import { withIntl, Link } from '../i18n'
 
 const About = ({ messages }) => (

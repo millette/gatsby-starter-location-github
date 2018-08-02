@@ -5,8 +5,7 @@ import Helmet from 'react-helmet'
 import { FormattedMessage } from 'react-intl'
 
 // self
-import Header from './header'
-import Nav from './nav.js'
+import { Header, Nav } from '.'
 import { getPageTitleID } from '../utils'
 import './layout.scss'
 

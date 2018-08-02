@@ -5,9 +5,7 @@ import { graphql } from 'gatsby'
 import { deburr } from 'lodash-es'
 
 // self
-import Layout from '../components/layout'
-import GithubUser from '../components/github-user'
-import Footer from '../components/footer'
+import { Layout, GithubUser, Footer } from '../components'
 // import { withIntl, Link } from '../i18n'
 import { withIntl } from '../i18n'
 
