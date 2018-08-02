@@ -1,6 +1,7 @@
 // npm
 import React, { Component } from 'react'
 import { withPrefix } from 'gatsby'
+import { FormattedMessage } from 'react-intl'
 
 // self
 import { Link } from '../i18n'
@@ -63,7 +64,12 @@ class Nav extends Component {
                 }`}
               >
                 <Link className='nav-link' to='/about/'>
-                  About <span className='sr-only'>(current)</span>
+                  <FormattedMessage id='nav.about' />
+                  {pageTitleStr === 'about' && (
+                    <span className='sr-only'>
+                      <FormattedMessage id='nav.current' />
+                    </span>
+                  )}
                 </Link>
               </li>
               <li
@@ -72,7 +78,12 @@ class Nav extends Component {
                 }`}
               >
                 <Link className='nav-link' to='/contact/'>
-                  Contact
+                  <FormattedMessage id='nav.contact' />
+                  {pageTitleStr === 'contact' && (
+                    <span className='sr-only'>
+                      <FormattedMessage id='nav.current' />
+                    </span>
+                  )}
                 </Link>
               </li>
             </ul>
@@ -87,7 +98,7 @@ class Nav extends Component {
                     aria-haspopup='true'
                     aria-expanded='false'
                   >
-                    Switch language
+                    <FormattedMessage id='nav.switchLanguage' />
                   </button>
                   <div
                     className={`bg-primary dropdown-menu${

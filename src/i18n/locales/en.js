@@ -61,6 +61,10 @@ module.exports = {
 <p>And More, as you wish.</p>
   `,
   'contact.title': 'Contact us',
+  'nav.contact': 'Contact',
+  'nav.about': 'About',
+  'nav.current': '(current)',
+  'nav.switchLanguage': 'Switch language',
   'jumbotron.text':
     'Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.'
 }

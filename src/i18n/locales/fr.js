@@ -59,6 +59,10 @@ module.exports = {
 </ul>
 `,
   'contact.title': 'Contactez nous',
+  'nav.contact': 'Contact',
+  'nav.about': 'À propos',
+  'nav.current': '(actuelle)',
+  'nav.switchLanguage': 'Changer la langue',
   'jumbotron.text':
     '[FR] Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.'
 }
