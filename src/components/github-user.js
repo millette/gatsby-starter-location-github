@@ -50,7 +50,7 @@ const GithubUser = props => {
               <dt className='col-6 col-xl-4'>
                 <FormattedMessage id='directory.website' />
               </dt>
-              <dd className='col-6 col-xl-8'>
+              <dd className='col-6 col-xl-8 text-truncate'>
                 <a
                   target='_blank'
                   rel='noopener noreferrer'
@@ -67,7 +67,7 @@ const GithubUser = props => {
               <dt className='col-6 col-xl-4'>
                 <FormattedMessage id='directory.email' />
               </dt>
-              <dd className='col-6 col-xl-8'>
+              <dd className='col-6 col-xl-8 text-truncate'>
                 <a
                   target='_blank'
                   rel='noopener noreferrer'
