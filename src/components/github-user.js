@@ -12,19 +12,12 @@ if (typeof window !== 'undefined') {
 const GithubUser = props => {
   return (
     <div className='card mt-4'>
-      <a
-        target='_blank'
-        rel='noopener noreferrer'
-        href={`https://github.com/${props.login}`}
-      >
-        <SimpleImg
-          imgClassName='card-img-top'
-          placeholder='linear-gradient(rgb(30, 87, 153) 0%, rgb(125, 185, 232) 100%)'
-          src={`https://avatars3.githubusercontent.com/u/${props.databaseId}`}
-          alt={`Avatar de ${props.name || props.login}`}
-        />
-      </a>
-
+      <SimpleImg
+        imgClassName='card-img-top'
+        placeholder='linear-gradient(rgb(30, 87, 153) 0%, rgb(125, 185, 232) 100%)'
+        src={`https://avatars3.githubusercontent.com/u/${props.databaseId}`}
+        alt={`Avatar de ${props.name || props.login}`}
+      />
       <div className='card-body'>
         {/* if props.name is falsy, show props.login */}
         <h3 className='card-title'>{props.name || props.login}</h3>
@@ -38,13 +31,14 @@ const GithubUser = props => {
           {props.login} @ GitHub
         </a>
         {/* if props.bio is truthy, show it in a paragraph */}
-        {props.bio && <p className='card-text'>{props.bio}</p>}
+        {props.bio && (
+          <blockquote className='blockquote'>{props.bio}</blockquote>
+        )}
         <dl className='row'>
           <dt className='col-6 col-xl-4'>
             <FormattedMessage id='directory.location' />
           </dt>
           <dd className='col-6 col-xl-8'>{props.location}</dd>
-
           {props.websiteUrl && (
             <Fragment>
               <dt className='col-6 col-xl-4'>
@@ -61,7 +55,6 @@ const GithubUser = props => {
               </dd>
             </Fragment>
           )}
-
           {props.email && (
             <Fragment>
               <dt className='col-6 col-xl-4'>
@@ -78,7 +71,6 @@ const GithubUser = props => {
               </dd>
             </Fragment>
           )}
-
           <dt className='col-6 col-xl-4'>
             <FormattedMessage id='directory.created' />
           </dt>
@@ -90,7 +82,6 @@ const GithubUser = props => {
               day='numeric'
             />
           </dd>
-
           {props.company && (
             <Fragment>
               <dt className='col-6 col-xl-4'>
@@ -99,7 +90,6 @@ const GithubUser = props => {
               <dd className='col-6 col-xl-8'>{props.company}</dd>
             </Fragment>
           )}
-
           {/* Here, we're testing length > 0
               since the number 0 is not falsy in this context.
               Otherwise, 0 would be shown instead of nothing or the following span. */}
@@ -119,7 +109,6 @@ const GithubUser = props => {
               </dd>
             </Fragment>
           )}
-
           {props.repositoriesContributedToCount && (
             <Fragment>
               <dt className='col-6 col-xl-4'>Contribs</dt>
