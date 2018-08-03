@@ -97,9 +97,9 @@ module.exports = {
   'directory.stars.label': 'Stars',
   'directory.repos.label': 'Repos',
   'directory.repos.value': `{nStars, plural,
-    =0 {no contributions}
-    one {one contribution}
-    other {# contributions}
+    =0 {no repos}
+    one {one repo}
+    other {# repos}
   }`,
 
   'directory.languages': 'Languages',

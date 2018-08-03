@@ -99,9 +99,9 @@ module.exports = {
   'directory.stars.label': 'Étoiles',
   'directory.repos.label': 'Dépots',
   'directory.repos.value': `{nStars, plural,
-    =0 {aucune contribution}
-    one {une contribution}
-    other {# contributions}
+    =0 {aucun dépot}
+    one {un dépot}
+    other {# dépots}
   }`,
   'directory.languages': 'Langages',
   'directory.available': 'Disponible pour travailler',
