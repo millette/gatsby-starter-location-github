@@ -33,7 +33,11 @@ module.exports = {
     =0 {}
     one {un de sélectionné,}
     other {# sélectionnés,}
-  } {nTotal, number} en tout`,
+  } {nTotal, number} en tout
+  {location, select,
+    UNDEFINED {}
+    other { - {location}}
+  }`,
 
   'contact.emailInput': 'Adresse email',
   'contact.emailHelp': 'Nous ne partagerons jamais votre adresse à un tier.',
@@ -42,44 +46,32 @@ module.exports = {
   'contact.commentHelp':
     'N’oubliez pas d’inscrire votre adresse email si vous attendez une réponse.',
   'contact.submitForm': 'Envoyer',
-  'contact.col1.html': `
-<p>
-  N’hésitez pas à nous contacter si vous avez des questions ou ou des
-  suggestions.
-</p>
-`,
-  'contact.col2.html': `
-<p>
-  Utilisez notre formulaire ou envoyez nous un email:<br />
-  <a href='mailto:{email}'>{email}</a>
-</p>
-`,
-  'contact.col2b.html': `
-<p>
-  Envoyez nous un email:<br />
-  <a href='mailto:{email}'>{email}</a>
-</p>
-`,
+  'contact.col1.html':
+    '<p>N’hésitez pas à nous contacter si vous avez des questions ou ou des suggestions.</p>',
+  'contact.col2.html': `<p>
+    Utilisez notre formulaire ou envoyez nous un email:<br />
+    <a href='mailto:{email}'>{email}</a>
+  </p>`,
+  'contact.col2b.html': `<p>
+    Envoyez nous un email:<br />
+    <a href='mailto:{email}'>{email}</a>
+  </p>`,
   'contact.col3': 'Pour contacter un développeur, consultez notre {directory}',
   'contact.directory': 'répertoire',
   'contact.title': 'Contactez nous',
 
   'about.title': 'À propos',
-  'about.col1.html': `
-<p>Francais bla bla.</p>
-<p>Et deuxième paragraphe.</p>
-`,
+  'about.col1.html': `<p>Francais bla bla.</p>
+  <p>Et deuxième paragraphe.</p>`,
   'about.front': 'Allez au répertoire',
   'about.contact': 'Des questions?',
-  'about.col2.html': `
-<p>Français bla bla pour la colonne 2.</p>
-<p>Et deuxième paragraphe.</p>
-<ul>
-  <li>Même</li>
-  <li>une</li>
-  <li>liste</li>
-</ul>
-`,
+  'about.col2.html': `<p>Français bla bla pour la colonne 2.</p>
+  <p>Et deuxième paragraphe.</p>
+  <ul>
+    <li>Même</li>
+    <li>une</li>
+    <li>liste</li>
+  </ul>`,
 
   '404.title': 'PAGE NON TROUVÉE',
   '404.text':

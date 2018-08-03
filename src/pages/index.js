@@ -8,6 +8,14 @@ import { deburr } from 'lodash-es'
 import { Layout, GithubUser, Footer } from '../components'
 import { withIntl } from '../i18n'
 
+let config = { location: 'UNDEFINED' }
+
+try {
+  config = { ...config, ...require('../../custom/config') }
+} catch (e) {
+  // expected if there is no custom config
+}
+
 // const LANGUAGE_TYPE = 'starLanguages'
 const LANGUAGE_TYPE = 'repoLanguages'
 const PER_PAGE = 12
@@ -323,7 +331,8 @@ class FrontPage extends Component {
                 values={{
                   nDisplayed: users.length,
                   nSelected: usersImp.length,
-                  nTotal: this.allUsers.length
+                  nTotal: this.allUsers.length,
+                  location: config.location
                 }}
               />
             </h4>
@@ -352,6 +361,18 @@ class FrontPage extends Component {
                     <FormattedMessage id='index.more' />
                   </button>
                 )}
+
+                <h4>
+                  <FormattedMessage
+                    id='index.resultsSummary'
+                    values={{
+                      nDisplayed: users.length,
+                      nSelected: usersImp.length,
+                      nTotal: this.allUsers.length,
+                      location: config.location
+                    }}
+                  />
+                </h4>
               </Fragment>
             ) : (
               <p>

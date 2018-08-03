@@ -35,7 +35,11 @@ module.exports = {
     one {one selected,}
     other {# selected,}
   }
-  {nTotal, number} in all`,
+  {nTotal, number} in all
+  {location, select,
+    UNDEFINED {}
+    other { - {location}}
+  }`,
 
   'contact.emailInput': 'Email address',
   'contact.emailHelp': 'We’ll never share your email with anyone else.',
@@ -45,39 +49,28 @@ module.exports = {
     'Don’t forget to fill in your email address if you expect a response.',
   'contact.submitForm': 'Send',
 
-  'contact.col1.html': `
-<p>
-  Don’t hesitate to contact us if you have any questions or suggestions.
-</p>
-`,
-  'contact.col2.html': `
-<p>
-  Use our contact form or send us an email:<br />
-  <a href='mailto:{email}'>{email}</a>
-</p>
-`,
-  'contact.col2b.html': `
-<p>
-  Send us an email:<br />
-  <a href='mailto:{email}'>{email}</a>
-</p>
-`,
+  'contact.col1.html':
+    '<p>Don’t hesitate to contact us if you have any questions or suggestions.</p>',
+  'contact.col2.html': `<p>
+    Use our contact form or send us an email:<br />
+    <a href='mailto:{email}'>{email}</a>
+  </p>`,
+  'contact.col2b.html': `<p>
+    Send us an email:<br />
+    <a href='mailto:{email}'>{email}</a>
+  </p>`,
   'contact.col3': 'To contact a developer, consult our {directory}',
   'contact.directory': 'directory',
   'contact.title': 'Contact us',
 
   'about.title': 'About us',
-  'about.col1.html': `
-<p>English bla bla.</p>
-<p>And second paragraph.</p>
-`,
+  'about.col1.html': `<p>English bla bla.</p>
+  <p>And second paragraph.</p>`,
   'about.front': 'The directory',
   'about.contact': 'Questions?',
-  'about.col2.html': `
-<p>English bla bla for column 2.</p>
+  'about.col2.html': `<p>English bla bla for column 2.</p>
 <p>And second paragraph.</p>
-<p>And More, as you wish.</p>
-  `,
+<p>And More, as you wish.</p>`,
 
   '404.title': 'NOT FOUND',
   '404.text': 'You just hit a route that doesn’t exist… the sadness.',
