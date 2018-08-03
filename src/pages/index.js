@@ -65,9 +65,16 @@ class FrontPage extends Component {
         ...x,
         languages:
           x[LANGUAGE_TYPE] &&
-          x[LANGUAGE_TYPE].map(({ name, count }) => `${name} (${count})`).join(
-            ', '
-          )
+          x[LANGUAGE_TYPE].map(({ name, count }) => {
+            const ret = { name, count }
+            if (this.allLanguageColors[name]) {
+              const { bg, fg } = this.allLanguageColors[name]
+              ret.style = { background: bg, color: fg }
+            } else {
+              ret.style = { background: '#fff', color: '#000' }
+            }
+            return ret
+          })
       }))
       .map(x => ({
         ...x,
@@ -222,15 +229,31 @@ class FrontPage extends Component {
             <label>
               <FormattedMessage id='index.order' />:{' '}
               <select onChange={this.changeOrder}>
+                <FormattedMessage id='index.order.joined'>
+                  {txt => <option value='joined'>{txt}</option>}
+                </FormattedMessage>
+
+                <FormattedMessage id='index.order.name'>
+                  {txt => <option value='name'>{txt}</option>}
+                </FormattedMessage>
+
+                <FormattedMessage id='index.order.nRepos'>
+                  {txt => <option value='nRepos'>{txt}</option>}
+                </FormattedMessage>
+
+                {/* The following causes extra <span>s to be inserted
                 <option value='joined'>
                   <FormattedMessage id='index.order.joined' />
                 </option>
+
                 <option value='name'>
                   <FormattedMessage id='index.order.name' />
                 </option>
+
                 <option value='nRepos'>
                   <FormattedMessage id='index.order.nRepos' />
                 </option>
+                */}
               </select>
             </label>{' '}
             <label>
