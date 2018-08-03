@@ -3,6 +3,12 @@
 node_modules
 yarn-error.log
 custom
+customs
+public-haiti
+public-kinshasa
+public-lubumbashi
+public-venezuela
+was-custom
 
 # Build directory
 /public
