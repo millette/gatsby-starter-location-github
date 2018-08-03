@@ -10,7 +10,7 @@
  * remplaceront les chaines par défaut.
  */
 module.exports = {
-  title: 'RolloDevs — Iran developpers',
+  title: 'RolloDevs',
   subtitle: 'Your locally sourced developper directory',
 
   'index.available.off': 'Available? Doesn’t matter',
@@ -98,6 +98,7 @@ module.exports = {
   'directory.languages': 'Languages',
   'directory.available': 'Available for hire',
 
+  'jumbotron.more': 'Find out more',
   'jumbotron.text':
     'Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.'
 }
