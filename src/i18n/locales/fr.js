@@ -13,6 +13,28 @@ module.exports = {
   title: 'RolloDevs — développeurs d’Iran',
   subtitle: 'Votre source de développeurs locaux',
 
+  'index.available.off': 'Disponible? Peu importe',
+  'index.available.on': 'Disponible? OUI!',
+  'index.order': 'Tri',
+  'index.order.joined': 'Date d’inscription',
+  'index.order.name': 'Nom (ou login)',
+  'index.order.nRepos': 'Nombre de dépots',
+  'index.order.reverse': 'Inverser l’ordre',
+  'index.allLanguages': 'Tous',
+  'index.search.name': 'Nom',
+  'index.search.location': 'Lieu',
+  'index.more': 'Afficher plus de résultats',
+  'index.noResults': 'Aucun résultat.',
+  'index.resultsSummary': `{nDisplayed, plural,
+    =0 {Aucun utilisateur affiché}
+    one {Un utilisateur affiché}
+    other {# utilisateur affichés}
+  } sur {nSelected, plural,
+    =0 {}
+    one {un de sélectionné,}
+    other {# sélectionnés,}
+  } {nTotal, number} en tout`,
+
   'contact.emailInput': 'Adresse email',
   'contact.emailHelp': 'Nous ne partagerons jamais votre adresse à un tier.',
   'contact.subjectInput': 'Sujet',
@@ -20,7 +42,6 @@ module.exports = {
   'contact.commentHelp':
     'N’oubliez pas d’inscrire votre adresse email si vous attendez une réponse.',
   'contact.submitForm': 'Envoyer',
-
   'contact.col1.html': `
 <p>
   N’hésitez pas à nous contacter si vous avez des questions ou ou des
@@ -68,6 +89,7 @@ module.exports = {
   'nav.about': 'À propos',
   'nav.current': '(actuelle)',
   'nav.switchLanguage': 'Changer la langue',
+
   'jumbotron.text':
     '[FR] Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.'
 }

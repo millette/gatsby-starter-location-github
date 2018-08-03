@@ -13,6 +13,30 @@ module.exports = {
   title: 'RolloDevs — Iran developpers',
   subtitle: 'Your locally sourced developper directory',
 
+  'index.available.off': 'Available? Doesn’t matter',
+  'index.available.on': 'Available? YES!',
+  'index.order': 'Order',
+  'index.order.joined': 'Registration date',
+  'index.order.name': 'Name (or login)',
+  'index.order.nRepos': 'Number of repos',
+  'index.order.reverse': 'Reverse order',
+  'index.allLanguages': 'All',
+  'index.search.name': 'Name',
+  'index.search.location': 'Location',
+  'index.more': 'Show more results',
+  'index.noResults': 'No results found.',
+  'index.resultsSummary': `{nDisplayed, plural,
+    =0 {No user}
+    one {One user}
+    other {# users}
+  } displayed from
+  {nSelected, plural,
+    =0 {}
+    one {one selected,}
+    other {# selected,}
+  }
+  {nTotal, number} in all`,
+
   'contact.emailInput': 'Email address',
   'contact.emailHelp': 'We’ll never share your email with anyone else.',
   'contact.subjectInput': 'Subject',
@@ -62,6 +86,7 @@ module.exports = {
   'nav.about': 'About',
   'nav.current': '(current)',
   'nav.switchLanguage': 'Switch language',
+
   'jumbotron.text':
     'Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.'
 }

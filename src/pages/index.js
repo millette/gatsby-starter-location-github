@@ -1,12 +1,11 @@
 // npm
 import React, { Fragment, Component } from 'react'
-// import { FormattedMessage } from 'react-intl'
+import { FormattedMessage } from 'react-intl'
 import { graphql } from 'gatsby'
 import { deburr } from 'lodash-es'
 
 // self
 import { Layout, GithubUser, Footer } from '../components'
-// import { withIntl, Link } from '../i18n'
 import { withIntl } from '../i18n'
 
 // const LANGUAGE_TYPE = 'starLanguages'
@@ -211,19 +210,31 @@ class FrontPage extends Component {
                 type='button'
                 onClick={this.clickAvailable}
               >
-                Dispo? {this.state.onlyAvailable ? 'OUI' : 'Peu importe'}
+                <FormattedMessage
+                  id={
+                    this.state.onlyAvailable
+                      ? 'index.available.on'
+                      : 'index.available.off'
+                  }
+                />
               </button>
             </p>
             <label>
-              Tri:{' '}
+              <FormattedMessage id='index.order' />:{' '}
               <select onChange={this.changeOrder}>
-                <option value='joined'>Date d’inscription</option>
-                <option value='name'>Nom (ou login)</option>
-                <option value='nRepos'>Nombre de dépots</option>
+                <option value='joined'>
+                  <FormattedMessage id='index.order.joined' />
+                </option>
+                <option value='name'>
+                  <FormattedMessage id='index.order.name' />
+                </option>
+                <option value='nRepos'>
+                  <FormattedMessage id='index.order.nRepos' />
+                </option>
               </select>
             </label>{' '}
             <label>
-              Inverser l’ordre{' '}
+              <FormattedMessage id='index.order.reverse' />{' '}
               <input
                 type='checkbox'
                 checked={this.state.reverse}
@@ -239,7 +250,7 @@ class FrontPage extends Component {
                   type='button'
                   onClick={this.click}
                 >
-                  Tous
+                  <FormattedMessage id='index.allLanguages' />
                 </button>
               </li>
               {availableLanguages.map(x => (
@@ -267,7 +278,7 @@ class FrontPage extends Component {
               ))}
             </ul>
             <label>
-              Nom:{' '}
+              <FormattedMessage id='index.search.name' />:{' '}
               <input
                 type='text'
                 value={this.state.name}
@@ -276,22 +287,22 @@ class FrontPage extends Component {
             </label>
             <br />
             <label>
-              Lieu:{' '}
+              <FormattedMessage id='index.search.location' />:{' '}
               <input
                 type='text'
                 value={this.state.location}
                 onChange={this.locationFilter}
               />
             </label>
-            {this.state.deburredLocation}
             <h3>
-              {users.length} utilisateurs affichés{' '}
-              <small>
-                sur {usersImp.length} sélectionnés
-                {this.allUsers.length !== usersImp.length && (
-                  <span>, {this.allUsers.length} en tout</span>
-                )}
-              </small>
+              <FormattedMessage
+                id='index.resultsSummary'
+                values={{
+                  nDisplayed: users.length,
+                  nSelected: usersImp.length,
+                  nTotal: this.allUsers.length
+                }}
+              />
             </h3>
             {users.length ? (
               <Fragment>
@@ -312,14 +323,14 @@ class FrontPage extends Component {
                     className='mt-4 w-100 btn btn-info'
                     type='button'
                   >
-                    Afficher plus de résultats
+                    <FormattedMessage id='index.more' />
                   </button>
                 )}
               </Fragment>
             ) : (
-              <div className='col'>
-                <p>Aucun résultat.</p>
-              </div>
+              <p>
+                <FormattedMessage id='index.noResults' />
+              </p>
             )}
           </div>
         </div>
@@ -330,8 +341,6 @@ class FrontPage extends Component {
     )
   }
 }
-
-export default withIntl(FrontPage)
 
 export const query = graphql`
   query {
@@ -387,3 +396,5 @@ export const query = graphql`
     }
   }
 `
+
+export default withIntl(FrontPage)
