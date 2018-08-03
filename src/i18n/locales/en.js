@@ -87,6 +87,23 @@ module.exports = {
   'nav.current': '(current)',
   'nav.switchLanguage': 'Switch language',
 
+  'directory.location': 'Location',
+  'directory.website': 'Website',
+  'directory.email': 'Email',
+  'directory.created': 'Created',
+
+  'directory.company': 'Company',
+
+  'directory.stars.label': 'Stars',
+  'directory.repos.value': `{nStars, plural,
+    =0 {no repos}
+    one {one repo}
+    other {# repos}
+  }`,
+
+  'directory.languages': 'Languages',
+  'directory.available': 'Available for hire',
+
   'jumbotron.text':
     'Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.'
 }

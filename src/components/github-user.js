@@ -1,7 +1,9 @@
 // npm
 import React, { Fragment } from 'react'
+import { FormattedMessage, FormattedDate } from 'react-intl'
 import { SimpleImg, initSimpleImg } from 'react-simple-img'
 
+// FIXME: SimpleImg only works if it's on the first loaded page. For now it's the frontpage.
 // run once at your root component or at file which calls `ReactDOM.render`
 if (typeof window !== 'undefined') {
   initSimpleImg({ threshold: 0.5 })
@@ -38,29 +40,62 @@ const GithubUser = props => {
         {/* if props.bio is truthy, show it in a paragraph */}
         {props.bio && <p className='card-text'>{props.bio}</p>}
         <dl className='row'>
-          <dt className='col-6 col-xl-4'>Location</dt>
+          <dt className='col-6 col-xl-4'>
+            <FormattedMessage id='directory.location' />
+          </dt>
           <dd className='col-6 col-xl-8'>{props.location}</dd>
 
           {props.websiteUrl && (
             <Fragment>
-              <dt className='col-6 col-xl-4'>Site web</dt>
-              <dd className='col-6 col-xl-8'>{props.websiteUrl}</dd>
+              <dt className='col-6 col-xl-4'>
+                <FormattedMessage id='directory.website' />
+              </dt>
+              <dd className='col-6 col-xl-8'>
+                <a
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  href={props.websiteUrl}
+                >
+                  {props.websiteUrl}
+                </a>
+              </dd>
             </Fragment>
           )}
 
           {props.email && (
             <Fragment>
-              <dt className='col-6 col-xl-4'>Email</dt>
-              <dd className='col-6 col-xl-8'>{props.email}</dd>
+              <dt className='col-6 col-xl-4'>
+                <FormattedMessage id='directory.email' />
+              </dt>
+              <dd className='col-6 col-xl-8'>
+                <a
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  href={`mailto:${props.email}`}
+                >
+                  {props.email}
+                </a>
+              </dd>
             </Fragment>
           )}
 
-          <dt className='col-6 col-xl-4'>Créé</dt>
-          <dd className='col-6 col-xl-8'>{props.createdAt}</dd>
+          <dt className='col-6 col-xl-4'>
+            <FormattedMessage id='directory.created' />
+          </dt>
+          <dd className='col-6 col-xl-8'>
+            <FormattedDate
+              value={props.createdAt}
+              year='numeric'
+              month='long'
+              day='numeric'
+            />
+          </dd>
 
           {props.company && (
             <Fragment>
-              <dt className='col-6 col-xl-4'>Compagnie</dt>
+              <dt className='col-6 col-xl-4'>
+                <FormattedMessage id='directory.company' />
+              </dt>
               <dd className='col-6 col-xl-8'>{props.company}</dd>
             </Fragment>
           )}
@@ -71,10 +106,16 @@ const GithubUser = props => {
           {props.starredRepositories &&
             props.starredRepositories.length > 0 && (
             <Fragment>
-              <dt className='col-6 col-xl-4'>Étoiles</dt>
+              <dt className='col-6 col-xl-4'>
+                <FormattedMessage id='directory.stars.label' />
+                  Étoiles
+              </dt>
               {/* Here, we want it displayed, even if it's 0 although the previous test would prevent 0 */}
               <dd className='col-6 col-xl-8'>
-                {props.starredRepositories.length} dépots
+                <FormattedMessage
+                  id='directory.repos.value'
+                  values={{ nStars: props.starredRepositories.length }}
+                />
               </dd>
             </Fragment>
           )}
@@ -83,11 +124,16 @@ const GithubUser = props => {
             <Fragment>
               <dt className='col-6 col-xl-4'>Contribs</dt>
               <dd className='col-6 col-xl-8'>
-                {props.repositoriesContributedToCount} dépots
+                <FormattedMessage
+                  id='directory.repos.value'
+                  values={{ nStars: props.repositoriesContributedToCount }}
+                />
               </dd>
               {props.languages && (
                 <Fragment>
-                  <dt className='col-6 col-xl-4'>Langages</dt>
+                  <dt className='col-6 col-xl-4'>
+                    <FormattedMessage id='directory.languages' />
+                  </dt>
                   <dd className='col-6 col-xl-8'>{props.languages}</dd>
                 </Fragment>
               )}
@@ -95,7 +141,9 @@ const GithubUser = props => {
           )}
         </dl>
         {props.isHireable && (
-          <p className='card-text'>Disponible pour travailler</p>
+          <p className='card-text'>
+            <FormattedMessage id='directory.available' />
+          </p>
         )}
       </div>
     </div>

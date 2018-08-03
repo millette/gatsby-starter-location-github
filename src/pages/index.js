@@ -294,7 +294,7 @@ class FrontPage extends Component {
                 onChange={this.locationFilter}
               />
             </label>
-            <h3>
+            <h4>
               <FormattedMessage
                 id='index.resultsSummary'
                 values={{
@@ -303,7 +303,7 @@ class FrontPage extends Component {
                   nTotal: this.allUsers.length
                 }}
               />
-            </h3>
+            </h4>
             {users.length ? (
               <Fragment>
                 <div className='row'>

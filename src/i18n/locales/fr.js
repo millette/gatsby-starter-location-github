@@ -90,6 +90,21 @@ module.exports = {
   'nav.current': '(actuelle)',
   'nav.switchLanguage': 'Changer la langue',
 
+  'directory.location': 'Lieu',
+  'directory.website': 'Site web',
+  'directory.email': 'Courriel',
+  'directory.created': 'Créé',
+  'directory.company': 'Compagnie',
+
+  'directory.stars.label': 'Étoiles',
+  'directory.repos.value': `{nStars, plural,
+    =0 {aucun dépot}
+    one {un dépot}
+    other {# dépots}
+  }`,
+  'directory.languages': 'Langages',
+  'directory.available': 'Disponible pour travailler',
+
   'jumbotron.text':
     '[FR] Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.'
 }
