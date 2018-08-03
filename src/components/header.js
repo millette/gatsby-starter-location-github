@@ -19,22 +19,17 @@ const Header = ({ pageContext, siteTitle, subTitle }) => (
               className='float-sm-left align-middle img-fluid mr-sm-4'
               alt='logo RoLLodeQc'
             />
-            <h1 className='jumbotron-heading'>
-              <Link to='/'>{siteTitle}</Link>
-            </h1>
+            <h1 className='jumbotron-heading'>{siteTitle}</h1>
             <h2 className='text-muted'>{subTitle}</h2>
             <p className='lead'>
-              <FormattedMessage
-                id='jumbotron.text'
-                defaultMessage666='Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.'
-              />
+              <FormattedMessage id='jumbotron.text' />
             </p>
           </div>
         </div>
         <div className='row'>
           <div className='column mx-auto'>
             <Link to='/about/' className='btn btn-info btn-lg'>
-              Find out more
+              <FormattedMessage id='jumbotron.more' />
             </Link>
           </div>
         </div>
