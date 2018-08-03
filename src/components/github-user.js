@@ -111,7 +111,9 @@ const GithubUser = props => {
           )}
           {props.repositoriesContributedToCount && (
             <Fragment>
-              <dt className='col-6 col-xl-4'>Contribs</dt>
+              <dt className='col-6 col-xl-4'>
+                <FormattedMessage id='directory.repos.label' />
+              </dt>
               <dd className='col-6 col-xl-8'>
                 <FormattedMessage
                   id='directory.repos.value'

@@ -6,6 +6,8 @@ import { FormattedMessage } from 'react-intl'
 import { Layout, Footer } from '../components'
 import { withIntl } from '../i18n'
 
+// FIXME: doesn't know the current language:
+// https://github.com/millette/gatsby-starter-location-github/issues/22
 const NotFoundPage = () => (
   <Layout>
     <div className='container'>

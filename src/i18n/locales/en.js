@@ -95,10 +95,11 @@ module.exports = {
   'directory.company': 'Company',
 
   'directory.stars.label': 'Stars',
+  'directory.repos.label': 'Repos',
   'directory.repos.value': `{nStars, plural,
-    =0 {no repos}
-    one {one repo}
-    other {# repos}
+    =0 {no contributions}
+    one {one contribution}
+    other {# contributions}
   }`,
 
   'directory.languages': 'Languages',

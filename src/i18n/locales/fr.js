@@ -97,10 +97,11 @@ module.exports = {
   'directory.company': 'Compagnie',
 
   'directory.stars.label': 'Étoiles',
+  'directory.repos.label': 'Dépots',
   'directory.repos.value': `{nStars, plural,
-    =0 {aucun dépot}
-    one {un dépot}
-    other {# dépots}
+    =0 {aucune contribution}
+    one {une contribution}
+    other {# contributions}
   }`,
   'directory.languages': 'Langages',
   'directory.available': 'Disponible pour travailler',
