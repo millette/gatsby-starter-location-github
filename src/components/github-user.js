@@ -141,7 +141,7 @@ const GithubUser = props => {
           )}
         </dl>
         {props.isHireable && (
-          <p className='card-text'>
+          <p className='card-footer text-center'>
             <FormattedMessage id='directory.available' />
           </p>
         )}
