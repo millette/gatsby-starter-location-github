@@ -134,7 +134,18 @@ const GithubUser = props => {
                   <dt className='col-6 col-xl-4'>
                     <FormattedMessage id='directory.languages' />
                   </dt>
-                  <dd className='col-6 col-xl-8'>{props.languages}</dd>
+                  <dd className='col-6 col-xl-8'>
+                    <ul className='list-inline'>
+                      {props.languages.map(({ name, count, style }) => (
+                        <li
+                          className='list-inline-item badge badge-pill'
+                          style={style}
+                        >
+                          {name} ({count})
+                        </li>
+                      ))}
+                    </ul>
+                  </dd>
                 </Fragment>
               )}
             </Fragment>
