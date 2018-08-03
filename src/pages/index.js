@@ -335,7 +335,10 @@ class FrontPage extends Component {
                       key={x.databaseId}
                       className='col-sm-6 col-md-6 col-lg-4'
                     >
-                      <GithubUser {...x} />
+                      <GithubUser
+                        {...x}
+                        onlyAvailable={this.state.onlyAvailable}
+                      />
                     </div>
                   ))}
                 </div>

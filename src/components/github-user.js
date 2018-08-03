@@ -142,7 +142,8 @@ const GithubUser = props => {
             </Fragment>
           )}
         </dl>
-        {props.isHireable && (
+        {!props.onlyAvailable &&
+          props.isHireable && (
           <p className='card-footer text-center'>
             <FormattedMessage id='directory.available' />
           </p>
