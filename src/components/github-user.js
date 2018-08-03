@@ -92,19 +92,19 @@ const GithubUser = props => {
           )}
           {/* Here, we're testing length > 0
               since the number 0 is not falsy in this context.
-              Otherwise, 0 would be shown instead of nothing or the following span. */}
-          {props.starredRepositories &&
-            props.starredRepositories.length > 0 && (
+              Otherwise, 0 would be shown instead of nothing or the following span.
+          */}
+
+          {props.starredRepositoriesCount > 0 && (
             <Fragment>
               <dt className='col-6 col-xl-4'>
                 <FormattedMessage id='directory.stars.label' />
-                  Étoiles
               </dt>
               {/* Here, we want it displayed, even if it's 0 although the previous test would prevent 0 */}
               <dd className='col-6 col-xl-8'>
                 <FormattedMessage
                   id='directory.repos.value'
-                  values={{ nStars: props.starredRepositories.length }}
+                  values={{ nStars: props.starredRepositoriesCount }}
                 />
               </dd>
             </Fragment>

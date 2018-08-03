@@ -400,6 +400,7 @@ export const query = graphql`
             email
             location
             createdAt
+            starredRepositoriesCount
             repositoriesContributedToCount
             fetchedAt
             isHireable
