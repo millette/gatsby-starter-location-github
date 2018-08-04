@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[9],{219:function(e,t,a){"use strict";a.r(t);var n=a(1),c=a.n(n),l=a(54),r=a(58),m=a(55);t.default=Object(m.c)(function(){return c.a.createElement(r.e,null,c.a.createElement("div",{className:"container"},c.a.createElement("h1",{className:"mt-3"},c.a.createElement(l.c,{id:"404.title"})),c.a.createElement("p",null,c.a.createElement(l.c,{id:"404.text"}))),c.a.createElement(r.a,null,c.a.createElement("p",{className:"card-text"},"Marvoulous")))})}}]);
+//# sourceMappingURL=component---src-pages-404-js-d576d2cdd2696b41155c.js.map
