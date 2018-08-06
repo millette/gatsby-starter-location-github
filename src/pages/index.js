@@ -61,6 +61,29 @@ const sortFns = {
 class FrontPage extends Component {
   constructor (props) {
     super(props)
+
+    const userSparks = {}
+    props.data.allSparksJson.edges
+      .map(({ node }) => node)
+      .forEach(({ login, output, sum2, lastContribDate }) => {
+        userSparks[login] = {
+          output: output.reverse(),
+          sum2,
+          lastContribDate
+        }
+      })
+
+    // this.userContribs = {}
+    const userContribs = {}
+    props.data.allContribsJson.edges
+      .map(({ node }) => node)
+      .forEach(({ login, contribs }) => {
+        if (contribs) {
+          // this.userContribs[login] = contribs
+          userContribs[login] = contribs
+        }
+      })
+
     this.allLanguageColors = {}
     props.data.allLanguageColorsJson.edges
       .map(({ node }) => node)
@@ -71,6 +94,9 @@ class FrontPage extends Component {
     this.allUsers = props.data.allDataJson.edges[0].node.users
       .map(x => ({
         ...x,
+        // contribs: this.userContribs[x.login],
+        sparks: userSparks[x.login],
+        contribs: userContribs[x.login],
         languages:
           x[LANGUAGE_TYPE] &&
           x[LANGUAGE_TYPE].map(({ name, count }) => {
@@ -409,6 +435,33 @@ export const query = graphql`
         }
       }
     }
+
+    allSparksJson {
+      totalCount
+      edges {
+        node {
+          lastContribDate
+          sum2
+          output
+          login
+        }
+      }
+    }
+
+    allContribsJson {
+      totalCount
+      edges {
+        node {
+          fetchedAt
+          contribs {
+            count
+            date
+          }
+          login
+        }
+      }
+    }
+
     allLanguageColorsJson {
       edges {
         node {
