@@ -4,6 +4,7 @@
   "license": "AGPL-3.0",
   "version": "0.0.0",
   "dependencies": {
+    "@data-ui/sparkline": "^0.0.61",
     "browser-lang": "^0.0.1",
     "gatsby": "^2.0.0-beta.71",
     "gatsby-plugin-react-helmet": "^3.0.0-beta.4",
