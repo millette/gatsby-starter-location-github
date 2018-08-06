@@ -5,10 +5,10 @@
   "version": "0.0.0",
   "dependencies": {
     "browser-lang": "^0.0.1",
-    "gatsby": "^2.0.0-beta.67",
+    "gatsby": "^2.0.0-beta.71",
     "gatsby-plugin-react-helmet": "^3.0.0-beta.4",
     "gatsby-source-filesystem": "^2.0.1-beta.10",
-    "gatsby-transformer-json": "^2.1.1-beta.4",
+    "gatsby-transformer-json": "^2.1.1-beta.5",
     "intl": "^1.2.5",
     "lodash-es": "^4.17.10",
     "react": "^16.4.2",
