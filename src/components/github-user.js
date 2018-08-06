@@ -129,6 +129,7 @@ const GithubUser = props => {
                     <ul className='list-inline'>
                       {props.languages.map(({ name, count, style }) => (
                         <li
+                          key={name}
                           className='list-inline-item badge badge-pill'
                           style={style}
                         >
