@@ -80,13 +80,18 @@ module.exports = {
   'nav.current': '(current)',
   'nav.switchLanguage': 'Switch language',
 
+  'directory.sum2.label': '20 weeks',
+  'directory.sum2.value': `{sum2, plural,
+    =0 {0 contribution}
+    one {one contribution}
+    other {# contributions}
+  }`,
+  'directory.lastContribDate': 'Most recents',
   'directory.location': 'Location',
   'directory.website': 'Website',
   'directory.email': 'Email',
   'directory.created': 'Created',
-
   'directory.company': 'Company',
-
   'directory.stars.label': 'Stars',
   'directory.repos.label': 'Repos',
   'directory.repos.value': `{nStars, plural,

@@ -82,6 +82,13 @@ module.exports = {
   'nav.current': '(actuelle)',
   'nav.switchLanguage': 'Changer la langue',
 
+  'directory.sum2.label': '20 semaines',
+  'directory.sum2.value': `{sum2, plural,
+    =0 {aucune contribution}
+    one {une contribution}
+    other {# contributions}
+  }`,
+  'directory.lastContribDate': 'Plus récentes',
   'directory.location': 'Lieu',
   'directory.website': 'Site web',
   'directory.email': 'Courriel',
