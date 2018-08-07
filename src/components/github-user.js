@@ -154,7 +154,6 @@ const GithubUser = props => {
               <dt className='col-6 col-xl-5'>
                 <FormattedMessage id='directory.stars.label' />
               </dt>
-              {/* Here, we want it displayed, even if it's 0 although the previous test would prevent 0 */}
               <dd className='col-6 col-xl-7'>
                 <FormattedMessage
                   id='directory.repos.value'
@@ -163,7 +162,7 @@ const GithubUser = props => {
               </dd>
             </Fragment>
           )}
-          {props.repositoriesContributedToCount && (
+          {props.repositoriesContributedToCount > 0 && (
             <Fragment>
               <dt className='col-6 col-xl-5'>
                 <FormattedMessage id='directory.repos.label' />
