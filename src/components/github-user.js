@@ -55,7 +55,7 @@ const GithubUser = props => {
           <blockquote className='blockquote'>{props.bio}</blockquote>
         )}
         <dl className='row'>
-          <dt className='col-6 col-xl-5'>
+          <dt className='col-6 col-xl-5 text-right'>
             <FormattedMessage id='directory.location' />
           </dt>
           <dd className='col-6 col-xl-7'>
@@ -68,7 +68,7 @@ const GithubUser = props => {
           {props.sparks &&
             props.sparks.lastContribDate && (
             <Fragment>
-              <dt className='col-6 col-xl-5'>
+              <dt className='col-6 col-xl-5 text-right'>
                 <FormattedMessage id='directory.sum2.label' />
               </dt>
               <dd className='col-6 col-xl-7'>
@@ -77,7 +77,7 @@ const GithubUser = props => {
                   values={props.sparks}
                 />
               </dd>
-              <dt className='col-6 col-xl-5'>
+              <dt className='col-6 col-xl-5 text-right'>
                 <FormattedMessage id='directory.lastContribDate' />
               </dt>
               <dd className='col-6 col-xl-7'>
@@ -94,7 +94,7 @@ const GithubUser = props => {
 
           {props.websiteUrl && (
             <Fragment>
-              <dt className='col-6 col-xl-5'>
+              <dt className='col-6 col-xl-5 text-right'>
                 <FormattedMessage id='directory.website' />
               </dt>
               <dd className='col-6 col-xl-7 text-truncate'>
@@ -110,7 +110,7 @@ const GithubUser = props => {
           )}
           {props.email && (
             <Fragment>
-              <dt className='col-6 col-xl-5'>
+              <dt className='col-6 col-xl-5 text-right'>
                 <FormattedMessage id='directory.email' />
               </dt>
               <dd className='col-6 col-xl-7 text-truncate'>
@@ -124,7 +124,7 @@ const GithubUser = props => {
               </dd>
             </Fragment>
           )}
-          <dt className='col-6 col-xl-5'>
+          <dt className='col-6 col-xl-5 text-right'>
             <FormattedMessage id='directory.created' />
           </dt>
           <dd className='col-6 col-xl-7'>
@@ -138,7 +138,7 @@ const GithubUser = props => {
           </dd>
           {props.company && (
             <Fragment>
-              <dt className='col-6 col-xl-5'>
+              <dt className='col-6 col-xl-5 text-right'>
                 <FormattedMessage id='directory.company' />
               </dt>
               <dd className='col-6 col-xl-7'>{props.company}</dd>
@@ -151,7 +151,7 @@ const GithubUser = props => {
 
           {props.starredRepositoriesCount > 0 && (
             <Fragment>
-              <dt className='col-6 col-xl-5'>
+              <dt className='col-6 col-xl-5 text-right'>
                 <FormattedMessage id='directory.stars.label' />
               </dt>
               <dd className='col-6 col-xl-7'>
@@ -164,7 +164,7 @@ const GithubUser = props => {
           )}
           {props.repositoriesContributedToCount > 0 && (
             <Fragment>
-              <dt className='col-6 col-xl-5'>
+              <dt className='col-6 col-xl-5 text-right'>
                 <FormattedMessage id='directory.repos.label' />
               </dt>
               <dd className='col-6 col-xl-7'>
@@ -175,7 +175,7 @@ const GithubUser = props => {
               </dd>
               {props.languages && (
                 <Fragment>
-                  <dt className='col-6 col-xl-5'>
+                  <dt className='col-6 col-xl-5 text-right'>
                     <FormattedMessage id='directory.languages' />
                   </dt>
                   <dd className='col-6 col-xl-7'>
