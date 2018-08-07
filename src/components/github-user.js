@@ -58,9 +58,15 @@ const GithubUser = props => {
           <dt className='col-6 col-xl-5'>
             <FormattedMessage id='directory.location' />
           </dt>
-          <dd className='col-6 col-xl-7'>{props.location}</dd>
+          <dd className='col-6 col-xl-7'>
+            {props.location
+              .replace(/,/g, ', ')
+              .replace(/\//g, ' / ')
+              .replace(/  +/g, ' ')}
+          </dd>
 
-          {props.sparks && (
+          {props.sparks &&
+            props.sparks.lastContribDate && (
             <Fragment>
               <dt className='col-6 col-xl-5'>
                 <FormattedMessage id='directory.sum2.label' />
