@@ -66,14 +66,16 @@ class FrontPage extends Component {
     props.data.allSparksJson.edges
       .map(({ node }) => node)
       .forEach(({ login, output, sum2, lastContribDate }) => {
+        // if (output.filter(Boolean).length) {
         userSparks[login] = {
           output: output.reverse(),
           sum2,
           lastContribDate
         }
+        // }
       })
 
-    // this.userContribs = {}
+    /*
     const userContribs = {}
     props.data.allContribsJson.edges
       .map(({ node }) => node)
@@ -83,6 +85,7 @@ class FrontPage extends Component {
           userContribs[login] = contribs
         }
       })
+    */
 
     this.allLanguageColors = {}
     props.data.allLanguageColorsJson.edges
@@ -94,9 +97,8 @@ class FrontPage extends Component {
     this.allUsers = props.data.allDataJson.edges[0].node.users
       .map(x => ({
         ...x,
-        // contribs: this.userContribs[x.login],
         sparks: userSparks[x.login],
-        contribs: userContribs[x.login],
+        // contribs: userContribs[x.login],
         languages:
           x[LANGUAGE_TYPE] &&
           x[LANGUAGE_TYPE].map(({ name, count }) => {
@@ -448,6 +450,20 @@ export const query = graphql`
       }
     }
 
+    allLanguageColorsJson {
+      edges {
+        node {
+          name
+          fg
+          bg
+        }
+      }
+    }
+  }
+`
+
+/*
+
     allContribsJson {
       totalCount
       edges {
@@ -462,16 +478,6 @@ export const query = graphql`
       }
     }
 
-    allLanguageColorsJson {
-      edges {
-        node {
-          name
-          fg
-          bg
-        }
-      }
-    }
-  }
-`
+*/
 
 export default withIntl(FrontPage)
