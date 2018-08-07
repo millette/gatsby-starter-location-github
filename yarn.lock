@@ -4726,22 +4726,27 @@ gh-pages@^1.2.0:
     graceful-fs "4.1.11"
     rimraf "^2.6.2"
 
-ghraphql@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/ghraphql/-/ghraphql-0.8.0.tgz#0fa35dfe0eb1b526ef935c6dd26288a9fa751c9a"
+ghraphql@^0.9.4:
+  version "0.9.4"
+  resolved "https://registry.yarnpkg.com/ghraphql/-/ghraphql-0.9.4.tgz#8efaa4c5d13f2e23a3a4b67099408ebab69cdc7e"
   dependencies:
     debug "^3.1.0"
     delay "^3.0.0"
     get-best-contrast-color "^0.2.1"
     got "^9.0.0"
     lodash.deburr "^4.1.0"
+    lodash.groupby "^4.6.0"
     lodash.uniq "^4.5.0"
     lodash.uniqby "^4.7.0"
     marked "^0.4.0"
     marked-terminal "^3.0.0"
     meow "^5.0.0"
+    mkdirp "^0.5.1"
     normalize-email-or-url "^0.1.0"
+    p-map "^1.2.0"
     progress "^2.0.0"
+    rollodeqc-gh-user-streak "^2.1.1"
+    weeknumber "^1.0.1"
 
 glob-base@^0.3.0:
   version "0.3.0"
@@ -6200,6 +6205,14 @@ lodash.deburr@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/lodash.deburr/-/lodash.deburr-4.1.0.tgz#ddb1bbb3ef07458c0177ba07de14422cb033ff9b"
 
+lodash.flatten@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/lodash.flatten/-/lodash.flatten-4.4.0.tgz#f31c22225a9632d2bbf8e4addbef240aa765a61f"
+
+lodash.groupby@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/lodash.groupby/-/lodash.groupby-4.6.0.tgz#0b08a1dcf68397c397855c3239783832df7403d1"
+
 lodash.isobject@^2.4.1:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/lodash.isobject/-/lodash.isobject-2.4.1.tgz#5a2e47fe69953f1ee631a7eba1fe64d2d06558f5"
@@ -6221,6 +6234,10 @@ lodash.merge@^4.6.0:
 lodash.mergewith@^4.6.0:
   version "4.6.1"
   resolved "https://registry.yarnpkg.com/lodash.mergewith/-/lodash.mergewith-4.6.1.tgz#639057e726c3afbdb3e7d42741caa8d6e4335927"
+
+lodash.sortby@^4.7.0:
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
 
 lodash.tail@^4.1.1:
   version "4.1.1"
@@ -7188,7 +7205,7 @@ p-locate@^2.0.0:
   dependencies:
     p-limit "^1.1.0"
 
-p-map@^1.1.1:
+p-map@^1.1.1, p-map@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/p-map/-/p-map-1.2.0.tgz#e4e94f311eabbc8633a1e79908165fca26241b6b"
 
@@ -8560,6 +8577,17 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
+rollodeqc-gh-user-streak@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/rollodeqc-gh-user-streak/-/rollodeqc-gh-user-streak-2.1.1.tgz#2b559d5374b0e63a6c7052461aae31db1853e077"
+  dependencies:
+    chalk "^2.4.1"
+    got "^9.0.0"
+    lodash.flatten "^4.4.0"
+    lodash.sortby "^4.7.0"
+    meow "^5.0.0"
+    update-notifier "^2.5.0"
+
 run-async@^2.2.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/run-async/-/run-async-2.3.0.tgz#0371ab4ae0bdd720d4166d7dfda64ff7a445a6c0"
@@ -9663,7 +9691,7 @@ update-check@1.5.2:
     registry-auth-token "3.3.2"
     registry-url "3.1.0"
 
-update-notifier@^2.3.0:
+update-notifier@^2.3.0, update-notifier@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/update-notifier/-/update-notifier-2.5.0.tgz#d0744593e13f161e406acb1d9408b72cad08aff6"
   dependencies:
@@ -9971,6 +9999,10 @@ websocket-driver@>=0.5.1:
 websocket-extensions@>=0.1.1:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.3.tgz#5d2ff22977003ec687a4b87073dfbbac146ccf29"
+
+weeknumber@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/weeknumber/-/weeknumber-1.0.1.tgz#95d9247d16708e930a947c1571a156323dee3b99"
 
 whatwg-fetch@2.0.3:
   version "2.0.3"
