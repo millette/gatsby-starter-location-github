@@ -8,6 +8,7 @@ import { FormattedMessage } from 'react-intl'
 import { Header, Nav } from '.'
 import { getPageTitleID } from '../utils'
 import './layout.scss'
+import { location } from '../../custom/config'
 
 const Layout = ({ messages, header, children }, ctx) => {
   if (!messages) {
@@ -16,12 +17,12 @@ const Layout = ({ messages, header, children }, ctx) => {
   const pageTitleStr = getPageTitleID(ctx.language)
   const pageTitleID = pageTitleStr && `${pageTitleStr}.title`
   const pageTitle =
-    pageTitleID && messages[pageTitleID] ? ` — ${messages[pageTitleID]}` : ''
+    pageTitleID && messages[pageTitleID] ? messages[pageTitleID] : location
   const pageContext = ctx.language || {}
   const helmetProps = {}
 
   if (messages.title) {
-    helmetProps.title = `${messages.title}${pageTitle}`
+    helmetProps.title = `${messages.title} — ${pageTitle}`
   }
 
   if (messages.subtitle) {
