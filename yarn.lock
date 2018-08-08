@@ -700,11 +700,11 @@
     lodash "^4.17.5"
     to-fast-properties "^2.0.0"
 
-"@data-ui/shared@^0.0.61":
-  version "0.0.61"
-  resolved "https://registry.yarnpkg.com/@data-ui/shared/-/shared-0.0.61.tgz#717a1a1f7bd606c0f51573e65b6acdda51a1252b"
+"@data-ui/shared@^0.0.62":
+  version "0.0.62"
+  resolved "https://registry.yarnpkg.com/@data-ui/shared/-/shared-0.0.62.tgz#6d4e14e03ab37060e6f6afdd5f831df88cd3c5aa"
   dependencies:
-    "@data-ui/theme" "^0.0.61"
+    "@data-ui/theme" "^0.0.62"
     "@vx/event" "^0.0.165"
     "@vx/group" "^0.0.165"
     "@vx/shape" "^0.0.168"
@@ -713,11 +713,11 @@
     d3-array "^1.2.1"
     prop-types "^15.5.10"
 
-"@data-ui/sparkline@^0.0.61":
-  version "0.0.61"
-  resolved "https://registry.yarnpkg.com/@data-ui/sparkline/-/sparkline-0.0.61.tgz#b44442fc9ce37f2da2ae680854895dd3e760a853"
+"@data-ui/sparkline@^0.0.62":
+  version "0.0.62"
+  resolved "https://registry.yarnpkg.com/@data-ui/sparkline/-/sparkline-0.0.62.tgz#3cfe862bb16639e1ca2f8965302c4d77afd33dbb"
   dependencies:
-    "@data-ui/shared" "^0.0.61"
+    "@data-ui/shared" "^0.0.62"
     "@data-ui/theme" "0.0.8"
     "@vx/axis" "0.0.140"
     "@vx/curve" "0.0.140"
@@ -738,9 +738,9 @@
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/@data-ui/theme/-/theme-0.0.8.tgz#3116723d04b99f65c7750f81a500e9608b4837c3"
 
-"@data-ui/theme@^0.0.61":
-  version "0.0.61"
-  resolved "https://registry.yarnpkg.com/@data-ui/theme/-/theme-0.0.61.tgz#2a792da6c384d08553d1794bdb16ce633bc02cbd"
+"@data-ui/theme@^0.0.62":
+  version "0.0.62"
+  resolved "https://registry.yarnpkg.com/@data-ui/theme/-/theme-0.0.62.tgz#a7f50bb796fd6ea90171cb2c7f958f3bb24fe6d9"
   dependencies:
     babel-runtime "^6.26.0"
 
@@ -4471,9 +4471,9 @@ gatsby-transformer-json@^2.1.1-beta.5:
     "@babel/runtime" "7.0.0-beta.52"
     bluebird "^3.5.0"
 
-gatsby@^2.0.0-beta.86:
-  version "2.0.0-beta.86"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.0-beta.86.tgz#1b93dd440a42e32699629593661891d4bfed4304"
+gatsby@^2.0.0-beta.87:
+  version "2.0.0-beta.87"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.0-beta.87.tgz#9059676410044e936d88255d74ed794bf5324237"
   dependencies:
     "@babel/code-frame" "7.0.0-beta.52"
     "@babel/core" "7.0.0-beta.52"
