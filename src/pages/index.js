@@ -392,9 +392,7 @@ class FrontPage extends Component {
             )}
           </div>
         </div>
-        <Footer>
-          <p className='card-text'>Marvoulous</p>
-        </Footer>
+        <Footer />
       </Layout>
     )
   }

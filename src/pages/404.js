@@ -19,9 +19,7 @@ const NotFoundPage = () => (
       </p>
     </div>
 
-    <Footer>
-      <p className='card-text'>Marvoulous</p>
-    </Footer>
+    <Footer />
   </Layout>
 )
 

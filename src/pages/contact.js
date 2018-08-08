@@ -25,9 +25,7 @@ const Contact = ({ messages }) => (
       </h1>
       <Content email={config.email} contactFormEnabled={config.contactForm} />
     </div>
-    <Footer>
-      <p className='card-text'>Marvoulous</p>
-    </Footer>
+    <Footer />
   </Layout>
 )
 
