@@ -19,6 +19,7 @@ module.exports = {
   'index.order.joined': 'Registration date',
   'index.order.name': 'Name (or login)',
   'index.order.nRepos': 'Number of repos',
+  'index.order.contribs': 'Recent contributions',
   'index.order.reverse': 'Reverse order',
   'index.allLanguages': 'All',
   'index.search.name': 'Name',

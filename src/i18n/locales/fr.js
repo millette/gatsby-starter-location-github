@@ -19,6 +19,7 @@ module.exports = {
   'index.order.joined': 'Date d’inscription',
   'index.order.name': 'Nom (ou login)',
   'index.order.nRepos': 'Nombre de dépots',
+  'index.order.contribs': 'Contributions récentes',
   'index.order.reverse': 'Inverser l’ordre',
   'index.allLanguages': 'Tous',
   'index.search.name': 'Nom',

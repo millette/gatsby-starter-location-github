@@ -45,6 +45,17 @@ const sortFns = {
     return 0
   },
   name: (a, b) => (a.name || a.login).localeCompare(b.name || b.login),
+  contribs: (a, b) => {
+    const na = a.sparks && a.sparks.sum2
+    const nb = b.sparks && b.sparks.sum2
+    if (na > nb) {
+      return 1
+    }
+    if (na < nb) {
+      return -1
+    }
+    return 0
+  },
   nRepos: (a, b) => {
     const na = a.repositoriesContributedToCount
     const nb = b.repositoriesContributedToCount
@@ -133,7 +144,7 @@ class FrontPage extends Component {
     }
     this.setState({
       sort: value,
-      reverse: value === 'nRepos' || value === 'joined'
+      reverse: value === 'nRepos' || value === 'joined' || value === 'contribs'
     })
   }
 
@@ -252,6 +263,9 @@ class FrontPage extends Component {
               <select onChange={this.changeOrder}>
                 <FormattedMessage id='index.order.joined'>
                   {txt => <option value='joined'>{txt}</option>}
+                </FormattedMessage>
+                <FormattedMessage id='index.order.contribs'>
+                  {txt => <option value='contribs'>{txt}</option>}
                 </FormattedMessage>
                 <FormattedMessage id='index.order.name'>
                   {txt => <option value='name'>{txt}</option>}
