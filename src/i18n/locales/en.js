@@ -13,6 +13,7 @@ module.exports = {
   title: 'RolloDevs',
   subtitle: 'Your locally sourced developper directory',
 
+  'footer.buildTime': 'Built {buildTime}',
   'index.available.off': 'Available? Doesn’t matter',
   'index.available.on': 'Available? YES!',
   'index.order': 'Order',
@@ -81,6 +82,7 @@ module.exports = {
   'nav.current': '(current)',
   'nav.switchLanguage': 'Switch language',
 
+  'directory.title': 'Directory',
   'directory.sum2.label': '20 weeks',
   'directory.sum2.value': `{sum2, plural,
     =0 {0 contribution}

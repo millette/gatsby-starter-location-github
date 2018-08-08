@@ -13,6 +13,8 @@ module.exports = {
   title: 'RolloDevs',
   subtitle: 'Votre source de développeurs locaux',
 
+  'footer.buildTime': 'Construit {buildTime}',
+
   'index.available.off': 'Disponible? Peu importe',
   'index.available.on': 'Disponible? OUI!',
   'index.order': 'Tri',
@@ -83,6 +85,7 @@ module.exports = {
   'nav.current': '(actuelle)',
   'nav.switchLanguage': 'Changer la langue',
 
+  'directory.title': 'Répertoire',
   'directory.sum2.label': '20 semaines',
   'directory.sum2.value': `{sum2, plural,
     =0 {aucune contribution}
