@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: '/gatsby-starter-location-github',
+  // pathPrefix: '/gatsby-starter-location-github',
   siteMetadata: {
     language: {
       fallback: 'en'

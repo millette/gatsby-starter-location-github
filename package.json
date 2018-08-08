@@ -35,6 +35,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "develop": "gatsby develop --port 8001",
     "dev": "gatsby develop --port 8001",
     "format": "prettier-standard '**/*.+(js|json|md)'",
     "precommit": "lint-staged"
