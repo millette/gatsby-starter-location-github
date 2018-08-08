@@ -40,6 +40,18 @@ yarn dev
 
 Change MY-ROLLO for a directory name of your choosing.
 
+## Translations
+
+Create a custom/locales/ directory and add fr.js and en.js files like:
+
+```js
+module.exports = {
+  title: 'RolloDevs — développeurs d’Iran'
+}
+```
+
+You can see all available strings in the src/i18n/locales/ files.
+
 ## See also
 
 Depends on [ghraphql](https://github.com/millette/ghraphql) to fetch GitHub data.
