@@ -6,3 +6,6 @@
 !gatsby-config.js
 !gatsby-node.js
 !gatsby-ssr.js
+!custom/data/gh-users.json
+!custom/data/language-colors.json
+!custom/data/sparks.json

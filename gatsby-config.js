@@ -18,7 +18,8 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'data',
-        path: `${__dirname}/custom/data/`
+        path: `./custom/data/`
+        // path: `${__dirname}/custom/data/`
       }
       /*
     },
