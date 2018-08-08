@@ -6,7 +6,7 @@
   "dependencies": {
     "@data-ui/sparkline": "^0.0.61",
     "browser-lang": "^0.0.1",
-    "gatsby": "^2.0.0-beta.85",
+    "gatsby": "^2.0.0-beta.86",
     "gatsby-plugin-react-helmet": "^3.0.0-beta.4",
     "gatsby-source-filesystem": "^2.0.1-beta.10",
     "gatsby-transformer-json": "^2.1.1-beta.5",
