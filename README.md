@@ -107,3 +107,7 @@ Reformat source with prettier-standard. Don't interrupt it or you may lose file 
 ### precommit
 
 prettier-standard runs automatically before committing supported files. You shouln't have to run this manually either.
+
+## License
+
+AGPL-v3 2018 © [Robin Millette](http://robin.millette.info)
