@@ -15,16 +15,30 @@ npm install --global gatsby-cli@next
 And run from your CLI:
 
 ```sh
-gatsby new gatsby-starter-location-github https://github.com/millette/gatsby-starter-location-github#prod
+gatsby new MY-ROLLO https://github.com/millette/gatsby-starter-location-github#prod
+cd MY-ROLLO
 ```
 
-Then you can run it by:
+Next, you should create the file `custom/config.js`:
+
+```js
+module.exports = {
+  // contactForm: true, // doesn't go anywhere even if enabled
+  location: 'Lubumbashi',
+  locationSearch: 'lubumbashi', // pass a string for a single location
+  // locationSearch: ['montréal', 'québec'], // or an array of strings for multiple locations or synonyms
+  email: 'robin@millette.info'
+}
+```
+
+Then you can run it with:
 
 ```sh
-cd gatsby-starter-location-github
 yarn ghraphql:init
 yarn dev
 ```
+
+Change MY-ROLLO for a directory name of your choosing.
 
 ## See also
 
@@ -74,6 +88,6 @@ Run source code through linter (standardJS) - may not succeeed, prettier-standar
 
 Reformat source with prettier-standard. Don't interrupt it or you may lose file contents. In fact, you shouldn't have to use this manually if you're also using git.
 
-### "precommit": "lint-staged"
+### precommit
 
-prettier-standard runs automatically before committing supported files.
+prettier-standard runs automatically before committing supported files. You shouln't have to run this manually either.
