@@ -6,7 +6,7 @@
   "dependencies": {
     "@data-ui/sparkline": "^0.0.61",
     "browser-lang": "^0.0.1",
-    "gatsby": "^2.0.0-beta.83",
+    "gatsby": "^2.0.0-beta.85",
     "gatsby-plugin-react-helmet": "^3.0.0-beta.4",
     "gatsby-source-filesystem": "^2.0.1-beta.10",
     "gatsby-transformer-json": "^2.1.1-beta.5",
@@ -43,7 +43,7 @@
   "devDependencies": {
     "bootstrap": "4.1.3",
     "bootswatch": "4.1.3",
-    "gatsby-plugin-sass": "^2.0.0-beta.9",
+    "gatsby-plugin-sass": "^2.0.0-beta.10",
     "gh-pages": "^1.2.0",
     "ghraphql": "^0.9.4",
     "husky": "^0.14.3",
