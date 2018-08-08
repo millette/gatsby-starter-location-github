@@ -34,7 +34,6 @@ You'll need a GitHub account and a token. GitHub provides some [help on personal
 
 You can [generate a new token](https://github.com/settings/tokens) and set it in your environment variables with the name `GITHUB_TOKEN` to configure `ghraphql`.
 
-````
 Better to set it up properly in your `.bashrc` file or equivalent. You should now restart your shell for the changes to take effect.
 
 ## Install
@@ -43,7 +42,7 @@ Make sure that you have the Gatsby CLI program installed, we're using Gatsby v2 
 
 ```sh
 npm install --global gatsby-cli@next
-````
+```
 
 And run from your CLI:
 
