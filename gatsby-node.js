@@ -13,6 +13,7 @@ const { languages } = require('./src/i18n/locales')
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions
 
+  // FIXME: 404 language bug?
   if (page.path.includes('404')) {
     return Promise.resolve()
   }
@@ -24,7 +25,7 @@ exports.onCreatePage = ({ page, actions }) => {
       component: redirect,
       context: {
         languages,
-        locale: '',
+        locale: '', // FIXME: 404 language bug?
         routed: false,
         redirectPage: page.path
       }

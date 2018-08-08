@@ -29,6 +29,11 @@ class Redirect extends PureComponent {
       })
 
     const newUrl = withPrefix(`/${detected}${pathname}`)
+    /*
+    console.error('NEWURL:', newUrl)
+    const newUrl2 = withPrefix(`/${pathname}`)
+    console.error('NEWURL2:', newUrl2)
+    */
     window.localStorage.setItem('language', detected)
     window.location.replace(newUrl)
   }
