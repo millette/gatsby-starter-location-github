@@ -8,13 +8,42 @@ For an overview of the project structure please refer to the [Gatsby documentati
 
 A big thank you to [WikiSuite](https://wikisuite.org/) (and Marc Laporte) for their financial support of the RoLLodeQc relaunch. It would never have happened without them!
 
+## Requirements
+
+### GNU/Linux / Unix-like OS
+
+This might work on MacOS and Microsoft Windows but I haven't tested it. Let me know!
+
+### Node.js
+
+You'll need Node.js. The quickest way to install it for your local user in the [n-install bash script](https://github.com/mklement0/n-install).
+
+`git` and `curl` are required for `n-install`.
+
+```
+$ curl -L https://git.io/n-install | bash
+```
+
+This will install the latest LTS, which is 8.11.3 at the time of this writing.
+
+You should restart your shell before using `node` and `npm` but first, setup your GitHub token so you only have to restart once.
+
+### GitHub account and token
+
+You'll need a GitHub account and a token. GitHub provides some [help on personal access token creation](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/).
+
+You can [generate a new token](https://github.com/settings/tokens) and set it in your environment variables with the name `GITHUB_TOKEN` to configure `ghraphql`.
+
+````
+Better to set it up properly in your `.bashrc` file or equivalent. You should now restart your shell for the changes to take effect.
+
 ## Install
 
 Make sure that you have the Gatsby CLI program installed, we're using Gatsby v2 (in beta):
 
 ```sh
 npm install --global gatsby-cli@next
-```
+````
 
 And run from your CLI:
 
