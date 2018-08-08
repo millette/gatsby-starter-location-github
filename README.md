@@ -4,6 +4,10 @@ The local GitHub directory starter.
 
 For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
 
+## Thank you!
+
+A big thank you to [WikiSuite](https://wikisuite.org/) (and Marc Laporte) for their financial support of the RoLLodeQc relaunch. It would never have happened without them!
+
 ## Install
 
 Make sure that you have the Gatsby CLI program installed, we're using Gatsby v2 (in beta):
