@@ -1,5 +1,5 @@
 module.exports = {
-  // pathPrefix: '/gatsby-starter-location-github',
+  pathPrefix: '/gatsby-starter-location-github',
   siteMetadata: {
     language: {
       fallback: 'en'
@@ -18,8 +18,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'data',
-        path: `./custom/data/`
-        // path: `${__dirname}/custom/data/`
+        path: `${__dirname}/custom/data/`
       }
       /*
     },
