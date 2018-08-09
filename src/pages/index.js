@@ -25,9 +25,10 @@ const PER_PAGE = 12
 // https://developer.mozilla.org/en-US/docs/Web/CSS/-ms-overflow-style
 // https://github.com/vitch/jScrollPane (find a React equivalent)
 const LANGUAGE_BAR = {
-  whiteSpace: 'nowrap',
-  paddingBottom: '1rem',
-  overflowX: 'scroll'
+  textAlign: 'justify',
+  overflowY: 'scroll',
+  maxHeight: '4rem',
+  marginBottom: '1.25rem'
 }
 
 const normalize = loc => deburr((loc || '').trim()).toLowerCase()
