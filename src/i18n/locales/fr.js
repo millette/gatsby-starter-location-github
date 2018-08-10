@@ -12,9 +12,7 @@
 module.exports = {
   title: 'RolloDevs',
   subtitle: 'Votre source de développeurs locaux',
-
   'footer.buildTime': 'Construit {buildTime}',
-
   'index.available.off': 'Disponible? Peu importe',
   'index.available.on': 'Disponible? OUI!',
   'index.order': 'Tri',
@@ -41,7 +39,6 @@ module.exports = {
     UNDEFINED {}
     other { - {location}}
   }`,
-
   'contact.emailInput': 'Adresse email',
   'contact.emailHelp': 'Nous ne partagerons jamais votre adresse à un tier.',
   'contact.subjectInput': 'Sujet',
@@ -62,7 +59,6 @@ module.exports = {
   'contact.col3': 'Pour contacter un développeur, consultez notre {directory}',
   'contact.directory': 'répertoire',
   'contact.title': 'Contactez nous',
-
   'about.title': 'À propos',
   'about.col1.html': `<p>Francais bla bla.</p>
   <p>Et deuxième paragraphe.</p>`,
@@ -75,16 +71,13 @@ module.exports = {
     <li>une</li>
     <li>liste</li>
   </ul>`,
-
   '404.title': 'PAGE NON TROUVÉE',
   '404.text':
     'Vous avez trouvé un chemin qui ne mène nul part… Quelle tristesse.',
-
   'nav.contact': 'Contact',
   'nav.about': 'À propos',
   'nav.current': '(actuelle)',
   'nav.switchLanguage': 'Changer la langue',
-
   'directory.title': 'Répertoire',
   'directory.sum2.label': '20 semaines',
   'directory.sum2.value': `{sum2, plural,
@@ -110,6 +103,6 @@ module.exports = {
   'directory.available': 'Disponible pour travailler',
 
   'jumbotron.more': 'En savoir plus',
-  'jumbotron.text':
-    '[FR] Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.'
+  'jumbotron.text': `Le {siteTitle}, c’est le répertoire des programmeurs de votre région inscrits sur GitHub.
+Ses outils de filtres et de tris permettent de rapidement trouver la personne que vous cherchez.`
 }

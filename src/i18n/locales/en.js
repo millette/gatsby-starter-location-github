@@ -12,7 +12,6 @@
 module.exports = {
   title: 'RolloDevs',
   subtitle: 'Your locally sourced developper directory',
-
   'footer.buildTime': 'Built {buildTime}',
   'index.available.off': 'Available? Doesn’t matter',
   'index.available.on': 'Available? YES!',
@@ -42,7 +41,6 @@ module.exports = {
     UNDEFINED {}
     other { - {location}}
   }`,
-
   'contact.emailInput': 'Email address',
   'contact.emailHelp': 'We’ll never share your email with anyone else.',
   'contact.subjectInput': 'Subject',
@@ -50,7 +48,6 @@ module.exports = {
   'contact.commentHelp':
     'Don’t forget to fill in your email address if you expect a response.',
   'contact.submitForm': 'Send',
-
   'contact.col1.html':
     '<p>Don’t hesitate to contact us if you have any questions or suggestions.</p>',
   'contact.col2.html': `<p>
@@ -64,7 +61,6 @@ module.exports = {
   'contact.col3': 'To contact a developer, consult our {directory}',
   'contact.directory': 'directory',
   'contact.title': 'Contact us',
-
   'about.title': 'About us',
   'about.col1.html': `<p>English bla bla.</p>
   <p>And second paragraph.</p>`,
@@ -73,15 +69,12 @@ module.exports = {
   'about.col2.html': `<p>English bla bla for column 2.</p>
 <p>And second paragraph.</p>
 <p>And More, as you wish.</p>`,
-
   '404.title': 'NOT FOUND',
   '404.text': 'You just hit a route that doesn’t exist… the sadness.',
-
   'nav.contact': 'Contact',
   'nav.about': 'About',
   'nav.current': '(current)',
   'nav.switchLanguage': 'Switch language',
-
   'directory.title': 'Directory',
   'directory.sum2.label': '20 weeks',
   'directory.sum2.value': `{sum2, plural,
@@ -102,11 +95,9 @@ module.exports = {
     one {one repo}
     other {# repos}
   }`,
-
   'directory.languages': 'Languages',
   'directory.available': 'Available for hire',
-
   'jumbotron.more': 'Find out more',
-  'jumbotron.text':
-    'Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.'
+  'jumbotron.text': `The {siteTitle} is a directory of programmers from your region with a GitHub account.
+Its filtering and ordering tools enable you to quicly find the person you are looking for.`
 }
