@@ -103,6 +103,6 @@ module.exports = {
   'directory.available': 'Disponible pour travailler',
 
   'jumbotron.more': 'En savoir plus',
-  'jumbotron.text': `Le {siteTitle}, c’est le répertoire des programmeurs de votre région inscrits sur GitHub.
-Ses outils de filtres et de tris permettent de rapidement trouver la personne que vous cherchez.`
+  'jumbotron.text': `Bienvenue au répertoire des programmeurs de votre région (inscrits sur GitHub).
+Ses outils de filtres et de tris permettent de trouver rapidement la personne que vous cherchez.`
 }

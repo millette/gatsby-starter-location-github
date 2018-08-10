@@ -98,6 +98,6 @@ module.exports = {
   'directory.languages': 'Languages',
   'directory.available': 'Available for hire',
   'jumbotron.more': 'Find out more',
-  'jumbotron.text': `The {siteTitle} is a directory of programmers from your region with a GitHub account.
+  'jumbotron.text': `Welcome to the directory of programmers from your region (with a GitHub account).
 Its filtering and ordering tools enable you to quicly find the person you are looking for.`
 }

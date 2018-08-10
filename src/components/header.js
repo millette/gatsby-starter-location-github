@@ -22,10 +22,7 @@ const Header = ({ pageContext, siteTitle, subTitle }) => (
             <h1 className='jumbotron-heading'>{siteTitle}</h1>
             <h2 className='text-muted'>{subTitle}</h2>
             <p className='lead'>
-              <FormattedMessage
-                id='jumbotron.text'
-                values={{ siteTitle: <code>{siteTitle}</code> }}
-              />
+              <FormattedMessage id='jumbotron.text' />
             </p>
           </div>
         </div>

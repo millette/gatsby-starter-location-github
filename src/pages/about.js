@@ -14,6 +14,9 @@ const About = ({ messages }) => (
       </h1>
       <div className='row'>
         <div className='col-md'>
+          <p>
+            <FormattedMessage id='jumbotron.text' />
+          </p>
           <FormattedHTMLMessage id='about.col1.html' />
         </div>
         <div className='col-md'>
