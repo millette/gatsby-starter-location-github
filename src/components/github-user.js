@@ -4,11 +4,8 @@ import { FormattedMessage, FormattedDate } from 'react-intl'
 import { SimpleImg, initSimpleImg } from 'react-simple-img'
 import { Sparkline, LineSeries } from '@data-ui/sparkline'
 
-// FIXME: SimpleImg only works if it's on the first loaded page. For now it's the frontpage.
-// run once at your root component or at file which calls `ReactDOM.render`
-if (typeof window !== 'undefined') {
-  initSimpleImg({ threshold: 0.5 })
-}
+// FIXME: run once at your root component or at file which calls `ReactDOM.render`
+initSimpleImg({ threshold: 0.5 })
 
 const GithubUser = props => {
   return (
