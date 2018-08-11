@@ -7972,9 +7972,9 @@ react-simple-animate@^1.7.4:
   version "1.9.8"
   resolved "https://registry.yarnpkg.com/react-simple-animate/-/react-simple-animate-1.9.8.tgz#149bcc848b4545946570cc07d7a56cee41987826"
 
-react-simple-img@1.3.13:
-  version "1.3.13"
-  resolved "https://registry.yarnpkg.com/react-simple-img/-/react-simple-img-1.3.13.tgz#9101be8b9eaddf21dbc6401e95801a0133e10b09"
+react-simple-img@1.3.16:
+  version "1.3.16"
+  resolved "https://registry.yarnpkg.com/react-simple-img/-/react-simple-img-1.3.16.tgz#2aca85f48a9fdab17df374556c05720c84bc6dab"
   dependencies:
     intersection-observer "^0.5.0"
     prop-types "^15.6.0"
