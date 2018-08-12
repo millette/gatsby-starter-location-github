@@ -6,9 +6,10 @@ import browserLang from 'browser-lang'
 // self
 import { languages } from './index'
 // FIXME: should probably use GraphQL instead
-import { siteMetadata } from '../../gatsby-config'
+// import { siteMetadata } from '../../gatsby-config'
 
-const { language: { fallback } } = siteMetadata
+// const { language: { fallback } } = siteMetadata
+const fallback = 'en'
 
 class Redirect extends PureComponent {
   constructor (props) {

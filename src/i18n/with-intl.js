@@ -6,10 +6,11 @@ import { IntlProvider, addLocaleData } from 'react-intl'
 // self
 import { localeData } from './locales'
 // FIXME: should probably use GraphQL instead
-import { siteMetadata } from '../../gatsby-config'
+// import { siteMetadata } from '../../gatsby-config'
 
 // FIXME: should probably use GraphQL for this
-const { language: { fallback } } = siteMetadata
+// const { language: { fallback } } = siteMetadata
+const fallback = 'en'
 
 addLocaleData(localeData)
 
