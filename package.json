@@ -2,7 +2,7 @@
   "name": "gatsby-starter-location-github",
   "description": "Local GitHub directory.",
   "license": "AGPL-3.0",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "dependencies": {
     "@data-ui/sparkline": "^0.0.62",
     "bootstrap": "4.1.3",
