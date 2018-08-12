@@ -1,5 +1,3 @@
-'use strict'
-
 try {
   const { themeType, themeName } = require('./custom/config.js')
   let themeDir
@@ -15,6 +13,7 @@ try {
       }
 
     default:
+      // eslint-disable-line no-fallthrough
       themeDir = `${__dirname}/scss/default`
   }
 
