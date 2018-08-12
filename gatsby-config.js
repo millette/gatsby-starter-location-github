@@ -1,3 +1,5 @@
+const { gitHead } = require('./utils')
+
 try {
   const { themeType, themeName } = require('./custom/config.js')
   let themeDir
@@ -12,14 +14,15 @@ try {
         break
       }
 
+    // eslint-disable-next-line no-fallthrough
     default:
-      // eslint-disable-line no-fallthrough
       themeDir = `${__dirname}/scss/default`
   }
 
   module.exports = {
     pathPrefix: '/gatsby-starter-location-github',
     siteMetadata: {
+      gitHead,
       language: {
         fallback: 'en'
       }
