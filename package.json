@@ -3,8 +3,15 @@
   "description": "Local GitHub directory.",
   "license": "AGPL-3.0",
   "version": "0.1.0",
+  "repository": "millette/gatsby-starter-location-github",
+  "author": {
+    "name": "Robin Millette",
+    "email": "robin@millette.info",
+    "url": "http://robin.millette.info"
+  },
+  "homepage": "http://dev.rollodeqc.com/",
   "browser": {
-    "fs": false
+    "npm-git-links": false
   },
   "dependencies": {
     "@data-ui/sparkline": "^0.0.62",
@@ -21,6 +28,7 @@
     "intl": "^1.2.5",
     "lodash-es": "^4.17.10",
     "node-sass": "^4.9.3",
+    "npm-git-links": "^0.0.3",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-helmet": "^5.2.0",
@@ -52,9 +60,8 @@
   "devDependencies": {
     "gh-pages": "^1.2.0",
     "husky": "^0.14.3",
-    "lint-staged": "^7.2.0",
+    "lint-staged": "^7.2.2",
     "prettier-standard": "^8.0.1",
     "standard": "^11.0.1"
-  },
-  "repository": "millette/gatsby-starter-location-github"
+  }
 }
