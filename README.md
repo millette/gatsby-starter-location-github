@@ -59,9 +59,47 @@ module.exports = {
   location: 'Lubumbashi',
   locationSearch: 'lubumbashi', // pass a string for a single location
   // locationSearch: ['montréal', 'québec'], // or an array of strings for multiple locations or synonyms
+  themeType: 'bootswatch',
+  themeName: 'journal',
+  // themeType: 'custom',
   email: 'robin@millette.info'
 }
 ```
+
+`themeType`, if specified, should be one of "bootswatch" or "custom". If you select "bootswatch", then you must also specify `themeName` to be one of the following:
+
+* cerulean
+* journal
+* minty
+* slate
+* yeti
+* cosmo
+* litera
+* pulse
+* solar
+* cyborg
+* lumen
+* sandstone
+* spacelab
+* darkly
+* lux
+* simplex
+* superhero
+* flatly
+* materia
+* sketchy
+* united
+
+See [Bootswatch](https://bootswatch.com/) for examples.
+
+If you select "custom" for `themeType` then you must create the `custom/scss/` directory with these two files at least:
+
+* \_variables.scss
+* \_bootswatch.scss
+
+See [Bootstrap's documentation](https://getbootstrap.com/docs/4.1/getting-started/theming/) for more.
+
+Otherwise, the default Bootstrap theme is used.
 
 Then you can run it with:
 
