@@ -38,7 +38,45 @@ Better to set it up properly in your `.bashrc` file or equivalent. You should no
 
 ## Install
 
-Make sure that you have the Gatsby CLI program installed, we're using Gatsby v2 (in beta):
+There are many ways to install.
+
+### Install with git and upgrade
+
+This is currently the preferred method and makes upgrades easier. You won't have to install gatsby globally.
+
+```sh
+git clone https://github.com/millette/gatsby-starter-location-github MY-ROLLO
+cd MY-ROLLO
+git checkout prod
+yarn # or npm install if you don't use yarn.
+```
+
+It you don't modify the source, you can periodically do:
+
+```sh
+git pull
+yarn # or npm install
+```
+
+If you need to modify the source, you can use your own branch:
+
+```sh
+git checkout -b MY-CUSTOM-BRANCH # only once, use whatever branch name
+# And once in a while
+# edit source code
+git commit -a -m"Track your changes"
+
+git checkout prod
+git pull
+git checkout MY-CUSTOM-BRANCH
+git merge prod # might produce conflicts, your turn to handle them
+```
+
+### Install with gatsby cli
+
+If you need to make drastic changes not supported by customization, you may prefer this method, although keeping up with the changes will be more difficult.
+
+Make sure that you have the Gatsby CLI program installed globally, we're using Gatsby v2 (in beta):
 
 ```sh
 npm install --global gatsby-cli@next
@@ -50,6 +88,8 @@ And run from your CLI:
 gatsby new MY-ROLLO https://github.com/millette/gatsby-starter-location-github#prod
 cd MY-ROLLO
 ```
+
+### Configure
 
 Next, you should create the file `custom/config.js`:
 

@@ -56,5 +56,6 @@ try {
   console.error(
     `Did you forget to create the ${__dirname}/custom/config.js file?`
   )
-  console.error(e)
+  console.error(e.toString())
+  throw e
 }
