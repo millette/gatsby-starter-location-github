@@ -12,10 +12,13 @@ const Footer = () => (
       query {
         site {
           buildTime
+          siteMetadata {
+            gitHead
+          }
         }
       }
     `}
-    render={({ site: { buildTime } }) => (
+    render={({ site: { buildTime, siteMetadata: { gitHead } } }) => (
       <footer className='container-fluid card mt-5'>
         <div className='container'>
           <div className='card-body row'>
@@ -60,6 +63,16 @@ const Footer = () => (
                       href='https://github.com/millette/gatsby-starter-location-github'
                     >
                       gatsby-starter-location-github
+                    </a>
+                  </li>
+                  <li>
+                    Version:{' '}
+                    <a
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      href={`https://github.com/millette/gatsby-starter-location-github/tree/v${gitHead}`}
+                    >
+                      {gitHead.slice(0, 10)}
                     </a>
                   </li>
                   <li>
