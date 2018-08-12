@@ -13,6 +13,7 @@ module.exports = {
         precision: 8 // required by bootstrap
       }
     },
+    'gatsby-plugin-purgecss',
     'gatsby-transformer-json',
     {
       resolve: 'gatsby-source-filesystem',
