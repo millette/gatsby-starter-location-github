@@ -4,8 +4,8 @@
 
 .rym-with-hover {
   transition: background 0.6s;
-}
 
-.rym-with-hover:active, .rym-with-hover:hover {
-  background: $card-bg;
+  &:active, &:hover {
+    background: $card-bg;
+  }
 }
