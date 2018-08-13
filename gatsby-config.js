@@ -1,13 +1,3 @@
-// const { name, headHash, version, versionTag, versionHash } = require('./utils')
-// const version = require('./utils')
-
-// console.log(headHash, version, versionHash)
-// throw 'ciao'
-
-// console.log(new Date().toISOString())
-// console.log('DIRNAME:', __dirname)
-// console.log('CWD:', process.cwd())
-
 const cwd = process.cwd()
 
 try {
@@ -30,7 +20,6 @@ try {
   }
 
   const { ret, Doit } = require('npm-git-links')
-  // console.log('DOIT', Doit)
 
   const aa = new Doit(ret.repository)
   ret.repoUrl = aa.browse
@@ -48,16 +37,6 @@ try {
   if (!ret.versionTag) {
     ret.versionTag = 'dev'
   }
-
-  // console.log('RET:', ret)
-
-  /*
-  console.log('AA1', aa1)
-  console.log('AA2', aa2)
-  console.log('AA3', aa3)
-  */
-
-  // const version = ret
 
   module.exports = {
     pathPrefix: '/gatsby-starter-location-github',
