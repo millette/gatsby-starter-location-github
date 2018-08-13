@@ -12,6 +12,8 @@
 module.exports = {
   title: 'RolloDevs',
   subtitle: 'Your locally sourced developper directory',
+  'footer.generated': 'Generated',
+  'footer.license': 'License',
   'footer.buildTime': 'Built {buildTime}',
   'index.available.off': 'Available? Doesn’t matter',
   'index.available.on': 'Available? YES!',

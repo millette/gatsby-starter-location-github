@@ -74,7 +74,9 @@ const Footer = () => (
 
             <div className='col-sm-9'>
               <dl className='card-text row'>
-                <dt className='col-6 text-right'>Génération</dt>
+                <dt className='col-6 text-right'>
+                  <FormattedMessage id='footer.generated' />
+                </dt>
                 <dd className='text-truncate col-6 text-right'>
                   <FormattedMessage
                     id='footer.buildTime'
@@ -127,7 +129,9 @@ const Footer = () => (
                   </Fragment>
                 )}
 
-                <dt className='col-6 text-right'>Licence</dt>
+                <dt className='col-6 text-right'>
+                  <FormattedMessage id='footer.license' />
+                </dt>
                 <dd className='col-6 text-truncate text-right'>
                   AGPL-v3 2018 ©{' '}
                   <a
