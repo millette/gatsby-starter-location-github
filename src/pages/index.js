@@ -16,8 +16,6 @@ try {
   // expected if there is no custom config
 }
 
-// const LANGUAGE_TYPE = 'starLanguages'
-const LANGUAGE_TYPE = 'repoLanguages'
 const PER_PAGE = 12
 
 // see also:
@@ -150,8 +148,8 @@ class FrontPage extends Component {
         ...x,
         sparks: userSparks[x.login],
         languages:
-          x[LANGUAGE_TYPE] &&
-          x[LANGUAGE_TYPE].map(({ name, count }) => {
+          x.repoLanguages &&
+          x.repoLanguages.map(({ name, count }) => {
             const ret = { name, count }
             if (this.allLanguageColors[name]) {
               const { bg, fg } = this.allLanguageColors[name]
@@ -186,31 +184,20 @@ class FrontPage extends Component {
     }
     this.click = this.click.bind(this)
     this.clickMore = this.clickMore.bind(this)
-    // this.clickAvailable = this.clickAvailable.bind(this)
     this.locationFilter = this.locationFilter.bind(this)
     this.nameFilter = this.nameFilter.bind(this)
     this.languageFiltering = this.languageFiltering.bind(this)
-    // this.filtering2 = this.filtering2.bind(this)
     this.locationFiltering = this.locationFiltering.bind(this)
     this.nameFiltering = this.nameFiltering.bind(this)
     this.changeOrder = this.changeOrder.bind(this)
     this.changeOrderReverse = this.changeOrderReverse.bind(this)
-    // this.radioChange = this.radioChange.bind(this)
-    // this.radioChange2 = this.radioChange2.bind(this)
   }
 
   radioChange (x, value) {
-    console.log('RADIO-CHANGE:', x, maybeMap[x], value)
     const obj = {}
     obj[maybeMap[x]] = value
     this.setState(obj)
   }
-
-  /*
-  radioChange2 (value) {
-    console.log('RADIO-CHANGE2:', value)
-  }
-  */
 
   changeOrder ({ target: { value } }) {
     if (value === this.state.sort) {
@@ -246,12 +233,6 @@ class FrontPage extends Component {
     })
   }
 
-  /*
-  clickAvailable () {
-    this.setState({ onlyAvailable: !this.state.onlyAvailable })
-  }
-  */
-
   click ({ target: { dataset } }) {
     if (!this.state.languageFilter && !dataset.key) {
       return
@@ -268,25 +249,16 @@ class FrontPage extends Component {
       return true
     }
     let ok = false
-    if (!x[LANGUAGE_TYPE]) {
+    if (!x.repoLanguages) {
       return false
     }
-    x[LANGUAGE_TYPE].forEach(y => {
+    x.repoLanguages.forEach(y => {
       if (y.name === this.state.languageFilter) {
         ok = true
       }
     })
     return ok
   }
-
-  /*
-  filtering2 (x) {
-    if (!this.state.onlyAvailable) {
-      return true
-    }
-    return x.isHireable
-  }
-  */
 
   locationFiltering (x) {
     if (!this.state.deburredLocation) {
@@ -303,9 +275,8 @@ class FrontPage extends Component {
   }
 
   render () {
-    const availableLanguages = this.props.data.allDataJson.edges[0].node[
-      LANGUAGE_TYPE
-    ]
+    const availableLanguages = this.props.data.allDataJson.edges[0].node
+      .repoLanguages
 
     const usersImp = this.allUsers
       .filter(this.languageFiltering)
@@ -458,7 +429,6 @@ class FrontPage extends Component {
                       key={x.databaseId}
                       className='col-sm-6 col-md-6 col-lg-4'
                     >
-                      {/* onlyAvailable={this.state.onlyAvailable} */}
                       <GithubUser {...x} />
                     </div>
                   ))}
