@@ -11,7 +11,7 @@ const LanguageSwitch = ({ showLanguages, toggleLanguages, pageContext }) => {
       .filter(({ value }) => value !== pageContext.locale)
       .map(({ text, value }) => (
         <a
-          className='dropdown-item'
+          className='text-center nav-link dropdown-item'
           key={value}
           href={`${withPrefix(`${value}${pageContext.originalPath}`)}`}
         >
