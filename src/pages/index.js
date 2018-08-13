@@ -2,7 +2,7 @@
 import React, { Fragment, Component } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { graphql } from 'gatsby'
-import { deburr } from 'lodash-es'
+import deburr from 'lodash.deburr'
 
 // self
 import { Radios, Layout, GithubUser, Footer } from '../components'
