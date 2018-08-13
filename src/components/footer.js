@@ -1,5 +1,5 @@
 // npm
-import React from 'react'
+import React, { Fragment } from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import { FormattedMessage, FormattedRelative } from 'react-intl'
 
@@ -47,7 +47,7 @@ const Footer = () => (
       <footer className='container-fluid card mt-5'>
         <div className='container'>
           <div className='card-body row'>
-            <div className='col text-left'>
+            <div className='col-6 text-left'>
               <ul className='list-unstyled'>
                 <li>
                   <Link to='/'>
@@ -69,15 +69,77 @@ const Footer = () => (
               </ul>
             </div>
 
-            <div className='col text-right'>
-              <ul className='card-text list-unstyled'>
-                {versionUrl && <li>versionUrl is {versionUrl}</li>}
+            <div className='col-6 text-right666'>
+              <dl className='card-text row'>
+                {versionUrl && (
+                  <Fragment>
+                    <dt className='col-4'>versionUrl</dt>
+                    <dd className='col-8 text-truncate'>{versionUrl}</dd>
+                  </Fragment>
+                )}
 
-                {headUrl && <li>headUrl is {headUrl}</li>}
+                {headUrl && (
+                  <Fragment>
+                    <dt className='col-4'>headUrl</dt>
+                    <dd className='col-8 text-truncate'>{headUrl}</dd>
+                  </Fragment>
+                )}
 
-                {versionHash && <li>versionHash is {versionHash}</li>}
+                {versionHash && (
+                  <Fragment>
+                    <dt className='col-4'>versionHash</dt>
+                    <dd className='col-8 text-truncate'>{versionHash}</dd>
+                  </Fragment>
+                )}
 
-                {false && (
+                <dt className='col-4'>Génération</dt>
+                <dd className='text-truncate col-8'>
+                  <FormattedMessage
+                    id='footer.buildTime'
+                    values={{
+                      buildTime: <FormattedRelative value={buildTime} />
+                    }}
+                  />
+                </dd>
+
+                <dt className='col-4'>Sources</dt>
+                <dd className='col-8 text-truncate'>
+                  <a target='_blank' rel='noopener noreferrer' href={repoUrl}>
+                    {name}
+                  </a>
+                </dd>
+
+                {versionHash && (
+                  <Fragment>
+                    <dt className='col-4'>versionHash</dt>
+                    <dd className='col-8 text-truncate'>{versionHash}</dd>
+                  </Fragment>
+                )}
+
+                {version && (
+                  <Fragment>
+                    <dt className='col-4'>version</dt>
+                    <dd className='col-8 text-truncate'>
+                      {version} / {versionTag}
+                    </dd>
+                  </Fragment>
+                )}
+
+                <dt className='col-4'>Licence</dt>
+                <dd className='col-8 text-truncate'>
+                  AGPL-v3 2018 ©{' '}
+                  <a
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    href='http://robin.millette.info/'
+                  >
+                    Robin Millette
+                  </a>
+                </dd>
+              </dl>
+
+              {false && (
+                <ul className='card-text list-unstyled'>
                   <li>
                     Version: {version}{' '}
                     <a
@@ -88,38 +150,8 @@ const Footer = () => (
                       {headHash.slice(0, 10)}
                     </a>
                   </li>
-                )}
-
-                <li>
-                  <FormattedMessage
-                    id='footer.buildTime'
-                    values={{
-                      buildTime: <FormattedRelative value={buildTime} />
-                    }}
-                  />
-                </li>
-                <li>
-                  Sources:{' '}
-                  <a target='_blank' rel='noopener noreferrer' href={repoUrl}>
-                    {name}
-                  </a>
-                </li>
-
-                <li>
-                  Version: {version} / {versionTag}
-                </li>
-
-                <li>
-                  AGPL-v3 2018 ©{' '}
-                  <a
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    href='http://robin.millette.info/'
-                  >
-                    Robin Millette
-                  </a>
-                </li>
-              </ul>
+                </ul>
+              )}
             </div>
           </div>
         </div>
