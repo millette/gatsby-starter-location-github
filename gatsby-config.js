@@ -29,7 +29,6 @@ try {
       themeDir = `${cwd}/scss/default`
   }
 
-  console.log('OKOKOK')
   const { ret, Doit } = require('npm-git-links')
   // console.log('DOIT', Doit)
 
@@ -39,10 +38,18 @@ try {
   aa.version = ret.headHash
   ret.headUrl = aa.browse
 
-  aa.version = ret.versionHash
-  ret.versionUrl = aa.browse
+  if (ret.versionHash) {
+    aa.version = ret.versionHash
+    ret.versionUrl = aa.browse
+  } else {
+    ret.versionHash = false
+    ret.versionUrl = false
+  }
+  if (!ret.versionTag) {
+    ret.versionTag = 'dev'
+  }
 
-  console.log('RET:', ret)
+  // console.log('RET:', ret)
 
   /*
   console.log('AA1', aa1)

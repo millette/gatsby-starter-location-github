@@ -13,12 +13,37 @@ const Footer = () => (
         site {
           buildTime
           siteMetadata {
-            gitHead
+            version {
+              repoUrl
+              versionUrl
+              headUrl
+              name
+              headHash
+              version
+              versionTag
+              versionHash
+            }
           }
         }
       }
     `}
-    render={({ site: { buildTime, siteMetadata: { gitHead } } }) => (
+    render={({
+      site: {
+        buildTime,
+        siteMetadata: {
+          version: {
+            repoUrl,
+            versionUrl,
+            headUrl,
+            name,
+            headHash,
+            version,
+            versionHash,
+            versionTag
+          }
+        }
+      }
+    }) => (
       <footer className='container-fluid card mt-5'>
         <div className='container'>
           <div className='card-body row'>
@@ -45,48 +70,56 @@ const Footer = () => (
             </div>
 
             <div className='col text-right'>
-              <p className='card-text'>
-                <ul className='list-unstyled'>
+              <ul className='card-text list-unstyled'>
+                {versionUrl && <li>versionUrl is {versionUrl}</li>}
+
+                {headUrl && <li>headUrl is {headUrl}</li>}
+
+                {versionHash && <li>versionHash is {versionHash}</li>}
+
+                {false && (
                   <li>
-                    <FormattedMessage
-                      id='footer.buildTime'
-                      values={{
-                        buildTime: <FormattedRelative value={buildTime} />
-                      }}
-                    />
-                  </li>
-                  <li>
-                    Sources:{' '}
+                    Version: {version}{' '}
                     <a
                       target='_blank'
                       rel='noopener noreferrer'
-                      href='https://github.com/millette/gatsby-starter-location-github'
+                      href={`https://github.com/millette/gatsby-starter-location-github/tree/v${headHash}`}
                     >
-                      gatsby-starter-location-github
+                      {headHash.slice(0, 10)}
                     </a>
                   </li>
-                  <li>
-                    Version:{' '}
-                    <a
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      href={`https://github.com/millette/gatsby-starter-location-github/tree/v${gitHead}`}
-                    >
-                      {gitHead.slice(0, 10)}
-                    </a>
-                  </li>
-                  <li>
-                    AGPL-v3 2018 ©{' '}
-                    <a
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      href='http://robin.millette.info/'
-                    >
-                      Robin Millette
-                    </a>
-                  </li>
-                </ul>
-              </p>
+                )}
+
+                <li>
+                  <FormattedMessage
+                    id='footer.buildTime'
+                    values={{
+                      buildTime: <FormattedRelative value={buildTime} />
+                    }}
+                  />
+                </li>
+                <li>
+                  Sources:{' '}
+                  <a target='_blank' rel='noopener noreferrer' href={repoUrl}>
+                    {name}
+                  </a>
+                </li>
+
+                <li>
+                  Version: {version} / {versionTag}
+                </li>
+
+                <li>
+                  AGPL-v3 2018 ©{' '}
+                  <a
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    href='http://robin.millette.info/'
+                  >
+                    Robin Millette
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
