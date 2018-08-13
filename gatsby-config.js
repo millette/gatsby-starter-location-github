@@ -22,6 +22,9 @@ try {
   const { ret, Doit } = require('npm-git-links')
 
   const aa = new Doit(ret.repository)
+  if (!ret.dev) {
+    ret.dev = false
+  }
   ret.repoUrl = aa.browse
 
   aa.version = ret.headHash
