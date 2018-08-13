@@ -14,6 +14,7 @@ const Footer = () => (
           buildTime
           siteMetadata {
             version {
+              dev
               repoUrl
               versionUrl
               headUrl
@@ -35,6 +36,7 @@ const Footer = () => (
             repoUrl,
             versionUrl,
             headUrl,
+            dev,
             name,
             headHash,
             version,
@@ -47,7 +49,7 @@ const Footer = () => (
       <footer className='container-fluid card mt-5'>
         <div className='container'>
           <div className='card-body row'>
-            <div className='col-6 text-left'>
+            <div className='col-md-6 col-sm-12 text-left'>
               <ul className='list-unstyled'>
                 <li>
                   <Link to='/'>
@@ -69,31 +71,10 @@ const Footer = () => (
               </ul>
             </div>
 
-            <div className='col-6 text-right666'>
+            <div className='col-md-6 col-sm-12'>
               <dl className='card-text row'>
-                {versionUrl && (
-                  <Fragment>
-                    <dt className='col-4'>versionUrl</dt>
-                    <dd className='col-8 text-truncate'>{versionUrl}</dd>
-                  </Fragment>
-                )}
-
-                {headUrl && (
-                  <Fragment>
-                    <dt className='col-4'>headUrl</dt>
-                    <dd className='col-8 text-truncate'>{headUrl}</dd>
-                  </Fragment>
-                )}
-
-                {versionHash && (
-                  <Fragment>
-                    <dt className='col-4'>versionHash</dt>
-                    <dd className='col-8 text-truncate'>{versionHash}</dd>
-                  </Fragment>
-                )}
-
-                <dt className='col-4'>Génération</dt>
-                <dd className='text-truncate col-8'>
+                <dt className='col-4 text-right'>Génération</dt>
+                <dd className='text-truncate col-8 text-right'>
                   <FormattedMessage
                     id='footer.buildTime'
                     values={{
@@ -102,31 +83,56 @@ const Footer = () => (
                   />
                 </dd>
 
-                <dt className='col-4'>Sources</dt>
-                <dd className='col-8 text-truncate'>
+                <dt className='col-4 text-right'>Sources</dt>
+                <dd className='col-8 text-truncate text-right'>
                   <a target='_blank' rel='noopener noreferrer' href={repoUrl}>
                     {name}
                   </a>
                 </dd>
 
-                {versionHash && (
-                  <Fragment>
-                    <dt className='col-4'>versionHash</dt>
-                    <dd className='col-8 text-truncate'>{versionHash}</dd>
-                  </Fragment>
-                )}
-
                 {version && (
                   <Fragment>
-                    <dt className='col-4'>version</dt>
-                    <dd className='col-8 text-truncate'>
-                      {version} / {versionTag}
+                    <dt className='col-4 text-right'>version</dt>
+                    <dd className='col-8 text-truncate text-right'>
+                      {`${version}${dev ? ' / dev' : ''}`}
                     </dd>
                   </Fragment>
                 )}
 
-                <dt className='col-4'>Licence</dt>
-                <dd className='col-8 text-truncate'>
+                {versionUrl &&
+                  !dev && (
+                  <Fragment>
+                    <dt className='col-4 text-right'>versionUrl</dt>
+                    <dd className='col-8 text-truncate text-right'>
+                      <a
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        href={versionUrl}
+                      >
+                        {versionHash}
+                      </a>
+                    </dd>
+                  </Fragment>
+                )}
+
+                {headUrl &&
+                  dev && (
+                  <Fragment>
+                    <dt className='col-4 text-right'>headUrl</dt>
+                    <dd className='col-8 text-truncate text-right'>
+                      <a
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        href={headUrl}
+                      >
+                        {headHash}
+                      </a>
+                    </dd>
+                  </Fragment>
+                )}
+
+                <dt className='col-4 text-right'>Licence</dt>
+                <dd className='col-8 text-truncate text-right'>
                   AGPL-v3 2018 ©{' '}
                   <a
                     target='_blank'
@@ -137,21 +143,6 @@ const Footer = () => (
                   </a>
                 </dd>
               </dl>
-
-              {false && (
-                <ul className='card-text list-unstyled'>
-                  <li>
-                    Version: {version}{' '}
-                    <a
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      href={`https://github.com/millette/gatsby-starter-location-github/tree/v${headHash}`}
-                    >
-                      {headHash.slice(0, 10)}
-                    </a>
-                  </li>
-                </ul>
-              )}
             </div>
           </div>
         </div>
