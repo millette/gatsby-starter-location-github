@@ -49,7 +49,8 @@ const Footer = () => (
       <footer className='container-fluid card mt-5'>
         <div className='container'>
           <div className='card-body row'>
-            <div className='col-md-6 col-sm-12 text-left'>
+            <div className='col-sm-3 text-center text-md-left'>
+              <h4>Menu</h4>
               <ul className='list-unstyled'>
                 <li>
                   <Link to='/'>
@@ -71,10 +72,10 @@ const Footer = () => (
               </ul>
             </div>
 
-            <div className='col-md-6 col-sm-12'>
+            <div className='col-sm-9'>
               <dl className='card-text row'>
-                <dt className='col-4 text-right'>Génération</dt>
-                <dd className='text-truncate col-8 text-right'>
+                <dt className='col-6 text-right'>Génération</dt>
+                <dd className='text-truncate col-6 text-right'>
                   <FormattedMessage
                     id='footer.buildTime'
                     values={{
@@ -83,27 +84,20 @@ const Footer = () => (
                   />
                 </dd>
 
-                <dt className='col-4 text-right'>Sources</dt>
-                <dd className='col-8 text-truncate text-right'>
+                <dt className='col-6 text-right'>Sources</dt>
+                <dd className='col-6 text-truncate text-right'>
                   <a target='_blank' rel='noopener noreferrer' href={repoUrl}>
                     {name}
                   </a>
                 </dd>
 
-                {version && (
-                  <Fragment>
-                    <dt className='col-4 text-right'>version</dt>
-                    <dd className='col-8 text-truncate text-right'>
-                      {`${version}${dev ? ' / dev' : ''}`}
-                    </dd>
-                  </Fragment>
-                )}
-
                 {versionUrl &&
                   !dev && (
                   <Fragment>
-                    <dt className='col-4 text-right'>versionUrl</dt>
-                    <dd className='col-8 text-truncate text-right'>
+                    <dt className='col-6 text-right'>
+                        Version {`${version}${dev ? ' / dev' : ''}`}
+                    </dt>
+                    <dd className='col-6 text-truncate text-right'>
                       <a
                         target='_blank'
                         rel='noopener noreferrer'
@@ -118,8 +112,8 @@ const Footer = () => (
                 {headUrl &&
                   dev && (
                   <Fragment>
-                    <dt className='col-4 text-right'>headUrl</dt>
-                    <dd className='col-8 text-truncate text-right'>
+                    <dt className='col-6 text-right'>headUrl</dt>
+                    <dd className='col-6 text-truncate text-right'>
                       <a
                         target='_blank'
                         rel='noopener noreferrer'
@@ -131,8 +125,8 @@ const Footer = () => (
                   </Fragment>
                 )}
 
-                <dt className='col-4 text-right'>Licence</dt>
-                <dd className='col-8 text-truncate text-right'>
+                <dt className='col-6 text-right'>Licence</dt>
+                <dd className='col-6 text-truncate text-right'>
                   AGPL-v3 2018 ©{' '}
                   <a
                     target='_blank'

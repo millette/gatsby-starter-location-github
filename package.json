@@ -2,7 +2,7 @@
   "name": "gatsby-starter-location-github",
   "description": "Local GitHub directory.",
   "license": "AGPL-3.0",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "repository": "millette/gatsby-starter-location-github",
   "author": {
     "name": "Robin Millette",
