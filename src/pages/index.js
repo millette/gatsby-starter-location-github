@@ -93,6 +93,17 @@ class FrontPage extends Component {
       })
 
     this.allUsers = props.data.allDataJson.edges[0].node.users
+      // FIXME: spam detection
+      // If a user has a digit in his location and a website
+      // but no repos starred or contributed to,
+      // it's probably a spammer.
+      .filter(
+        x =>
+          !x.location.match(/[0-9]/) ||
+          !x.websiteUrl ||
+          x.starredRepositoriesCount ||
+          x.repositoriesContributedToCount
+      )
       .map(x => ({
         ...x,
         sparks: userSparks[x.login],
