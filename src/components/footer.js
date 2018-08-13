@@ -112,7 +112,9 @@ const Footer = () => (
                 {headUrl &&
                   dev && (
                   <Fragment>
-                    <dt className='col-6 text-right'>headUrl</dt>
+                    <dt className='col-6 text-right'>
+                        Version {`${version}${dev ? ' / dev' : ''}`}
+                    </dt>
                     <dd className='col-6 text-truncate text-right'>
                       <a
                         target='_blank'
