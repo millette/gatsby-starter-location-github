@@ -5,7 +5,7 @@ import { graphql } from 'gatsby'
 import { deburr } from 'lodash-es'
 
 // self
-import { Layout, GithubUser, Footer } from '../components'
+import { Radios, Layout, GithubUser, Footer } from '../components'
 import { withIntl } from '../i18n'
 
 let config = { location: 'UNDEFINED' }
@@ -70,6 +70,48 @@ const sortFns = {
   }
 }
 
+const maybeMap = {
+  available: 'maybeFilterAvailable',
+  minDepots: 'maybeFilterMinDepots',
+  minContribs: 'maybeFilterMinContribs',
+  web: 'maybeFilterWeb',
+  email: 'maybeFilterEmail',
+  company: 'maybeFilterCompany'
+}
+
+const maybeMapFns = {
+  available: {
+    dontCare: () => true,
+    yes: x => x.isHireable,
+    no: x => !x.isHireable
+  },
+  minDepots: {
+    dontCare: () => true,
+    yes: x => x.repositoriesContributedToCount,
+    no: x => !x.repositoriesContributedToCount
+  },
+  minContribs: {
+    dontCare: () => true,
+    yes: x => x.sparks.sum2,
+    no: x => !x.sparks.sum2
+  },
+  web: {
+    dontCare: () => true,
+    yes: x => x.websiteUrl,
+    no: x => !x.websiteUrl
+  },
+  email: {
+    dontCare: () => true,
+    yes: x => x.email,
+    no: x => !x.email
+  },
+  company: {
+    dontCare: () => true,
+    yes: x => x.company,
+    no: x => !x.company
+  }
+}
+
 class FrontPage extends Component {
   constructor (props) {
     super(props)
@@ -127,8 +169,13 @@ class FrontPage extends Component {
       }))
 
     this.state = {
-      filter: false,
-      onlyAvailable: false,
+      maybeFilterAvailable: 'dontCare',
+      maybeFilterMinDepots: 'dontCare',
+      maybeFilterMinContribs: 'dontCare',
+      maybeFilterWeb: 'dontCare',
+      maybeFilterEmail: 'dontCare',
+      maybeFilterCompany: 'dontCare',
+      languageFilter: false,
       last: PER_PAGE,
       location: '',
       deburredLocation: '',
@@ -139,16 +186,31 @@ class FrontPage extends Component {
     }
     this.click = this.click.bind(this)
     this.clickMore = this.clickMore.bind(this)
-    this.clickAvailable = this.clickAvailable.bind(this)
+    // this.clickAvailable = this.clickAvailable.bind(this)
     this.locationFilter = this.locationFilter.bind(this)
     this.nameFilter = this.nameFilter.bind(this)
-    this.filtering = this.filtering.bind(this)
-    this.filtering2 = this.filtering2.bind(this)
-    this.filtering3 = this.filtering3.bind(this)
-    this.filtering4 = this.filtering4.bind(this)
+    this.languageFiltering = this.languageFiltering.bind(this)
+    // this.filtering2 = this.filtering2.bind(this)
+    this.locationFiltering = this.locationFiltering.bind(this)
+    this.nameFiltering = this.nameFiltering.bind(this)
     this.changeOrder = this.changeOrder.bind(this)
     this.changeOrderReverse = this.changeOrderReverse.bind(this)
+    // this.radioChange = this.radioChange.bind(this)
+    // this.radioChange2 = this.radioChange2.bind(this)
   }
+
+  radioChange (x, value) {
+    console.log('RADIO-CHANGE:', x, maybeMap[x], value)
+    const obj = {}
+    obj[maybeMap[x]] = value
+    this.setState(obj)
+  }
+
+  /*
+  radioChange2 (value) {
+    console.log('RADIO-CHANGE2:', value)
+  }
+  */
 
   changeOrder ({ target: { value } }) {
     if (value === this.state.sort) {
@@ -184,22 +246,25 @@ class FrontPage extends Component {
     })
   }
 
+  /*
   clickAvailable () {
     this.setState({ onlyAvailable: !this.state.onlyAvailable })
   }
+  */
 
   click ({ target: { dataset } }) {
-    if (!this.state.filter && !dataset.key) {
+    if (!this.state.languageFilter && !dataset.key) {
       return
     }
     this.setState({
       last: PER_PAGE,
-      filter: dataset && dataset.key !== this.state.filter && dataset.key
+      languageFilter:
+        dataset && dataset.key !== this.state.languageFilter && dataset.key
     })
   }
 
-  filtering (x) {
-    if (!this.state.filter) {
+  languageFiltering (x) {
+    if (!this.state.languageFilter) {
       return true
     }
     let ok = false
@@ -207,28 +272,30 @@ class FrontPage extends Component {
       return false
     }
     x[LANGUAGE_TYPE].forEach(y => {
-      if (y.name === this.state.filter) {
+      if (y.name === this.state.languageFilter) {
         ok = true
       }
     })
     return ok
   }
 
+  /*
   filtering2 (x) {
     if (!this.state.onlyAvailable) {
       return true
     }
     return x.isHireable
   }
+  */
 
-  filtering3 (x) {
+  locationFiltering (x) {
     if (!this.state.deburredLocation) {
       return true
     }
     return x.deburredLocation.indexOf(this.state.deburredLocation) !== -1
   }
 
-  filtering4 (x) {
+  nameFiltering (x) {
     if (!this.state.deburredName) {
       return true
     }
@@ -241,35 +308,57 @@ class FrontPage extends Component {
     ]
 
     const usersImp = this.allUsers
-      .filter(this.filtering)
-      .filter(this.filtering2)
-      .filter(this.filtering3)
-      .filter(this.filtering4)
+      .filter(this.languageFiltering)
+      .filter(this.locationFiltering)
+      .filter(this.nameFiltering)
+      .filter(maybeMapFns.available[this.state[maybeMap.available]])
+      .filter(maybeMapFns.minContribs[this.state[maybeMap.minContribs]])
+      .filter(maybeMapFns.minDepots[this.state[maybeMap.minDepots]])
+      .filter(maybeMapFns.company[this.state[maybeMap.company]])
+      .filter(maybeMapFns.web[this.state[maybeMap.web]])
+      .filter(maybeMapFns.email[this.state[maybeMap.email]])
       .sort(sortFns[this.state.sort])
 
     const users = this.state.reverse
       ? usersImp.reverse().slice(0, this.state.last)
       : usersImp.slice(0, this.state.last)
 
+    const AllRadios = ({ radios }) => (
+      <div className='row'>
+        {radios.map(key => (
+          <div key={key} className='col-sm-6 col-md-4 col-xl-2'>
+            <Radios
+              active={this.state[maybeMap[key]]}
+              change={this.radioChange.bind(this, key)}
+              title={<FormattedMessage id={`radios.${key}`} />}
+            />
+          </div>
+        ))}
+      </div>
+    )
+
     return (
       <Layout header messages={this.props.messages}>
         <div className='container'>
           <div>
-            <p>
-              <button
-                className='btn btn-secondary'
-                type='button'
-                onClick={this.clickAvailable}
-              >
-                <FormattedMessage
-                  id={
-                    this.state.onlyAvailable
-                      ? 'index.available.on'
-                      : 'index.available.off'
-                  }
-                />
-              </button>
-            </p>
+            {false && (
+              <p>
+                <button
+                  className='btn btn-secondary'
+                  type='button'
+                  onClick={this.clickAvailable}
+                >
+                  <FormattedMessage
+                    id={
+                      this.state.onlyAvailable
+                        ? 'index.available.on'
+                        : 'index.available.off'
+                    }
+                  />
+                </button>
+              </p>
+            )}
+            <AllRadios radios={Object.keys(maybeMap)} />
             <label>
               <FormattedMessage id='index.order' />:{' '}
               <select onChange={this.changeOrder}>
@@ -299,7 +388,7 @@ class FrontPage extends Component {
               <li className='list-inline-item'>
                 <button
                   className={`btn badge badge-primary${
-                    this.state.filter ? ' badge-pill' : ' active'
+                    this.state.languageFilter ? ' badge-pill' : ' active'
                   }`}
                   type='button'
                   onClick={this.click}
@@ -319,7 +408,9 @@ class FrontPage extends Component {
                         : { background: '#fff', color: '#000' }
                     }
                     className={`btn badge${
-                      this.state.filter === x.name ? ' active' : ' badge-pill'
+                      this.state.languageFilter === x.name
+                        ? ' active'
+                        : ' badge-pill'
                     }`}
                     type='button'
                     data-key={x.name}
@@ -367,10 +458,8 @@ class FrontPage extends Component {
                       key={x.databaseId}
                       className='col-sm-6 col-md-6 col-lg-4'
                     >
-                      <GithubUser
-                        {...x}
-                        onlyAvailable={this.state.onlyAvailable}
-                      />
+                      {/* onlyAvailable={this.state.onlyAvailable} */}
+                      <GithubUser {...x} />
                     </div>
                   ))}
                 </div>
