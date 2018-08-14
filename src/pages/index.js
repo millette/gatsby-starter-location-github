@@ -3,6 +3,7 @@ import React, { Fragment, Component } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { graphql } from 'gatsby'
 import deburr from 'lodash.deburr'
+import { parse, stringify } from 'query-string'
 
 // self
 import { Radios, Layout, GithubUser, Footer } from '../components'
@@ -122,7 +123,6 @@ const maybeMapFns = {
 class FrontPage extends Component {
   constructor (props) {
     super(props)
-
     const userSparks = {}
     props.data.allSparksJson.edges
       .map(({ node }) => node)
@@ -175,6 +175,8 @@ class FrontPage extends Component {
         deburredLocation: normalize(x.location)
       }))
 
+    const qs = this.queryString()
+
     this.state = {
       maybeFilterAvailable: 'dontCare',
       maybeFilterMinDepots: 'dontCare',
@@ -189,8 +191,10 @@ class FrontPage extends Component {
       name: '',
       deburredName: '',
       sort: 'joined',
-      reverse: true
+      reverse: true,
+      ...qs
     }
+
     this.click = this.click.bind(this)
     this.clickMore = this.clickMore.bind(this)
     this.locationFilter = this.locationFilter.bind(this)
@@ -202,9 +206,30 @@ class FrontPage extends Component {
     this.changeOrderReverse = this.changeOrderReverse.bind(this)
   }
 
+  queryString () {
+    if (typeof window === 'undefined') {
+      return {}
+    }
+    const qs = parse(window.location.search)
+    let r
+    for (r in qs) {
+      if (qs[r] !== 'no') {
+        qs[r] = 'yes'
+      }
+    }
+    return qs
+  }
+
   radioChange (x, value) {
     const obj = {}
     obj[maybeMap[x]] = value
+    const xx = {
+      ...this.queryString(),
+      ...obj
+    }
+    if (typeof window !== 'undefined') {
+      window.history.pushState(xx, null, `?${stringify(xx)}`)
+    }
     this.setState(obj)
   }
 
@@ -284,6 +309,7 @@ class FrontPage extends Component {
   }
 
   render () {
+    // console.log('PROPS-INDEX', this.props.location.search)
     const availableLanguages = this.props.data.allDataJson.edges[0].node
       .repoLanguages
 
