@@ -21,15 +21,27 @@ class Radios extends Component {
   }
 
   render () {
+    // FIXME: workaround purgecss and missing classes
+    // See also whitelist option for 'gatsby-plugin-purgecss' in gatsby-config.js
+    const fake = false && (
+      <span className='text-primary text-secondary text-success text-danger text-warning text-info btn-primary btn-secondary btn-success btn-danger btn-warning btn-info btn-outline-primary btn-outline-secondary btn-outline-success btn-outline-danger btn-outline-warning btn-outline-info' />
+    )
     return (
       <div className='form-group row'>
-        <div className='col-6 col-sm-12 col-form-label'>{this.props.title}</div>
-        <div className='col-6 col-sm-12 btn-group btn-group-toggle'>
-          {this.buttons.map(({ key, txt }) => (
+        {fake}
+        <div
+          className={`col-6 col-sm-12 col-form-label text-${this.props.color}`}
+        >
+          {this.props.title}
+        </div>
+        <div className='col-6 col-sm-12 btn-group btn-group-sm btn-group-toggle'>
+          {this.buttons.map(({ key, txt }, i) => (
             <label
               key={key}
-              className={`btn btn-sm btn-secondary${
-                this.active === key ? ' active' : ''
+              className={`btn ${
+                this.active === key
+                  ? `btn-${this.props.color} active`
+                  : `btn-outline-${this.props.color}`
               }`}
             >
               <input
