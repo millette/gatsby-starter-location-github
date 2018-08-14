@@ -1,37 +1,18 @@
 // npm
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
+// import Helmet from 'react-helmet'
 import { FormattedMessage } from 'react-intl'
 
 // self
-import { Header, Nav } from '.'
-import { getPageTitleID } from '../utils'
+import { Social, Header, Nav } from '.'
 import './layout.scss'
-import { location } from '../../custom/config'
 
 const Layout = ({ messages, header, children }, ctx) => {
-  if (!messages) {
-    messages = {}
-  }
-  const pageTitleStr = getPageTitleID(ctx.language)
-  const pageTitleID = pageTitleStr && `${pageTitleStr}.title`
-  const pageTitle =
-    pageTitleID && messages[pageTitleID] ? messages[pageTitleID] : location
   const pageContext = ctx.language || {}
-  const helmetProps = {}
-
-  if (messages.title) {
-    helmetProps.title = `${messages.title} — ${pageTitle}`
-  }
-
-  if (messages.subtitle) {
-    helmetProps.meta = [{ name: 'description', content: messages.subtitle }]
-  }
-
   return (
     <Fragment>
-      <Helmet {...helmetProps} />
+      <Social messages={messages} pageContext={pageContext} />
       {header ? (
         <Header
           pageContext={pageContext}
