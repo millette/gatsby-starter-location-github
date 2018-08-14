@@ -18,6 +18,15 @@ try {
 
 const PER_PAGE = 12
 
+const BUTTONCOLORS = [
+  'primary',
+  'secondary',
+  'success',
+  'danger',
+  'warning',
+  'info'
+]
+
 // see also:
 // https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar
 // https://developer.mozilla.org/en-US/docs/Web/CSS/-ms-overflow-style
@@ -296,9 +305,10 @@ class FrontPage extends Component {
 
     const AllRadios = ({ radios }) => (
       <div className='row'>
-        {radios.map(key => (
+        {radios.map((key, i) => (
           <div key={key} className='col-sm-6 col-md-4 col-xl-2'>
             <Radios
+              color={BUTTONCOLORS[i % 6]}
               active={this.state[maybeMap[key]]}
               change={this.radioChange.bind(this, key)}
               title={<FormattedMessage id={`radios.${key}`} />}
