@@ -40,21 +40,25 @@ const Social = props => {
       <meta
         itemprop='name'
         content={messages.title}
+        itemscope
         itemtype='http://schema.org/WebSite'
       />
       <meta
         itemprop='description'
         content={messages.subtitle}
+        itemscope
         itemtype='http://schema.org/WebSite'
       />
       <meta
         itemprop='image'
         content='http://www.rollodeqc.com/images/logo.png'
+        itemscope
         itemtype='http://schema.org/WebSite'
       />
       <meta
         itemprop='url'
         content={`${url}/${currentLanguage}/`}
+        itemscope
         itemtype='http://schema.org/WebSite'
       />
 
