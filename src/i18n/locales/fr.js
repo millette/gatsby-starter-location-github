@@ -22,7 +22,7 @@ module.exports = {
   'radios.minDepots': 'Mininum un dépot',
   'radios.minContribs': 'Mininum une contrib.',
   'radios.web': 'Site web',
-  'radios.email': 'Email',
+  'radios.email': 'Courriel',
   'radios.company': 'Compagnie',
   'index.available.off': 'Disponible? Peu importe',
   'index.available.on': 'Disponible? OUI!',
@@ -50,28 +50,28 @@ module.exports = {
     UNDEFINED {}
     other { - {location}}
   }`,
-  'contact.emailInput': 'Adresse email',
-  'contact.emailHelp': 'Nous ne partagerons jamais votre adresse à un tier.',
+  'contact.emailInput': 'Adresse courriel',
+  'contact.emailHelp': 'Nous ne partagerons jamais votre adresse courriel à un tiers.',
   'contact.subjectInput': 'Sujet',
   'contact.commentInput': 'Commentaire',
   'contact.commentHelp':
-    'N’oubliez pas d’inscrire votre adresse email si vous attendez une réponse.',
+    'N’oubliez pas d’inscrire votre adresse courriel si vous attendez une réponse.',
   'contact.submitForm': 'Envoyer',
   'contact.col1.html':
-    '<p>N’hésitez pas à nous contacter si vous avez des questions ou ou des suggestions.</p>',
+    '<p>N’hésitez pas à nous contacter si vous avez des questions ou des suggestions.</p>',
   'contact.col2.html': `<p>
-    Utilisez notre formulaire ou envoyez nous un email:<br />
+    Utilisez notre formulaire ou envoyez-nous un courriel:<br />
     <a href='mailto:{email}'>{email}</a>
   </p>`,
   'contact.col2b.html': `<p>
-    Envoyez nous un email:<br />
+    Envoyez nous un courriel:<br />
     <a href='mailto:{email}'>{email}</a>
   </p>`,
   'contact.col3': 'Pour contacter un développeur, consultez notre {directory}',
   'contact.directory': 'répertoire',
-  'contact.title': 'Contactez nous',
+  'contact.title': 'Contactez-nous',
   'about.title': 'À propos',
-  'about.col1.html': `<p>Francais bla bla.</p>
+  'about.col1.html': `<p>Français bla bla.</p>
   <p>Et deuxième paragraphe.</p>`,
   'about.front': 'Allez au répertoire',
   'about.contact': 'Des questions?',
@@ -104,7 +104,7 @@ module.exports = {
   'directory.company': 'Compagnie',
 
   'directory.stars.label': 'Étoiles',
-  'directory.repos.label': 'Dépots',
+  'directory.repos.label': 'Dépôts',
   'directory.repos.value': `{nStars, plural,
     =0 {aucun dépot}
     one {un dépot}
@@ -115,5 +115,5 @@ module.exports = {
 
   'jumbotron.more': 'En savoir plus',
   'jumbotron.text': `Bienvenue au répertoire des programmeurs de votre région (inscrits sur GitHub).
-Ses outils de filtres et de tris permettent de trouver rapidement la personne que vous cherchez.`
+Ces outils de filtrage et de tri permettent de trouver rapidement la personne que vous cherchez.`
 }
