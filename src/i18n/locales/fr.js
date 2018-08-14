@@ -40,7 +40,7 @@ module.exports = {
   'index.resultsSummary': `{nDisplayed, plural,
     =0 {Aucun utilisateur affiché}
     one {Un utilisateur affiché}
-    other {# utilisateur affichés}
+    other {# utilisateurs affichés}
   } sur {nSelected, plural,
     =0 {}
     one {un de sélectionné,}
