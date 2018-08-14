@@ -123,6 +123,24 @@ const maybeMapFns = {
 class FrontPage extends Component {
   constructor (props) {
     super(props)
+    this.state = {
+      maybeFilterAvailable: 'dontCare',
+      maybeFilterMinDepots: 'dontCare',
+      maybeFilterMinContribs: 'dontCare',
+      maybeFilterWeb: 'dontCare',
+      maybeFilterEmail: 'dontCare',
+      maybeFilterCompany: 'dontCare',
+      languageFilter: false,
+      last: PER_PAGE,
+      location: '',
+      deburredLocation: '',
+      name: '',
+      deburredName: '',
+      sort: 'joined',
+      reverse: true,
+      ...this.queryString()
+    }
+
     const userSparks = {}
     props.data.allSparksJson.edges
       .map(({ node }) => node)
@@ -175,26 +193,6 @@ class FrontPage extends Component {
         deburredLocation: normalize(x.location)
       }))
 
-    const qs = this.queryString()
-
-    this.state = {
-      maybeFilterAvailable: 'dontCare',
-      maybeFilterMinDepots: 'dontCare',
-      maybeFilterMinContribs: 'dontCare',
-      maybeFilterWeb: 'dontCare',
-      maybeFilterEmail: 'dontCare',
-      maybeFilterCompany: 'dontCare',
-      languageFilter: false,
-      last: PER_PAGE,
-      location: '',
-      deburredLocation: '',
-      name: '',
-      deburredName: '',
-      sort: 'joined',
-      reverse: true,
-      ...qs
-    }
-
     this.click = this.click.bind(this)
     this.clickMore = this.clickMore.bind(this)
     this.locationFilter = this.locationFilter.bind(this)
@@ -212,12 +210,17 @@ class FrontPage extends Component {
     }
     const qs = parse(window.location.search)
     let r
+
     for (r in qs) {
       if (qs[r] !== 'no') {
         qs[r] = 'yes'
       }
     }
     return qs
+  }
+
+  componentDidMount (prevProps, prevState, snapshot) {
+    this.setState({ ping: true })
   }
 
   radioChange (x, value) {
@@ -227,8 +230,38 @@ class FrontPage extends Component {
       ...this.queryString(),
       ...obj
     }
+
     if (typeof window !== 'undefined') {
-      window.history.pushState(xx, null, `?${stringify(xx)}`)
+      Object.keys(xx).forEach(k => {
+        switch (typeof xx[k]) {
+          case 'undefined':
+            delete xx[k]
+            break
+
+          case 'null':
+          case 'string':
+            if (!xx[k]) {
+              xx[k] = 'yes'
+            } else {
+              xx[k] = xx[k].toLowerCase()
+            }
+            if (xx[k] === 'dontcare') {
+              delete xx[k]
+            } else if (xx[k] === 'yes') {
+              xx[k] = null
+            }
+            break
+
+          default:
+            throw new Error('Oh my!!')
+        }
+      })
+      const qsStr = stringify(xx)
+      window.history.pushState(
+        xx,
+        null,
+        qsStr ? `?${qsStr}` : this.props.location.pathname
+      )
     }
     this.setState(obj)
   }
@@ -309,7 +342,6 @@ class FrontPage extends Component {
   }
 
   render () {
-    // console.log('PROPS-INDEX', this.props.location.search)
     const availableLanguages = this.props.data.allDataJson.edges[0].node
       .repoLanguages
 
