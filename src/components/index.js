@@ -5,5 +5,15 @@ import LanguageSwitch from './language-switch'
 import Layout from './layout'
 import Nav from './nav'
 import Radios from './radios'
+import Social from './social'
 
-export { Footer, GithubUser, Header, LanguageSwitch, Layout, Nav, Radios }
+export {
+  Footer,
+  GithubUser,
+  Header,
+  LanguageSwitch,
+  Layout,
+  Nav,
+  Radios,
+  Social
+}
