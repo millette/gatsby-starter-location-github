@@ -120,6 +120,75 @@ const maybeMapFns = {
   }
 }
 
+// FIXME: should take ALL filters, ordering and such in consideration
+const booya = obj => {
+  if (typeof window === 'undefined') {
+    return
+  }
+  const xx = {
+    ...queryString(),
+    ...obj
+  }
+
+  Object.keys(xx).forEach(k => {
+    switch (typeof xx[k]) {
+      case 'undefined':
+        delete xx[k]
+        break
+
+      case 'null':
+      case 'string':
+        if (!xx[k]) {
+          xx[k] = 'yes'
+        } else {
+          xx[k] = xx[k].toLowerCase()
+        }
+        if (xx[k] === 'dontcare') {
+          delete xx[k]
+        } else if (xx[k] === 'yes') {
+          xx[k] = null
+        }
+        break
+
+      default:
+        throw new Error('Oh my!!')
+    }
+  })
+  const qsStr = stringify(xx)
+  window.history.pushState(
+    xx,
+    null,
+    qsStr ? `?${qsStr}` : window.location.pathname // this.props.location.pathname
+  )
+}
+
+const queryString = () => {
+  if (typeof window === 'undefined') {
+    return {}
+  }
+  const qs = parse(window.location.search)
+  let r
+
+  for (r in qs) {
+    if (qs[r] !== 'no') {
+      qs[r] = 'yes'
+    }
+  }
+  return qs
+}
+
+const elDoer = (obj, state, props) => {
+  console.log('EL-STATE:', state)
+  console.log('EL-PROPS:', props)
+  console.log('EL-OBJ:', obj)
+
+  // FIXME: booya should handle all cases, not just maybeFilters
+  if (!obj.sort) {
+    booya(obj)
+  }
+  return obj
+}
+
 class FrontPage extends Component {
   constructor (props) {
     super(props)
@@ -138,7 +207,7 @@ class FrontPage extends Component {
       deburredName: '',
       sort: 'joined',
       reverse: true,
-      ...this.queryString()
+      ...queryString()
     }
 
     const userSparks = {}
@@ -204,21 +273,6 @@ class FrontPage extends Component {
     this.changeOrderReverse = this.changeOrderReverse.bind(this)
   }
 
-  queryString () {
-    if (typeof window === 'undefined') {
-      return {}
-    }
-    const qs = parse(window.location.search)
-    let r
-
-    for (r in qs) {
-      if (qs[r] !== 'no') {
-        qs[r] = 'yes'
-      }
-    }
-    return qs
-  }
-
   componentDidMount (prevProps, prevState, snapshot) {
     this.setState({ ping: true })
   }
@@ -226,54 +280,24 @@ class FrontPage extends Component {
   radioChange (x, value) {
     const obj = {}
     obj[maybeMap[x]] = value
-    const xx = {
-      ...this.queryString(),
-      ...obj
-    }
 
-    if (typeof window !== 'undefined') {
-      Object.keys(xx).forEach(k => {
-        switch (typeof xx[k]) {
-          case 'undefined':
-            delete xx[k]
-            break
-
-          case 'null':
-          case 'string':
-            if (!xx[k]) {
-              xx[k] = 'yes'
-            } else {
-              xx[k] = xx[k].toLowerCase()
-            }
-            if (xx[k] === 'dontcare') {
-              delete xx[k]
-            } else if (xx[k] === 'yes') {
-              xx[k] = null
-            }
-            break
-
-          default:
-            throw new Error('Oh my!!')
-        }
-      })
-      const qsStr = stringify(xx)
-      window.history.pushState(
-        xx,
-        null,
-        qsStr ? `?${qsStr}` : this.props.location.pathname
-      )
-    }
-    this.setState(obj)
+    // booya(obj)
+    // this.setState(obj)
+    this.setState(elDoer.bind(null, obj))
   }
 
   changeOrder ({ target: { value } }) {
     if (value === this.state.sort) {
       return
     }
-    this.setState({
+    console.log('CHANGE-ORDER')
+
+    const obj = {
       sort: value,
       reverse: value === 'nRepos' || value === 'joined' || value === 'contribs'
-    })
+    }
+
+    this.setState(elDoer.bind(null, obj))
   }
 
   changeOrderReverse ({ target: { checked } }) {
