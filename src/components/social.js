@@ -5,7 +5,9 @@ import Helmet from 'react-helmet'
 
 // self
 import { getPageTitleID } from '../utils'
-import { location } from '../../custom/config'
+import { baseUrl, location } from '../../custom/config'
+
+const url = baseUrl || 'http://dev.rollodeqc.com'
 
 const Social = props => {
   let { messages, pageContext } = props
@@ -27,7 +29,7 @@ const Social = props => {
 
       <meta name='twitter:card' content='summary' />
       <meta name='twitter:site' content='@RoLLodeQc' />
-      <meta name='twitter:title' content='RoLLodeQc' />
+      <meta name='twitter:title' content={messages.title} />
       <meta name='twitter:description' content={messages.subtitle} />
       <meta name='twitter:creator' content='@RoLLodeQc' />
       <meta
@@ -37,41 +39,34 @@ const Social = props => {
 
       <meta
         itemprop='name'
-        content='RoLLodeQc'
-        itemscope
+        content={messages.title}
         itemtype='http://schema.org/WebSite'
       />
       <meta
         itemprop='description'
         content={messages.subtitle}
-        itemscope
         itemtype='http://schema.org/WebSite'
       />
       <meta
         itemprop='image'
         content='http://www.rollodeqc.com/images/logo.png'
-        itemscope
         itemtype='http://schema.org/WebSite'
       />
       <meta
         itemprop='url'
-        content={`http://dev.rollodeqc.com/${currentLanguage}/`}
-        itemscope
+        content={`${url}/${currentLanguage}/`}
         itemtype='http://schema.org/WebSite'
       />
 
-      <meta name='og:title' content='RoLLodeQc' />
+      <meta name='og:title' content={messages.title} />
       <meta name='og:type' content='website' />
-      <meta
-        name='og:url'
-        content={`http://dev.rollodeqc.com/${currentLanguage}/`}
-      />
+      <meta name='og:url' content={`${url}/${currentLanguage}/`} />
       <meta
         name='og:image'
         content='http://www.rollodeqc.com/images/logo.png'
       />
       <meta name='og:description' content={messages.subtitle} />
-      <meta name='og:site_name' content='RoLLodeQc' />
+      <meta name='og:site_name' content={messages.title} />
       <meta name='og:locale' content={currentLanguage} />
     </Helmet>
   )

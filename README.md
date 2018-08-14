@@ -95,6 +95,7 @@ Next, you should create the file `custom/config.js`:
 
 ```js
 module.exports = {
+  baseUrl: 'http://dev.rollodeqc.com', // don't add a slash at the end
   // contactForm: true, // doesn't go anywhere even if enabled
   location: 'Lubumbashi',
   locationSearch: 'lubumbashi', // pass a string for a single location
