@@ -51,14 +51,6 @@ try {
     },
     plugins: [
       'gatsby-plugin-react-helmet',
-      {
-        resolve: 'gatsby-plugin-sass',
-        options: {
-          includePaths: [themeDir, `${cwd}/node_modules/bootstrap`],
-          precision: 8 // required by bootstrap
-        }
-      },
-      'gatsby-plugin-purgecss',
       'gatsby-transformer-json',
       {
         resolve: 'gatsby-source-filesystem',
@@ -66,15 +58,48 @@ try {
           name: 'data',
           path: `${cwd}/custom/data/`
         }
-        /*
       },
+      {
+        resolve: 'gatsby-plugin-sass',
+        options: {
+          includePaths: [themeDir, `${cwd}/node_modules/bootstrap`],
+          precision: 8 // required by bootstrap
+        }
+      },
+      {
+        resolve: 'gatsby-plugin-purgecss',
+        options: {
+          whitelist: [
+            'html',
+            'body',
+            '.text-primary',
+            '.text-secondary',
+            '.text-success',
+            '.text-danger',
+            '.text-warning',
+            '.text-info',
+            '.btn-primary',
+            '.btn-secondary',
+            '.btn-success',
+            '.btn-danger',
+            '.btn-warning',
+            '.btn-info',
+            '.btn-outline-primary',
+            '.btn-outline-secondary',
+            '.btn-outline-success',
+            '.btn-outline-danger',
+            '.btn-outline-warning',
+            '.btn-outline-info'
+          ]
+        }
+      }
+      /*
       {
         resolve: 'gatsby-plugin-webpack-bundle-analyzer',
         options: {
           analyzerPort: 8008,
         }
       */
-      }
     ]
   }
 } catch (e) {
