@@ -51,7 +51,8 @@ module.exports = {
     other { - {location}}
   }`,
   'contact.emailInput': 'Adresse courriel',
-  'contact.emailHelp': 'Nous ne partagerons jamais votre adresse courriel à un tiers.',
+  'contact.emailHelp':
+    'Nous ne partagerons jamais votre adresse courriel à un tiers.',
   'contact.subjectInput': 'Sujet',
   'contact.commentInput': 'Commentaire',
   'contact.commentHelp':
@@ -102,7 +103,6 @@ module.exports = {
   'directory.email': 'Courriel',
   'directory.created': 'Créé',
   'directory.company': 'Compagnie',
-
   'directory.stars.label': 'Étoiles',
   'directory.repos.label': 'Dépôts',
   'directory.repos.value': `{nStars, plural,
@@ -112,7 +112,8 @@ module.exports = {
   }`,
   'directory.languages': 'Langages',
   'directory.available': 'Disponible pour travailler',
-
+  'jumbotron.header.show': 'Montrer l’entête',
+  'jumbotron.header.hide': 'Cacher l’entête',
   'jumbotron.more': 'En savoir plus',
   'jumbotron.text': `Bienvenue au répertoire des programmeurs de votre région (inscrits sur GitHub).
 Ces outils de filtrage et de tri permettent de trouver rapidement la personne que vous cherchez.`
