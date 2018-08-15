@@ -179,17 +179,30 @@ const updateUrl = obj => {
   let r
   for (r in xx) {
     if (!r.indexOf('maybeFilter')) {
+      // eslint-disable-next-line default-case
       switch (xx[r]) {
         case 'yes':
           xx[r] = null
           break
-
         case 'dontCare':
           delete xx[r]
           break
       }
     } else if (!r.indexOf('deburred')) {
       delete xx[r]
+    } else {
+      // eslint-disable-next-line default-case
+      switch (r) {
+        case 'last':
+          delete xx[r]
+          break
+        case 'location':
+        case 'name':
+          if (!xx[r]) {
+            delete xx[r]
+          }
+          break
+      }
     }
   }
 
@@ -197,7 +210,7 @@ const updateUrl = obj => {
   window.history.pushState(
     xx,
     null,
-    qsStr ? `?${qsStr}` : window.location.pathname // this.props.location.pathname
+    qsStr ? `?${qsStr}` : window.location.pathname
   )
   return obj
 }
@@ -222,8 +235,6 @@ class FrontPage extends Component {
       reverse: true,
       ...queryString()
     }
-
-    console.log('STATE CTOR:', this.state)
 
     const userSparks = {}
     props.data.allSparksJson.edges
