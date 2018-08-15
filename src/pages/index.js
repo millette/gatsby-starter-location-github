@@ -126,15 +126,47 @@ const queryString = () => {
   }
   const qs = parse(window.location.search)
 
-  if (qs.reverse) {
-    qs.reverse = qs.reverse !== 'false'
+  let r
+  for (r in qs) {
+    switch (r) {
+      case 'reverse':
+        qs.reverse = qs.reverse !== 'false'
+        break
+
+      case 'name':
+        if (qs.name) {
+          if (!qs.deburredName) {
+            qs.deburredName = normalize(qs.name)
+          }
+        } else {
+          delete qs.name
+          delete qs.deburredName
+        }
+        break
+
+      case 'location':
+        if (qs.location) {
+          if (!qs.deburredLocation) {
+            qs.deburredLocation = normalize(qs.location)
+          }
+        } else {
+          delete qs.location
+          delete qs.deburredLocation
+        }
+        break
+
+      default:
+        if (!r.indexOf('maybeFilter') && !qs[r]) {
+          qs[r] = 'yes'
+        }
+        break
+    }
   }
 
   return qs
 }
 
-// FIXME: should take ALL filters, ordering and such in consideration
-const booya = obj => {
+const updateUrl = obj => {
   if (typeof window === 'undefined') {
     return obj
   }
@@ -142,6 +174,23 @@ const booya = obj => {
   const xx = {
     ...queryString(),
     ...obj
+  }
+
+  let r
+  for (r in xx) {
+    if (!r.indexOf('maybeFilter')) {
+      switch (xx[r]) {
+        case 'yes':
+          xx[r] = null
+          break
+
+        case 'dontCare':
+          delete xx[r]
+          break
+      }
+    } else if (!r.indexOf('deburred')) {
+      delete xx[r]
+    }
   }
 
   const qsStr = stringify(xx)
@@ -246,8 +295,7 @@ class FrontPage extends Component {
   radioChange (x, value) {
     const obj = {}
     obj[maybeMap[x]] = value
-
-    this.setState(booya.bind(null, obj))
+    this.setState(updateUrl.bind(null, obj))
   }
 
   changeOrder ({ target: { value } }) {
@@ -258,14 +306,14 @@ class FrontPage extends Component {
       sort: value,
       reverse: value === 'nRepos' || value === 'joined' || value === 'contribs'
     }
-    this.setState(booya.bind(null, obj))
+    this.setState(updateUrl.bind(null, obj))
   }
 
   changeOrderReverse ({ target: { checked } }) {
     const obj = {
       reverse: checked
     }
-    this.setState(booya.bind(null, obj))
+    this.setState(updateUrl.bind(null, obj))
   }
 
   nameFilter ({ target: { value } }) {
@@ -273,7 +321,7 @@ class FrontPage extends Component {
       name: value,
       deburredName: normalize(value)
     }
-    this.setState(booya.bind(null, obj))
+    this.setState(updateUrl.bind(null, obj))
   }
 
   locationFilter ({ target: { value } }) {
@@ -281,7 +329,7 @@ class FrontPage extends Component {
       location: value,
       deburredLocation: normalize(value)
     }
-    this.setState(booya.bind(null, obj))
+    this.setState(updateUrl.bind(null, obj))
   }
 
   clickMore () {
@@ -299,7 +347,7 @@ class FrontPage extends Component {
       languageFilter:
         dataset && dataset.key !== this.state.languageFilter && dataset.key
     }
-    this.setState(booya.bind(null, obj))
+    this.setState(updateUrl.bind(null, obj))
   }
 
   languageFiltering (x) {
