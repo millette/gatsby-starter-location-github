@@ -112,7 +112,7 @@ module.exports = {
   }`,
   'directory.languages': 'Langages',
   'directory.available': 'Disponible pour travailler',
-  'jumbotron.header.show': 'Montrer l’entête',
+  'jumbotron.header.show': 'Plus d’info',
   'jumbotron.header.hide': 'Cacher l’entête',
   'jumbotron.more': 'En savoir plus',
   'jumbotron.text': `Bienvenue au répertoire des programmeurs de votre région (inscrits sur GitHub).

@@ -19,7 +19,7 @@ module.exports = {
   'radios.dontCare': 'Doesn’t matter',
   'radios.yes': 'Yes',
   'radios.no': 'No',
-  'radios.minDepots': 'Mininum one repo',
+  'radios.minDepots': 'Mininum one repository',
   'radios.minContribs': 'Mininum one contribution',
   'radios.web': 'Web site',
   'radios.email': 'Email',
@@ -29,7 +29,7 @@ module.exports = {
   'index.order': 'Order',
   'index.order.joined': 'Registration date',
   'index.order.name': 'Name (or login)',
-  'index.order.nRepos': 'Number of repos',
+  'index.order.nRepos': 'Number of repositories',
   'index.order.contribs': 'Recent contributions',
   'index.order.reverse': 'Reverse order',
   'index.allLanguages': 'All',
@@ -89,7 +89,7 @@ module.exports = {
   'directory.title': 'Directory',
   'directory.sum2.label': '20 weeks',
   'directory.sum2.value': `{sum2, plural,
-    =0 {0 contribution}
+    =0 {zero contributions}
     one {one contribution}
     other {# contributions}
   }`,
@@ -100,15 +100,15 @@ module.exports = {
   'directory.created': 'Created',
   'directory.company': 'Company',
   'directory.stars.label': 'Stars',
-  'directory.repos.label': 'Repos',
+  'directory.repos.label': 'Repositories',
   'directory.repos.value': `{nStars, plural,
-    =0 {no repos}
-    one {one repo}
-    other {# repos}
+    =0 {zero repositories}
+    one {one repository}
+    other {# repositories}
   }`,
   'directory.languages': 'Languages',
   'directory.available': 'Available for hire',
-  'jumbotron.header.show': 'Show header',
+  'jumbotron.header.show': 'More info',
   'jumbotron.header.hide': 'Hide header',
   'jumbotron.more': 'Find out more',
   'jumbotron.text': `Welcome to the directory of programmers from your region (with a GitHub account).
