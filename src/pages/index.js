@@ -120,72 +120,36 @@ const maybeMapFns = {
   }
 }
 
+const queryString = () => {
+  if (typeof window === 'undefined') {
+    return {}
+  }
+  const qs = parse(window.location.search)
+
+  if (qs.reverse) {
+    qs.reverse = qs.reverse !== 'false'
+  }
+
+  return qs
+}
+
 // FIXME: should take ALL filters, ordering and such in consideration
 const booya = obj => {
   if (typeof window === 'undefined') {
-    return
+    return obj
   }
+
   const xx = {
     ...queryString(),
     ...obj
   }
 
-  Object.keys(xx).forEach(k => {
-    switch (typeof xx[k]) {
-      case 'undefined':
-        delete xx[k]
-        break
-
-      case 'null':
-      case 'string':
-        if (!xx[k]) {
-          xx[k] = 'yes'
-        } else {
-          xx[k] = xx[k].toLowerCase()
-        }
-        if (xx[k] === 'dontcare') {
-          delete xx[k]
-        } else if (xx[k] === 'yes') {
-          xx[k] = null
-        }
-        break
-
-      default:
-        throw new Error('Oh my!!')
-    }
-  })
   const qsStr = stringify(xx)
   window.history.pushState(
     xx,
     null,
     qsStr ? `?${qsStr}` : window.location.pathname // this.props.location.pathname
   )
-}
-
-const queryString = () => {
-  if (typeof window === 'undefined') {
-    return {}
-  }
-  const qs = parse(window.location.search)
-  let r
-
-  for (r in qs) {
-    if (qs[r] !== 'no') {
-      qs[r] = 'yes'
-    }
-  }
-  return qs
-}
-
-const elDoer = (obj, state, props) => {
-  console.log('EL-STATE:', state)
-  console.log('EL-PROPS:', props)
-  console.log('EL-OBJ:', obj)
-
-  // FIXME: booya should handle all cases, not just maybeFilters
-  if (!obj.sort) {
-    booya(obj)
-  }
   return obj
 }
 
@@ -209,6 +173,8 @@ class FrontPage extends Component {
       reverse: true,
       ...queryString()
     }
+
+    console.log('STATE CTOR:', this.state)
 
     const userSparks = {}
     props.data.allSparksJson.edges
@@ -281,41 +247,41 @@ class FrontPage extends Component {
     const obj = {}
     obj[maybeMap[x]] = value
 
-    // booya(obj)
-    // this.setState(obj)
-    this.setState(elDoer.bind(null, obj))
+    this.setState(booya.bind(null, obj))
   }
 
   changeOrder ({ target: { value } }) {
     if (value === this.state.sort) {
       return
     }
-    console.log('CHANGE-ORDER')
-
     const obj = {
       sort: value,
       reverse: value === 'nRepos' || value === 'joined' || value === 'contribs'
     }
-
-    this.setState(elDoer.bind(null, obj))
+    this.setState(booya.bind(null, obj))
   }
 
   changeOrderReverse ({ target: { checked } }) {
-    this.setState({ reverse: checked })
+    const obj = {
+      reverse: checked
+    }
+    this.setState(booya.bind(null, obj))
   }
 
   nameFilter ({ target: { value } }) {
-    this.setState({
+    const obj = {
       name: value,
       deburredName: normalize(value)
-    })
+    }
+    this.setState(booya.bind(null, obj))
   }
 
   locationFilter ({ target: { value } }) {
-    this.setState({
+    const obj = {
       location: value,
       deburredLocation: normalize(value)
-    })
+    }
+    this.setState(booya.bind(null, obj))
   }
 
   clickMore () {
@@ -328,11 +294,12 @@ class FrontPage extends Component {
     if (!this.state.languageFilter && !dataset.key) {
       return
     }
-    this.setState({
+    const obj = {
       last: PER_PAGE,
       languageFilter:
         dataset && dataset.key !== this.state.languageFilter && dataset.key
-    })
+    }
+    this.setState(booya.bind(null, obj))
   }
 
   languageFiltering (x) {
@@ -424,7 +391,10 @@ class FrontPage extends Component {
             <AllRadios radios={Object.keys(maybeMap)} />
             <label>
               <FormattedMessage id='index.order' />:{' '}
-              <select onChange={this.changeOrder}>
+              <select
+                defaultValue={this.state.sort}
+                onChange={this.changeOrder}
+              >
                 <FormattedMessage id='index.order.joined'>
                   {txt => <option value='joined'>{txt}</option>}
                 </FormattedMessage>
