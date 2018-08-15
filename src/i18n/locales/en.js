@@ -20,7 +20,7 @@ module.exports = {
   'radios.yes': 'Yes',
   'radios.no': 'No',
   'radios.minDepots': 'Mininum one repo',
-  'radios.minContribs': 'Mininum one contrib.',
+  'radios.minContribs': 'Mininum one contribution',
   'radios.web': 'Web site',
   'radios.email': 'Email',
   'radios.company': 'Company',
