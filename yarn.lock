@@ -4423,9 +4423,9 @@ gatsby-plugin-page-creator@^2.0.0-beta.5:
     parse-filepath "^1.0.1"
     slash "^1.0.0"
 
-gatsby-plugin-purgecss@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-purgecss/-/gatsby-plugin-purgecss-2.2.0.tgz#b7e29d4cffdcc8a1430d8fd4b32b986f6a6548f7"
+gatsby-plugin-purgecss@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-purgecss/-/gatsby-plugin-purgecss-2.3.0.tgz#223db75da36fcce849f1b8921d3173965ac2f5cd"
   dependencies:
     fs-extra "^7.0.0"
     loader-utils "^1.1.0"
@@ -4476,9 +4476,9 @@ gatsby-transformer-json@^2.1.1-beta.5:
     "@babel/runtime" "7.0.0-beta.52"
     bluebird "^3.5.0"
 
-gatsby@^2.0.0-beta.105:
-  version "2.0.0-beta.105"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.0-beta.105.tgz#fefd3a6be7741e97a315debd8600a9272e9faf99"
+gatsby@^2.0.0-beta.106:
+  version "2.0.0-beta.106"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.0-beta.106.tgz#be232df7bcc37afb1ea0601b50fafdcef82a83a0"
   dependencies:
     "@babel/code-frame" "7.0.0-beta.52"
     "@babel/core" "7.0.0-beta.52"
