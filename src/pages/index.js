@@ -3,7 +3,7 @@ import React, { Fragment, Component } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { graphql } from 'gatsby'
 import deburr from 'lodash.deburr'
-import { parse, stringify } from 'query-string'
+// import { parse, stringify } from 'query-string'
 
 // self
 import { Radios, Layout, GithubUser, Footer } from '../components'
@@ -120,6 +120,7 @@ const maybeMapFns = {
   }
 }
 
+/*
 const queryString = () => {
   if (typeof window === 'undefined') {
     return {}
@@ -165,7 +166,9 @@ const queryString = () => {
 
   return qs
 }
+*/
 
+/*
 const updateUrl = obj => {
   if (typeof window === 'undefined') {
     return obj
@@ -214,6 +217,7 @@ const updateUrl = obj => {
   )
   return obj
 }
+*/
 
 class FrontPage extends Component {
   constructor (props) {
@@ -232,8 +236,9 @@ class FrontPage extends Component {
       name: '',
       deburredName: '',
       sort: 'joined',
-      reverse: true,
-      ...queryString()
+      reverse: true
+      // reverse: true,
+      // ...queryString()
     }
 
     const userSparks = {}
@@ -306,7 +311,8 @@ class FrontPage extends Component {
   radioChange (x, value) {
     const obj = {}
     obj[maybeMap[x]] = value
-    this.setState(updateUrl.bind(null, obj))
+    // this.setState(updateUrl.bind(null, obj))
+    this.setState(obj)
   }
 
   changeOrder ({ target: { value } }) {
@@ -317,14 +323,16 @@ class FrontPage extends Component {
       sort: value,
       reverse: value === 'nRepos' || value === 'joined' || value === 'contribs'
     }
-    this.setState(updateUrl.bind(null, obj))
+    // this.setState(updateUrl.bind(null, obj))
+    this.setState(obj)
   }
 
   changeOrderReverse ({ target: { checked } }) {
     const obj = {
       reverse: checked
     }
-    this.setState(updateUrl.bind(null, obj))
+    // this.setState(updateUrl.bind(null, obj))
+    this.setState(obj)
   }
 
   nameFilter ({ target: { value } }) {
@@ -332,7 +340,8 @@ class FrontPage extends Component {
       name: value,
       deburredName: normalize(value)
     }
-    this.setState(updateUrl.bind(null, obj))
+    // this.setState(updateUrl.bind(null, obj))
+    this.setState(obj)
   }
 
   locationFilter ({ target: { value } }) {
@@ -340,7 +349,8 @@ class FrontPage extends Component {
       location: value,
       deburredLocation: normalize(value)
     }
-    this.setState(updateUrl.bind(null, obj))
+    // this.setState(updateUrl.bind(null, obj))
+    this.setState(obj)
   }
 
   clickMore () {
@@ -358,7 +368,8 @@ class FrontPage extends Component {
       languageFilter:
         dataset && dataset.key !== this.state.languageFilter && dataset.key
     }
-    this.setState(updateUrl.bind(null, obj))
+    // this.setState(updateUrl.bind(null, obj))
+    this.setState(obj)
   }
 
   languageFiltering (x) {
