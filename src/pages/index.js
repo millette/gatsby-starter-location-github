@@ -3,7 +3,6 @@ import React, { Fragment, Component } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { graphql } from 'gatsby'
 import deburr from 'lodash.deburr'
-// import { parse, stringify } from 'query-string'
 
 // self
 import { Radios, Layout, GithubUser, Footer } from '../components'
@@ -120,105 +119,6 @@ const maybeMapFns = {
   }
 }
 
-/*
-const queryString = () => {
-  if (typeof window === 'undefined') {
-    return {}
-  }
-  const qs = parse(window.location.search)
-
-  let r
-  for (r in qs) {
-    switch (r) {
-      case 'reverse':
-        qs.reverse = qs.reverse !== 'false'
-        break
-
-      case 'name':
-        if (qs.name) {
-          if (!qs.deburredName) {
-            qs.deburredName = normalize(qs.name)
-          }
-        } else {
-          delete qs.name
-          delete qs.deburredName
-        }
-        break
-
-      case 'location':
-        if (qs.location) {
-          if (!qs.deburredLocation) {
-            qs.deburredLocation = normalize(qs.location)
-          }
-        } else {
-          delete qs.location
-          delete qs.deburredLocation
-        }
-        break
-
-      default:
-        if (!r.indexOf('maybeFilter') && !qs[r]) {
-          qs[r] = 'yes'
-        }
-        break
-    }
-  }
-
-  return qs
-}
-*/
-
-/*
-const updateUrl = obj => {
-  if (typeof window === 'undefined') {
-    return obj
-  }
-
-  const xx = {
-    ...queryString(),
-    ...obj
-  }
-
-  let r
-  for (r in xx) {
-    if (!r.indexOf('maybeFilter')) {
-      // eslint-disable-next-line default-case
-      switch (xx[r]) {
-        case 'yes':
-          xx[r] = null
-          break
-        case 'dontCare':
-          delete xx[r]
-          break
-      }
-    } else if (!r.indexOf('deburred')) {
-      delete xx[r]
-    } else {
-      // eslint-disable-next-line default-case
-      switch (r) {
-        case 'last':
-          delete xx[r]
-          break
-        case 'location':
-        case 'name':
-          if (!xx[r]) {
-            delete xx[r]
-          }
-          break
-      }
-    }
-  }
-
-  const qsStr = stringify(xx)
-  window.history.pushState(
-    xx,
-    null,
-    qsStr ? `?${qsStr}` : window.location.pathname
-  )
-  return obj
-}
-*/
-
 class FrontPage extends Component {
   constructor (props) {
     super(props)
@@ -237,8 +137,6 @@ class FrontPage extends Component {
       deburredName: '',
       sort: 'joined',
       reverse: true
-      // reverse: true,
-      // ...queryString()
     }
 
     const userSparks = {}
@@ -311,7 +209,6 @@ class FrontPage extends Component {
   radioChange (x, value) {
     const obj = {}
     obj[maybeMap[x]] = value
-    // this.setState(updateUrl.bind(null, obj))
     this.setState(obj)
   }
 
@@ -323,7 +220,6 @@ class FrontPage extends Component {
       sort: value,
       reverse: value === 'nRepos' || value === 'joined' || value === 'contribs'
     }
-    // this.setState(updateUrl.bind(null, obj))
     this.setState(obj)
   }
 
@@ -331,7 +227,6 @@ class FrontPage extends Component {
     const obj = {
       reverse: checked
     }
-    // this.setState(updateUrl.bind(null, obj))
     this.setState(obj)
   }
 
@@ -340,7 +235,6 @@ class FrontPage extends Component {
       name: value,
       deburredName: normalize(value)
     }
-    // this.setState(updateUrl.bind(null, obj))
     this.setState(obj)
   }
 
@@ -349,7 +243,6 @@ class FrontPage extends Component {
       location: value,
       deburredLocation: normalize(value)
     }
-    // this.setState(updateUrl.bind(null, obj))
     this.setState(obj)
   }
 
@@ -368,7 +261,6 @@ class FrontPage extends Component {
       languageFilter:
         dataset && dataset.key !== this.state.languageFilter && dataset.key
     }
-    // this.setState(updateUrl.bind(null, obj))
     this.setState(obj)
   }
 
