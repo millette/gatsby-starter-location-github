@@ -1,4 +1,4 @@
-<a href="themes/rollo-boostrap.png"><img src="themes/rollo-boostrap.png" alt="boostrap bootswatch theme on RoLLo" width="320" height="180"></a>
+<a href="themes/rollo-bootstrap.png"><img src="themes/rollo-bootstrap.png" alt="boostrap bootswatch theme on RoLLo" width="320" height="180"></a>
 <a href="themes/rollo-cerulean.png"><img src="themes/rollo-cerulean.png" alt="cerulean bootswatch theme on RoLLo" width="320" height="180"></a>
 <a href="themes/rollo-cosmo.png"><img src="themes/rollo-cosmo.png" alt="cosmo bootswatch theme on RoLLo" width="320" height="180"></a>
 <a href="themes/rollo-cyborg.png"><img src="themes/rollo-cyborg.png" alt="cyborg bootswatch theme on RoLLo" width="320" height="180"></a>
