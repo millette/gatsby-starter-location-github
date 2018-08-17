@@ -13,6 +13,10 @@ const LanguageSwitch = ({ showLanguages, toggleLanguages, pageContext }) => {
     pageContext.languages &&
     pageContext.languages.filter(({ value }) => value !== pageContext.locale)
 
+  if (!lngs || !lngs.length) {
+    return false
+  }
+
   const languageSwitch = lngs.map(({ text, value }) => (
     <a
       className='dropdown-item'
@@ -22,10 +26,6 @@ const LanguageSwitch = ({ showLanguages, toggleLanguages, pageContext }) => {
       {text}
     </a>
   ))
-
-  if (!languageSwitch) {
-    return false
-  }
 
   const languagesString = `${lngs.map(x => x.text).join(', ')} ?`
 
