@@ -6,7 +6,7 @@ import 'react-bootstrap-typeahead/css/Typeahead.css'
 import 'react-bootstrap-typeahead/css/Typeahead-bs4.css'
 
 // Keep the following comment otherwise these classes are purged from the generated css:
-// <span className='rbt clearfix open has-aux rbt-input-hint-container rbt-aux close rbt-close sr-only rbt-sr-status rbt-menu' />
+// <span className='badge badge-primary badge-pill rbt clearfix open has-aux rbt-input-hint-container rbt-aux close rbt-close sr-only rbt-sr-status rbt-menu' />
 
 const renderer = (allLanguageColors, option, props, index) => (
   <button
