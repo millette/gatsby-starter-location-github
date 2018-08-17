@@ -6,6 +6,8 @@ import Layout from './layout'
 import Nav from './nav'
 import Radios from './radios'
 import Social from './social'
+import ProgLanguagesOrig from './prog-langs-orig'
+import ProgLanguages from './prog-langs'
 
 export {
   Footer,
@@ -15,5 +17,7 @@ export {
   Layout,
   Nav,
   Radios,
-  Social
+  Social,
+  ProgLanguagesOrig,
+  ProgLanguages
 }

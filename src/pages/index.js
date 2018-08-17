@@ -5,7 +5,13 @@ import { graphql } from 'gatsby'
 import deburr from 'lodash.deburr'
 
 // self
-import { Radios, Layout, GithubUser, Footer } from '../components'
+import {
+  ProgLanguages,
+  Radios,
+  Layout,
+  GithubUser,
+  Footer
+} from '../components'
 import { withIntl } from '../i18n'
 
 let config = { location: 'UNDEFINED' }
@@ -26,17 +32,6 @@ const BUTTONCOLORS = [
   'warning',
   'info'
 ]
-
-// see also:
-// https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar
-// https://developer.mozilla.org/en-US/docs/Web/CSS/-ms-overflow-style
-// https://github.com/vitch/jScrollPane (find a React equivalent)
-const LANGUAGE_BAR = {
-  textAlign: 'justify',
-  overflowY: 'scroll',
-  maxHeight: '4rem',
-  marginBottom: '1.25rem'
-}
 
 const normalize = loc => deburr((loc || '').trim()).toLowerCase()
 
@@ -129,7 +124,7 @@ class FrontPage extends Component {
       maybeFilterWeb: 'dontCare',
       maybeFilterEmail: 'dontCare',
       maybeFilterCompany: 'dontCare',
-      languageFilter: false,
+      languageFilter: [],
       last: PER_PAGE,
       location: '',
       deburredLocation: '',
@@ -192,6 +187,7 @@ class FrontPage extends Component {
       }))
 
     this.click = this.click.bind(this)
+    this.clickOrig = this.clickOrig.bind(this)
     this.clickMore = this.clickMore.bind(this)
     this.locationFilter = this.locationFilter.bind(this)
     this.nameFilter = this.nameFilter.bind(this)
@@ -252,7 +248,15 @@ class FrontPage extends Component {
     })
   }
 
-  click ({ target: { dataset } }) {
+  click (languageFilter) {
+    const obj = {
+      last: PER_PAGE,
+      languageFilter
+    }
+    this.setState(obj)
+  }
+
+  clickOrig ({ target: { dataset } }) {
     if (!this.state.languageFilter && !dataset.key) {
       return
     }
@@ -265,7 +269,7 @@ class FrontPage extends Component {
   }
 
   languageFiltering (x) {
-    if (!this.state.languageFilter) {
+    if (!this.state.languageFilter.length) {
       return true
     }
     let ok = false
@@ -273,7 +277,8 @@ class FrontPage extends Component {
       return false
     }
     x.repoLanguages.forEach(y => {
-      if (y.name === this.state.languageFilter) {
+      if (y.name === this.state.languageFilter[0].name) {
+        // if (y.name === this.state.languageFilter) {
         ok = true
       }
     })
@@ -333,23 +338,6 @@ class FrontPage extends Component {
       <Layout header messages={this.props.messages}>
         <div className='container'>
           <div>
-            {false && (
-              <p>
-                <button
-                  className='btn btn-secondary'
-                  type='button'
-                  onClick={this.clickAvailable}
-                >
-                  <FormattedMessage
-                    id={
-                      this.state.onlyAvailable
-                        ? 'index.available.on'
-                        : 'index.available.off'
-                    }
-                  />
-                </button>
-              </p>
-            )}
             <AllRadios radios={Object.keys(maybeMap)} />
             <label>
               <FormattedMessage id='index.order' />:{' '}
@@ -379,44 +367,15 @@ class FrontPage extends Component {
                 onChange={this.changeOrderReverse}
               />
             </label>
-            <ul className='list-inline' style={LANGUAGE_BAR}>
-              <li className='list-inline-item'>
-                <button
-                  className={`btn badge badge-primary${
-                    this.state.languageFilter ? ' badge-pill' : ' active'
-                  }`}
-                  type='button'
-                  onClick={this.click}
-                >
-                  <FormattedMessage id='index.allLanguages' />
-                </button>
-              </li>
-              {availableLanguages.map(x => (
-                <li key={x.name} className='list-inline-item'>
-                  <button
-                    style={
-                      this.allLanguageColors[x.name]
-                        ? {
-                          background: this.allLanguageColors[x.name].bg,
-                          color: this.allLanguageColors[x.name].fg
-                        }
-                        : { background: '#fff', color: '#000' }
-                    }
-                    className={`btn badge${
-                      this.state.languageFilter === x.name
-                        ? ' active'
-                        : ' badge-pill'
-                    }`}
-                    type='button'
-                    data-key={x.name}
-                    onClick={this.click}
-                  >
-                    {/* {x.name}&nbsp;({x.count}) */}
-                    {x.name}
-                  </button>
-                </li>
-              ))}
-            </ul>
+            <label>
+              <FormattedMessage id='index.progLanguage' />{' '}
+              <ProgLanguages
+                languageFilter={this.state.languageFilter}
+                click={this.click}
+                availableLanguages={availableLanguages}
+                allLanguageColors={this.allLanguageColors}
+              />
+            </label>
             <label>
               <FormattedMessage id='index.search.name' />:{' '}
               <input
