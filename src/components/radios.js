@@ -28,16 +28,14 @@ class Radios extends Component {
     // <span className='text-primary text-secondary text-success text-danger text-warning text-info btn-primary btn-secondary btn-success btn-danger btn-warning btn-info btn-outline-primary btn-outline-secondary btn-outline-success btn-outline-danger btn-outline-warning btn-outline-info' />
     return (
       <div className='form-group row'>
-        <div className='col-6 col-sm-12 col-form-label text-truncate'>
-          <span className={`p-1 bg-white text-${this.props.color}`}>
-            {this.props.title}
-          </span>
+        <div className='col-6 col-sm-12 text-truncate'>
+          <span className='pt-1 px-0'>{this.props.title}</span>
         </div>
         <div className='col-6 col-sm-12 btn-group btn-group-sm btn-group-toggle'>
           {this.buttons.map(({ key, txt }, i) => (
             <label
               key={key}
-              className={`btn ${
+              className={`btn pt-0 ${
                 this.active === key
                   ? `btn-${this.props.color} active`
                   : `btn-outline-${this.props.color}`
