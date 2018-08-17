@@ -130,7 +130,7 @@ class FrontPage extends Component {
       deburredLocation: '',
       name: '',
       deburredName: '',
-      sort: 'joined',
+      sort: 'nRepos',
       reverse: true
     }
 
