@@ -322,7 +322,7 @@ class FrontPage extends Component {
     const AllRadios = ({ radios }) => (
       <div className='row'>
         {radios.map((key, i) => (
-          <div key={key} className='col-sm-6 col-md-4 col-xl-2'>
+          <div key={key} className='col-sm-6 col-md-4'>
             <Radios
               color={BUTTONCOLORS[i % 6]}
               active={this.state[maybeMap[key]]}
@@ -337,7 +337,7 @@ class FrontPage extends Component {
     return (
       <Layout header messages={this.props.messages}>
         <div className='container'>
-          <div>
+          <div className='bg-light p-2 mb-3'>
             <AllRadios radios={Object.keys(maybeMap)} />
 
             <div className='form-group row'>
@@ -431,59 +431,59 @@ class FrontPage extends Component {
                 />
               </div>
             </div>
-
-            <h4>
-              <FormattedMessage
-                id='index.resultsSummary'
-                values={{
-                  nDisplayed: users.length,
-                  nSelected: usersImp.length,
-                  nTotal: this.allUsers.length,
-                  location: config.location
-                }}
-              />
-            </h4>
-            {users.length ? (
-              <Fragment>
-                <div className='row'>
-                  {users.map(x => (
-                    <div
-                      key={x.databaseId}
-                      className='col-sm-6 col-md-6 col-lg-4'
-                    >
-                      <GithubUser {...x} />
-                    </div>
-                  ))}
-                </div>
-
-                {usersImp.length > this.state.last && (
-                  <button
-                    onClick={this.clickMore}
-                    className='mt-4 w-100 btn btn-info'
-                    type='button'
-                  >
-                    <FormattedMessage id='index.more' />
-                  </button>
-                )}
-
-                <h4>
-                  <FormattedMessage
-                    id='index.resultsSummary'
-                    values={{
-                      nDisplayed: users.length,
-                      nSelected: usersImp.length,
-                      nTotal: this.allUsers.length,
-                      location: config.location
-                    }}
-                  />
-                </h4>
-              </Fragment>
-            ) : (
-              <p>
-                <FormattedMessage id='index.noResults' />
-              </p>
-            )}
           </div>
+
+          <h4>
+            <FormattedMessage
+              id='index.resultsSummary'
+              values={{
+                nDisplayed: users.length,
+                nSelected: usersImp.length,
+                nTotal: this.allUsers.length,
+                location: config.location
+              }}
+            />
+          </h4>
+          {users.length ? (
+            <Fragment>
+              <div className='row'>
+                {users.map(x => (
+                  <div
+                    key={x.databaseId}
+                    className='col-sm-6 col-md-6 col-lg-4'
+                  >
+                    <GithubUser {...x} />
+                  </div>
+                ))}
+              </div>
+
+              {usersImp.length > this.state.last && (
+                <button
+                  onClick={this.clickMore}
+                  className='mt-4 w-100 btn btn-info'
+                  type='button'
+                >
+                  <FormattedMessage id='index.more' />
+                </button>
+              )}
+
+              <h4>
+                <FormattedMessage
+                  id='index.resultsSummary'
+                  values={{
+                    nDisplayed: users.length,
+                    nSelected: usersImp.length,
+                    nTotal: this.allUsers.length,
+                    location: config.location
+                  }}
+                />
+              </h4>
+            </Fragment>
+          ) : (
+            <p>
+              <FormattedMessage id='index.noResults' />
+            </p>
+          )}
         </div>
         <Footer />
       </Layout>
