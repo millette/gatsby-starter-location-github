@@ -25,7 +25,7 @@ class Header extends Component {
     return (
       <Fragment>
         <Nav pageContext={pageContext} />
-        <section className=''>
+        <section>
           <button
             onClick={this.click}
             className='text-right border-bottom btn btn-sm btn-primary btn-block'
