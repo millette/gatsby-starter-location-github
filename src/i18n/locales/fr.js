@@ -24,6 +24,7 @@ module.exports = {
   'radios.web': 'Site web',
   'radios.email': 'Courriel',
   'radios.company': 'Compagnie',
+  'index.search': 'Cherchez',
   'index.progLanguage': 'Langage de programmation',
   'index.available.off': 'Disponible? Peu importe',
   'index.available.on': 'Disponible? OUI!',

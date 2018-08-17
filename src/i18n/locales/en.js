@@ -24,6 +24,7 @@ module.exports = {
   'radios.web': 'Web site',
   'radios.email': 'Email',
   'radios.company': 'Company',
+  'index.search': 'Search',
   'index.progLanguage': 'Programming language',
   'index.available.off': 'Available? Doesn’t matter',
   'index.available.on': 'Available? YES!',
