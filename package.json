@@ -29,6 +29,7 @@
     "lodash.deburr": "^4.1.0",
     "node-sass": "^4.9.3",
     "npm-git-links": "^0.0.3",
+    "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-helmet": "^5.2.0",
@@ -62,6 +63,7 @@
     "husky": "^0.14.3",
     "lint-staged": "^7.2.2",
     "prettier-standard": "^8.0.1",
-    "standard": "^11.0.1"
+    "standard": "^11.0.1",
+    "webpack": "^4.16.5"
   }
 }
