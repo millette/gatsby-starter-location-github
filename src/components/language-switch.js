@@ -1,32 +1,37 @@
 // npm
 import React from 'react'
-import { FormattedMessage } from 'react-intl'
+// import { FormattedMessage } from 'react-intl'
 import { withPrefix } from 'gatsby'
 
+import switchLanguageLogo from '../assets/images/globe-blue.svg'
+
 const LanguageSwitch = ({ showLanguages, toggleLanguages, pageContext }) => {
-  const languageSwitch =
+  const lngs =
     pageContext &&
     pageContext.languages &&
-    pageContext.languages
-      .filter(({ value }) => value !== pageContext.locale)
-      .map(({ text, value }) => (
-        <a
-          className='text-center nav-link dropdown-item'
-          key={value}
-          href={`${withPrefix(`${value}${pageContext.originalPath}`)}`}
-        >
-          {text}
-        </a>
-      ))
+    pageContext.languages.filter(({ value }) => value !== pageContext.locale)
+
+  const languageSwitch = lngs.map(({ text, value }) => (
+    <a
+      className='dropdown-item'
+      key={value}
+      href={`${withPrefix(`${value}${pageContext.originalPath}`)}`}
+    >
+      {text}
+    </a>
+  ))
 
   if (!languageSwitch) {
     return false
   }
 
+  const languagesString = `${lngs.map(x => x.text).join(', ')} ?`
+
   return (
     <ul className='navbar-nav'>
       <li className='nav-item dropdown'>
         <button
+          title={languagesString}
           onClick={toggleLanguages}
           type='button'
           className='btn btn-primary nav-link dropdown-toggle'
@@ -34,7 +39,11 @@ const LanguageSwitch = ({ showLanguages, toggleLanguages, pageContext }) => {
           aria-haspopup='true'
           aria-expanded={showLanguages ? 'true' : 'false'}
         >
-          <FormattedMessage id='nav.switchLanguage' />
+          <img
+            style={{ height: '32px' }}
+            src={switchLanguageLogo}
+            alt='Switch language'
+          />
         </button>
         <div
           className={`bg-primary dropdown-menu${showLanguages ? ' show' : ''}`}
