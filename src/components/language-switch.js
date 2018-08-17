@@ -3,6 +3,8 @@ import React from 'react'
 // import { FormattedMessage } from 'react-intl'
 import { withPrefix } from 'gatsby'
 
+// self
+// https://openclipart.org/detail/77347/globeblue
 import switchLanguageLogo from '../assets/images/globe-blue.svg'
 
 const LanguageSwitch = ({ showLanguages, toggleLanguages, pageContext }) => {
