@@ -68,6 +68,64 @@ try {
       },
       'gatsby-plugin-purgecss'
       /*
+From:  /home/millette/gml/v2/gatsby-starter-location-github/node_modules/react-bootstrap-typeahead/css/Typeahead.css
+ Removed Selectors:  [ '.rbt-menu-pagination-option',
+  '.rbt .rbt-input-main::-ms-clear',
+  '.rbt-input-multi',
+  '.rbt-input-multi.focus',
+  '.rbt-input-multi.form-control[disabled]',
+  '.rbt-input-multi input::-moz-placeholder',
+  '.rbt-input-multi input:-ms-input-placeholder',
+  '.rbt-input-multi input::-webkit-input-placeholder',
+  '.rbt-input-multi .rbt-input-wrapper',
+  '.rbt-input-multi .rbt-input-main',
+  '.rbt-input-multi .rbt-input-hint-container',
+  '.rbt-input-multi.input-lg .rbt-input-main',
+  ' .rbt-input-multi.form-control-lg .rbt-input-main',
+  '.rbt-input-multi.input-sm .rbt-input-main',
+  ' .rbt-input-multi.form-control-sm .rbt-input-main',
+  '.rbt-close-lg',
+  '.rbt-token',
+  '.rbt-token-disabled',
+  '.rbt-token-removeable',
+  '.rbt-token-active',
+  '.rbt-token .rbt-token-remove-button',
+  '.rbt-loader',
+  '.rbt-loader-lg',
+  '.rbt-aux-lg',
+  '.has-aux .rbt-input',
+  '.rbt-highlight-text',
+  '.input-group > .rbt',
+  '.input-group > .rbt .rbt-input-hint-container',
+  '.input-group > .rbt .rbt-input-hint',
+  '.input-group > .rbt .rbt-aux',
+  '.input-group > .rbt:not(:first-child) .form-control',
+  '.input-group > .rbt:not(:last-child) .form-control',
+  '.has-error .rbt-input-multi.focus',
+  '.has-warning .rbt-input-multi.focus',
+  '.has-success .rbt-input-multi.focus' ]
+
+From:  /home/millette/gml/v2/gatsby-starter-location-github/node_modules/react-bootstrap-typeahead/css/Typeahead-bs4.css
+ Removed Selectors:  [ '.rbt-input-multi.focus',
+  '.rbt-input-multi.is-invalid.focus',
+  '.rbt-input-multi.is-valid.focus',
+  '.rbt-input-multi input::-moz-placeholder',
+  '.rbt-input-multi input:-ms-input-placeholder',
+  '.rbt-input-multi input::-webkit-input-placeholder',
+  '.rbt-input-multi .rbt-input-main',
+  '.rbt-input-multi.form-control-lg .rbt-input-main',
+  '.rbt-input-multi.form-control-sm .rbt-input-main',
+  '.input-group > .rbt .rbt-input-hint-container' ]
+      */
+      /*
+      {
+        resolve: 'gatsby-plugin-purgecss',
+        options: {
+          printRejected: true
+        }
+      }
+      */
+      /*
       {
         resolve: 'gatsby-plugin-webpack-bundle-analyzer',
         options: {
