@@ -1,6 +1,6 @@
 // npm
 import React from 'react'
-import { Highlighter, Typeahead } from 'react-bootstrap-typeahead'
+import { Typeahead } from 'react-bootstrap-typeahead'
 
 import 'react-bootstrap-typeahead/css/Typeahead.css'
 import 'react-bootstrap-typeahead/css/Typeahead-bs4.css'
@@ -23,6 +23,7 @@ const renderer = (allLanguageColors, option, props, index) => (
 
 const ProgLanguages = props => (
   <Typeahead
+    inputProps={{ id: props.id }}
     clearButton
     selectHintOnEnter
     onChange={props.click}

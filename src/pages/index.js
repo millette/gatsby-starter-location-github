@@ -339,60 +339,99 @@ class FrontPage extends Component {
         <div className='container'>
           <div>
             <AllRadios radios={Object.keys(maybeMap)} />
-            <label>
-              <FormattedMessage id='index.order' />:{' '}
-              <select
-                defaultValue={this.state.sort}
-                onChange={this.changeOrder}
+
+            <div className='form-group row'>
+              <label htmlFor='input-order' className='col-sm-5 col-form-label'>
+                <FormattedMessage id='index.order' />
+              </label>
+              <div className='col-sm-5'>
+                <select
+                  className='form-control'
+                  id='input-order'
+                  defaultValue={this.state.sort}
+                  onChange={this.changeOrder}
+                >
+                  <FormattedMessage id='index.order.joined'>
+                    {txt => <option value='joined'>{txt}</option>}
+                  </FormattedMessage>
+                  <FormattedMessage id='index.order.contribs'>
+                    {txt => <option value='contribs'>{txt}</option>}
+                  </FormattedMessage>
+                  <FormattedMessage id='index.order.name'>
+                    {txt => <option value='name'>{txt}</option>}
+                  </FormattedMessage>
+                  <FormattedMessage id='index.order.nRepos'>
+                    {txt => <option value='nRepos'>{txt}</option>}
+                  </FormattedMessage>
+                </select>
+              </div>
+              <div className='col-sm-2'>
+                <div className='form-check'>
+                  <input
+                    className='form-check-input'
+                    type='checkbox'
+                    id='input-reverse'
+                    checked={this.state.reverse}
+                    onChange={this.changeOrderReverse}
+                  />
+                  <label className='form-check-label' htmlFor='input-reverse'>
+                    <FormattedMessage id='index.order.reverse' />
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div className='form-group row'>
+              <label
+                htmlFor='input-language'
+                className='col-sm-5 col-form-label'
               >
-                <FormattedMessage id='index.order.joined'>
-                  {txt => <option value='joined'>{txt}</option>}
-                </FormattedMessage>
-                <FormattedMessage id='index.order.contribs'>
-                  {txt => <option value='contribs'>{txt}</option>}
-                </FormattedMessage>
-                <FormattedMessage id='index.order.name'>
-                  {txt => <option value='name'>{txt}</option>}
-                </FormattedMessage>
-                <FormattedMessage id='index.order.nRepos'>
-                  {txt => <option value='nRepos'>{txt}</option>}
-                </FormattedMessage>
-              </select>
-            </label>{' '}
-            <label>
-              <FormattedMessage id='index.order.reverse' />{' '}
-              <input
-                type='checkbox'
-                checked={this.state.reverse}
-                onChange={this.changeOrderReverse}
-              />
-            </label>
-            <label>
-              <FormattedMessage id='index.progLanguage' />{' '}
-              <ProgLanguages
-                languageFilter={this.state.languageFilter}
-                click={this.click}
-                availableLanguages={availableLanguages}
-                allLanguageColors={this.allLanguageColors}
-              />
-            </label>
-            <label>
-              <FormattedMessage id='index.search.name' />:{' '}
-              <input
-                type='text'
-                value={this.state.name}
-                onChange={this.nameFilter}
-              />
-            </label>
-            <br />
-            <label>
-              <FormattedMessage id='index.search.location' />:{' '}
-              <input
-                type='text'
-                value={this.state.location}
-                onChange={this.locationFilter}
-              />
-            </label>
+                <FormattedMessage id='index.progLanguage' />
+              </label>
+              <div className='col-sm-7'>
+                <ProgLanguages
+                  id='input-language'
+                  languageFilter={this.state.languageFilter}
+                  click={this.click}
+                  availableLanguages={availableLanguages}
+                  allLanguageColors={this.allLanguageColors}
+                />
+              </div>
+            </div>
+
+            <div className='form-group row'>
+              <label htmlFor='input-name' className='col-sm-5 col-form-label'>
+                <FormattedMessage id='index.search.name' />
+              </label>
+              <div className='col-sm-7'>
+                <input
+                  className='form-control'
+                  id='input-name'
+                  type='text'
+                  value={this.state.name}
+                  onChange={this.nameFilter}
+                />
+              </div>
+            </div>
+
+            <div className='form-group row'>
+              <label
+                htmlFor='input-location'
+                className='col-sm-5 col-form-label'
+              >
+                <FormattedMessage id='index.search.location' />
+              </label>
+              <div className='col-sm-7'>
+                <input
+                  className='form-control'
+                  id='input-location'
+                  type='text'
+                  value={this.state.location}
+                  onChange={this.locationFilter}
+                />
+              </div>
+            </div>
+
             <h4>
               <FormattedMessage
                 id='index.resultsSummary'
