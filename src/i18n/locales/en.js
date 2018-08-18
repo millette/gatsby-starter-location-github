@@ -14,6 +14,12 @@ module.exports = {
   subtitle: 'Your locally sourced developper directory',
   'ads.toggle.show': 'Show ads',
   'ads.toggle.hide': 'Ads (hide)',
+  'ads.rollodevs':
+    'Looking to hire the perfect candidate? {name} is the place to start!',
+  'ads.wikisuite':
+    '{name} is the most comprehensive and integrated Free / Libre / Open Source enterprise software suite ever developed.',
+  'ads.andyou.title': 'And you?',
+  'ads.andyou.text': 'Contact us to find out more about our offer.',
   'footer.generated': 'Generated',
   'footer.license': 'License',
   'footer.buildTime': 'Built {buildTime}',

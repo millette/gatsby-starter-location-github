@@ -49,7 +49,11 @@ class Ads extends Component {
           {this.state.showAds ? (
             <Fragment>
               <div className='col-md-4'>
-                <Link to='/promo/'>
+                <a
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  href='https://wikisuite.org/'
+                >
                   <div className='card text-dark border-0 text-center'>
                     <Img
                       className='card-img-top'
@@ -57,15 +61,15 @@ class Ads extends Component {
                       fixed={f1.childImageSharp.fixed}
                     />
                     <div className='card-body'>
-                      {false && <h5 className='card-title'>WikiSuite</h5>}
                       <p className='card-text'>
-                        <b>WikiSuite</b> is the most comprehensive and
-                        integrated Free / Libre / Open Source enterprise
-                        software suite ever developed
+                        <FormattedMessage
+                          id='ads.wikisuite'
+                          values={{ name: <b>WikiSuite</b> }}
+                        />
                       </p>
                     </div>
                   </div>
-                </Link>
+                </a>
               </div>
               <div className='col-md-5'>
                 <Link to='/promo/'>
@@ -76,28 +80,30 @@ class Ads extends Component {
                       fixed={f2.childImageSharp.fixed}
                     />
                     <div className='card-body'>
-                      {false && <h5 className='card-title'>RoLLoDevs</h5>}
                       <p className='card-text'>
-                        Looking to hire the perfect candidate? <b>RoLLoDevs</b>{' '}
-                        is the place to start!
+                        <FormattedMessage
+                          id='ads.rollodevs'
+                          values={{ name: <b>RoLLoDevs</b> }}
+                        />
                       </p>
                     </div>
                   </div>
                 </Link>
               </div>
               <div className='col-md-3'>
-                <Link to='/promo/'>
+                <Link to='/contact/'>
                   <div className='card text-dark border-0 text-center'>
                     <Img
                       className='card-img-top'
                       alt='You! Vous?'
                       fixed={f3.childImageSharp.fixed}
                     />
-
                     <div className='card-body'>
-                      <h5 className='card-title'>Et vous?</h5>
+                      <h5 className='card-title'>
+                        <FormattedMessage id='ads.andyou.title' />
+                      </h5>
                       <p className='card-text'>
-                        Contactez-nous pour connaitre nos forfaits.
+                        <FormattedMessage id='ads.andyou.text' />
                       </p>
                     </div>
                   </div>

@@ -14,6 +14,12 @@ module.exports = {
   subtitle: 'Votre source de développeurs locaux',
   'ads.toggle.show': 'Afficher les annonces',
   'ads.toggle.hide': 'Annonces (cacher)',
+  'ads.rollodevs':
+    'Vous cherchez le candidat parfait? {name} c’est l’endroit où commencer!',
+  'ads.wikisuite':
+    '{name} est la suite intégrée de logiciels libres la plus complète à avoir été développée jusqu’à ce jour.',
+  'ads.andyou.title': 'Et vous?',
+  'ads.andyou.text': 'Contactez-nous pour connaitre nos forfaits.',
   'footer.generated': 'Génération',
   'footer.license': 'Licence',
   'footer.buildTime': 'Construit {buildTime}',
