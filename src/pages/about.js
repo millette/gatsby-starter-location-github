@@ -31,6 +31,7 @@ const About = ({ messages }) => (
           </Link>
         </div>
         <div className='col-md-4'>
+          <Link to='/promo'>...</Link>
           <Link className='btn btn-success btn-lg btn-block' to='/contact/'>
             <FormattedMessage id='about.contact' />
           </Link>
