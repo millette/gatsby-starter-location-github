@@ -341,7 +341,10 @@ class FrontPage extends Component {
             <AllRadios radios={Object.keys(maybeMap)} />
 
             <div className='form-group row'>
-              <label htmlFor='input-order' className='col-sm-5 col-form-label'>
+              <label
+                htmlFor='input-order'
+                className='col-sm-5 col-form-label text-right'
+              >
                 <FormattedMessage id='index.order' />
               </label>
               <div className='col-sm-5'>
@@ -384,7 +387,7 @@ class FrontPage extends Component {
             <div className='form-group row'>
               <label
                 htmlFor='input-language'
-                className='col-sm-5 col-form-label'
+                className='col-sm-5 col-form-label text-right'
               >
                 <FormattedMessage id='index.progLanguage' />
               </label>
@@ -400,7 +403,10 @@ class FrontPage extends Component {
             </div>
 
             <div className='form-group row'>
-              <label htmlFor='input-name' className='col-sm-5 col-form-label'>
+              <label
+                htmlFor='input-name'
+                className='col-sm-5 col-form-label text-right'
+              >
                 <FormattedMessage id='index.search.name' />
               </label>
               <div className='col-sm-7'>
@@ -417,7 +423,7 @@ class FrontPage extends Component {
             <div className='form-group row'>
               <label
                 htmlFor='input-location'
-                className='col-sm-5 col-form-label'
+                className='col-sm-5 col-form-label text-right'
               >
                 <FormattedMessage id='index.search.location' />
               </label>
