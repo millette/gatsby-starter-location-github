@@ -12,6 +12,8 @@
 module.exports = {
   title: 'RolloDevs',
   subtitle: 'Your locally sourced developper directory',
+  'ads.toggle.show': 'Show ads',
+  'ads.toggle.hide': 'Ads (hide)',
   'footer.generated': 'Generated',
   'footer.license': 'License',
   'footer.buildTime': 'Built {buildTime}',
