@@ -11,7 +11,18 @@
   },
   "homepage": "http://dev.rollodeqc.com/",
   "browser": {
-    "npm-git-links": false
+    "npm-git-links": false,
+    "gatsby-plugin-sass": false,
+    "gatsby-plugin-sharp": false,
+    "gatsby-source-filesystem": false,
+    "gatsby-plugin-purgecss": false,
+
+    "gatsby-transformer-json": false,
+    "gatsby-transformer-sharp": false,
+    "node-sass": false,
+    "ghraphql": false,
+    "bootstrap": false,
+    "bootswatch": false
   },
   "dependencies": {
     "@data-ui/sparkline": "^0.0.62",
