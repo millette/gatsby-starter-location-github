@@ -11,7 +11,7 @@ const GithubUser = props => {
   return (
     <div className='card mt-4'>
       <SimpleImg
-        imgClassName='card-img-top'
+        className='card-img-top'
         placeholder='linear-gradient(rgb(30, 87, 153) 0%, rgb(125, 185, 232) 100%)'
         src={`https://avatars3.githubusercontent.com/u/${props.databaseId}`}
         alt={`Avatar de ${props.name || props.login}`}
