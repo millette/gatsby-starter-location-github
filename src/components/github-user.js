@@ -5,13 +5,13 @@ import { SimpleImg, initSimpleImg } from 'react-simple-img'
 import { Sparkline, LineSeries } from '@data-ui/sparkline'
 
 // FIXME: run once at your root component or at file which calls `ReactDOM.render`
-initSimpleImg({ threshold: 0.5 })
+initSimpleImg({ threshold: 0.25 })
 
 const GithubUser = props => {
   return (
     <div className='card mt-4'>
       <SimpleImg
-        className='card-img-top'
+        wrapperClassName='rym-fix-img card-img-top'
         placeholder='linear-gradient(rgb(30, 87, 153) 0%, rgb(125, 185, 232) 100%)'
         src={`https://avatars3.githubusercontent.com/u/${props.databaseId}`}
         alt={`Avatar de ${props.name || props.login}`}

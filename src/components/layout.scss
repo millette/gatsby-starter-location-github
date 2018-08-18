@@ -9,3 +9,15 @@
     background: $card-bg;
   }
 }
+
+.rym-fix-img {
+  height: 288px;
+  width: 100%;
+
+  img {
+    width: 348px;
+    height: 348px;
+    margin: 0 auto;
+  }
+}
+
