@@ -60,6 +60,15 @@ try {
         }
       },
       {
+        resolve: 'gatsby-source-filesystem',
+        options: {
+          name: 'img',
+          path: `${cwd}/src/assets/images/`
+        }
+      },
+      'gatsby-plugin-sharp',
+      'gatsby-transformer-sharp',
+      {
         resolve: 'gatsby-plugin-sass',
         options: {
           includePaths: [themeDir, `${cwd}/node_modules/bootstrap`],
