@@ -54,7 +54,7 @@ class Ads extends Component {
                   rel='noopener noreferrer'
                   href='https://wikisuite.org/'
                 >
-                  <div className='card text-dark border-0 text-center'>
+                  <div className='card pt-1 text-dark border-0 text-center'>
                     <Img
                       className='card-img-top'
                       alt='WikiSuite'
@@ -73,7 +73,7 @@ class Ads extends Component {
               </div>
               <div className='col-md-5'>
                 <Link to='/promo/'>
-                  <div className='card text-dark border-0 text-center'>
+                  <div className='card pt-1 text-dark border-0 text-center'>
                     <Img
                       className='card-img-top'
                       alt='RoLLoDevs'
@@ -92,7 +92,7 @@ class Ads extends Component {
               </div>
               <div className='col-md-3'>
                 <Link to='/contact/'>
-                  <div className='card text-dark border-0 text-center'>
+                  <div className='card pt-1 text-dark border-0 text-center'>
                     <Img
                       className='card-img-top'
                       alt='You! Vous?'
