@@ -429,7 +429,7 @@ class PromoPage extends Component {
               >
                 <FormattedMessage id='index.search.location' />
               </label>
-              <div className='col-sm-6'>
+              <div className='col-sm-7'>
                 <input
                   className='form-control'
                   id='input-location'
