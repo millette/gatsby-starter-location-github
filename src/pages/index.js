@@ -201,13 +201,15 @@ class FrontPage extends Component {
     this.setState(obj)
   }
 
-  changeOrder ({ target: { value } }) {
-    if (value === this.state.sort) {
+  changeOrder ({ target }) {
+    target.blur()
+    const sort = target.value
+    if (sort === this.state.sort) {
       return
     }
     const obj = {
-      sort: value,
-      reverse: value === 'nRepos' || value === 'joined' || value === 'contribs'
+      sort,
+      reverse: sort === 'nRepos' || sort === 'joined' || sort === 'contribs'
     }
     this.setState(obj)
   }
