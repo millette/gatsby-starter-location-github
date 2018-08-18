@@ -25,14 +25,7 @@ try {
 
 const PER_PAGE = 12
 
-const BUTTONCOLORS = [
-  'primary',
-  'secondary',
-  'success',
-  'danger',
-  'warning',
-  'info'
-]
+const BUTTONCOLORS = ['primary', 'info', 'success', 'danger', 'warning', 'info']
 
 const normalize = loc => deburr((loc || '').trim()).toLowerCase()
 
