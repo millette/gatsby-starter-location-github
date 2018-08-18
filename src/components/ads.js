@@ -42,7 +42,9 @@ class Ads extends Component {
         </h6>
         <div
           style={adsStyle}
-          className='row border border-warning pt-3 border-top-0'
+          className={`row border border-warning pt-3 border-top-0${
+            this.state.showAds ? '' : ' border-left-0'
+          }`}
         >
           {this.state.showAds ? (
             <Fragment>
