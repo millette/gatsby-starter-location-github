@@ -114,7 +114,7 @@ class Ads extends Component {
             <div className='col text-right'>
               <blockquote className='blockquote'>
                 <p>
-                  « Notez que les annonces contribuent au maintien du site. »
+                  <FormattedMessage id='ads.why' />
                 </p>
                 <footer className='blockquote-footer'>Robin Millette</footer>
               </blockquote>

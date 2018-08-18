@@ -12,6 +12,7 @@
 module.exports = {
   title: 'RolloDevs',
   subtitle: 'Your locally sourced developper directory',
+  'ads.why': '" Note that the ads help maintain the website. "',
   'ads.toggle.show': 'Show ads',
   'ads.toggle.hide': 'Ads (hide)',
   'ads.rollodevs':

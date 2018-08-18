@@ -12,6 +12,7 @@
 module.exports = {
   title: 'RolloDevs',
   subtitle: 'Votre source de développeurs locaux',
+  'ads.why': '« Notez que les annonces contribuent au maintien du site. »',
   'ads.toggle.show': 'Afficher les annonces',
   'ads.toggle.hide': 'Annonces (cacher)',
   'ads.rollodevs':
