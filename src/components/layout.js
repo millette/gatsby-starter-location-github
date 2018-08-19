@@ -1,7 +1,6 @@
 // npm
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
-// import Helmet from 'react-helmet'
 import { FormattedMessage } from 'react-intl'
 import 'typeface-roboto'
 
