@@ -1,5 +1,4 @@
 // npm
-
 import React from 'react'
 import Helmet from 'react-helmet'
 
@@ -19,14 +18,19 @@ const Social = props => {
   const pageTitleID = pageTitleStr && `${pageTitleStr}.title`
   const pageTitle =
     pageTitleID && messages[pageTitleID] ? messages[pageTitleID] : location
-  const currentLanguage = (pageContext && pageContext.locale) || 'en'
+
+  const htmlAttributes = {}
+  const lang = pageContext && pageContext.locale
+  const currentLanguage = lang || 'en'
+  if (lang) {
+    htmlAttributes.lang = lang
+  }
 
   return (
-    <Helmet>
+    <Helmet htmlAttributes={htmlAttributes}>
       <title>{`${messages.title} — ${pageTitle}`}</title>
       <meta name='description' content={messages.subtitle} />
       <meta name='image' content='http://www.rollodeqc.com/images/logo.png' />
-
       <meta name='twitter:card' content='summary' />
       <meta name='twitter:site' content='@RoLLodeQc' />
       <meta name='twitter:title' content={messages.title} />
@@ -36,7 +40,6 @@ const Social = props => {
         name='twitter:image:src'
         content='http://www.rollodeqc.com/images/logo.png'
       />
-
       <meta
         itemprop='name'
         content={messages.title}
@@ -61,7 +64,6 @@ const Social = props => {
         itemscope
         itemtype='http://schema.org/WebSite'
       />
-
       <meta name='og:title' content={messages.title} />
       <meta name='og:type' content='website' />
       <meta name='og:url' content={`${url}/${currentLanguage}/`} />
