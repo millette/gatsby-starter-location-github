@@ -16,7 +16,6 @@
     "gatsby-plugin-sharp": false,
     "gatsby-source-filesystem": false,
     "gatsby-plugin-purgecss": false,
-
     "gatsby-transformer-json": false,
     "gatsby-transformer-sharp": false,
     "node-sass": false,
@@ -49,7 +48,8 @@
     "react-dom": "^16.4.2",
     "react-helmet": "^5.2.0",
     "react-intl": "^2.4.0",
-    "react-simple-img": "^1.3.16"
+    "react-simple-img": "^1.3.16",
+    "typeface-roboto": "^0.0.54"
   },
   "engines": {
     "node": ">= 8.11.3"
