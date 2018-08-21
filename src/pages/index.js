@@ -590,7 +590,7 @@ class FrontPage extends Component {
                     key={x.databaseId}
                     className='col-sm-6 col-md-6 col-lg-4'
                   >
-                    <GithubUser {...x} />
+                    <GithubUser {...x} lang={this.props.pageContext.locale} />
                   </div>
                 ))}
               </div>

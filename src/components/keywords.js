@@ -19,6 +19,7 @@ const Keywords = props => (
     inputProps={{ id: props.id }}
     clearButton
     selectHintOnEnter
+    minLength={2}
     onChange={props.click}
     options={props.availableKeywords}
     labelKey='word'

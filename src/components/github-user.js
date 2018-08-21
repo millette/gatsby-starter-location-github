@@ -4,6 +4,9 @@ import { FormattedMessage, FormattedDate } from 'react-intl'
 import { SimpleImg, initSimpleImg } from 'react-simple-img'
 import { Sparkline, LineSeries } from '@data-ui/sparkline'
 
+// self
+import { ListKeywords } from '.'
+
 // FIXME: run once at your root component or at file which calls `ReactDOM.render`
 initSimpleImg({ threshold: 0.25 })
 
@@ -191,6 +194,8 @@ const GithubUser = props => {
                   </dd>
                 </Fragment>
               )}
+
+              <ListKeywords keywords={props.keywords} lang={props.lang} />
 
               {props.licenses && (
                 <Fragment>
