@@ -186,7 +186,6 @@ class FrontPage extends Component {
     this.click = this.click.bind(this)
     this.click2 = this.click2.bind(this)
     this.click3 = this.click3.bind(this)
-    // this.clickOrig = this.clickOrig.bind(this)
     this.clickMore = this.clickMore.bind(this)
     this.locationFilter = this.locationFilter.bind(this)
     this.nameFilter = this.nameFilter.bind(this)
@@ -268,7 +267,6 @@ class FrontPage extends Component {
   }
 
   click3 (keywordFilter) {
-    // console.log('keywordFilter:', keywordFilter)
     const obj = {
       last: PER_PAGE,
       keywordFilter
@@ -276,24 +274,7 @@ class FrontPage extends Component {
     this.setState(obj)
   }
 
-  /*
-  clickOrig ({ target: { dataset } }) {
-    if (!this.state.languageFilter && !dataset.key) {
-      return
-    }
-    const obj = {
-      last: PER_PAGE,
-      languageFilter:
-        dataset && dataset.key !== this.state.languageFilter && dataset.key
-    }
-    this.setState(obj)
-  }
-  */
-
   keywordFiltering (x) {
-    // console.log('keywordFiltering:', x)
-    // console.log('keywordFiltering:', this.state.keywordFilter)
-
     if (!this.state.keywordFilter.length) {
       return true
     }
@@ -310,10 +291,8 @@ class FrontPage extends Component {
       }
     })
 
-    // RYMRYM
     langKeywords.forEach(y => {
       if (y.word === this.state.keywordFilter[0].word) {
-        // if (y.name === this.state.languageFilter) {
         ok = true
       }
     })
@@ -321,8 +300,6 @@ class FrontPage extends Component {
   }
 
   licenseFiltering (x) {
-    // console.log('licenseFiltering:', x)
-    // console.log('licenseFiltering:', this.state.licenseFilter)
     if (!this.state.licenseFilter.length) {
       return true
     }
@@ -332,7 +309,6 @@ class FrontPage extends Component {
     }
     x.licenses.forEach(y => {
       if (y.license === this.state.licenseFilter[0]) {
-        // if (y.name === this.state.languageFilter) {
         ok = true
       }
     })
@@ -349,7 +325,6 @@ class FrontPage extends Component {
     }
     x.repoLanguages.forEach(y => {
       if (y.name === this.state.languageFilter[0].name) {
-        // if (y.name === this.state.languageFilter) {
         ok = true
       }
     })
@@ -379,15 +354,11 @@ class FrontPage extends Component {
 
     this.props.data.allDataJson.edges[0].node.keywords.forEach(
       ({ language, keywords }) => {
-        // availableKeywords[language] = keywords
         if (language === this.props.pageContext.locale) {
           availableKeywords = keywords
         }
       }
     )
-
-    // console.log('availableKeywords:', availableKeywords)
-    // console.log('props:', this.props.pageContext.locale)
 
     const availableLanguages = this.props.data.allDataJson.edges[0].node
       .repoLanguages

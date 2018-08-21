@@ -11,7 +11,6 @@ import { ListKeywords } from '.'
 initSimpleImg({ threshold: 0.25 })
 
 const GithubUser = props => {
-  // console.log('repositoriesContributedTo:', props.repositoriesContributedTo)
   return (
     <div className='card mt-4'>
       <SimpleImg
