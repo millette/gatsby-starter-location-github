@@ -6,6 +6,7 @@ import deburr from 'lodash.deburr'
 
 // self
 import {
+  Keywords,
   Licenses,
   ProgLanguages,
   Radios,
@@ -120,6 +121,7 @@ class FrontPage extends Component {
       maybeFilterCompany: 'dontCare',
       languageFilter: [],
       licenseFilter: [],
+      keywordFilter: [],
       last: PER_PAGE,
       location: '',
       deburredLocation: '',
@@ -183,12 +185,14 @@ class FrontPage extends Component {
 
     this.click = this.click.bind(this)
     this.click2 = this.click2.bind(this)
+    this.click3 = this.click3.bind(this)
     // this.clickOrig = this.clickOrig.bind(this)
     this.clickMore = this.clickMore.bind(this)
     this.locationFilter = this.locationFilter.bind(this)
     this.nameFilter = this.nameFilter.bind(this)
     this.languageFiltering = this.languageFiltering.bind(this)
     this.licenseFiltering = this.licenseFiltering.bind(this)
+    this.keywordFiltering = this.keywordFiltering.bind(this)
     this.locationFiltering = this.locationFiltering.bind(this)
     this.nameFiltering = this.nameFiltering.bind(this)
     this.changeOrder = this.changeOrder.bind(this)
@@ -263,6 +267,15 @@ class FrontPage extends Component {
     this.setState(obj)
   }
 
+  click3 (keywordFilter) {
+    // console.log('keywordFilter:', keywordFilter)
+    const obj = {
+      last: PER_PAGE,
+      keywordFilter
+    }
+    this.setState(obj)
+  }
+
   /*
   clickOrig ({ target: { dataset } }) {
     if (!this.state.languageFilter && !dataset.key) {
@@ -276,6 +289,36 @@ class FrontPage extends Component {
     this.setState(obj)
   }
   */
+
+  keywordFiltering (x) {
+    // console.log('keywordFiltering:', x)
+    // console.log('keywordFiltering:', this.state.keywordFilter)
+
+    if (!this.state.keywordFilter.length) {
+      return true
+    }
+    let ok = false
+    const lang = this.props.pageContext.locale
+    if (!x.keywords) {
+      return false
+    }
+
+    let langKeywords = []
+    x.keywords.forEach(y => {
+      if (y.language === lang) {
+        langKeywords = y.keywords
+      }
+    })
+
+    // RYMRYM
+    langKeywords.forEach(y => {
+      if (y.word === this.state.keywordFilter[0].word) {
+        // if (y.name === this.state.languageFilter) {
+        ok = true
+      }
+    })
+    return ok
+  }
 
   licenseFiltering (x) {
     // console.log('licenseFiltering:', x)
@@ -331,13 +374,27 @@ class FrontPage extends Component {
     const availableLicenses = this.props.data.allDataJson.edges[0].node.licenses.map(
       x => x.spdxId
     )
-    // console.log('availableLicenses:', availableLicenses)
+
+    let availableKeywords = []
+
+    this.props.data.allDataJson.edges[0].node.keywords.forEach(
+      ({ language, keywords }) => {
+        // availableKeywords[language] = keywords
+        if (language === this.props.pageContext.locale) {
+          availableKeywords = keywords
+        }
+      }
+    )
+
+    // console.log('availableKeywords:', availableKeywords)
+    // console.log('props:', this.props.pageContext.locale)
 
     const availableLanguages = this.props.data.allDataJson.edges[0].node
       .repoLanguages
 
     const usersImp = this.allUsers
       .filter(this.languageFiltering)
+      .filter(this.keywordFiltering)
       .filter(this.licenseFiltering)
       .filter(this.locationFiltering)
       .filter(this.nameFiltering)
@@ -462,6 +519,23 @@ class FrontPage extends Component {
 
             <div className='form-group row'>
               <label
+                htmlFor='input-keyword'
+                className='col-sm-5 col-form-label text-right'
+              >
+                <FormattedMessage id='index.keyword' />
+              </label>
+              <div className='col-sm-7'>
+                <Keywords
+                  id='input-keyword'
+                  keywordFilter={this.state.keywordFilter}
+                  click={this.click3}
+                  availableKeywords={availableKeywords}
+                />
+              </div>
+            </div>
+
+            <div className='form-group row'>
+              <label
                 htmlFor='input-name'
                 className='col-sm-5 col-form-label text-right'
               >
@@ -566,6 +640,14 @@ export const query = graphql`
             processedAt
           }
 
+          keywords {
+            language
+            keywords {
+              word
+              count
+            }
+          }
+
           licenses {
             url
             spdxId
@@ -578,6 +660,14 @@ export const query = graphql`
             count
           }
           users {
+            keywords {
+              language
+              keywords {
+                word
+                count
+              }
+            }
+
             repoLanguages {
               name
               count
