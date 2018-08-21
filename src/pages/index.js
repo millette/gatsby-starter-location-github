@@ -6,6 +6,7 @@ import deburr from 'lodash.deburr'
 
 // self
 import {
+  Licenses,
   ProgLanguages,
   Radios,
   Layout,
@@ -118,6 +119,7 @@ class FrontPage extends Component {
       maybeFilterEmail: 'dontCare',
       maybeFilterCompany: 'dontCare',
       languageFilter: [],
+      licenseFilter: [],
       last: PER_PAGE,
       location: '',
       deburredLocation: '',
@@ -180,11 +182,13 @@ class FrontPage extends Component {
       }))
 
     this.click = this.click.bind(this)
-    this.clickOrig = this.clickOrig.bind(this)
+    this.click2 = this.click2.bind(this)
+    // this.clickOrig = this.clickOrig.bind(this)
     this.clickMore = this.clickMore.bind(this)
     this.locationFilter = this.locationFilter.bind(this)
     this.nameFilter = this.nameFilter.bind(this)
     this.languageFiltering = this.languageFiltering.bind(this)
+    this.licenseFiltering = this.licenseFiltering.bind(this)
     this.locationFiltering = this.locationFiltering.bind(this)
     this.nameFiltering = this.nameFiltering.bind(this)
     this.changeOrder = this.changeOrder.bind(this)
@@ -251,6 +255,15 @@ class FrontPage extends Component {
     this.setState(obj)
   }
 
+  click2 (licenseFilter) {
+    const obj = {
+      last: PER_PAGE,
+      licenseFilter
+    }
+    this.setState(obj)
+  }
+
+  /*
   clickOrig ({ target: { dataset } }) {
     if (!this.state.languageFilter && !dataset.key) {
       return
@@ -261,6 +274,26 @@ class FrontPage extends Component {
         dataset && dataset.key !== this.state.languageFilter && dataset.key
     }
     this.setState(obj)
+  }
+  */
+
+  licenseFiltering (x) {
+    // console.log('licenseFiltering:', x)
+    // console.log('licenseFiltering:', this.state.licenseFilter)
+    if (!this.state.licenseFilter.length) {
+      return true
+    }
+    let ok = false
+    if (!x.licenses) {
+      return false
+    }
+    x.licenses.forEach(y => {
+      if (y.license === this.state.licenseFilter[0]) {
+        // if (y.name === this.state.languageFilter) {
+        ok = true
+      }
+    })
+    return ok
   }
 
   languageFiltering (x) {
@@ -295,11 +328,17 @@ class FrontPage extends Component {
   }
 
   render () {
+    const availableLicenses = this.props.data.allDataJson.edges[0].node.licenses.map(
+      x => x.spdxId
+    )
+    // console.log('availableLicenses:', availableLicenses)
+
     const availableLanguages = this.props.data.allDataJson.edges[0].node
       .repoLanguages
 
     const usersImp = this.allUsers
       .filter(this.languageFiltering)
+      .filter(this.licenseFiltering)
       .filter(this.locationFiltering)
       .filter(this.nameFiltering)
       .filter(maybeMapFns.available[this.state[maybeMap.available]])
@@ -400,6 +439,23 @@ class FrontPage extends Component {
                   click={this.click}
                   availableLanguages={availableLanguages}
                   allLanguageColors={this.allLanguageColors}
+                />
+              </div>
+            </div>
+
+            <div className='form-group row'>
+              <label
+                htmlFor='input-license'
+                className='col-sm-5 col-form-label text-right'
+              >
+                <FormattedMessage id='index.license' />
+              </label>
+              <div className='col-sm-7'>
+                <Licenses
+                  id='input-license'
+                  licenseFilter={this.state.licenseFilter}
+                  click={this.click2}
+                  availableLicenses={availableLicenses}
                 />
               </div>
             </div>
@@ -509,6 +565,14 @@ export const query = graphql`
             version
             processedAt
           }
+
+          licenses {
+            url
+            spdxId
+            name
+            nickname
+          }
+
           repoLanguages {
             name
             count
@@ -528,6 +592,11 @@ export const query = graphql`
             createdAt
             starredRepositoriesCount
             repositoriesContributedToCount
+            licenses {
+              license
+              count
+            }
+
             fetchedAt
             isHireable
             websiteUrl

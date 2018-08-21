@@ -8,6 +8,7 @@ import { Sparkline, LineSeries } from '@data-ui/sparkline'
 initSimpleImg({ threshold: 0.25 })
 
 const GithubUser = props => {
+  // console.log('repositoriesContributedTo:', props.repositoriesContributedTo)
   return (
     <div className='card mt-4'>
       <SimpleImg
@@ -184,6 +185,26 @@ const GithubUser = props => {
                           style={style}
                         >
                           {name} ({count})
+                        </li>
+                      ))}
+                    </ul>
+                  </dd>
+                </Fragment>
+              )}
+
+              {props.licenses && (
+                <Fragment>
+                  <dt className='col-6 col-xl-5 text-right'>
+                    <FormattedMessage id='directory.licenses' />
+                  </dt>
+                  <dd className='col-6 col-xl-7'>
+                    <ul className='list-inline'>
+                      {props.licenses.map(({ license, count }) => (
+                        <li
+                          key={license}
+                          className='list-inline-item badge badge-info'
+                        >
+                          {license} ({count})
                         </li>
                       ))}
                     </ul>
