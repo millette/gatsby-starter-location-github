@@ -52,7 +52,7 @@
     "typeface-roboto": "^0.0.54"
   },
   "engines": {
-    "node": ">= 8.11.3"
+    "node": ">= 8.11.4"
   },
   "keywords": ["gatsby", "starter", "github"],
   "lint-staged": {
