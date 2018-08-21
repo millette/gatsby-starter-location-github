@@ -10,6 +10,7 @@ import ProgLanguages from './prog-langs'
 import Ads from './ads'
 import Licenses from './licenses'
 import Keywords from './keywords'
+import ListKeywords from './list-keywords'
 
 export {
   Footer,
@@ -23,5 +24,6 @@ export {
   ProgLanguages,
   Ads,
   Licenses,
-  Keywords
+  Keywords,
+  ListKeywords
 }

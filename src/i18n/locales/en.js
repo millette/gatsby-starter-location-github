@@ -100,6 +100,7 @@ module.exports = {
   'nav.current': '(current)',
   'nav.switchLanguage': 'Switch language',
   'directory.title': 'Directory',
+  'directory.keywords': 'Keywords',
   'directory.licenses': 'Licenses',
   'directory.sum2.label': '20 weeks',
   'directory.sum2.value': `{sum2, plural,
