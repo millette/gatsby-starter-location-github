@@ -8,6 +8,7 @@ import Radios from './radios'
 import Social from './social'
 import ProgLanguages from './prog-langs'
 import Ads from './ads'
+import Licenses from './licenses'
 
 export {
   Footer,
@@ -19,5 +20,6 @@ export {
   Radios,
   Social,
   ProgLanguages,
-  Ads
+  Ads,
+  Licenses
 }
