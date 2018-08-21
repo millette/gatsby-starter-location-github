@@ -37,7 +37,7 @@
     "gatsby-source-filesystem": "^2.0.1-rc.0",
     "gatsby-transformer-json": "^2.1.1-rc.0",
     "gatsby-transformer-sharp": "^2.1.1-rc.0",
-    "ghraphql": "^0.9.4",
+    "ghraphql": "^0.10.0",
     "intl": "^1.2.5",
     "lodash.deburr": "^4.1.0",
     "node-sass": "^4.9.3",

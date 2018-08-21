@@ -2646,6 +2646,10 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
+collapse-white-space@^1.0.3:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/collapse-white-space/-/collapse-white-space-1.0.4.tgz#ce05cf49e54c3277ae573036a26851ba430a0091"
+
 collection-visit@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/collection-visit/-/collection-visit-1.0.0.tgz#4bc0373c164bc3291b4d368c829cf1a80a59dca0"
@@ -3499,9 +3503,9 @@ del@^3.0.0:
     pify "^3.0.0"
     rimraf "^2.2.8"
 
-delay@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/delay/-/delay-3.0.0.tgz#97fc5c21028e20616e822ab11838c648808534eb"
+delay@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/delay/-/delay-3.1.0.tgz#fb7e64afbcea7f3c73435f3fb028d44e07734117"
 
 delayed-stream@~1.0.0:
   version "1.0.0"
@@ -4806,6 +4810,12 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
+franc-min@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/franc-min/-/franc-min-4.0.0.tgz#e93d9c95a1497494e885f76cfe33ddf03c9ae736"
+  dependencies:
+    trigram-utils "^1.0.0"
+
 fresh@0.5.2:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/fresh/-/fresh-0.5.2.tgz#3d8cadd90d976569fa835ab1f8e4b23a105605a7"
@@ -5269,19 +5279,25 @@ gh-pages@^1.2.0:
     graceful-fs "4.1.11"
     rimraf "^2.6.2"
 
-ghraphql@^0.9.4:
-  version "0.9.4"
-  resolved "https://registry.yarnpkg.com/ghraphql/-/ghraphql-0.9.4.tgz#8efaa4c5d13f2e23a3a4b67099408ebab69cdc7e"
+ghraphql@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/ghraphql/-/ghraphql-0.10.0.tgz#c3974de2f9f8b2e88862de0480510f5cf916263b"
   dependencies:
     debug "^3.1.0"
-    delay "^3.0.0"
+    delay "^3.1.0"
+    franc-min "^4.0.0"
     get-best-contrast-color "^0.2.1"
     got "^9.0.0"
+    lodash.countby "^4.6.0"
     lodash.deburr "^4.1.0"
+    lodash.difference "^4.5.0"
     lodash.groupby "^4.6.0"
+    lodash.intersectionwith "^4.4.0"
+    lodash.sortby "^4.7.0"
     lodash.uniq "^4.5.0"
     lodash.uniqby "^4.7.0"
-    marked "^0.4.0"
+    lodash.words "^4.2.0"
+    marked "^0.5.0"
     marked-terminal "^3.0.0"
     meow "^5.0.0"
     mkdirp "^0.5.1"
@@ -5289,6 +5305,7 @@ ghraphql@^0.9.4:
     p-map "^1.2.0"
     progress "^2.0.0"
     rollodeqc-gh-user-streak "^2.1.1"
+    stopwords "^0.0.9"
     weeknumber "^1.0.1"
 
 github-from-package@0.0.0:
@@ -6987,6 +7004,10 @@ lodash.clonedeep@^4.3.2:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
 
+lodash.countby@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/lodash.countby/-/lodash.countby-4.6.0.tgz#5351f24de16724a0059b561f920b0d80af78a33c"
+
 lodash.debounce@^4.0.8:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
@@ -6994,6 +7015,10 @@ lodash.debounce@^4.0.8:
 lodash.deburr@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/lodash.deburr/-/lodash.deburr-4.1.0.tgz#ddb1bbb3ef07458c0177ba07de14422cb033ff9b"
+
+lodash.difference@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.difference/-/lodash.difference-4.5.0.tgz#9ccb4e505d486b91651345772885a2df27fd017c"
 
 lodash.escape@^3.0.0:
   version "3.2.0"
@@ -7008,6 +7033,10 @@ lodash.flatten@^4.4.0:
 lodash.groupby@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.groupby/-/lodash.groupby-4.6.0.tgz#0b08a1dcf68397c397855c3239783832df7403d1"
+
+lodash.intersectionwith@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/lodash.intersectionwith/-/lodash.intersectionwith-4.4.0.tgz#818949e293052ba7fc73a440f6114c2c81c38e1c"
 
 lodash.isarguments@^3.0.0:
   version "3.1.0"
@@ -7093,6 +7122,10 @@ lodash.uniq@^4.5.0:
 lodash.uniqby@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/lodash.uniqby/-/lodash.uniqby-4.7.0.tgz#d99c07a669e9e6d24e1362dfe266c67616af1302"
+
+lodash.words@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/lodash.words/-/lodash.words-4.2.0.tgz#5ecfeaf8ecf8acaa8e0c8386295f1993c9cf4036"
 
 lodash@^4.0.0, lodash@^4.0.8, lodash@^4.11.1, lodash@^4.13.1, lodash@^4.16.4, lodash@^4.17.10, lodash@^4.17.2, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@~4.17.10:
   version "4.17.10"
@@ -7235,9 +7268,9 @@ marked-terminal@^3.0.0:
     lodash.assign "^4.2.0"
     node-emoji "^1.4.1"
 
-marked@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-0.4.0.tgz#9ad2c2a7a1791f10a852e0112f77b571dce10c66"
+marked@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-0.5.0.tgz#9e590bad31584a48ff405b33ab1c0dd25172288e"
 
 math-random@^1.0.1:
   version "1.0.1"
@@ -7567,6 +7600,10 @@ mutationobserver-shim@^0.3.2:
 mute-stream@0.0.7, mute-stream@~0.0.4:
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.7.tgz#3075ce93bc21b8fab43e1bc4da7e8115ed1e7bab"
+
+n-gram@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/n-gram/-/n-gram-1.0.1.tgz#d29a465e4debcff7f9eed9fb57d9da6c806f4112"
 
 name-all-modules-plugin@^1.0.1:
   version "1.0.1"
@@ -10368,6 +10405,10 @@ stdout-stream@^1.4.0:
   dependencies:
     readable-stream "^2.0.1"
 
+stopwords@^0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/stopwords/-/stopwords-0.0.9.tgz#d2ceb30c778b3b12896d476a0ca5e9946141b5e3"
+
 stream-browserify@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/stream-browserify/-/stream-browserify-2.0.1.tgz#66266ee5f9bdb9940a4e4514cafb43bb71e5c9db"
@@ -10835,6 +10876,14 @@ tough-cookie@~2.4.3:
   dependencies:
     psl "^1.1.24"
     punycode "^1.4.1"
+
+trigram-utils@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/trigram-utils/-/trigram-utils-1.0.1.tgz#9248b88393c696095640eafd8d529d30761094da"
+  dependencies:
+    collapse-white-space "^1.0.3"
+    n-gram "^1.0.0"
+    trim "0.0.1"
 
 trim-newlines@^1.0.0:
   version "1.0.0"
