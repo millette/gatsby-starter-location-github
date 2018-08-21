@@ -9,6 +9,7 @@ import Social from './social'
 import ProgLanguages from './prog-langs'
 import Ads from './ads'
 import Licenses from './licenses'
+import Keywords from './keywords'
 
 export {
   Footer,
@@ -21,5 +22,6 @@ export {
   Social,
   ProgLanguages,
   Ads,
-  Licenses
+  Licenses,
+  Keywords
 }
