@@ -35,6 +35,7 @@ module.exports = {
   'radios.company': 'Compagnie',
   'index.search': 'Cherchez',
   'index.progLanguage': 'Langage de programmation',
+  'index.license': 'Licence',
   'index.available.off': 'Disponible? Peu importe',
   'index.available.on': 'Disponible? OUI!',
   'index.order': 'Tri',
@@ -102,6 +103,7 @@ module.exports = {
   'nav.current': '(actuelle)',
   'nav.switchLanguage': 'Changer la langue',
   'directory.title': 'Répertoire',
+  'directory.licenses': 'Licences',
   'directory.sum2.label': '20 semaines',
   'directory.sum2.value': `{sum2, plural,
     =0 {aucune contribution}
