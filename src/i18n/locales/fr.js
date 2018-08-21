@@ -36,6 +36,7 @@ module.exports = {
   'index.search': 'Cherchez',
   'index.progLanguage': 'Langage de programmation',
   'index.license': 'Licence',
+  'index.keyword': 'Mot-clé',
   'index.available.off': 'Disponible? Peu importe',
   'index.available.on': 'Disponible? OUI!',
   'index.order': 'Tri',

@@ -36,6 +36,7 @@ module.exports = {
   'index.search': 'Search',
   'index.progLanguage': 'Programming language',
   'index.license': 'License',
+  'index.keyword': 'Keyword',
   'index.available.off': 'Available? Doesn’t matter',
   'index.available.on': 'Available? YES!',
   'index.order': 'Order',
