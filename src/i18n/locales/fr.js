@@ -104,7 +104,7 @@ module.exports = {
   'nav.current': '(actuelle)',
   'nav.switchLanguage': 'Changer la langue',
   'directory.title': 'Répertoire',
-  'directory.keywords': 'Mots-clé',
+  'directory.keywords': 'Mots-clés',
   'directory.licenses': 'Licences',
   'directory.sum2.label': '20 semaines',
   'directory.sum2.value': `{sum2, plural,
