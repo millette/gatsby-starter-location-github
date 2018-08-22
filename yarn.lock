@@ -680,9 +680,9 @@
     lodash "^4.17.5"
     to-fast-properties "^2.0.0"
 
-"@data-ui/shared@^0.0.62":
-  version "0.0.62"
-  resolved "https://registry.yarnpkg.com/@data-ui/shared/-/shared-0.0.62.tgz#6d4e14e03ab37060e6f6afdd5f831df88cd3c5aa"
+"@data-ui/shared@^0.0.63":
+  version "0.0.63"
+  resolved "https://registry.yarnpkg.com/@data-ui/shared/-/shared-0.0.63.tgz#870e84adaa0600b18679b291874cf01c5325829a"
   dependencies:
     "@data-ui/theme" "^0.0.62"
     "@vx/event" "^0.0.165"
@@ -693,11 +693,11 @@
     d3-array "^1.2.1"
     prop-types "^15.5.10"
 
-"@data-ui/sparkline@^0.0.62":
-  version "0.0.62"
-  resolved "https://registry.yarnpkg.com/@data-ui/sparkline/-/sparkline-0.0.62.tgz#3cfe862bb16639e1ca2f8965302c4d77afd33dbb"
+"@data-ui/sparkline@^0.0.63":
+  version "0.0.63"
+  resolved "https://registry.yarnpkg.com/@data-ui/sparkline/-/sparkline-0.0.63.tgz#f5d7ad31c99c6e6eb1a1e6888ab98ebe3b021eb8"
   dependencies:
-    "@data-ui/shared" "^0.0.62"
+    "@data-ui/shared" "^0.0.63"
     "@data-ui/theme" "0.0.8"
     "@vx/axis" "0.0.140"
     "@vx/curve" "0.0.140"
