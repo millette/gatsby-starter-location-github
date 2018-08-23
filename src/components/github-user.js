@@ -1,22 +1,17 @@
 // npm
 import React, { Fragment } from 'react'
 import { FormattedMessage, FormattedDate } from 'react-intl'
-// import { SimpleImg, initSimpleImg } from 'react-simple-img'
-import { Sparkline, LineSeries } from '@data-ui/sparkline'
+import {
+  Label,
+  WithTooltip,
+  Sparkline,
+  LineSeries,
+  PointSeries,
+  HorizontalReferenceLine
+} from '@data-ui/sparkline'
 
 // self
 import { ListKeywords } from '.'
-
-// FIXME: run once at your root component or at file which calls `ReactDOM.render`
-/*
-initSimpleImg({ threshold: 0.25 })
-      <SimpleImg
-        wrapperClassName='rym-fix-img card-img-top'
-        placeholder='linear-gradient(rgb(30, 87, 153) 0%, rgb(125, 185, 232) 100%)'
-        src={`https://avatars3.githubusercontent.com/u/${props.databaseId}`}
-        alt={`Avatar de ${props.name || props.login}`}
-      />
-*/
 
 const GithubUser = props => {
   return (
@@ -32,15 +27,26 @@ const GithubUser = props => {
           style={{ marginTop: -64, zIndex: 200 }}
           className='card-img-top text-center rym-with-hover'
         >
-          <Sparkline
-            margin={{ top: 10, right: 10, bottom: 10, left: 10 }}
-            width={240}
-            height={64}
-            data={props.sparks.output}
-            ariaLabel={`${props.login} sparkline`}
+          <WithTooltip
+            renderTooltip={({ datum: { y } }) => y && `${y} contribs`}
           >
-            <LineSeries showArea />
-          </Sparkline>
+            <Sparkline
+              margin={{ top: 10, right: 48, bottom: 10, left: 10 }}
+              width={240}
+              height={64}
+              data={props.sparks.output}
+              ariaLabel={`${props.login} sparkline`}
+            >
+              <HorizontalReferenceLine
+                stroke='#f00'
+                labelPosition='right'
+                LabelComponent={<Label strokeWidth={1} fill='#f00' />}
+                renderLabel={a => Math.round(a) && `${Math.round(a)}/w`}
+              />
+              <LineSeries showArea />
+              <PointSeries points={['max']} />
+            </Sparkline>
+          </WithTooltip>
         </div>
       )}
 
