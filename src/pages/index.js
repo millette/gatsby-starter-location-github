@@ -555,14 +555,13 @@ class FrontPage extends Component {
           </h4>
           {users.length ? (
             <Fragment>
-              <div className='row'>
+              <div className='row card-group'>
                 {users.map(x => (
-                  <div
+                  <GithubUser
+                    {...x}
+                    lang={this.props.pageContext.locale}
                     key={x.databaseId}
-                    className='col-sm-6 col-md-6 col-lg-4'
-                  >
-                    <GithubUser {...x} lang={this.props.pageContext.locale} />
-                  </div>
+                  />
                 ))}
               </div>
 
