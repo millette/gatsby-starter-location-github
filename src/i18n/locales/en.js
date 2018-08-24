@@ -127,5 +127,5 @@ module.exports = {
   'jumbotron.header.hide': 'Hide header',
   'jumbotron.more': 'Find out more',
   'jumbotron.text': `Welcome to the directory of programmers from your region (with a GitHub account).
-Its filtering and ordering tools enable you to quicly find the person you are looking for.`
+Its filtering and ordering tools enable you to quickly find the person you are looking for.`
 }
