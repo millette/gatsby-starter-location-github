@@ -8,6 +8,14 @@ import tinylogo from '../assets/images/tinier-rollo-logo.png'
 import { getPageTitleID } from '../utils'
 import { LanguageSwitch } from '.'
 
+let config = { location: 'UNDEFINED' }
+
+try {
+  config = { ...config, ...require('../../custom/config') }
+} catch (e) {
+  // expected if there is no custom config
+}
+
 class Nav extends Component {
   constructor (props) {
     super(props)
@@ -87,6 +95,23 @@ class Nav extends Component {
                   )}
                 </Link>
               </li>
+
+              {config.withAds && (
+                <li
+                  className={`nav-item${
+                    pageTitleStr === 'sponsor' ? ' active' : ''
+                  }`}
+                >
+                  <Link className='nav-link' to='/sponsor/'>
+                    <FormattedMessage id='nav.sponsor' />
+                    {pageTitleStr === 'sponsor' && (
+                      <span className='sr-only'>
+                        <FormattedMessage id='nav.current' />
+                      </span>
+                    )}
+                  </Link>
+                </li>
+              )}
             </ul>
             <LanguageSwitch
               showLanguages={this.state.showLanguages}

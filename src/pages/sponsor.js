@@ -6,21 +6,21 @@ import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
 import { Layout, Footer } from '../components'
 import { withIntl, Link } from '../i18n'
 
-const About = ({ messages }) => (
+const Sponsor = ({ messages }) => (
   <Layout messages={messages}>
     <div className='container'>
       <h1 className='mt-3'>
-        <FormattedMessage id='about.title' />
+        <FormattedMessage id='sponsor.title' />
       </h1>
       <div className='row'>
         <div className='col-md'>
           <p>
             <FormattedMessage id='jumbotron.text' />
           </p>
-          <FormattedHTMLMessage id='about.col1.html' />
+          <FormattedHTMLMessage id='sponsor.col1.html' />
         </div>
         <div className='col-md'>
-          <FormattedHTMLMessage id='about.col2.html' />
+          <FormattedHTMLMessage id='sponsor.col2.html' />
         </div>
       </div>
 
@@ -41,4 +41,4 @@ const About = ({ messages }) => (
   </Layout>
 )
 
-export default withIntl(About)
+export default withIntl(Sponsor)

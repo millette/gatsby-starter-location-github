@@ -95,6 +95,7 @@ module.exports = {
 <p>And More, as you wish.</p>`,
   '404.title': 'NOT FOUND',
   '404.text': 'You just hit a route that doesn’t exist… the sadness.',
+  'nav.sponsor': 'Sponsor',
   'nav.contact': 'Contact',
   'nav.about': 'About',
   'nav.current': '(current)',
@@ -123,6 +124,9 @@ module.exports = {
   }`,
   'directory.languages': 'Languages',
   'directory.available': 'Available for hire',
+
+  'sponsor.title': 'Sponsor',
+
   'jumbotron.header.show': 'More info',
   'jumbotron.header.hide': 'Hide header',
   'jumbotron.more': 'Find out more',

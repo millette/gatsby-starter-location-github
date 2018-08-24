@@ -12,7 +12,8 @@ import {
   Radios,
   Layout,
   GithubUser,
-  Footer
+  Footer,
+  Ads
 } from '../components'
 import { withIntl } from '../i18n'
 
@@ -399,6 +400,7 @@ class FrontPage extends Component {
     return (
       <Layout header messages={this.props.messages}>
         <div className='container'>
+          {config.withAds && <Ads />}
           <section className='mt-3 py-2 jumbotron'>
             <h2 className='jumbotron-heading'>
               <FormattedMessage id='index.search' />{' '}

@@ -72,7 +72,7 @@ class Ads extends Component {
                 </a>
               </div>
               <div className='col-md-5'>
-                <Link to='/promo/'>
+                <Link to='/'>
                   <div className='card pt-2 text-dark border-0 text-center'>
                     <Img
                       className='card-img-top'
@@ -91,7 +91,7 @@ class Ads extends Component {
                 </Link>
               </div>
               <div className='col-md-3'>
-                <Link to='/contact/'>
+                <Link to='/sponsor/'>
                   <div className='card pt-2 text-dark border-0 text-center'>
                     <Img
                       className='card-img-top'

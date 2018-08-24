@@ -99,6 +99,7 @@ module.exports = {
   '404.title': 'PAGE NON TROUVÉE',
   '404.text':
     'Vous avez trouvé un chemin qui ne mène nul part… Quelle tristesse.',
+  'nav.sponsor': 'Commanditer',
   'nav.contact': 'Contact',
   'nav.about': 'À propos',
   'nav.current': '(actuelle)',
@@ -127,6 +128,9 @@ module.exports = {
   }`,
   'directory.languages': 'Langages',
   'directory.available': 'Disponible pour travailler',
+
+  'sponsor.title': 'Commanditer',
+
   'jumbotron.header.show': 'Plus d’info',
   'jumbotron.header.hide': 'Cacher l’entête',
   'jumbotron.more': 'En savoir plus',

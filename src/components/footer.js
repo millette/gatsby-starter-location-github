@@ -6,6 +6,14 @@ import { FormattedMessage, FormattedRelative } from 'react-intl'
 // self
 import { Link } from '../i18n'
 
+let config = { location: 'UNDEFINED' }
+
+try {
+  config = { ...config, ...require('../../custom/config') }
+} catch (e) {
+  // expected if there is no custom config
+}
+
 const Footer = () => (
   <StaticQuery
     query={graphql`
@@ -59,16 +67,24 @@ const Footer = () => (
                 </li>
 
                 <li>
-                  <Link to='/about'>
+                  <Link to='/about/'>
                     <FormattedMessage id='about.title' />
                   </Link>
                 </li>
 
                 <li>
-                  <Link to='/contact'>
+                  <Link to='/contact/'>
                     <FormattedMessage id='contact.title' />
                   </Link>
                 </li>
+
+                {config.withAds && (
+                  <li>
+                    <Link to='/sponsor/'>
+                      <FormattedMessage id='sponsor.title' />
+                    </Link>
+                  </li>
+                )}
               </ul>
             </div>
 
