@@ -5281,9 +5281,9 @@ gh-pages@^1.2.0:
     graceful-fs "4.1.11"
     rimraf "^2.6.2"
 
-ghraphql@^0.11.0:
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/ghraphql/-/ghraphql-0.11.0.tgz#ec1e2f523cd0d9e587ec57a1c33d7aed90e7c292"
+ghraphql@^0.11.1:
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/ghraphql/-/ghraphql-0.11.1.tgz#89f061badc5b8e523a999c4062ee6d36597d5e94"
   dependencies:
     debug "^3.1.0"
     delay "^3.1.0"
