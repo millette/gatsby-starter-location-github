@@ -81,7 +81,7 @@ const Footer = () => (
                 {config.withAds && (
                   <li>
                     <Link to='/sponsor/'>
-                      <FormattedMessage id='nav.sponsor' />
+                      <FormattedMessage id='sponsor.title' />
                     </Link>
                   </li>
                 )}

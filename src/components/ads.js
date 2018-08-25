@@ -112,7 +112,19 @@ class Ads extends Component {
             <div className='col text-right'>
               <blockquote className='blockquote'>
                 <p>
-                  <FormattedMessage id='ads.why' />
+                  <FormattedMessage
+                    id='ads.why'
+                    values={{
+                      more: (
+                        <Fragment>
+                          <br />
+                          <Link to='/sponsor' className='btn btn-info'>
+                            <FormattedMessage id='ads.sponsor' />
+                          </Link>
+                        </Fragment>
+                      )
+                    }}
+                  />
                 </p>
                 <footer className='blockquote-footer'>Robin Millette</footer>
               </blockquote>
