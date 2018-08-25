@@ -12,7 +12,8 @@
 module.exports = {
   title: 'RolloDevs',
   subtitle: 'Your locally sourced developper directory',
-  'ads.why': '"Note that the ads help maintain the website."',
+  'ads.sponsor': 'About the ads',
+  'ads.why': '"Note that the ads help maintain the website." {more}',
   'ads.toggle.show': 'Show ads',
   'ads.toggle.hide': 'Ads (hide)',
   'ads.rollodevs':
@@ -79,8 +80,7 @@ module.exports = {
     <a href='mailto:{email}'>{email}</a>
   </p>`,
   'contact.col2b.html': `<p>
-    Send us an email:<br />
-    <a href='mailto:{email}'>{email}</a>
+    Send us an email <a href='mailto:{email}'>{email}</a> or call Robin Millette at 514-394-7877.
   </p>`,
   'contact.col3': 'To contact a developer, consult our {directory}',
   'contact.directory': 'directory',
@@ -125,19 +125,29 @@ module.exports = {
   'directory.languages': 'Languages',
   'directory.available': 'Available for hire',
 
-  'sponsor.title': 'Sponsor',
+  'sponsor.title': 'Sponsoring',
   'sponsor.col1.html': `
 <p class='lead'>
-[EN] Est-ce que votre entreprise serait intéressée à voir son logo sur le bottin et ainsi encourager le développement à plus long terme du site et de sa communauté? Ce serait juste à temps pour la <a target='_blank' rel='noopener noreferrer' href='https://2018.sqil.info/'>Semaine québécoise de l’informatique libre</a> :-)
+Would you be interested in seeing your company logo on the directory
+and support the long term development of the site and its community?
+Just in time for the
+<a target='_blank' rel='noopener noreferrer' href='https://2018.sqil.info/en/'>
+  Québec Free Software Week
+</a> :-)
 </p>
 <p>
-[EN] Depuis 2015, le nombre de développeurs au Québec a plus que doublé. Un nouveau bottin RoLLodeQc était nécessaire et maintenant qu’il est basé sur Gatsby, c’est plus facile de le mettre à jour et de l’adapter à un autre lieu.
+Since 2015, the number of developpers in Québec has more than double.
+A new RoLLodeQc was necessary. Now that it’s based on Gatsby, it’s
+easier to update and adapt to other locations.
 </p>
 <p>
-[EN] Pour supporter le développement et le maintien du bottin, le site comptera quelques courtes publicités locales en rotation  et disposera bientôt d’un espace pour des annonces plus longues comme des offres d’emplois et plus.
+In order to support the development and maintenance of the directory,
+the site will be showing small ads in rotation and will have a section
+for longer ads such as job offers and more.
 </p>
 <p>
-[EN] Contactez-nous en mentionnant le forfait choisi pour que nous puissons rapidement mettre votre annonce en ligne.
+Make sure you mention if you prefer the small or longer ad when you contact us
+so we can put it online as soon as possible.
 </p>
 `,
   'sponsor.col2.title': 'Available offers',
@@ -145,9 +155,9 @@ module.exports = {
 
   'sponsor.col2.html': `
 <ul>
-  <li>[EN] <b>250$ pour 3 mois:</b> Longue annonce; offre d’empoi, etc.</li>
-  <li>[EN] <b>100$ pour 3 mois:</b> Logo, nom et un court message (max 15 mots); 3 espaces en rotation <b><sup>*</sup></b> sur la page d’accueil</li>
-  <li>[EN] <b>500$ par mois:</b> Option d’affichage permanent sur la page d’accueil <sup>*</sup></b> <i>(au lieu d’être en rotation</i>); 1 seul disponible chaque mois</li>
+  <li><b>250$ for 3 months:</b> Longer ads; job offers, etc.</li>
+  <li><b>100$ for 3 months:</b> Logo, name and a short message (max 15 words); 3 spaces in rotation <b><sup>*</sup></b> on the front page</li>
+  <li><b>500$ per month:</b> Permanent display on the front page <sup>*</sup></b> <i>(instead of in rotation</i>); only 1 available each month</li>
 </ul>
 `,
 

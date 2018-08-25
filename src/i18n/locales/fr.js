@@ -12,7 +12,9 @@
 module.exports = {
   title: 'RolloDevs',
   subtitle: 'Votre source de développeurs locaux',
-  'ads.why': '« Notez que les annonces contribuent au maintien du site. »',
+  'ads.sponsor': 'À propos des annonces',
+  'ads.why':
+    '« Notez que les annonces contribuent au maintien du site.» {more}',
   'ads.toggle.show': 'Afficher les annonces',
   'ads.toggle.hide': 'Annonces (cacher)',
   'ads.rollodevs':
@@ -78,8 +80,7 @@ module.exports = {
     <a href='mailto:{email}'>{email}</a>
   </p>`,
   'contact.col2b.html': `<p>
-    Envoyez nous un courriel:<br />
-    <a href='mailto:{email}'>{email}</a>
+    Envoyez-nous un courriel <a href='mailto:{email}'>{email}</a> ou téléphonez Robin Millette au 514-394-7877.
   </p>`,
   'contact.col3': 'Pour contacter un développeur, consultez notre {directory}',
   'contact.directory': 'répertoire',
