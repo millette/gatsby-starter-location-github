@@ -126,6 +126,30 @@ module.exports = {
   'directory.available': 'Available for hire',
 
   'sponsor.title': 'Sponsor',
+  'sponsor.col1.html': `
+<p class='lead'>
+[EN] Est-ce que votre entreprise serait intéressée à voir son logo sur le bottin et ainsi encourager le développement à plus long terme du site et de sa communauté? Ce serait juste à temps pour la <a target='_blank' rel='noopener noreferrer' href='https://2018.sqil.info/'>Semaine québécoise de l’informatique libre</a> :-)
+</p>
+<p>
+[EN] Depuis 2015, le nombre de développeurs au Québec a plus que doublé. Un nouveau bottin RoLLodeQc était nécessaire et maintenant qu’il est basé sur Gatsby, c’est plus facile de le mettre à jour et de l’adapter à un autre lieu.
+</p>
+<p>
+[EN] Pour supporter le développement et le maintien du bottin, le site comptera quelques courtes publicités locales en rotation  et disposera bientôt d’un espace pour des annonces plus longues comme des offres d’emplois et plus.
+</p>
+<p>
+[EN] Contactez-nous en mentionnant le forfait choisi pour que nous puissons rapidement mettre votre annonce en ligne.
+</p>
+`,
+  'sponsor.col2.title': 'Available offers',
+  'sponsor.col2.deadline': 'until the end of 2018',
+
+  'sponsor.col2.html': `
+<ul>
+  <li>[EN] <b>250$ pour 3 mois:</b> Longue annonce; offre d’empoi, etc.</li>
+  <li>[EN] <b>100$ pour 3 mois:</b> Logo, nom et un court message (max 15 mots); 3 espaces en rotation <b><sup>*</sup></b> sur la page d’accueil</li>
+  <li>[EN] <b>500$ par mois:</b> Option d’affichage permanent sur la page d’accueil <sup>*</sup></b> <i>(au lieu d’être en rotation</i>); 1 seul disponible chaque mois</li>
+</ul>
+`,
 
   'jumbotron.header.show': 'More info',
   'jumbotron.header.hide': 'Hide header',

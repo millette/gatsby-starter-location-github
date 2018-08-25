@@ -14,26 +14,25 @@ const Sponsor = ({ messages }) => (
       </h1>
       <div className='row'>
         <div className='col-md'>
-          <p>
-            <FormattedMessage id='jumbotron.text' />
-          </p>
           <FormattedHTMLMessage id='sponsor.col1.html' />
         </div>
-        <div className='col-md'>
-          <FormattedHTMLMessage id='sponsor.col2.html' />
-        </div>
-      </div>
-
-      <div className='mt-5 row justify-content-around'>
-        <div className='col-md-4'>
-          <Link className='btn btn-primary btn-lg btn-block' to='/'>
-            <FormattedMessage id='about.front' />
-          </Link>
-        </div>
-        <div className='col-md-4'>
-          <Link className='btn btn-success btn-lg btn-block' to='/contact/'>
-            <FormattedMessage id='about.contact' />
-          </Link>
+        <div className='col-md ml-3'>
+          <div className='card'>
+            <div className='card-header text-center'>
+              <h4>
+                <FormattedMessage id='sponsor.col2.title' />
+              </h4>
+            </div>
+            <div className='card-body text-white bg-info'>
+              <FormattedHTMLMessage id='sponsor.col2.html' />
+            </div>
+            <Link
+              to='/contact/'
+              className='card-footer btn btn-danger bg-danger btn-block'
+            >
+              <FormattedMessage id='contact.title' />
+            </Link>
+          </div>
         </div>
       </div>
     </div>

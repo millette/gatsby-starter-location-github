@@ -72,23 +72,21 @@ class Ads extends Component {
                 </a>
               </div>
               <div className='col-md-5'>
-                <Link to='/'>
-                  <div className='card pt-2 text-dark border-0 text-center'>
-                    <Img
-                      className='card-img-top'
-                      alt='RoLLoDevs'
-                      fixed={f2.childImageSharp.fixed}
-                    />
-                    <div className='card-body'>
-                      <p className='card-text'>
-                        <FormattedMessage
-                          id='ads.rollodevs'
-                          values={{ name: <b>RoLLoDevs</b> }}
-                        />
-                      </p>
-                    </div>
+                <div className='card pt-2 text-dark border-0 text-center'>
+                  <Img
+                    className='card-img-top'
+                    alt='RoLLoDevs'
+                    fixed={f2.childImageSharp.fixed}
+                  />
+                  <div className='card-body'>
+                    <p className='card-text'>
+                      <FormattedMessage
+                        id='ads.rollodevs'
+                        values={{ name: <b>RoLLoDevs</b> }}
+                      />
+                    </p>
                   </div>
-                </Link>
+                </div>
               </div>
               <div className='col-md-3'>
                 <Link to='/sponsor/'>
