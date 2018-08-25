@@ -2,7 +2,7 @@
   "name": "gatsby-starter-location-github",
   "description": "Local GitHub directory.",
   "license": "AGPL-3.0",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "repository": "millette/gatsby-starter-location-github",
   "author": {
     "name": "Robin Millette",
@@ -61,7 +61,7 @@
     "lint": "standard",
     "ghraphql:colors": "ghraphql --config custom/config.js --colors",
     "ghraphql:users": "ghraphql --config custom/config.js --verbose",
-    "ghraphql:sparks": "ghraphql --config custom/config.js --sparks",
+    "ghraphql:sparks": "ghraphql --config custom/config.js --sparks --verbose",
     "ghraphql:init":
       "ghraphql --config custom/config.js --colors && ghraphql --config custom/config.js --verbose && ghraphql --config custom/config.js --sparks && mkdir custom/locales",
     "build": "gatsby build",
