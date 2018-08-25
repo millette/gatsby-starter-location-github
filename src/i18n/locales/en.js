@@ -95,7 +95,7 @@ module.exports = {
 <p>And More, as you wish.</p>`,
   '404.title': 'NOT FOUND',
   '404.text': 'You just hit a route that doesn’t exist… the sadness.',
-  'nav.sponsor': 'Sponsor',
+  'nav.sponsor': 'Sponsoring',
   'nav.contact': 'Contact',
   'nav.about': 'About',
   'nav.current': '(current)',
