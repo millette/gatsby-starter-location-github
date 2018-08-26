@@ -5281,9 +5281,9 @@ gh-pages@^1.2.0:
     graceful-fs "4.1.11"
     rimraf "^2.6.2"
 
-ghraphql@^0.11.1:
-  version "0.11.1"
-  resolved "https://registry.yarnpkg.com/ghraphql/-/ghraphql-0.11.1.tgz#89f061badc5b8e523a999c4062ee6d36597d5e94"
+ghraphql@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/ghraphql/-/ghraphql-0.12.0.tgz#78c28ac43399941704e9a36b62daf1ef5300a03e"
   dependencies:
     debug "^3.1.0"
     delay "^3.1.0"
@@ -5306,7 +5306,7 @@ ghraphql@^0.11.1:
     normalize-email-or-url "^0.1.0"
     p-map "^1.2.0"
     progress "^2.0.0"
-    rollodeqc-gh-user-streak "^2.1.1"
+    rollodeqc-gh-user-streak "^2.2.0"
     stopwords "^0.0.9"
     weeknumber "^1.0.1"
 
@@ -5521,20 +5521,6 @@ got@^7.0.0, got@^7.1.0:
     timed-out "^4.0.0"
     url-parse-lax "^1.0.0"
     url-to-options "^1.0.1"
-
-got@^9.0.0:
-  version "9.0.0"
-  resolved "https://registry.yarnpkg.com/got/-/got-9.0.0.tgz#8673d2838adbac8a2e4a07e5772e238c701e9b7c"
-  dependencies:
-    "@sindresorhus/is" "^0.11.0"
-    cacheable-request "^4.0.1"
-    decompress-response "^3.3.0"
-    duplexer3 "^0.1.4"
-    get-stream "^3.0.0"
-    mimic-response "^1.0.0"
-    p-cancelable "^0.5.0"
-    to-readable-stream "^1.0.0"
-    url-parse-lax "^3.0.0"
 
 got@^9.1.0:
   version "9.1.0"
@@ -9768,12 +9754,12 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
-rollodeqc-gh-user-streak@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/rollodeqc-gh-user-streak/-/rollodeqc-gh-user-streak-2.1.1.tgz#2b559d5374b0e63a6c7052461aae31db1853e077"
+rollodeqc-gh-user-streak@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/rollodeqc-gh-user-streak/-/rollodeqc-gh-user-streak-2.2.0.tgz#ea1bdc4d804587f6c1d1fd8cf7862a38566ba945"
   dependencies:
     chalk "^2.4.1"
-    got "^9.0.0"
+    got "^9.1.0"
     lodash.flatten "^4.4.0"
     lodash.sortby "^4.7.0"
     meow "^5.0.0"
