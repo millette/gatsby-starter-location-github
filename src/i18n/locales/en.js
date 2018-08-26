@@ -86,13 +86,40 @@ module.exports = {
   'contact.directory': 'directory',
   'contact.title': 'Contact us',
   'about.title': 'About us',
-  'about.col1.html': `<p>English bla bla.</p>
-  <p>And second paragraph.</p>`,
+  'about.col1.html': `
+<p>
+The directory data comes from <code>GitHub</code> via a location based search.
+It’s updated many times each week to generate a new static website with <code>Gatsby</code>.
+</p>
+<p>
+The <code>Gatsby</code> Starter is available as open source software
+and can easily be adapted to other locations and languages.
+It’s a good way to discover <code>Gatsby</code>, <code>React</code> and <code>GraphQL</code>
+if you already know <code>JavaScript</code>.
+</p>
+<p>Contact us if you would like to sponsor the site.</p>
+`,
   'about.front': 'The directory',
   'about.contact': 'Questions?',
-  'about.col2.html': `<p>English bla bla for column 2.</p>
-<p>And second paragraph.</p>
-<p>And More, as you wish.</p>`,
+  'about.col2.html': `
+<p>
+The site is maintained and developed by Robin Millette, a Montréal programmer
+and long time supporter of Free and Open Source Software.
+</p>
+<p>
+Don’t hesite to contact me directly or through the <code>GitHub</code> issues
+if you wish to contribute or have a comment or suggestion to improve the site.
+</p>
+<h4>Coming features</h4>
+<ul>
+  <li>Longer ads section (job offers, etc.)</li>
+  <li>User accounts to manage your profile</li>
+  <li>Detailed user profiles</li>
+  <li>Community pages (<code>Python</code>, <code>JavaScript</code>, <code>Linux</code>, etc.)</li>
+  <li>Global statistics and charts</li>
+  <li>And more!</li>
+</ul>
+`,
   '404.title': 'NOT FOUND',
   '404.text': 'You just hit a route that doesn’t exist… the sadness.',
   'nav.sponsor': 'Sponsoring',

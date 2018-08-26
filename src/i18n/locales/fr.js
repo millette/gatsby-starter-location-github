@@ -86,17 +86,44 @@ module.exports = {
   'contact.directory': 'répertoire',
   'contact.title': 'Contactez-nous',
   'about.title': 'À propos',
-  'about.col1.html': `<p>Français bla bla.</p>
-  <p>Et deuxième paragraphe.</p>`,
+  'about.col1.html': `
+<p>
+Les données du répertoire proviennent de <code>GitHub</code> via une recherche basée sur le lieu.
+Elles sont mises à jour plusieurs fois par semaine
+pour générer un nouveau site web statique avec <code>Gatsby</code>.
+</p>
+<p>
+Le <i>Starter</i> <code>Gatsby</code> est disponible en logiciel libre
+et s’adapte facilement à une autre localité et dans d’autres langues.
+C’est une bonne façon de s’initier à
+<code>Gatsby</code>, <code>React</code> et <code>GraphQL</code>
+si vous connaissez déjà le <code>JavaScript</code>.
+</p>
+<p>Contactez-nous si vous désirez commanditer le site.</p>
+`,
   'about.front': 'Allez au répertoire',
   'about.contact': 'Des questions?',
-  'about.col2.html': `<p>Français bla bla pour la colonne 2.</p>
-  <p>Et deuxième paragraphe.</p>
-  <ul>
-    <li>Même</li>
-    <li>une</li>
-    <li>liste</li>
-  </ul>`,
+  'about.col2.html': `
+<p>
+Le site est maintenu et développé par Robin Millette, un programmeur de Montréal
+et depuis longtemps fervent adepte des logiciels libres.
+</p>
+<p>
+N’hésitez pas à me contacter directement
+ou passer par les <i>issues</i> <code>GitHub</code>
+si vous désirez contribuer ou faire des commentaires ou suggestions
+pour améliorer le site.
+</p>
+<h4>À venir</h4>
+<ul>
+  <li>Section pour des annonces (offres d’emplois, etc.)</li>
+  <li>Compte utilisateur pour gérer son profil</li>
+  <li>Profil détaillé par utilisateur</li>
+  <li>Pages de communautés (<code>Python</code>, <code>JavaScript</code>, <code>Linux</code>, etc.)</li>
+  <li>Statistiques et graphiques globaux</li>
+  <li>Et bien plus!</li>
+</ul>
+`,
   '404.title': 'PAGE NON TROUVÉE',
   '404.text':
     'Vous avez trouvé un chemin qui ne mène nul part… Quelle tristesse.',
