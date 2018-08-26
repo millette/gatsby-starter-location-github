@@ -11,7 +11,7 @@
  */
 module.exports = {
   title: 'RolloDevs',
-  subtitle: 'Your locally sourced developper directory',
+  subtitle: 'Your locally sourced developer directory',
   'ads.sponsor': 'About the ads',
   'ads.why': '"Note that the ads help maintain the website." {more}',
   'ads.toggle.show': 'Show ads',
@@ -163,7 +163,7 @@ Just in time for the
 </a> :-)
 </p>
 <p>
-Since 2015, the number of developpers in Québec has more than double.
+Since 2015, the number of developers in Québec has more than double.
 A new RoLLodeQc was necessary. Now that it’s based on Gatsby, it’s
 easier to update and adapt to other locations.
 </p>
