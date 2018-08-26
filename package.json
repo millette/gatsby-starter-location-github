@@ -63,7 +63,7 @@
     "ghraphql:users": "ghraphql --config custom/config.js --verbose",
     "ghraphql:sparks": "ghraphql --config custom/config.js --sparks --verbose",
     "ghraphql:init":
-      "ghraphql --config custom/config.js --colors && ghraphql --config custom/config.js --verbose && ghraphql --config custom/config.js --sparks && mkdir custom/locales",
+      "ghraphql --config custom/config.js --colors && ghraphql --config custom/config.js --verbose && ghraphql --config custom/config.js --sparks --verbose && mkdir custom/locales",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
