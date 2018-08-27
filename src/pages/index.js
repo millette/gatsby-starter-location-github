@@ -137,7 +137,7 @@ class FrontPage extends Component {
       .map(({ node }) => node)
       .forEach(({ login, output, sum2, lastContribDate }) => {
         userSparks[login] = {
-          output: output.reverse(),
+          output,
           sum2,
           lastContribDate
         }
