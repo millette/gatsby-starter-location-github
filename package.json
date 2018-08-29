@@ -71,8 +71,7 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "develop": "gatsby develop --port 8001",
     "dev": "gatsby develop --port 8001",
-    "clean:all": "rm public/* .cache -fr",
-    "clean": "rm public/* -fr",
+    "clean": "rm public/* .cache -fr",
     "format": "prettier-standard '**/*.+(js|json|md)'",
     "precommit": "lint-staged"
   },
