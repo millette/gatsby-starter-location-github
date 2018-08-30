@@ -28,7 +28,7 @@ const Sponsor = ({ messages }) => (
             </div>
             <Link
               to='/contact/'
-              className='card-footer btn btn-danger bg-danger btn-block'
+              className='card-footer btn btn-success bg-success btn-block'
             >
               <FormattedMessage id='contact.title' />
             </Link>
