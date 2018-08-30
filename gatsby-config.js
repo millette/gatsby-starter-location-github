@@ -50,12 +50,14 @@ try {
       }
     },
     plugins: [
+      /*
       {
         resolve: 'gatsby-plugin-webpack-bundle-analyzer',
         options: {
           production: true
         }
       },
+      */
       'gatsby-plugin-react-helmet',
       'gatsby-transformer-json',
       {
