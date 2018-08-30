@@ -187,6 +187,10 @@ Fetch GitHub contributions for users in custom/data/gh-users.json and generate i
 
 Fetch all GitHub data and store in custom/data/ directory.
 
+### clean
+
+Delete public/\* content (except hidden files) and the whole .cache/ directory.
+
 ### dev (or develop)
 
 Start development mode. Sources files are watched and edits are reflected in the browser automatically.
