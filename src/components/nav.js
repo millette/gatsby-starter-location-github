@@ -17,7 +17,7 @@ try {
   // expected if there is no custom config
 }
 
-const sflImage = (
+const sflImage = config.withAds && (
   <img
     className='mt-1 mr-3 rounded'
     src={sfllogo}
@@ -66,7 +66,7 @@ class Nav extends Component {
     const { pageContext } = this.props
     const pageTitleStr = getPageTitleID(pageContext)
     return (
-      <nav className='navbar navbar-expand-sm navbar-dark bg-primary'>
+      <nav className='navbar navbar-expand-sm navbar-light bg-light'>
         <div className='container'>
           <Link className='navbar-brand' to='/'>
             <img src={tinylogo} alt='tiny logo RoLLodeQc' />

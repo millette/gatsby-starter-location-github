@@ -36,7 +36,7 @@ const LanguageSwitch = ({ showLanguages, toggleLanguages, pageContext }) => {
           title={languagesString}
           onClick={toggleLanguages}
           type='button'
-          className='btn btn-primary nav-link dropdown-toggle'
+          className='btn nav-link dropdown-toggle'
           id='navbarDropdown'
           aria-haspopup='true'
           aria-expanded={showLanguages ? 'true' : 'false'}
@@ -48,7 +48,7 @@ const LanguageSwitch = ({ showLanguages, toggleLanguages, pageContext }) => {
           />
         </button>
         <div
-          className={`bg-primary dropdown-menu${showLanguages ? ' show' : ''}`}
+          className={`dropdown-menu${showLanguages ? ' show' : ''}`}
           aria-labelledby='navbarDropdown'
         >
           {languageSwitch}

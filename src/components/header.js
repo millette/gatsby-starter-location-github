@@ -28,7 +28,7 @@ class Header extends Component {
         <section>
           <button
             onClick={this.click}
-            className='text-right border-bottom btn btn-sm btn-primary btn-block'
+            className='text-right border-bottom btn btn-sm btn-block'
           >
             <FormattedMessage
               id={`jumbotron.header.${this.state.showHeader ? 'hide' : 'show'}`}
