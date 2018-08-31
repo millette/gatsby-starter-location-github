@@ -17,32 +17,31 @@ try {
   // expected if there is no custom config
 }
 
-const TopAd = ({ pageContext }) => {
-  if (!config.withAds) {
-    return null
-  }
-  const ggg = (
-    <img
-      className='mt-1 mr-3 rounded'
-      src={sfllogo}
-      height={48}
-      alt='logo SFL'
-      title='Merci - Thank you!'
-    />
-  )
+const sflImage = (
+  <img
+    className='mt-1 mr-3 rounded'
+    src={sfllogo}
+    height={48}
+    alt='logo SFL'
+    title='Merci - Thank you!'
+  />
+)
 
-  return pageContext && pageContext.originalPath === '/sponsor/' ? (
+const sponsorPath = '/sponsor/'
+
+const TopAd = ({ pageContext: { originalPath } }) =>
+  config.withAds &&
+  (originalPath === sponsorPath ? (
     <a
       target='_blank'
       rel='noopener noreferrer'
       href='https://www.savoirfairelinux.com/'
     >
-      {ggg}
+      {sflImage}
     </a>
   ) : (
-    <Link to='/sponsor/'>{ggg}</Link>
-  )
-}
+    <Link to={sponsorPath}>{sflImage}</Link>
+  ))
 
 class Nav extends Component {
   constructor (props) {
@@ -130,7 +129,7 @@ class Nav extends Component {
                     pageTitleStr === 'sponsor' ? ' active' : ''
                   }`}
                 >
-                  <Link className='nav-link' to='/sponsor/'>
+                  <Link className='nav-link' to={sponsorPath}>
                     <FormattedMessage id='nav.sponsor' />
                     {pageTitleStr === 'sponsor' && (
                       <span className='sr-only'>
