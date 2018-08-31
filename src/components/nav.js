@@ -17,6 +17,33 @@ try {
   // expected if there is no custom config
 }
 
+const TopAd = ({ pageContext }) => {
+  if (!config.withAds) {
+    return null
+  }
+  const ggg = (
+    <img
+      className='mt-1 mr-3 rounded'
+      src={sfllogo}
+      height={48}
+      alt='logo SFL'
+      title='Merci - Thank you!'
+    />
+  )
+
+  return pageContext && pageContext.originalPath === '/sponsor/' ? (
+    <a
+      target='_blank'
+      rel='noopener noreferrer'
+      href='https://www.savoirfairelinux.com/'
+    >
+      {ggg}
+    </a>
+  ) : (
+    <Link to='/sponsor/'>{ggg}</Link>
+  )
+}
+
 class Nav extends Component {
   constructor (props) {
     super(props)
@@ -115,17 +142,7 @@ class Nav extends Component {
               )}
             </ul>
           </div>
-          {config.withAds && (
-            <Link to='/sponsor/'>
-              <img
-                className='mt-1 mr-3 rounded'
-                src={sfllogo}
-                height={48}
-                alt='logo SFL'
-                title='Merci - Thank you!'
-              />
-            </Link>
-          )}
+          <TopAd {...this.props} />
           <LanguageSwitch
             showLanguages={this.state.showLanguages}
             toggleLanguages={this.toggleLanguages}
