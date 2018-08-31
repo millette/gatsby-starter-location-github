@@ -20,6 +20,7 @@ public-ontario
 was-custom
 custom-qc
 package-lock.json
+bah-node_modules
 
 # Build directory
 /public
