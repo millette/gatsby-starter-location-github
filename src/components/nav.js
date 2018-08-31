@@ -5,6 +5,7 @@ import { FormattedMessage } from 'react-intl'
 // self
 import { Link } from '../i18n'
 import tinylogo from '../assets/images/tinier-rollo-logo.png'
+import sfllogo from '../assets/images/logo-sfl-coul-rgb.jpg'
 import { getPageTitleID } from '../utils'
 import { LanguageSwitch } from '.'
 
@@ -113,12 +114,23 @@ class Nav extends Component {
                 </li>
               )}
             </ul>
-            <LanguageSwitch
-              showLanguages={this.state.showLanguages}
-              toggleLanguages={this.toggleLanguages}
-              pageContext={pageContext}
-            />
           </div>
+          {config.withAds && (
+            <Link to='/sponsor/'>
+              <img
+                className='mt-1 mr-3 rounded'
+                src={sfllogo}
+                height={48}
+                alt='logo SFL'
+                title='Merci - Thank you!'
+              />
+            </Link>
+          )}
+          <LanguageSwitch
+            showLanguages={this.state.showLanguages}
+            toggleLanguages={this.toggleLanguages}
+            pageContext={pageContext}
+          />
         </div>
       </nav>
     )
