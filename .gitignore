@@ -19,6 +19,7 @@ public-qc-slimmer
 public-ontario
 was-custom
 custom-qc
+package-lock.json
 
 # Build directory
 /public
