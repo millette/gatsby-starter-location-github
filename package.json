@@ -44,9 +44,10 @@
     "node-sass": "^4.9.3",
     "npm-git-links": "^0.0.3",
     "prop-types": "^15.6.2",
-    "react": "^16.4.2",
-    "react-bootstrap-typeahead": "^3.2.2",
-    "react-dom": "^16.4.2",
+    "react": "^16.5.0",
+    "react-bootstrap-typeahead":
+      "millette/react-bootstrap-typeahead#fbb6905aa9baa0ffd4a329a0dbf1db7fbba68eb2",
+    "react-dom": "^16.5.0",
     "react-helmet": "^5.2.0",
     "react-intl": "^2.4.0",
     "typeface-roboto": "^0.0.54"
