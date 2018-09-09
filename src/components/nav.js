@@ -4,7 +4,6 @@ import { FormattedMessage } from 'react-intl'
 
 // self
 import { Link } from '../i18n'
-// import tinylogo from '../assets/images/tinier-rollo-logo.png'
 import sfllogo from '../assets/images/logo-sfl-coul-rgb.jpg'
 import { getPageTitleID } from '../utils'
 import { LogoAnim, LanguageSwitch } from '.'
@@ -65,7 +64,6 @@ class Nav extends Component {
   render () {
     const { pageContext } = this.props
     const pageTitleStr = getPageTitleID(pageContext)
-    // <img src={tinylogo} alt='tiny logo RoLLodeQc' />
     return (
       <nav className='navbar navbar-expand-sm navbar-light bg-light'>
         <div className='container'>
