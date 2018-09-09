@@ -5111,9 +5111,9 @@ gatsby-transformer-sharp@^2.1.1-rc.3:
     probe-image-size "^4.0.0"
     sharp "^0.20.2"
 
-gatsby@^2.0.0-rc.14:
-  version "2.0.0-rc.14"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.0-rc.14.tgz#8a654b81465f736b5b12694e9f055dff238812e5"
+gatsby@^2.0.0-rc.15:
+  version "2.0.0-rc.15"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.0-rc.15.tgz#994ceabf049e0020fa799928d77658ab95cb0290"
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -9253,9 +9253,9 @@ rc@^1.0.1, rc@^1.1.2, rc@^1.1.6, rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-bootstrap-typeahead@millette/react-bootstrap-typeahead#fbb6905aa9baa0ffd4a329a0dbf1db7fbba68eb2:
-  version "3.2.2"
-  resolved "https://codeload.github.com/millette/react-bootstrap-typeahead/tar.gz/fbb6905aa9baa0ffd4a329a0dbf1db7fbba68eb2"
+react-bootstrap-typeahead@^3.2.3:
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/react-bootstrap-typeahead/-/react-bootstrap-typeahead-3.2.3.tgz#ef93c9afbcc43335c6c77c90e160a3abad95732c"
   dependencies:
     classnames "^2.2.0"
     escape-string-regexp "^1.0.5"

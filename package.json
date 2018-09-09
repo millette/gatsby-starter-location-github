@@ -29,7 +29,7 @@
     "bootstrap": "4.1.3",
     "bootswatch": "4.1.3",
     "browser-lang": "^0.0.1",
-    "gatsby": "^2.0.0-rc.14",
+    "gatsby": "^2.0.0-rc.15",
     "gatsby-image": "^2.0.0-rc.1",
     "gatsby-plugin-purgecss": "^2.4.0",
     "gatsby-plugin-react-helmet": "^3.0.0-rc.1",
@@ -45,8 +45,7 @@
     "npm-git-links": "^0.0.3",
     "prop-types": "^15.6.2",
     "react": "^16.5.0",
-    "react-bootstrap-typeahead":
-      "millette/react-bootstrap-typeahead#fbb6905aa9baa0ffd4a329a0dbf1db7fbba68eb2",
+    "react-bootstrap-typeahead": "^3.2.3",
     "react-dom": "^16.5.0",
     "react-helmet": "^5.2.0",
     "react-intl": "^2.4.0",
