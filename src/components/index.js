@@ -11,6 +11,7 @@ import Ads from './ads'
 import Licenses from './licenses'
 import Keywords from './keywords'
 import ListKeywords from './list-keywords'
+import LogoAnim from './logo-anim'
 
 export {
   Footer,
@@ -25,5 +26,6 @@ export {
   Ads,
   Licenses,
   Keywords,
-  ListKeywords
+  ListKeywords,
+  LogoAnim
 }

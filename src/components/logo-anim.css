@@ -1,0 +1,51 @@
+svg {
+  margin: 0 auto;
+}
+
+#card-5 {
+  transform-origin: 92.5px 65px;
+}
+
+#card-4 {
+  transform-origin: 92.5px 65px;
+}
+
+#card-3 {
+  transform-origin: 92.5px 65px;
+}
+
+#card-2 {
+  transform-origin: 92.5px 65px;
+}
+
+#card-1 {
+  transform-origin: 92.5px 65px;
+}
+
+use {
+  transition: .3s;
+}
+
+.navbar:hover #card-5 {
+  transform-origin: 92.5px 65px;
+  transform: rotate(-40deg);
+}
+
+.navbar:hover #card-4 {
+  transform-origin: 92.5px 65px;
+  transform: rotate(-30deg);
+}
+
+.navbar:hover #card-3 {
+  transform-origin: 92.5px 65px;
+  transform: rotate(-20deg);
+}
+
+.navbar:hover #card-2 {
+  transform-origin: 92.5px 65px;
+  transform: rotate(-10deg);
+}
+
+.navbar:hover #card-1 {
+  transform-origin: 92.5px 65px;
+}
