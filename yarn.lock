@@ -689,11 +689,11 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@data-ui/shared@^0.0.63":
-  version "0.0.63"
-  resolved "https://registry.yarnpkg.com/@data-ui/shared/-/shared-0.0.63.tgz#870e84adaa0600b18679b291874cf01c5325829a"
+"@data-ui/shared@^0.0.69":
+  version "0.0.69"
+  resolved "https://registry.yarnpkg.com/@data-ui/shared/-/shared-0.0.69.tgz#1a1ee44efea0f35cf8b7bdc0adfce7b8b37122cd"
   dependencies:
-    "@data-ui/theme" "^0.0.62"
+    "@data-ui/theme" "^0.0.69"
     "@vx/event" "^0.0.165"
     "@vx/group" "^0.0.165"
     "@vx/shape" "^0.0.168"
@@ -702,11 +702,11 @@
     d3-array "^1.2.1"
     prop-types "^15.5.10"
 
-"@data-ui/sparkline@^0.0.63":
-  version "0.0.63"
-  resolved "https://registry.yarnpkg.com/@data-ui/sparkline/-/sparkline-0.0.63.tgz#f5d7ad31c99c6e6eb1a1e6888ab98ebe3b021eb8"
+"@data-ui/sparkline@^0.0.69":
+  version "0.0.69"
+  resolved "https://registry.yarnpkg.com/@data-ui/sparkline/-/sparkline-0.0.69.tgz#c7e2ffec1b3040a3e3e9b4fc4f5747ab14932980"
   dependencies:
-    "@data-ui/shared" "^0.0.63"
+    "@data-ui/shared" "^0.0.69"
     "@data-ui/theme" "0.0.8"
     "@vx/axis" "0.0.140"
     "@vx/curve" "0.0.140"
@@ -727,9 +727,9 @@
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/@data-ui/theme/-/theme-0.0.8.tgz#3116723d04b99f65c7750f81a500e9608b4837c3"
 
-"@data-ui/theme@^0.0.62":
-  version "0.0.62"
-  resolved "https://registry.yarnpkg.com/@data-ui/theme/-/theme-0.0.62.tgz#a7f50bb796fd6ea90171cb2c7f958f3bb24fe6d9"
+"@data-ui/theme@^0.0.69":
+  version "0.0.69"
+  resolved "https://registry.yarnpkg.com/@data-ui/theme/-/theme-0.0.69.tgz#f9c92f8bbd0711aecf89ea4f597dffc38472e387"
   dependencies:
     babel-runtime "^6.26.0"
 
