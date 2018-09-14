@@ -606,7 +606,7 @@ class FrontPage extends Component {
 export const query = graphql`
   query {
     allJustUsersJson(
-      limit: 96
+      limit: 12
       filter: { repositoriesContributedToCount: { gte: 1 } }
       sort: { fields: [repositoriesContributedToCount], order: DESC }
     ) {
