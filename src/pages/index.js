@@ -150,7 +150,9 @@ class FrontPage extends Component {
         this.allLanguageColors[name] = { bg, fg }
       })
 
-    this.allUsers = props.data.allDataJson.edges[0].node.users
+    // this.allUsers = props.data.allDataJson.edges[0].node.users
+    this.allUsers = props.data.allJustUsersJson.edges
+      .map(({ node }) => node)
       // FIXME: spam detection
       // If a user has a digit in his location and a website
       // but no repos starred or contributed to,
@@ -603,6 +605,45 @@ class FrontPage extends Component {
 
 export const query = graphql`
   query {
+    allJustUsersJson(
+      limit: 96
+      filter: { repositoriesContributedToCount: { gte: 1 } }
+      sort: { fields: [repositoriesContributedToCount], order: DESC }
+    ) {
+      totalCount
+      edges {
+        node {
+          keywords {
+            language
+            keywords {
+              word
+              count
+            }
+          }
+          repoLanguages {
+            name
+            count
+          }
+          name
+          login
+          databaseId
+          bio
+          company
+          email
+          location
+          createdAt
+          starredRepositoriesCount
+          repositoriesContributedToCount
+          licenses {
+            license
+            count
+          }
+          fetchedAt
+          isHireable
+          websiteUrl
+        }
+      }
+    }
     allDataJson {
       edges {
         node {
@@ -630,38 +671,6 @@ export const query = graphql`
           repoLanguages {
             name
             count
-          }
-          users {
-            keywords {
-              language
-              keywords {
-                word
-                count
-              }
-            }
-
-            repoLanguages {
-              name
-              count
-            }
-            name
-            login
-            databaseId
-            bio
-            company
-            email
-            location
-            createdAt
-            starredRepositoriesCount
-            repositoriesContributedToCount
-            licenses {
-              license
-              count
-            }
-
-            fetchedAt
-            isHireable
-            websiteUrl
           }
         }
       }
