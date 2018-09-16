@@ -7,8 +7,33 @@
 // core
 const path = require('path')
 
+// npm
+const { createFilePath } = require('gatsby-source-filesystem')
+
 // self
 const { languages } = require('./src/i18n/locales')
+
+exports.onCreateNode = oy => {
+  const { node, getNode, actions: { createNodeField } } = oy
+  // if (node.internal.owner === 'gatsby-transformer-json') { return }
+  // if (node.internal.owner === 'internal-data-bridge') { return }
+  if (node.internal.type !== 'MarkdownRemark') {
+    return
+  }
+  // console.log('NODE:', oy)
+  const fileNode = getNode(node.parent)
+  const value = `/blog${createFilePath({
+    node,
+    getNode,
+    basePath: 'custom/blog'
+  })}`
+  console.log('\n', value, fileNode.relativePath)
+  createNodeField({
+    name: 'slug',
+    node,
+    value
+  })
+}
 
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions
