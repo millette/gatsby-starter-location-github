@@ -59,7 +59,6 @@ try {
       },
       */
       'gatsby-plugin-react-helmet',
-      'gatsby-transformer-json',
       {
         resolve: 'gatsby-source-filesystem',
         options: {
@@ -74,6 +73,15 @@ try {
           path: `${cwd}/src/assets/images/`
         }
       },
+      {
+        resolve: 'gatsby-source-filesystem',
+        options: {
+          name: 'blog',
+          path: `${cwd}/custom/blog/`
+        }
+      },
+      'gatsby-transformer-json',
+      'gatsby-transformer-remark',
       'gatsby-plugin-sharp',
       'gatsby-transformer-sharp',
       {
