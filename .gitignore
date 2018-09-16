@@ -1,4 +1,3 @@
-# Project dependencies
 .cache
 node_modules
 yarn-error.log
@@ -21,7 +20,6 @@ was-custom
 custom-qc
 package-lock.json
 bah-node_modules
-
-# Build directory
-/public
+stuff.txt
+public
 .DS_Store
