@@ -13,21 +13,15 @@ const { createFilePath } = require('gatsby-source-filesystem')
 // self
 const { languages } = require('./src/i18n/locales')
 
-exports.onCreateNode = oy => {
-  const { node, getNode, actions: { createNodeField } } = oy
-  // if (node.internal.owner === 'gatsby-transformer-json') { return }
-  // if (node.internal.owner === 'internal-data-bridge') { return }
+exports.onCreateNode = ({ node, getNode, actions: { createNodeField } }) => {
   if (node.internal.type !== 'MarkdownRemark') {
     return
   }
-  // console.log('NODE:', oy)
-  const fileNode = getNode(node.parent)
   const value = `/blog${createFilePath({
     node,
     getNode,
     basePath: 'custom/blog'
   })}`
-  console.log('\n', value, fileNode.relativePath)
   createNodeField({
     name: 'slug',
     node,
@@ -35,8 +29,7 @@ exports.onCreateNode = oy => {
   })
 }
 
-exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
+exports.createPages = ({ graphql, actions: { createPage } }) => {
   return new Promise((resolve, reject) => {
     graphql(`
       {
@@ -51,22 +44,40 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     `).then(result => {
-      console.log(JSON.stringify(result, null, '  '))
+      // console.log(JSON.stringify(result, null, '  '))
 
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-        createPage({
-          path: `/en${node.fields.slug}`,
-          component: path.resolve(`./src/templates/blog-post.js`),
+        const redirect = path.resolve('src/i18n/redirect.js')
+        const redirectPage = {
+          // ...page,
+          path: node.fields.slug,
+          component: redirect,
           context: {
-            // Data passed to context is available
-            // in page queries as GraphQL variables.
-            slug: node.fields.slug,
             languages,
-            locale: 'en',
-            routed: true,
-            originalPath: node.fields.slug
+            locale: '', // FIXME: 404 language bug?
+            routed: false,
+            redirectPage: node.fields.slug
           }
-        })
+        }
+
+        // deletePage({ path: node.fields.slug })
+        createPage(redirectPage)
+
+        languages.forEach(({ value }) =>
+          createPage({
+            path: `/${value}${node.fields.slug}`,
+            component: path.resolve(`./src/templates/blog-post.js`),
+            context: {
+              // Data passed to context is available
+              // in page queries as GraphQL variables.
+              slug: node.fields.slug,
+              languages,
+              locale: value,
+              routed: true,
+              originalPath: node.fields.slug
+            }
+          })
+        )
       })
 
       resolve()
@@ -74,9 +85,9 @@ exports.createPages = ({ graphql, actions }) => {
   })
 }
 
-exports.onCreatePage = ({ page, actions }) => {
-  console.log('onCreatePage page.path:', page.path)
-  const { createPage, deletePage } = actions
+exports.onCreatePage = ({ page, actions: { createPage, deletePage } }) => {
+  // console.log('onCreatePage page.path:', page.path)
+  // const { createPage, deletePage } = actions
 
   // FIXME: 404 language bug?
   if (page.path.includes('404')) {
@@ -95,6 +106,8 @@ exports.onCreatePage = ({ page, actions }) => {
         redirectPage: page.path
       }
     }
+    // console.log('onCreatePage DELETE', page)
+    // console.log('onCreatePage CREATE', redirectPage)
     deletePage(page)
     createPage(redirectPage)
 
