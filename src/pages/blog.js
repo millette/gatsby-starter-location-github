@@ -6,6 +6,7 @@ import { graphql } from 'gatsby'
 import { Layout } from '../components'
 import { Link, withIntl } from '../i18n'
 
+/*
 const BlogPage = props => {
   return (
     <Layout messages={props.messages}>
@@ -33,7 +34,56 @@ const BlogPage = props => {
     </Layout>
   )
 }
+*/
 
+const BlogPage = props => {
+  // FIXME: should be a 404 but this will do for now
+  if (
+    !props.data.allMarkdownRemark ||
+    !props.data.allMarkdownRemark.edges.length
+  ) {
+    return <div>Niet</div>
+  }
+  return (
+    <Layout messages={props.messages}>
+      <div className='container'>
+        {props.data.allMarkdownRemark.edges.map(({ node }, key) => (
+          <div key={key}>
+            <h2>
+              <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+            </h2>
+            <i>Time to read: {node.timeToRead} min.</i>
+            <p>{node.excerpt}</p>
+          </div>
+        ))}
+      </div>
+    </Layout>
+  )
+}
+
+export const query = graphql`
+  query {
+    allMarkdownRemark(
+      limit: 5
+      filter: { frontmatter: { title: { ne: "" } } }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+          }
+          excerpt
+          timeToRead
+        }
+      }
+    }
+  }
+`
+
+/*
 export const query = graphql`
   query {
     allFile(
@@ -75,5 +125,6 @@ export const query = graphql`
     }
   }
 `
+*/
 
 export default withIntl(BlogPage)
