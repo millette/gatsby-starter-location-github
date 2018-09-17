@@ -1,6 +1,7 @@
 // npm
 import React, { Component } from 'react'
 import { FormattedMessage } from 'react-intl'
+import { StaticQuery, graphql } from 'gatsby'
 
 // self
 import { Link } from '../i18n'
@@ -42,13 +43,15 @@ const TopAd = ({ pageContext: { originalPath } }) =>
     <Link to={sponsorPath}>{sflImage}</Link>
   ))
 
-class Nav extends Component {
+class NavImp extends Component {
   constructor (props) {
     super(props)
     this.state = {
       showLanguages: false,
       showMenu: false
     }
+
+    this.withBlog = this.props.totalCount > 0
     this.toggleLanguages = this.toggleLanguages.bind(this)
     this.toggleMenu = this.toggleMenu.bind(this)
   }
@@ -64,6 +67,7 @@ class Nav extends Component {
   render () {
     const { pageContext } = this.props
     const pageTitleStr = getPageTitleID(pageContext)
+
     return (
       <nav className='navbar navbar-expand-sm navbar-light bg-light'>
         <div className='container'>
@@ -107,6 +111,26 @@ class Nav extends Component {
                   )}
                 </Link>
               </li>
+
+              {this.withBlog ? (
+                <li
+                  className={`nav-item${
+                    pageTitleStr === 'blog' ? ' active' : ''
+                  }`}
+                >
+                  <Link className='nav-link' to='/blog/'>
+                    <FormattedMessage id='nav.blog' />
+                    {pageTitleStr === 'blog' && (
+                      <span className='sr-only'>
+                        <FormattedMessage id='nav.current' />
+                      </span>
+                    )}
+                  </Link>
+                </li>
+              ) : (
+                'No-BLOG'
+              )}
+
               <li
                 className={`nav-item${
                   pageTitleStr === 'contact' ? ' active' : ''
@@ -151,5 +175,24 @@ class Nav extends Component {
     )
   }
 }
+
+const Nav = props => (
+  <StaticQuery
+    query={graphql`
+      query {
+        allFile(
+          limit: 1
+          sort: { fields: [modifiedTime], order: DESC }
+          filter: { extension: { eq: "md" } }
+        ) {
+          totalCount
+        }
+      }
+    `}
+    render={({ allFile: { totalCount } }) => (
+      <NavImp totalCount={totalCount} {...props} />
+    )}
+  />
+)
 
 export default Nav

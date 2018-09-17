@@ -44,8 +44,10 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
         }
       }
     `).then(result => {
-      // console.log(JSON.stringify(result, null, '  '))
-
+      if (!result.data || !result.data.allMarkdownRemark) {
+        console.log(JSON.stringify(result, null, '  '))
+        return resolve()
+      }
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
         const redirect = path.resolve('src/i18n/redirect.js')
         const redirectPage = {
