@@ -37,35 +37,36 @@ const BlogPage = props => {
 */
 
 const BlogPage = props => {
-  // FIXME: should be a 404 but this will do for now
-  if (
-    !props.data.allMarkdownRemark ||
-    !props.data.allMarkdownRemark.edges.length
-  ) {
-    return <div>Niet</div>
-  }
   return (
     <Layout messages={props.messages}>
       <div className='container'>
-        {props.data.allMarkdownRemark.edges.map(({ node }, key) => (
-          <div key={key}>
-            <h2>
-              <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
-            </h2>
-            <i>Time to read: {node.timeToRead} min.</i>
-            <p>{node.excerpt}</p>
-          </div>
-        ))}
+        <h1>Blog posts</h1>
+        {props.data.allMarkdownRemark &&
+        props.data.allMarkdownRemark.edges.length ? (
+            props.data.allMarkdownRemark.edges.map(({ node }, key) => (
+              <div key={key}>
+                <h2>
+                  <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+                </h2>
+                <h3>{node.frontmatter.date}</h3>
+                <i>Time to read: {node.timeToRead} min.</i>
+                <p>{node.excerpt}</p>
+              </div>
+            ))
+          ) : (
+            <p>Nope, sorry.</p>
+          )}
       </div>
     </Layout>
   )
 }
 
 export const query = graphql`
-  query {
+  query($locale: String!) {
     allMarkdownRemark(
       limit: 5
-      filter: { frontmatter: { title: { ne: "" } } }
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { language: { eq: $locale } } }
     ) {
       edges {
         node {
@@ -74,6 +75,8 @@ export const query = graphql`
           }
           frontmatter {
             title
+            date
+            language
           }
           excerpt
           timeToRead
