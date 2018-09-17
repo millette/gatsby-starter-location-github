@@ -33,7 +33,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
   return new Promise((resolve, reject) => {
     graphql(`
       {
-        allMarkdownRemark {
+        allMarkdownRemark(filter: { frontmatter: { title: { ne: "" } } }) {
           edges {
             node {
               fields {
@@ -45,7 +45,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
       }
     `).then(result => {
       if (!result.data || !result.data.allMarkdownRemark) {
-        console.log(JSON.stringify(result, null, '  '))
+        // console.log(JSON.stringify(result, null, '  '))
         return resolve()
       }
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
