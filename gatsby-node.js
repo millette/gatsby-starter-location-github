@@ -35,7 +35,47 @@ exports.onCreateNode = oy => {
   })
 }
 
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions
+  return new Promise((resolve, reject) => {
+    graphql(`
+      {
+        allMarkdownRemark {
+          edges {
+            node {
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      }
+    `).then(result => {
+      console.log(JSON.stringify(result, null, '  '))
+
+      result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+        createPage({
+          path: `/en${node.fields.slug}`,
+          component: path.resolve(`./src/templates/blog-post.js`),
+          context: {
+            // Data passed to context is available
+            // in page queries as GraphQL variables.
+            slug: node.fields.slug,
+            languages,
+            locale: 'en',
+            routed: true,
+            originalPath: node.fields.slug
+          }
+        })
+      })
+
+      resolve()
+    })
+  })
+}
+
 exports.onCreatePage = ({ page, actions }) => {
+  console.log('onCreatePage page.path:', page.path)
   const { createPage, deletePage } = actions
 
   // FIXME: 404 language bug?
@@ -58,8 +98,8 @@ exports.onCreatePage = ({ page, actions }) => {
     deletePage(page)
     createPage(redirectPage)
 
-    languages.forEach(({ value }) => {
-      const localePage = {
+    languages.forEach(({ value }) =>
+      createPage({
         ...page,
         originalPath: page.path,
         path: `/${value}${page.path}`,
@@ -69,9 +109,8 @@ exports.onCreatePage = ({ page, actions }) => {
           routed: true,
           originalPath: page.path
         }
-      }
-      createPage(localePage)
-    })
+      })
+    )
 
     resolve()
   })
