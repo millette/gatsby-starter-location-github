@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 
 // self
 import { Layout } from '../components'
-import { withIntl } from '../i18n'
+import { Link, withIntl } from '../i18n'
 
 const BlogPage = props => {
   return (
@@ -12,7 +12,11 @@ const BlogPage = props => {
       <div className='container'>
         {props.data.allFile.edges.map(({ node }, key) => (
           <div style={{ border: 'thin solid black' }} key={key}>
-            <h2>{node.childMarkdownRemark.frontmatter.title}</h2>
+            <h2>
+              <Link to={node.childMarkdownRemark.fields.slug}>
+                {node.childMarkdownRemark.frontmatter.title}
+              </Link>
+            </h2>
             <h3>{node.modifiedTime}</h3>
             <i>Time to read: {node.childMarkdownRemark.timeToRead} min.</i>
             <p>{node.childMarkdownRemark.excerpt}</p>
@@ -22,6 +26,7 @@ const BlogPage = props => {
                 __html: node.childMarkdownRemark.html
               }}
             />
+            <pre>{JSON.stringify(node, null, '  ')}</pre>
           </div>
         ))}
       </div>
@@ -44,6 +49,9 @@ export const query = graphql`
           modifiedTime
           childMarkdownRemark {
             id
+            fields {
+              slug
+            }
             frontmatter {
               title
             }
