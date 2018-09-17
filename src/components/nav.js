@@ -51,9 +51,19 @@ class NavImp extends Component {
       showMenu: false
     }
 
-    this.withBlog = this.props.totalCount > 0
+    // this.withBlog = this.props.totalCount > 0
+    this.withBlog =
+      this.props.edges &&
+      this.props.edges
+        .map(({ node: { frontmatter: { language } } }) => language)
+        .indexOf(props.pageContext.locale) !== -1
     this.toggleLanguages = this.toggleLanguages.bind(this)
     this.toggleMenu = this.toggleMenu.bind(this)
+
+    this.props.edges &&
+      this.props.edges.forEach(({ node }) => {
+        console.log('NODE:', node)
+      })
   }
 
   toggleMenu () {
@@ -66,6 +76,7 @@ class NavImp extends Component {
 
   render () {
     const { pageContext } = this.props
+    console.log('pageContext:', pageContext)
     const pageTitleStr = getPageTitleID(pageContext)
 
     return (
@@ -180,20 +191,30 @@ const Nav = props => (
   <StaticQuery
     query={graphql`
       query {
-        allMarkdownRemark(
-          limit: 1
-          filter: { frontmatter: { title: { ne: "" } } }
-        ) {
-          totalCount
+        allMarkdownRemark(filter: { frontmatter: { title: { ne: "" } } }) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+
+              frontmatter {
+                language
+                set
+              }
+            }
+          }
         }
       }
     `}
-    render={({ allMarkdownRemark }) => (
-      <NavImp
-        totalCount={allMarkdownRemark && allMarkdownRemark.totalCount}
-        {...props}
-      />
-    )}
+    render={({ allMarkdownRemark }) => {
+      return (
+        <NavImp
+          edges={allMarkdownRemark && allMarkdownRemark.edges}
+          {...props}
+        />
+      )
+    }}
   />
 )
 
