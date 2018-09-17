@@ -180,17 +180,19 @@ const Nav = props => (
   <StaticQuery
     query={graphql`
       query {
-        allFile(
+        allMarkdownRemark(
           limit: 1
-          sort: { fields: [modifiedTime], order: DESC }
-          filter: { extension: { eq: "md" } }
+          filter: { frontmatter: { title: { ne: "" } } }
         ) {
           totalCount
         }
       }
     `}
-    render={({ allFile: { totalCount } }) => (
-      <NavImp totalCount={totalCount} {...props} />
+    render={({ allMarkdownRemark }) => (
+      <NavImp
+        totalCount={allMarkdownRemark && allMarkdownRemark.totalCount}
+        {...props}
+      />
     )}
   />
 )
