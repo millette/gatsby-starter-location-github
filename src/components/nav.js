@@ -102,7 +102,7 @@ class NavImp extends Component {
         .map(({ node }) => node)
         .filter(({ frontmatter }) => frontmatter.set)
         .forEach(node => {
-          console.log('NODE:', JSON.stringify(node, null, '  '))
+          // console.log('NODE:', JSON.stringify(node, null, '  '))
           this.languageSets.push({
             slug: node.fields.slug,
             language: node.frontmatter.language

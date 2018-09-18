@@ -18,8 +18,8 @@ const LanguageSwitch = ({
     pageContext.languages &&
     pageContext.languages.filter(({ value }) => value !== pageContext.locale)
 
-  console.log('languageSets:', languageSets)
-  console.log('lngs:', lngs)
+  // console.log('languageSets:', languageSets)
+  // console.log('lngs:', lngs)
 
   /*
   if (!lngs || !lngs.length || !languageSets) {
@@ -31,6 +31,9 @@ const LanguageSwitch = ({
   const languageLink = languageSets
     ? value => {
       const otherA = languageSets.find(({ language }) => language === value)
+      if (!otherA || !otherA.slug) {
+        return
+      }
       const other = otherA.slug
       return `${withPrefix(`${value}${other}`)}`
     }
@@ -40,12 +43,19 @@ const LanguageSwitch = ({
 
   // href={`${withPrefix(`${value}${pageContext.originalPath}`)}`}
   const languageSwitch =
-    lngs && lngs.length && languageSets && languageSets.length ? (
-      lngs.map(({ text, value }) => (
-        <a className='dropdown-item' key={value} href={languageLink(value)}>
-          {text}
-        </a>
-      ))
+    // (lngs && lngs.length) || (languageSets && languageSets.length) ? (
+    lngs && lngs.length ? (
+      lngs.map(({ text, value }) => {
+        const ll = languageLink(value)
+        if (!ll) {
+          return <span>None</span>
+        }
+        return (
+          <a className='dropdown-item' key={value} href={ll}>
+            {text}
+          </a>
+        )
+      })
     ) : (
       <span>None</span>
     )
