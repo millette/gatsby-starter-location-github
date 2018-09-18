@@ -100,7 +100,10 @@ class NavImp extends Component {
     ) {
       this.props.edges
         .map(({ node }) => node)
-        .filter(({ frontmatter }) => frontmatter.set)
+        .filter(
+          ({ frontmatter }) =>
+            frontmatter.set === this.props.pageContext.languageSet
+        )
         .forEach(node => {
           // console.log('NODE:', JSON.stringify(node, null, '  '))
           this.languageSets.push({
