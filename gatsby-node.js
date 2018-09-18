@@ -43,6 +43,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
               }
               frontmatter {
                 language
+                set
               }
             }
           }
@@ -80,6 +81,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
             if (value !== node.frontmatter.language) {
               return
             }
+            // console.log('EL-NODE:', node)
             createPage({
               path: `/${value}${node.fields.slug}`,
               component: path.resolve(`./src/templates/blog-post.js`),
@@ -87,6 +89,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
                 // Data passed to context is available
                 // in page queries as GraphQL variables.
                 slug: node.fields.slug,
+                languageSet: node.frontmatter.set || '',
                 languages,
                 locale: value,
                 routed: true,
