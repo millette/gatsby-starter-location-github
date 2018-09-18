@@ -12,6 +12,9 @@
 module.exports = {
   title: 'RolloDevs',
   subtitle: 'Your locally sourced developer directory',
+  'no-translations': 'No translations',
+  'blog.posts': 'Blog posts',
+  'blog.readtime': 'Read time: {readtime} min.',
   'ads.sponsor': 'About the ads',
   'ads.why': '"Note that the ads help maintain the website." {more}',
   'ads.toggle.show': 'Show ads',
@@ -122,6 +125,7 @@ if you wish to contribute or have a comment or suggestion to improve the site.
 `,
   '404.title': 'NOT FOUND',
   '404.text': 'You just hit a route that doesn’t exist… the sadness.',
+  'nav.blog': 'Blog',
   'nav.sponsor': 'Sponsoring',
   'nav.contact': 'Contact',
   'nav.about': 'About',

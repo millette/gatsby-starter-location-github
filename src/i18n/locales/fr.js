@@ -12,6 +12,9 @@
 module.exports = {
   title: 'RolloDevs',
   subtitle: 'Votre source de développeurs locaux',
+  'no-translations': 'Aucune traduction',
+  'blog.posts': 'Billets de blogue',
+  'blog.readtime': 'Temps de lecture: {readtime} min.',
   'ads.sponsor': 'À propos des annonces',
   'ads.why':
     '« Notez que les annonces contribuent au maintien du site.» {more}',
@@ -127,6 +130,7 @@ pour améliorer le site.
   '404.title': 'PAGE NON TROUVÉE',
   '404.text':
     'Vous avez trouvé un chemin qui ne mène nul part… Quelle tristesse.',
+  'nav.blog': 'Blogue',
   'nav.sponsor': 'Commanditer',
   'nav.contact': 'Contact',
   'nav.about': 'À propos',
