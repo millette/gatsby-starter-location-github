@@ -56,7 +56,7 @@ class Ads extends Component {
                 >
                   <div className='card pt-2 text-dark border-0 text-center'>
                     <Img
-                      className='card-img-top'
+                      className='card-img-top mx-auto d-block'
                       alt='WikiSuite'
                       fixed={f1.childImageSharp.fixed}
                     />
@@ -74,7 +74,7 @@ class Ads extends Component {
               <div className='col-md-5'>
                 <div className='card pt-2 text-dark border-0 text-center'>
                   <Img
-                    className='card-img-top'
+                    className='card-img-top mx-auto d-block'
                     alt='RoLLoDevs'
                     fixed={f2.childImageSharp.fixed}
                   />
@@ -92,7 +92,7 @@ class Ads extends Component {
                 <Link to='/sponsor/'>
                   <div className='card pt-2 text-dark border-0 text-center'>
                     <Img
-                      className='card-img-top'
+                      className='card-img-top mx-auto d-block'
                       alt='You! Vous?'
                       fixed={f3.childImageSharp.fixed}
                     />
