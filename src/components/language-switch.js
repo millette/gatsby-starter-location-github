@@ -2,6 +2,7 @@
 import React from 'react'
 // import { FormattedMessage } from 'react-intl'
 import { withPrefix } from 'gatsby'
+import { FormattedMessage } from 'react-intl'
 
 // self
 // https://openclipart.org/detail/77347/globeblue
@@ -48,7 +49,13 @@ const LanguageSwitch = ({
       lngs.map(({ text, value }) => {
         const ll = languageLink(value)
         if (!ll) {
-          return <span>None</span>
+          return (
+            <FormattedMessage
+              className='dropdown-item'
+              key='no-words-here-ever'
+              id='no-translations'
+            />
+          )
         }
         return (
           <a className='dropdown-item' key={value} href={ll}>
@@ -57,7 +64,7 @@ const LanguageSwitch = ({
         )
       })
     ) : (
-      <span>None</span>
+      <span>None456</span>
     )
 
   const languagesString =

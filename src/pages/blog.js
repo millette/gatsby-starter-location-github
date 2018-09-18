@@ -1,6 +1,7 @@
 // npm
 import React from 'react'
 import { graphql } from 'gatsby'
+import { FormattedMessage } from 'react-intl'
 
 // self
 import { Layout } from '../components'
@@ -40,7 +41,9 @@ const BlogPage = props => {
   return (
     <Layout messages={props.messages}>
       <div className='container'>
-        <h1>Blog posts</h1>
+        <h1>
+          <FormattedMessage id='blog.posts' />
+        </h1>
         {props.data.allMarkdownRemark &&
         props.data.allMarkdownRemark.edges.length ? (
             props.data.allMarkdownRemark.edges.map(({ node }, key) => (
@@ -49,7 +52,12 @@ const BlogPage = props => {
                   <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
                 </h2>
                 <h3>{node.frontmatter.date}</h3>
-                <i>Time to read: {node.timeToRead} min.</i>
+                <i>
+                  <FormattedMessage
+                    id='blog.readtime'
+                    values={{ readtime: node.timeToRead }}
+                  />
+                </i>
                 <p>{node.excerpt}</p>
               </div>
             ))

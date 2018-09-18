@@ -1,6 +1,7 @@
 // npm
 import React from 'react'
 import { graphql } from 'gatsby'
+import { FormattedMessage } from 'react-intl'
 
 // self
 import { Link, withIntl } from '../i18n'
@@ -13,14 +14,21 @@ const BlogPost = ({ pageContext, messages, data: { markdownRemark } }) => {
     <Layout pageContext={pageContext} messages={messages}>
       <div className='container'>
         <h1>
-          <Link to='/blog/'>Blog</Link>
+          <Link to='/blog/'>
+            <FormattedMessage id='nav.blog' />
+          </Link>
         </h1>
         <h2>{markdownRemark.frontmatter.title}</h2>
         <h3>
           {markdownRemark.frontmatter.date}{' '}
           <small>{markdownRemark.frontmatter.set}</small>
         </h3>
-        <i>Time to read: {markdownRemark.timeToRead} min.</i>
+        <i>
+          <FormattedMessage
+            id='blog.readtime'
+            values={{ readtime: markdownRemark.timeToRead }}
+          />
+        </i>
         <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
       </div>
     </Layout>
