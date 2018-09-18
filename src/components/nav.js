@@ -60,10 +60,55 @@ class NavImp extends Component {
     this.toggleLanguages = this.toggleLanguages.bind(this)
     this.toggleMenu = this.toggleMenu.bind(this)
 
-    this.props.edges &&
-      this.props.edges.forEach(({ node }) => {
-        console.log('NODE:', node)
-      })
+    // case 1: don't care about languageSets (/en/)
+    //         languageSet = undefined
+    //         languageSets = undefined
+    //         lngs.length = 1
+
+    // case 2: the language set is empty
+    //         languageSet = ''
+    //         languageSets = undefined
+    //         lngs.length = 1
+
+    // case 3: hourray for languageSets
+    //         languageSet = 'pandas-more'
+    //         languageSet.length = 2
+    //         lngs.length = 1
+
+    // console.log('LANGUAGESET:', this.props.pageContext.languageSet)
+    // console.log('PPPpageContext:', this.props.pageContext)
+    // console.log('EDGES:', this.props.edges)
+
+    /*
+    // if (this.props.pageContext && (typeof this.props.pageContext.languageSet === 'string')) {
+    if (this.props.edges && this.props.edges.length) {
+      this.languageSets = []
+    }
+    */
+
+    if (typeof this.props.pageContext.languageSet === 'string') {
+      this.languageSets = []
+    }
+
+    // if (this.withBlog) {
+    // if (this.props.edges && this.props.edges.length && this.props.pageContext && (typeof this.props.pageContext.languageSet === 'string')) {
+    if (
+      this.props.edges &&
+      this.props.edges.length &&
+      this.props.pageContext &&
+      this.props.pageContext.languageSet
+    ) {
+      this.props.edges
+        .map(({ node }) => node)
+        .filter(({ frontmatter }) => frontmatter.set)
+        .forEach(node => {
+          console.log('NODE:', JSON.stringify(node, null, '  '))
+          this.languageSets.push({
+            slug: node.fields.slug,
+            language: node.frontmatter.language
+          })
+        })
+    }
   }
 
   toggleMenu () {
@@ -76,7 +121,6 @@ class NavImp extends Component {
 
   render () {
     const { pageContext } = this.props
-    console.log('pageContext:', pageContext)
     const pageTitleStr = getPageTitleID(pageContext)
 
     return (
@@ -180,6 +224,7 @@ class NavImp extends Component {
             showLanguages={this.state.showLanguages}
             toggleLanguages={this.toggleLanguages}
             pageContext={pageContext}
+            languageSets={this.languageSets}
           />
         </div>
       </nav>
