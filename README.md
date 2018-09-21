@@ -24,7 +24,7 @@ You'll need Node.js. The quickest way to install it for your local user in the [
 $ curl -L https://git.io/n-install | bash
 ```
 
-This will install the latest LTS, which is 8.11.3 at the time of this writing.
+This will install the latest LTS, which is 8.12.0 at the time of this writing.
 
 You should restart your shell before using `node` and `npm` but first, setup your GitHub token so you only have to restart once.
 
@@ -76,10 +76,10 @@ git merge prod # might produce conflicts, your turn to handle them
 
 If you need to make drastic changes not supported by customization, you may prefer this method, although keeping up with the changes will be more difficult.
 
-Make sure that you have the Gatsby CLI program installed globally, we're using Gatsby v2 (in beta):
+Make sure that you have the Gatsby CLI program installed globally, we're using Gatsby v2:
 
 ```sh
-npm install --global gatsby-cli@next
+npm install --global gatsby-cli
 ```
 
 And run from your CLI:
