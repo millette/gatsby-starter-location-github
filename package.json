@@ -72,12 +72,16 @@
     "develop": "gatsby develop --port 8001",
     "dev": "gatsby develop --port 8001",
     "clean": "rm public/* .cache -fr",
-    "format": "prettier-standard '**/*.+(js|json|md)'",
-    "precommit": "lint-staged"
+    "format": "prettier-standard '**/*.+(js|json|md)'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "devDependencies": {
     "gh-pages": "^2.0.0",
-    "husky": "^0.14.3",
+    "husky": "^1.0.0-rc.15",
     "lint-staged": "^7.3.0",
     "prettier-standard": "^8.0.1",
     "standard": "^12.0.1",
