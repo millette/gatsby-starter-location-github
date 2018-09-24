@@ -5,7 +5,7 @@ import { FormattedMessage } from 'react-intl'
 
 // self
 import { Link, withIntl } from '../i18n'
-import { Layout } from '../components'
+import { Layout, Footer } from '../components'
 
 const BlogPost = ({ pageContext, messages, data: { markdownRemark } }) => {
   // console.log('markdownRemark:', markdownRemark)
@@ -31,6 +31,7 @@ const BlogPost = ({ pageContext, messages, data: { markdownRemark } }) => {
         </i>
         <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
       </div>
+      <Footer />
     </Layout>
   )
 }
