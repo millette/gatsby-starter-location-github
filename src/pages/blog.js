@@ -7,38 +7,36 @@ import { FormattedMessage } from 'react-intl'
 import { Layout, Footer } from '../components'
 import { Link, withIntl } from '../i18n'
 
-const BlogPage = props => {
-  return (
-    <Layout messages={props.messages}>
-      <div className='container'>
-        <h1>
-          <FormattedMessage id='blog.posts' />
-        </h1>
-        {props.data.allMarkdownRemark &&
-        props.data.allMarkdownRemark.edges.length ? (
-            props.data.allMarkdownRemark.edges.map(({ node }, key) => (
-              <div key={key}>
-                <h2>
-                  <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
-                </h2>
-                <h3>{node.frontmatter.date}</h3>
-                <i>
-                  <FormattedMessage
-                    id='blog.readtime'
-                    values={{ readtime: node.timeToRead }}
-                  />
-                </i>
-                <p>{node.excerpt}</p>
-              </div>
-            ))
-          ) : (
-            <p>Nope, sorry.</p>
-          )}
-      </div>
-      <Footer />
-    </Layout>
-  )
-}
+const BlogPage = props => (
+  <Layout messages={props.messages}>
+    <div className='container'>
+      <h1>
+        <FormattedMessage id='blog.posts' />
+      </h1>
+      {props.data.allMarkdownRemark &&
+      props.data.allMarkdownRemark.edges.length ? (
+          props.data.allMarkdownRemark.edges.map(({ node }, key) => (
+            <div key={key}>
+              <h2>
+                <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+              </h2>
+              <h3>{node.frontmatter.date}</h3>
+              <i>
+                <FormattedMessage
+                  id='blog.readtime'
+                  values={{ readtime: node.timeToRead }}
+                />
+              </i>
+              <p>{node.excerpt}</p>
+            </div>
+          ))
+        ) : (
+          <p>Nope, sorry.</p>
+        )}
+    </div>
+    <Footer />
+  </Layout>
+)
 
 export const query = graphql`
   query($locale: String!) {
