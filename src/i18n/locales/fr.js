@@ -164,7 +164,7 @@ pour améliorer le site.
   'sponsor.title': 'Commanditer le bottin',
   'sponsor.col1.html': `
 <p class='lead'>
-Est-ce que votre entreprise serait intéressée à voir son logo sur le bottin et ainsi encourager le développement à plus long terme du site et de sa communauté? Ce serait juste à temps pour la <a target='_blank' rel='noopener noreferrer' href='https://2018.sqil.info/'>Semaine québécoise de l’informatique libre</a> :-)
+Est-ce que votre entreprise serait intéressée à voir son logo sur le bottin et ainsi encourager le développement à plus long terme du site et de sa communauté?
 </p>
 <p>
 Depuis 2015, le nombre de développeurs au Québec a plus que doublé. Un nouveau bottin RoLLodeQc était devenu nécessaire. Maintenant qu’il est basé sur Gatsby, c’est plus facile de le mettre à jour et de l’adapter à un autre lieu.

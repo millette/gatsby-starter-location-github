@@ -161,10 +161,6 @@ if you wish to contribute or have a comment or suggestion to improve the site.
 <p class='lead'>
 Would you be interested in seeing your company logo on the directory
 and support the long term development of the site and its community?
-Just in time for the
-<a target='_blank' rel='noopener noreferrer' href='https://2018.sqil.info/en/'>
-  Québec Free Software Week
-</a> :-)
 </p>
 <p>
 Since 2015, the number of developers in Québec has more than double.
