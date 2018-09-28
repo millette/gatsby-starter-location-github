@@ -81,7 +81,30 @@ try {
         }
       },
       'gatsby-transformer-json',
-      'gatsby-transformer-remark',
+      {
+        resolve: 'gatsby-transformer-remark',
+        options: {
+          plugins: [
+            'gatsby-remark-smartypants',
+            {
+              resolve: 'gatsby-remark-external-links',
+              options: {
+                target: '_blank',
+                rel: 'noopener noreferrer'
+              }
+            },
+            {
+              resolve: 'gatsby-remark-images',
+              options: {
+                // showCaptions: true,
+                withWebp: true,
+                // wrapperStyle: 'width: 100%',
+                maxWidth: 1100
+              }
+            }
+          ]
+        }
+      },
       'gatsby-plugin-sharp',
       'gatsby-transformer-sharp',
       {
