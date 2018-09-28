@@ -41,9 +41,25 @@ try {
     ret.versionTag = 'dev'
   }
 
+  const serialize = ({ query: { site, allMarkdownRemark } }) =>
+    allMarkdownRemark.edges.map(({ node }) => ({
+      ...node.frontmatter,
+      description: node.excerpt,
+      url: `${site.siteMetadata.siteUrl}${node.frontmatter.language}${
+        node.fields.slug
+      }`,
+      guid: `${site.siteMetadata.siteUrl}${node.frontmatter.language}${
+        node.fields.slug
+      }`,
+      custom_elements: [{ 'content:encoded': node.html }]
+    }))
+
   module.exports = {
     pathPrefix: '/gatsby-starter-location-github',
     siteMetadata: {
+      siteUrl: 'http://dev.rollodeqc.com/',
+      title: 'RoLLodeQc',
+      description: 'Votre source de développeurs locaux',
       version: ret,
       language: {
         fallback: 'en'
@@ -58,6 +74,104 @@ try {
         }
       },
       */
+      {
+        resolve: 'gatsby-plugin-feed',
+        options: {
+          query: `
+            {
+              site {
+                siteMetadata {
+                  siteUrl
+                  description
+                  title
+                }
+              }
+            }
+          `,
+          feeds: [
+            {
+              serialize,
+              query: `
+                {
+                  allMarkdownRemark(
+                    limit: 20
+                    sort: { order: DESC, fields: [frontmatter___date] }
+                    filter: {
+                      frontmatter: {
+                        language: { eq: "fr" }
+                        title: { ne: "" }
+                      }
+                    }
+                  ) {
+                    edges {
+                      node {
+                        excerpt
+                        html
+                        fields { slug }
+                        frontmatter {
+                          title
+                          date
+                          language
+                        }
+                      }
+                    }
+                  }
+                }
+              `,
+              output: '/fr/rss.xml'
+            }
+          ]
+        }
+      },
+      {
+        resolve: 'gatsby-plugin-feed',
+        options: {
+          query: `
+            {
+              site {
+                siteMetadata {
+                  siteUrl
+                  description
+                  title
+                }
+              }
+            }
+          `,
+          feeds: [
+            {
+              serialize,
+              query: `
+                {
+                  allMarkdownRemark(
+                    limit: 20
+                    sort: { order: DESC, fields: [frontmatter___date] }
+                    filter: {
+                      frontmatter: {
+                        language: { eq: "en" }
+                        title: { ne: "" }
+                      }
+                    }
+                  ) {
+                    edges {
+                      node {
+                        excerpt
+                        html
+                        fields { slug }
+                        frontmatter {
+                          title
+                          date
+                          language
+                        }
+                      }
+                    }
+                  }
+                }
+              `,
+              output: '/en/rss.xml'
+            }
+          ]
+        }
+      },
       'gatsby-plugin-react-helmet',
       {
         resolve: 'gatsby-source-filesystem',
