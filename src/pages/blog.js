@@ -55,7 +55,7 @@ export const query = graphql`
             date
             language
           }
-          excerpt
+          excerpt(pruneLength: 400)
           timeToRead
         }
       }

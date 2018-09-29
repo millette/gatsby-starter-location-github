@@ -106,7 +106,7 @@ try {
                   ) {
                     edges {
                       node {
-                        excerpt
+                        excerpt(pruneLength: 400)
                         html
                         fields { slug }
                         frontmatter {
