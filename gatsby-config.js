@@ -74,6 +74,7 @@ try {
         }
       },
       */
+      'gatsby-plugin-catch-links',
       {
         resolve: 'gatsby-plugin-feed',
         options: {

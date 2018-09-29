@@ -6002,6 +6002,13 @@ gatsby-link@^2.0.2:
     prop-types "^15.6.1"
     ric "^1.3.0"
 
+gatsby-plugin-catch-links@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-2.0.3.tgz#61b996f0b84108a37255338e1dc75965bbd30f85"
+  integrity sha512-/H8Peic1CmR6GxWZy7TeSLjz1sYJ3kAYKou68XjoifrTgtAOQBWFCxzX9G3xUKiPZeXXAvChQwDuy67MyG+y4Q==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+
 gatsby-plugin-feed@^2.0.5:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-feed/-/gatsby-plugin-feed-2.0.5.tgz#f0171f608bfd9754bb6e2a28f15b279ec006e1ac"
