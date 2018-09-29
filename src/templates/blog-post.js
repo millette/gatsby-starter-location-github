@@ -33,12 +33,16 @@ const BlogPost = ({ pageContext, messages, data: { markdownRemark } }) => (
 )
 
 export const query = graphql`
-  query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+  query($locale: String!, $slug: String!) {
+    markdownRemark(
+      frontmatter: { language: { eq: $locale } }
+      fields: { slug: { eq: $slug } }
+    ) {
       html
       frontmatter {
         title
         date
+        language
         set
       }
       timeToRead

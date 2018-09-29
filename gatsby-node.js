@@ -51,43 +51,20 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
       }
     `).then(result => {
       if (!result.data || !result.data.allMarkdownRemark) {
-        // console.log(JSON.stringify(result, null, '  '))
         return resolve()
       }
 
-      // FIXME: only create pages in proper language
       result.data.allMarkdownRemark.edges
         .map(({ node }) => node)
         .forEach(node => {
-          /*
-          const redirect = path.resolve('src/i18n/redirect.js')
-          const redirectPage = {
-            // ...page,
-            path: node.fields.slug,
-            component: redirect,
-            context: {
-              languages,
-              locale: '', // FIXME: 404 language bug?
-              routed: false,
-              redirectPage: node.fields.slug
-            }
-          }
-
-          // deletePage({ path: node.fields.slug })
-          createPage(redirectPage)
-          */
-
           languages.forEach(({ value }) => {
             if (value !== node.frontmatter.language) {
               return
             }
-            // console.log('EL-NODE:', node)
             createPage({
               path: `/${value}${node.fields.slug}`,
               component: path.resolve(`./src/templates/blog-post.js`),
               context: {
-                // Data passed to context is available
-                // in page queries as GraphQL variables.
                 slug: node.fields.slug,
                 languageSet: node.frontmatter.set || '',
                 languages,
@@ -105,10 +82,8 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
 }
 
 exports.onCreatePage = ({ page, actions: { createPage, deletePage } }) => {
-  // console.log('onCreatePage page.path:', page.path)
-  // const { createPage, deletePage } = actions
-
   // FIXME: 404 language bug?
+  // see https://github.com/gatsbyjs/gatsby/issues/5129
   if (page.path.includes('404')) {
     return Promise.resolve()
   }
@@ -125,8 +100,6 @@ exports.onCreatePage = ({ page, actions: { createPage, deletePage } }) => {
         redirectPage: page.path
       }
     }
-    // console.log('onCreatePage DELETE', page)
-    // console.log('onCreatePage CREATE', redirectPage)
     deletePage(page)
     createPage(redirectPage)
 
