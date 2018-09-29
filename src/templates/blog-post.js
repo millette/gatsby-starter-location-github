@@ -26,7 +26,10 @@ const BlogPost = ({ pageContext, messages, data: { markdownRemark } }) => (
           values={{ readtime: markdownRemark.timeToRead }}
         />
       </i>
-      <div dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
+      <div
+        className='blogpost'
+        dangerouslySetInnerHTML={{ __html: markdownRemark.html }}
+      />
     </div>
     <Footer />
   </Layout>

@@ -22,3 +22,7 @@ $web-font-path: "";
   }
 }
 
+div.blogpost > p:first-child {
+  font-size: $lead-font-size;
+  font-weight: $lead-font-weight;
+}
