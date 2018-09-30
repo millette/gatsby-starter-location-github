@@ -12,6 +12,7 @@ import Licenses from './licenses'
 import Keywords from './keywords'
 import ListKeywords from './list-keywords'
 import LogoAnim from './logo-anim'
+import BlogPostHeader from './blog-post-header'
 
 export {
   Footer,
@@ -27,5 +28,6 @@ export {
   Licenses,
   Keywords,
   ListKeywords,
-  LogoAnim
+  LogoAnim,
+  BlogPostHeader
 }
