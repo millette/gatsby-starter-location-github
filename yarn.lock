@@ -6138,18 +6138,18 @@ gatsby-source-filesystem@^2.0.1:
     valid-url "^1.0.9"
     xstate "^3.1.0"
 
-gatsby-transformer-json@^2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-json/-/gatsby-transformer-json-2.1.2.tgz#c561b813c55ac517ccbdefe43063a0782e997f70"
-  integrity sha512-bvT+SK3x4T/hW7DRA2ymsQVsWKlLyUM2YMg8rYYpSuZSJnX/eVaoLQIpMy0MZuuDOAyRK7gwNRq5aULA9OG3BQ==
+gatsby-transformer-json@^2.1.3:
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-json/-/gatsby-transformer-json-2.1.3.tgz#7b2bb2946d75ebba7f43f2902331449605b2cbfd"
+  integrity sha512-ZPGUgNcTogcyyTI0yNUKeOGzrBTV4Ih6eaK1ZM+0bHxs8G76oPOQqhp1LcetzXznX+RxevTY1vAQV7q9Lj5jTQ==
   dependencies:
     "@babel/runtime" "^7.0.0"
     bluebird "^3.5.0"
 
-gatsby-transformer-remark@^2.1.5:
-  version "2.1.5"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-2.1.5.tgz#e767e9852e44688ac54e39955397c1c223885057"
-  integrity sha512-aCqzpXF5me6zVjXP54+Dmot93kVbGVXmZxUZ9uiBMGCTsa6uMtGifibiVjeLhYIELt0CsRbxk5lnZB0QxOHN6w==
+gatsby-transformer-remark@^2.1.6:
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-2.1.6.tgz#4bfdfa8eabc413d0890e9cd19338e333eb889841"
+  integrity sha512-PqbXFoxbkPLYb5Tq64vSevtIuiC45oxTDFM88gtrCT0y+64Uk5tX1ypVKQ/vjmT/el/hJfSFVCOJT39MMJquOA==
   dependencies:
     "@babel/runtime" "^7.0.0"
     bluebird "^3.5.0"
@@ -6183,10 +6183,10 @@ gatsby-transformer-sharp@^2.1.3:
     probe-image-size "^4.0.0"
     sharp "^0.20.2"
 
-gatsby@^2.0.14:
-  version "2.0.14"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.14.tgz#cd7de9d27d9656d1da020a0562628a44643a6fac"
-  integrity sha512-TbzqAA9AlWwQ8BQCDibJMcsDi6Hks4son9DtHdyCpzpw+aouDgPR2Z+rVJ9UIkFqlmrT3MR4E50zftPlhQ6zjg==
+gatsby@^2.0.17:
+  version "2.0.17"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.17.tgz#4784f841e1d67e5b6d217c7b831cdd009c213750"
+  integrity sha512-166SSKKFMqU4RsHS/CMiRg3/iU24TL9/vbVn+vFaRK2kWWR5EVvMFGOnon60tSTK8a3X665LYDlc8YTGEmPjGg==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -11419,10 +11419,10 @@ rc@^1.0.1, rc@^1.1.2, rc@^1.1.6, rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-bootstrap-typeahead@^3.2.3:
-  version "3.2.3"
-  resolved "https://registry.yarnpkg.com/react-bootstrap-typeahead/-/react-bootstrap-typeahead-3.2.3.tgz#ef93c9afbcc43335c6c77c90e160a3abad95732c"
-  integrity sha512-/4beG0T7LzEOoXk7sUNyqEUY9ZXN4hLisZ8aswENTpmw1OB+XVAJ/PxCcw2SS2+Wl5qpYkg7K64Z6dfQF+DjOA==
+react-bootstrap-typeahead@^3.2.4:
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/react-bootstrap-typeahead/-/react-bootstrap-typeahead-3.2.4.tgz#3af0bc5f569c4a745041620f4ecb2453c887c495"
+  integrity sha512-wFXIKbOHY4Q1AtnhSQIAnUvSDxmcFdDc5wIX/yd7YJug2jL5TvKspJ3XfX/FaWEWyn1pgHukRuFGnbYnL8rtUQ==
   dependencies:
     classnames "^2.2.0"
     escape-string-regexp "^1.0.5"
