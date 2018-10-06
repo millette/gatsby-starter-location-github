@@ -119,6 +119,7 @@ try {
                   }
                 }
               `,
+              title: 'RoLLodeQc (français)',
               output: '/fr/rss.xml'
             }
           ]
@@ -168,6 +169,7 @@ try {
                   }
                 }
               `,
+              title: 'RoLLodeQc (English)',
               output: '/en/rss.xml'
             }
           ]
