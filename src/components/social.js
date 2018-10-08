@@ -9,7 +9,7 @@ import { baseUrl, location } from '../../custom/config'
 const url = baseUrl || 'http://dev.rollodeqc.com'
 
 const Social = props => {
-  let { messages, pageContext } = props
+  let { title, messages, pageContext } = props
   if (!messages) {
     messages = {}
   }
@@ -26,14 +26,16 @@ const Social = props => {
     htmlAttributes.lang = lang
   }
 
+  const specialTitle = title && `${messages.title} — ${title}`
+
   return (
     <Helmet htmlAttributes={htmlAttributes}>
-      <title>{`${messages.title} — ${pageTitle}`}</title>
+      <title>{specialTitle || `${messages.title} — ${pageTitle}`}</title>
       <meta name='description' content={messages.subtitle} />
       <meta name='image' content='http://www.rollodeqc.com/images/logo.png' />
       <meta name='twitter:card' content='summary' />
       <meta name='twitter:site' content='@RoLLodeQc' />
-      <meta name='twitter:title' content={messages.title} />
+      <meta name='twitter:title' content={specialTitle || messages.title} />
       <meta name='twitter:description' content={messages.subtitle} />
       <meta name='twitter:creator' content='@RoLLodeQc' />
       <meta
@@ -64,7 +66,7 @@ const Social = props => {
         itemscope
         itemtype='http://schema.org/WebSite'
       />
-      <meta name='og:title' content={messages.title} />
+      <meta name='og:title' content={specialTitle || messages.title} />
       <meta name='og:type' content='website' />
       <meta name='og:url' content={`${url}/${currentLanguage}/`} />
       <meta

@@ -8,19 +8,12 @@ import 'typeface-roboto'
 import { Social, Header, Nav } from '.'
 import './layout.scss'
 
-// const Layout = ({ pageContext, messages, header, children }, ctx) => {
-// const pageContext = ctx.language || {}
-// const Layout = ({ pageContext, messages, header, children }) => {
 const Layout = (props, ctx) => {
-  const { messages, header, children } = props
+  const { title, messages, header, children } = props
   const pageContext = props.pageContext || ctx.language || {}
-  // console.log('LAYOUT PAGECONTEXT:', pageContext)
-  // console.log('LAYOUT LC:', languageSet)
-  // console.log('LAYOUT ctx:', ctx)
-  // console.log('LAYOUT PAGECONTEXT:', pageContext)
   return (
     <Fragment>
-      <Social messages={messages} pageContext={pageContext} />
+      <Social title={title} messages={messages} pageContext={pageContext} />
       {header ? (
         <Header
           pageContext={pageContext}

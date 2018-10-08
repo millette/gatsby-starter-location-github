@@ -8,7 +8,11 @@ import { Link, withIntl } from '../i18n'
 import { Layout, Footer, BlogPostHeader } from '../components'
 
 const BlogPost = ({ pageContext, messages, data: { markdownRemark } }) => (
-  <Layout pageContext={pageContext} messages={messages}>
+  <Layout
+    title={markdownRemark.frontmatter.title}
+    pageContext={pageContext}
+    messages={messages}
+  >
     <div className='container'>
       <h1>
         <Link to='/blog/'>
