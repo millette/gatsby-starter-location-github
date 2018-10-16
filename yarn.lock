@@ -6023,10 +6023,10 @@ gatsby-link@^2.0.4:
     prop-types "^15.6.1"
     ric "^1.3.0"
 
-gatsby-plugin-catch-links@^2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-2.0.4.tgz#7b62099dc7a99f72d58e0f8631581892fcef59f8"
-  integrity sha512-jBPB6ND33CxG/C/U8iGcZy5yt9WCdBUBpr21/U1/ZQicSODD3U8yqp048IYC49wCfDoSpRhmMpG+va0/p/X9XQ==
+gatsby-plugin-catch-links@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-2.0.5.tgz#d3a024a7bc4ffec9838ae241f1c71480c7cbd60d"
+  integrity sha512-wOCmkII2qkq2TaWOQYM3bNFzTi1I1+x5nO54eGtEYhvfOXJaBRdxOuwVQ5rrBhfgzHuPXoSy+vDzlSrALUG2Dg==
   dependencies:
     "@babel/runtime" "^7.0.0"
     escape-string-regexp "^1.0.5"
