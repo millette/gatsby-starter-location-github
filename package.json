@@ -50,11 +50,11 @@
     "node-sass": "^4.9.4",
     "npm-git-links": "^0.0.3",
     "prop-types": "^15.6.2",
-    "react": "^16.5.2",
+    "react": "^16.6.0",
     "react-bootstrap-typeahead": "^3.2.4",
-    "react-dom": "^16.5.2",
+    "react-dom": "^16.6.0",
     "react-helmet": "^5.2.0",
-    "react-intl": "^2.7.1",
+    "react-intl": "^2.7.2",
     "typeface-roboto": "^0.0.54"
   },
   "engines": {
