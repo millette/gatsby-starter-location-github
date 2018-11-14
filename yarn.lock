@@ -5269,19 +5269,6 @@ execa@^0.8.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
-execa@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/execa/-/execa-0.9.0.tgz#adb7ce62cf985071f60580deb4a88b9e34712d01"
-  integrity sha512-BbUMBiX4hqiHZUA5+JujIjNb6TyAlp2D5KLheMjMluwOuzcnylDL4AxZYLLn1n2AGB49eSWwyKvvEQoRpnAtmA==
-  dependencies:
-    cross-spawn "^5.0.1"
-    get-stream "^3.0.0"
-    is-stream "^1.1.0"
-    npm-run-path "^2.0.0"
-    p-finally "^1.0.0"
-    signal-exit "^3.0.0"
-    strip-eof "^1.0.0"
-
 execa@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/execa/-/execa-1.0.0.tgz#c6236a5bb4df6d6f15e88e7f017798216749ddd8"
@@ -6244,10 +6231,10 @@ gatsby-transformer-sharp@^2.1.8:
     probe-image-size "^4.0.0"
     sharp "^0.21.0"
 
-gatsby@^2.0.47:
-  version "2.0.47"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.47.tgz#e4a8f856520d146584f0b78b4e7e131d4c283c94"
-  integrity sha512-rQD3jUpCXL2nlW/v8N9Z1U8nNoeLCYMYyywlgBkr+0msNvfAB+I6P8ZPqJ9RSP9wyLv9KuMpxGs9anvew7szYQ==
+gatsby@^2.0.48:
+  version "2.0.48"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.48.tgz#083173a4f5dd319cbd68f3036eedcdfbc07812f6"
+  integrity sha512-X7/BC/4II+D2sH0Wggys2CMRzcEKOYEvjeFkPC/cpHDFPs5h2Q7JrXJnvi2ZkWX7tBur7XsVGSnXlAgi29xtIg==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -6314,7 +6301,7 @@ gatsby@^2.0.47:
     jest-worker "^23.2.0"
     joi "12.x.x"
     json-loader "^0.5.7"
-    json-stream-stringify "^2.0.1"
+    json-stringify-safe "^5.0.1"
     kebab-hash "^0.1.2"
     lodash "^4.17.10"
     md5 "^2.2.1"
@@ -7327,13 +7314,13 @@ humanize-url@^1.0.0:
     normalize-url "^1.0.0"
     strip-url-auth "^1.0.0"
 
-husky@^1.1.3:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/husky/-/husky-1.1.3.tgz#3ccfdb4d7332896bf7cd0e618c6fb8be09d9de4b"
-  integrity sha512-6uc48B/A2Mqi65yeg37d/TPcTb0bZ1GTkMYOM0nXLOPuPaTRhXCeee80/noOrbavWd12x72Tusja7GJ5rzvV6g==
+husky@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-1.1.4.tgz#92f61383527d2571e9586234e5864356bfaceaa9"
+  integrity sha512-cZjGpS7qsaBSo3fOMUuR7erQloX3l5XzL1v/RkIqU6zrQImDdU70z5Re9fGDp7+kbYlM2EtS4aYMlahBeiCUGw==
   dependencies:
     cosmiconfig "^5.0.6"
-    execa "^0.9.0"
+    execa "^1.0.0"
     find-up "^3.0.0"
     get-stdin "^6.0.0"
     is-ci "^1.2.1"
@@ -8365,12 +8352,7 @@ json-stable-stringify@^1.0.0:
   dependencies:
     jsonify "~0.0.0"
 
-json-stream-stringify@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/json-stream-stringify/-/json-stream-stringify-2.0.1.tgz#8bc0e65ff94567d9010e14c27c043a951cb14939"
-  integrity sha512-5XymtJXPmzRWZ1UdLQQQXbjHV/E7NAanSClikEqORbkZKOYLSYLNHqRuooyju9W90kJUzknFhX2xvWn4cHluHQ==
-
-json-stringify-safe@~5.0.1:
+json-stringify-safe@^5.0.1, json-stringify-safe@~5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
   integrity sha1-Epai1Y/UXxmg9s4B1lcB4sc1tus=
