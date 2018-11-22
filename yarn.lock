@@ -6188,10 +6188,10 @@ gatsby-remark-external-links@^0.0.4:
     unist-util-find "^1.0.1"
     unist-util-visit "^1.1.3"
 
-gatsby-remark-images@^2.0.6:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-2.0.6.tgz#7567b40be11fec8931084f27d8b3aa18ccc4d5fc"
-  integrity sha512-1gXW1Gm/qiUS6YBZU//lH8gwB6SHbu2jdZlCxIzbSl4GvQ/P1zvo1hkOmxEScmit2FC4g4UrnLco/BbWAgNj1A==
+gatsby-remark-images@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-3.0.0.tgz#ec4fa67ff6e16480523d42fca4795a60581fc1fb"
+  integrity sha512-w53ueG7TAkXlWQCJ+oNZJhvw3ht5GTkNSh8uTHU0dciGaWk2QeABcvvf6jHBBM0kpXWf/ZnoFlVAer6yrOZgFQ==
   dependencies:
     "@babel/runtime" "^7.0.0"
     cheerio "^1.0.0-rc.2"
@@ -6276,10 +6276,10 @@ gatsby-transformer-sharp@^2.1.8:
     probe-image-size "^4.0.0"
     sharp "^0.21.0"
 
-gatsby@^2.0.53:
-  version "2.0.53"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.53.tgz#de7782eead16a9b9066b1b21e085a7a48d5bfdd8"
-  integrity sha512-rYMRUq/TR4lTFGspa4hvAVEEGUkqCeWDdNfaAsK/UWZNOuoL2jLBITOvMgenVADSdO9Oj6Czuk4X6Do2c1P9+Q==
+gatsby@^2.0.55:
+  version "2.0.55"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.55.tgz#e86e2ce35da629121c28859ee6215d110b307b41"
+  integrity sha512-L3Cx9EQ0HznOgeC/f8clUGSlIXHO3+65Yfr/mKnXLMNKz5S+TBNHWpB0z9691hpDwLydS4kEsoO419iWa9Wltg==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -6373,6 +6373,7 @@ gatsby@^2.0.53:
     redux "^4.0.0"
     relay-compiler "1.5.0"
     request "^2.85.0"
+    semver "^5.6.0"
     shallow-compare "^1.2.2"
     sift "^5.1.0"
     signal-exit "^3.0.2"
@@ -12610,6 +12611,11 @@ semver@^4.0.3:
   version "4.3.6"
   resolved "https://registry.yarnpkg.com/semver/-/semver-4.3.6.tgz#300bc6e0e86374f7ba61068b5b1ecd57fc6532da"
   integrity sha1-MAvG4OhjdPe6YQaLWx7NV/xlMto=
+
+semver@^5.6.0:
+  version "5.6.0"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-5.6.0.tgz#7e74256fbaa49c75aa7c7a205cc22799cac80004"
+  integrity sha512-RS9R6R35NYgQn++fkDWaOmqGoj4Ek9gGs+DPxNUZKuwE183xjJroKvyo1IzVFeXvUrvmALy6FWD5xrdJT25gMg==
 
 semver@~5.3.0:
   version "5.3.0"
