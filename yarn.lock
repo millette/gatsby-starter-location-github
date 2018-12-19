@@ -6343,10 +6343,10 @@ gatsby-transformer-sharp@^2.1.9:
     probe-image-size "^4.0.0"
     sharp "^0.21.0"
 
-gatsby@^2.0.72:
-  version "2.0.72"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.72.tgz#f848e2bcb3a1f38e4f01810c1c2dba897e2d2536"
-  integrity sha512-uPm9UWeIxv/0rEEbTtSFk7+RshyfS4++x7SiU/NJ6pbNlyeUfO+TT88wz3L0iqOAkuOHclMD4qEKQpU15VlEew==
+gatsby@^2.0.73:
+  version "2.0.73"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.73.tgz#7fd237faa69fdf7ad077f606398337988d4333aa"
+  integrity sha512-TSf0JYhL9/RRb7abMGiPDLq1x4qMaI2Lgyouz5OyMFLqJkfV4tQaJ7d3ltXdpGZPECazEjecXh/NVZEhGEWZzA==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -14845,10 +14845,10 @@ webpack@^4.12.0:
     watchpack "^1.5.0"
     webpack-sources "^1.2.0"
 
-webpack@^4.27.1:
-  version "4.27.1"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.27.1.tgz#5f2e2db446d2266376fa15d7d2277a1a9c2e12bb"
-  integrity sha512-WArHiLvHrlfyRM8i7f+2SFbr/XbQ0bXqTkPF8JpHOzub5482Y3wx7rEO8stuLGOKOgZJcqcisLhD7LrM/+fVMw==
+webpack@^4.28.0:
+  version "4.28.0"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.28.0.tgz#6bdc26c17fe4c7e28c29fa002e6d37ac92caae9e"
+  integrity sha512-gPNTMGR5ZlBucXmEQ34TRxRqXnGYq9P3t8LeP9rvhkNnr+Cn+HvZMxGuJ4Hl7zdmoRUZP+GosniqJiadXW/RqQ==
   dependencies:
     "@webassemblyjs/ast" "1.7.11"
     "@webassemblyjs/helper-module-context" "1.7.11"
