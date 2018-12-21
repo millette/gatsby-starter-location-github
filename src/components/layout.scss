@@ -26,3 +26,7 @@ div.blogpost > p:first-child {
   font-size: $lead-font-size;
   font-weight: $lead-font-weight;
 }
+
+.btn-group > .btn {
+  flex: 0 1 auto;
+}
