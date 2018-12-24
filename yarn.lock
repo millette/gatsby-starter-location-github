@@ -4241,6 +4241,13 @@ debug@^4.1.0:
   dependencies:
     ms "^2.1.1"
 
+debug@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-4.1.1.tgz#3b72260255109c6b589cee050f1d516139664791"
+  integrity sha512-pYAIzeRo8J6KPEaJ0VWOh5Pzkbw/RetuzehGM7QRRX5he4fPHx2rdKMB256ehJCkX+XRQm16eZLqLNS8RSZXZw==
+  dependencies:
+    ms "^2.1.1"
+
 decamelize-keys@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/decamelize-keys/-/decamelize-keys-1.1.0.tgz#d171a87933252807eb3cb61dc1c1445d078df2d9"
@@ -6683,12 +6690,12 @@ gh-pages@^2.0.1:
     graceful-fs "^4.1.11"
     rimraf "^2.6.2"
 
-ghraphql@^0.14.1:
-  version "0.14.1"
-  resolved "https://registry.yarnpkg.com/ghraphql/-/ghraphql-0.14.1.tgz#c592d5e5abcad853146fc5ca7003455a907c40c1"
-  integrity sha512-m5EdSnTStOUJ0e9nXUhtJ9tgLzZ7VwmbY/kvkzuYF3GlLM7MkqoiDDv72G6X54G1tEYpLaofBdKueFaxk+buYw==
+ghraphql@^0.15.0:
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/ghraphql/-/ghraphql-0.15.0.tgz#def2a1f360eb6e3632521ebeef538576558ae79c"
+  integrity sha512-MlKnrFrqpmHoTdb0IAQZwKs5Ga9RGt/jdtY8hy0kZSlPF4fSV/XSm1WUA+KdR43XaAndFGRHVwAzaQp2ozaYWQ==
   dependencies:
-    debug "^4.1.0"
+    debug "^4.1.1"
     delay "^4.1.0"
     franc-min "^4.0.0"
     get-best-contrast-color "^0.2.2"
