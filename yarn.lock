@@ -10231,10 +10231,10 @@ npm-conf@^1.1.0:
     config-chain "^1.1.11"
     pify "^3.0.0"
 
-npm-git-links@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/npm-git-links/-/npm-git-links-0.0.3.tgz#ddb458d589ef1bc710c10cea37e3dbf77d844064"
-  integrity sha512-qebVCaorl9/MaF2cY7Kd6o55NdQK6sGpVIfS8+hEP7oEd/bpzXArHBEOS95+bQRMRHxQKuq4aUwiUTa8keNaSw==
+npm-git-links@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/npm-git-links/-/npm-git-links-0.0.4.tgz#4c66201e2fc870972ae9bf973ad107c917cef357"
+  integrity sha512-f1xqfekWYeZu4kA+w0lZkmzoPg0u4Jgg11PTveSbjqWl4lnoR4YrrdSCAr4t6m19yBQ2ItTZyxkl1yVOiaJobA==
   dependencies:
     hosted-git-info "^2.7.1"
 
