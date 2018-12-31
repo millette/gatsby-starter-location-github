@@ -44,7 +44,7 @@
     "gatsby-transformer-json": "^2.1.6",
     "gatsby-transformer-remark": "^2.1.17",
     "gatsby-transformer-sharp": "^2.1.9",
-    "ghraphql": "^0.15.0",
+    "ghraphql": "^0.16.0",
     "intl": "^1.2.5",
     "lodash.deburr": "^4.1.0",
     "node-sass": "^4.11.0",
