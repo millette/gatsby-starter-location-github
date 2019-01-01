@@ -6283,10 +6283,10 @@ gatsby-plugin-page-creator@^2.0.5:
     parse-filepath "^1.0.1"
     slash "^1.0.0"
 
-gatsby-plugin-purgecss@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-purgecss/-/gatsby-plugin-purgecss-3.0.0.tgz#3d9ab151f6b8098053e272a461f2d3680c89a291"
-  integrity sha512-S1o3+7FWa95DEJ2ktScI+iUKnsc9C9RarJKhPV8x9PWJE2/JG4wZhyFZ7Yj/uua71TcS+s936iz4M/rIX3fl+A==
+gatsby-plugin-purgecss@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-purgecss/-/gatsby-plugin-purgecss-3.1.0.tgz#ecaf5266317ef3deba94478f341f2855f58a3a74"
+  integrity sha512-X8715ZuRmusyEIE91EA+4SS3yvw986kV0h4atB6Tsz5rE8n9KqzPMQxrVsJGRuI5DIxu0YZN6EEFlb7UMTT3cg==
   dependencies:
     fs-extra "^7.0.0"
     loader-utils "^1.1.0"
@@ -6697,10 +6697,10 @@ gh-pages@^2.0.1:
     graceful-fs "^4.1.11"
     rimraf "^2.6.2"
 
-ghraphql@^0.16.0:
-  version "0.16.0"
-  resolved "https://registry.yarnpkg.com/ghraphql/-/ghraphql-0.16.0.tgz#157aa9faef3932004d30585ad6e8115f983e89cb"
-  integrity sha512-HzBJRm8KnAXhJ6Aarp6977oucMj5NMNCdcRZpqUEdznDlYiC8qvpQcdns8J5GYZIKeRLl2mMYqhkoTed0XqzxQ==
+ghraphql@^0.17.0:
+  version "0.17.0"
+  resolved "https://registry.yarnpkg.com/ghraphql/-/ghraphql-0.17.0.tgz#bf29e9f365a524d75e5ffa51e86d68d3569be287"
+  integrity sha512-Ezx02CP1Bv+8+ZDd4YGDnBelM/HBPVItIZCY8YIJpOF4SJB7eCFRk5WLh6oQVMuJ56gZYo9DaCfeau0+6LV/WA==
   dependencies:
     debug "^4.1.1"
     delay "^4.1.0"
@@ -6716,7 +6716,7 @@ ghraphql@^0.16.0:
     lodash.uniq "^4.5.0"
     lodash.uniqby "^4.7.0"
     lodash.words "^4.2.0"
-    marked "^0.5.2"
+    marked "^0.6.0"
     marked-terminal "^3.1.1"
     meow "^5.0.0"
     mkdirp "^0.5.1"
@@ -9412,10 +9412,10 @@ marked-terminal@^3.1.1:
     lodash.assign "^4.2.0"
     node-emoji "^1.4.1"
 
-marked@^0.5.2:
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-0.5.2.tgz#3efdb27b1fd0ecec4f5aba362bddcd18120e5ba9"
-  integrity sha512-fdZvBa7/vSQIZCi4uuwo2N3q+7jJURpMVCcbaX0S1Mg65WZ5ilXvC67MviJAsdjqqgD+CEq4RKo5AYGgINkVAA==
+marked@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-0.6.0.tgz#a18d01cfdcf8d15c3c455b71c8329e5e0f01faa1"
+  integrity sha512-HduzIW2xApSXKXJSpCipSxKyvMbwRRa/TwMbepmlZziKdH8548WSoDP4SxzulEKjlo8BE39l+2fwJZuRKOln6g==
 
 matcher@^1.0.0:
   version "1.1.1"
