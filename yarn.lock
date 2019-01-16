@@ -786,12 +786,12 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@data-ui/shared@^0.0.74":
-  version "0.0.74"
-  resolved "https://registry.yarnpkg.com/@data-ui/shared/-/shared-0.0.74.tgz#895af8ee3a7c48779867ea5e0c10a840325a65e4"
-  integrity sha512-zQkIvTISDvuPNGBjp6hHjx7jQn31bRnal/qH6DZJBSXnsRUTJglp3F1lna5fd+i5dMKbiXFBEPRyYQtHJR2cVg==
+"@data-ui/shared@^0.0.75":
+  version "0.0.75"
+  resolved "https://registry.yarnpkg.com/@data-ui/shared/-/shared-0.0.75.tgz#18a1ff3478fa3c46b144f4c27ab2f4fea2aff21d"
+  integrity sha512-zL8Mtcc2sdr1MIWJKqrf6sbRVVS+whNwQtiZkKaxqP7XNnzbRBQhZl3/1G2LqF1eeKzxebNV3jwnBVRkz7PpXQ==
   dependencies:
-    "@data-ui/theme" "^0.0.74"
+    "@data-ui/theme" "^0.0.75"
     "@vx/event" "^0.0.165"
     "@vx/group" "^0.0.165"
     "@vx/shape" "^0.0.168"
@@ -799,12 +799,12 @@
     d3-array "^1.2.1"
     prop-types "^15.5.10"
 
-"@data-ui/sparkline@^0.0.74":
-  version "0.0.74"
-  resolved "https://registry.yarnpkg.com/@data-ui/sparkline/-/sparkline-0.0.74.tgz#69a80fa2f41ed1302d64db0bc2f81f6307c9667a"
-  integrity sha512-iewHWfhvHb/IhUeeWOvOfY0IFLnp5q0AVyp/LJ96sIVWKvuwAJX6CkbCbCSHaeajopYBFd7LnZ2HXrVlmCDxpA==
+"@data-ui/sparkline@^0.0.75":
+  version "0.0.75"
+  resolved "https://registry.yarnpkg.com/@data-ui/sparkline/-/sparkline-0.0.75.tgz#6c611f432ef8c36ca49c3b7caa4e544a011600dc"
+  integrity sha512-PlR72oqDYKgQFUF7ybmO3MfTGsoy+/CV3Vn5ze+NKZqt9Sw/9ZziDqqwGey5QcUUxQ7Dl5vByb4ONI2WGzb4VQ==
   dependencies:
-    "@data-ui/shared" "^0.0.74"
+    "@data-ui/shared" "^0.0.75"
     "@data-ui/theme" "^0.0.8"
     "@vx/axis" "^0.0.179"
     "@vx/curve" "^0.0.165"
@@ -821,10 +821,10 @@
     d3-array "^1.2.0"
     prop-types "^15.5.10"
 
-"@data-ui/theme@^0.0.74":
-  version "0.0.74"
-  resolved "https://registry.yarnpkg.com/@data-ui/theme/-/theme-0.0.74.tgz#a9a80db81666b7f869574395f62e144b496f4039"
-  integrity sha512-KriUIGyUqQQKfiHxEwcynIxGnVkMHZ0R4pd5vgq/t/zcKyAOCp9zCpHPv0qJwG4Khi4zicHAqVjAmSDpgYPHuA==
+"@data-ui/theme@^0.0.75":
+  version "0.0.75"
+  resolved "https://registry.yarnpkg.com/@data-ui/theme/-/theme-0.0.75.tgz#50f10af0dff2bc7dd3eea66ef235f0981b83baf7"
+  integrity sha512-Kr6M/3mGMR2Mhqb4+YFSe4x40UCKdK4OpreYa553EAsS5ngpcOk6u3ZQjRyNTuZ4d+Zjk7Fvn8fQKsUqQlwG1Q==
 
 "@data-ui/theme@^0.0.8":
   version "0.0.8"
@@ -6798,10 +6798,10 @@ gh-pages@^2.0.1:
     graceful-fs "^4.1.11"
     rimraf "^2.6.2"
 
-ghraphql@^0.17.1:
-  version "0.17.1"
-  resolved "https://registry.yarnpkg.com/ghraphql/-/ghraphql-0.17.1.tgz#56fec5093bcac3ff25f2341e7c4d04f227962eb7"
-  integrity sha512-YKKx+GXH0jAnQxVuyIkgg9YnsZZUExrg7JR1pKkxmDBBg50qzoe9HdeYZyisiUXZ270TIxz6UgX1o0zuYFYrnA==
+ghraphql@^0.18.0:
+  version "0.18.0"
+  resolved "https://registry.yarnpkg.com/ghraphql/-/ghraphql-0.18.0.tgz#93572722bb5be6e852b2fcc0c27d93960ecc76fc"
+  integrity sha512-DhmCSz5/GtKsP5494F1PXc7ZlsU5U3AxdYAJTtDTuwdPvYmuxT+HC/Wbo0h/dNJT8dOzLqjBHA7pSkpqTx0fmg==
   dependencies:
     debug "^4.1.1"
     delay "^4.1.0"
@@ -12041,10 +12041,10 @@ react-hot-loader@^4.6.2:
     shallowequal "^1.0.2"
     source-map "^0.7.3"
 
-react-intl@^2.7.2:
-  version "2.7.2"
-  resolved "https://registry.yarnpkg.com/react-intl/-/react-intl-2.7.2.tgz#efe97e3fc0e99b4e88a6e6150854d3d1852a4381"
-  integrity sha512-3dcNGLqEw2FKkX+1L2WYLgjP0MVJkvWuVd1uLcnwifIQe8JQvnd9Bss4hb4Gvg/YhBIRcs4LM6C2bAgyklucjw==
+react-intl@^2.8.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/react-intl/-/react-intl-2.8.0.tgz#20b0c1f01d1292427768aa8ec9e51ab7e36503ba"
+  integrity sha512-1cSasNkHxZOXYYhms9Q1tSEWF8AWZQNq3nPLB/j8mYV0ZTSt2DhGQXHfKrKQMu4cgj9J1Crqg7xFPICTBgzqtQ==
   dependencies:
     hoist-non-react-statics "^2.5.5"
     intl-format-cache "^2.0.5"
