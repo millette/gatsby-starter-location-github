@@ -6798,16 +6798,16 @@ gh-pages@^2.0.1:
     graceful-fs "^4.1.11"
     rimraf "^2.6.2"
 
-ghraphql@^0.18.0:
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/ghraphql/-/ghraphql-0.18.0.tgz#93572722bb5be6e852b2fcc0c27d93960ecc76fc"
-  integrity sha512-DhmCSz5/GtKsP5494F1PXc7ZlsU5U3AxdYAJTtDTuwdPvYmuxT+HC/Wbo0h/dNJT8dOzLqjBHA7pSkpqTx0fmg==
+ghraphql@^0.19.0:
+  version "0.19.0"
+  resolved "https://registry.yarnpkg.com/ghraphql/-/ghraphql-0.19.0.tgz#9e5d893b036a1238ccbb51e2eac946dc3b80e185"
+  integrity sha512-fUGQdGnInwTgOYTMUDrxAu1rIdlUW1YS5Qil9F9IenBJsncufifFi83OA4b7WSIbqhmfuWvhHBS+mHSuWmp/1Q==
   dependencies:
     debug "^4.1.1"
     delay "^4.1.0"
     franc-min "^4.0.0"
     get-best-contrast-color "^0.2.2"
-    got "^9.5.1"
+    got "^9.6.0"
     lodash.countby "^4.6.0"
     lodash.deburr "^4.1.0"
     lodash.difference "^4.5.0"
@@ -7099,6 +7099,23 @@ got@^9.5.1:
   version "9.5.1"
   resolved "https://registry.yarnpkg.com/got/-/got-9.5.1.tgz#9cd83c64978225790c5142fc4e492cdea01256ef"
   integrity sha512-a6UC2YXj3UPQT3UOzCCovwna4WPpN/OBAiiPSUwQ9gFranGs8HQjidyRmen2esBVlauqLWDbMwSTFDtxYNUv+g==
+  dependencies:
+    "@sindresorhus/is" "^0.14.0"
+    "@szmarczak/http-timer" "^1.1.2"
+    cacheable-request "^6.0.0"
+    decompress-response "^3.3.0"
+    duplexer3 "^0.1.4"
+    get-stream "^4.1.0"
+    lowercase-keys "^1.0.1"
+    mimic-response "^1.0.1"
+    p-cancelable "^1.0.0"
+    to-readable-stream "^1.0.0"
+    url-parse-lax "^3.0.0"
+
+got@^9.6.0:
+  version "9.6.0"
+  resolved "https://registry.yarnpkg.com/got/-/got-9.6.0.tgz#edf45e7d67f99545705de1f7bbeeeb121765ed85"
+  integrity sha512-R7eWptXuGYxwijs0eV+v3o6+XH1IqVK8dJOEecQfTmkncw9AV4dcw/Dhxi8MdlqPthxxpZyizMzyg8RTmEsG+Q==
   dependencies:
     "@sindresorhus/is" "^0.14.0"
     "@szmarczak/http-timer" "^1.1.2"
