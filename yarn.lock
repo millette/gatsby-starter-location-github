@@ -6798,10 +6798,10 @@ gh-pages@^2.0.1:
     graceful-fs "^4.1.11"
     rimraf "^2.6.2"
 
-ghraphql@^0.19.0:
-  version "0.19.0"
-  resolved "https://registry.yarnpkg.com/ghraphql/-/ghraphql-0.19.0.tgz#9e5d893b036a1238ccbb51e2eac946dc3b80e185"
-  integrity sha512-fUGQdGnInwTgOYTMUDrxAu1rIdlUW1YS5Qil9F9IenBJsncufifFi83OA4b7WSIbqhmfuWvhHBS+mHSuWmp/1Q==
+ghraphql@^0.19.1:
+  version "0.19.1"
+  resolved "https://registry.yarnpkg.com/ghraphql/-/ghraphql-0.19.1.tgz#f0de4226e49f78d793563f906e265623a0db4f81"
+  integrity sha512-wSjccuG3M5uWTN4qnPbkDgVCU68ovT+XpecHKf1Xcd6hk6Bhb16UrazJ6Ve3ju2VbisPKumrsvrIBO4E12TS0A==
   dependencies:
     debug "^4.1.1"
     delay "^4.1.0"
