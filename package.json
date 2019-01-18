@@ -2,7 +2,7 @@
   "name": "gatsby-starter-location-github",
   "description": "Local GitHub directory.",
   "license": "AGPL-3.0",
-  "version": "0.18.1",
+  "version": "0.18.2",
   "repository": "millette/gatsby-starter-location-github",
   "author": {
     "name": "Robin Millette",
@@ -44,7 +44,7 @@
     "gatsby-transformer-json": "^2.1.7",
     "gatsby-transformer-remark": "^2.2.0",
     "gatsby-transformer-sharp": "^2.1.10",
-    "ghraphql": "^0.19.1",
+    "ghraphql": "^0.19.2",
     "intl": "^1.2.5",
     "lodash.deburr": "^4.1.0",
     "node-sass": "^4.11.0",
