@@ -60,17 +60,23 @@
   "engines": {
     "node": ">= 8.12.0"
   },
-  "keywords": ["gatsby", "starter", "github"],
+  "keywords": [
+    "gatsby",
+    "starter",
+    "github"
+  ],
   "lint-staged": {
-    "*.{js,json,md}": ["prettier-standard", "git add"]
+    "*.{js,json,md}": [
+      "prettier-standard",
+      "git add"
+    ]
   },
   "scripts": {
     "lint": "standard",
     "ghraphql:colors": "ghraphql --config custom/config.js --colors",
     "ghraphql:users": "ghraphql --config custom/config.js --verbose",
     "ghraphql:sparks": "ghraphql --config custom/config.js --sparks --verbose",
-    "ghraphql:init":
-      "ghraphql --config custom/config.js --colors && ghraphql --config custom/config.js --verbose && ghraphql --config custom/config.js --sparks --verbose && mkdir custom/locales",
+    "ghraphql:init": "ghraphql --config custom/config.js --colors && ghraphql --config custom/config.js --verbose && ghraphql --config custom/config.js --sparks --verbose && mkdir custom/locales",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
@@ -88,8 +94,8 @@
     "gh-pages": "^2.0.1",
     "husky": "^1.3.1",
     "lint-staged": "^8.1.0",
-    "prettier-standard": "^8.0.1",
+    "prettier-standard": "^9.1.1",
     "standard": "^12.0.1",
-    "webpack": "^4.28.4"
+    "webpack": "^4.29.0"
   }
 }
