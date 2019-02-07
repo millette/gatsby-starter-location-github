@@ -29,7 +29,7 @@
     "bootstrap": "4.2.1",
     "bootswatch": "4.2.1",
     "browser-lang": "^0.0.1",
-    "gatsby": "^2.0.115",
+    "gatsby": "^2.0.116",
     "gatsby-image": "^2.0.29",
     "gatsby-plugin-catch-links": "^2.0.10",
     "gatsby-plugin-feed": "^2.0.13",
@@ -50,9 +50,9 @@
     "node-sass": "^4.11.0",
     "npm-git-links": "^0.0.4",
     "prop-types": "^15.6.2",
-    "react": "^16.7.0",
+    "react": "^16.8.1",
     "react-bootstrap-typeahead": "^3.3.2",
-    "react-dom": "^16.7.0",
+    "react-dom": "^16.8.1",
     "react-helmet": "^5.2.0",
     "react-intl": "^2.8.0",
     "typeface-roboto": "^0.0.54"
@@ -96,6 +96,6 @@
     "lint-staged": "^8.1.3",
     "prettier-standard": "^9.1.1",
     "standard": "^12.0.1",
-    "webpack": "^4.29.1"
+    "webpack": "^4.29.2"
   }
 }
