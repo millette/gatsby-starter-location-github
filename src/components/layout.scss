@@ -1,5 +1,6 @@
 $web-font-path: "";
 @import "variables";
+$enable-responsive-font-sizes: true;
 @import "scss/bootstrap";
 @import "bootswatch";
 
