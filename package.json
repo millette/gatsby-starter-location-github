@@ -96,6 +96,6 @@
     "lint-staged": "^8.1.4",
     "prettier-standard": "^9.1.1",
     "standard": "^12.0.1",
-    "webpack": "^4.29.3"
+    "webpack": "^4.29.4"
   }
 }
