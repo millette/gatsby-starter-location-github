@@ -2816,6 +2816,11 @@ camelcase@^4.0.0, camelcase@^4.1.0:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-4.1.0.tgz#d545635be1e33c542649c69173e5de6acfae34dd"
   integrity sha1-1UVjW+HjPFQmScaRc+Xeas+uNN0=
 
+camelcase@^5.0.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-5.2.0.tgz#e7522abda5ed94cc0489e1b8466610e88404cf45"
+  integrity sha512-IXFsBS2pC+X0j0N/GE7Dm7j3bsEBp+oTpb7F50dwEVX7rf3IgwO9XatnegTsDtniKCUtEJH4fSU6Asw7uoVLfQ==
+
 caniuse-api@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/caniuse-api/-/caniuse-api-3.0.0.tgz#5e4d90e2274961d46291997df599e3ed008ee4c0"
@@ -4007,7 +4012,7 @@ decamelize-keys@^1.0.0:
     decamelize "^1.1.0"
     map-obj "^1.0.0"
 
-decamelize@^1.1.0, decamelize@^1.1.1, decamelize@^1.1.2:
+decamelize@^1.1.0, decamelize@^1.1.1, decamelize@^1.1.2, decamelize@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
   integrity sha1-9lNNFRSCabIDUue+4m9QH5oZEpA=
@@ -5712,7 +5717,7 @@ find-up@^1.0.0:
     path-exists "^2.0.0"
     pinkie-promise "^2.0.0"
 
-find-up@^2.0.0, find-up@^2.1.0:
+find-up@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/find-up/-/find-up-2.1.0.tgz#45d1b7e506c717ddd482775a2b77920a3c0c57a7"
   integrity sha1-RdG35QbHF93UgndaK3eSCjwMV6c=
@@ -5986,10 +5991,10 @@ g-status@^2.0.2:
     matcher "^1.0.0"
     simple-git "^1.85.0"
 
-gatsby-cli@^2.4.13:
-  version "2.4.13"
-  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.4.13.tgz#2338d005053d3adf60d6182700c118ba9431a57b"
-  integrity sha512-DWXGUGFKLO5mA/4LTC0hPQ9vGtWWFcsNstp6LmAIW+51yH7wKJHYWiIdbYR5URyvX64fQ2z67Kz4j2cps12Cfg==
+gatsby-cli@^2.4.14:
+  version "2.4.14"
+  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.4.14.tgz#5013fbccd2e9c7060065d1f757c08c427627c758"
+  integrity sha512-estCxsdYs1WVuoGTcuszTdbx7xGexsUrslUaEgtybf8jWzpy5xA0M4T6DnzLSEN8HIbal3AiM+nQvPMInjYl3A==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/runtime" "^7.0.0"
@@ -6003,13 +6008,14 @@ gatsby-cli@^2.4.13:
     fs-extra "^4.0.1"
     hosted-git-info "^2.6.0"
     lodash "^4.17.10"
+    meant "^1.0.1"
     opentracing "^0.14.3"
     pretty-error "^2.1.1"
     resolve-cwd "^2.0.0"
     source-map "^0.5.7"
     stack-trace "^0.0.10"
     update-notifier "^2.3.0"
-    yargs "^11.1.0"
+    yargs "^12.0.5"
     yurnalist "^1.0.2"
 
 gatsby-image@^2.0.31:
@@ -6222,10 +6228,10 @@ gatsby-transformer-sharp@^2.1.15:
     probe-image-size "^4.0.0"
     sharp "^0.21.3"
 
-gatsby@^2.1.24:
-  version "2.1.24"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.1.24.tgz#0522989cd4e0e6fc84e02fd2f97cf62cb8ef290b"
-  integrity sha512-S2ghkROyAxAPZv31y9SxPDh1uEcrvK9De157GWLj+Ljx+Iahdjl+gSh0pntmooik5BlEyYBhdBhD0MDliBMogg==
+gatsby@^2.1.26:
+  version "2.1.26"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.1.26.tgz#5c5411f222fce6afcd4067c5cc4cb5c6b565f232"
+  integrity sha512-fNMpTsJcrT25DcmWdSge4X8RTIk/AjcK3ESHn2f8EykqC4iE7vx4TqQ7wSGpVTf3x8RWPIs9vMjVWsl2RQydig==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -6281,7 +6287,7 @@ gatsby@^2.1.24:
     friendly-errors-webpack-plugin "^1.6.1"
     fs-exists-cached "1.0.0"
     fs-extra "^5.0.0"
-    gatsby-cli "^2.4.13"
+    gatsby-cli "^2.4.14"
     gatsby-link "^2.0.14"
     gatsby-plugin-page-creator "^2.0.9"
     gatsby-react-router-scroll "^2.0.4"
@@ -9306,6 +9312,11 @@ mdurl@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/mdurl/-/mdurl-1.0.1.tgz#fe85b2ec75a59037f2adfec100fd6c601761152e"
   integrity sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=
+
+meant@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/meant/-/meant-1.0.1.tgz#66044fea2f23230ec806fb515efea29c44d2115d"
+  integrity sha512-UakVLFjKkbbUwNWJ2frVLnnAtbb7D7DsloxRd3s/gDpI8rdv8W5Hp3NaDb+POBI1fQdeussER6NB8vpcRURvlg==
 
 media-typer@0.3.0:
   version "0.3.0"
@@ -15094,6 +15105,14 @@ yargs-parser@^10.0.0, yargs-parser@^10.1.0:
   dependencies:
     camelcase "^4.1.0"
 
+yargs-parser@^11.1.1:
+  version "11.1.1"
+  resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-11.1.1.tgz#879a0865973bca9f6bab5cbdf3b1c67ec7d3bcf4"
+  integrity sha512-C6kB/WJDiaxONLJQnF8ccx9SEeoTTLek8RVbaOIsrAUS8VrBEXfmeSnCZxygc+XC2sNMBIwOOnfcxiynjHsVSQ==
+  dependencies:
+    camelcase "^5.0.0"
+    decamelize "^1.2.0"
+
 yargs-parser@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-5.0.0.tgz#275ecf0d7ffe05c77e64e7c86e4cd94bf0e1228a"
@@ -15105,13 +15124,6 @@ yargs-parser@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-7.0.0.tgz#8d0ac42f16ea55debd332caf4c4038b3e3f5dfd9"
   integrity sha1-jQrELxbqVd69MyyvTEA4s+P139k=
-  dependencies:
-    camelcase "^4.1.0"
-
-yargs-parser@^9.0.2:
-  version "9.0.2"
-  resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-9.0.2.tgz#9ccf6a43460fe4ed40a9bb68f48d43b8a68cc077"
-  integrity sha1-nM9qQ0YP5O1Aqbto9I1DuKaMwHc=
   dependencies:
     camelcase "^4.1.0"
 
@@ -15133,23 +15145,23 @@ yargs@12.0.2, yargs@^12.0.1:
     y18n "^3.2.1 || ^4.0.0"
     yargs-parser "^10.1.0"
 
-yargs@^11.1.0:
-  version "11.1.0"
-  resolved "http://registry.npmjs.org/yargs/-/yargs-11.1.0.tgz#90b869934ed6e871115ea2ff58b03f4724ed2d77"
-  integrity sha512-NwW69J42EsCSanF8kyn5upxvjp5ds+t3+udGBeTbFnERA+lF541DDpMawzo4z6W/QrzNM18D+BPMiOBibnFV5A==
+yargs@^12.0.5:
+  version "12.0.5"
+  resolved "https://registry.yarnpkg.com/yargs/-/yargs-12.0.5.tgz#05f5997b609647b64f66b81e3b4b10a368e7ad13"
+  integrity sha512-Lhz8TLaYnxq/2ObqHDql8dX8CJi97oHxrjUcYtzKbbykPtVW9WB+poxI+NM2UIzsMgNCZTIf0AQwsjK5yMAqZw==
   dependencies:
     cliui "^4.0.0"
-    decamelize "^1.1.1"
-    find-up "^2.1.0"
+    decamelize "^1.2.0"
+    find-up "^3.0.0"
     get-caller-file "^1.0.1"
-    os-locale "^2.0.0"
+    os-locale "^3.0.0"
     require-directory "^2.1.1"
     require-main-filename "^1.0.1"
     set-blocking "^2.0.0"
     string-width "^2.0.0"
     which-module "^2.0.0"
-    y18n "^3.2.1"
-    yargs-parser "^9.0.2"
+    y18n "^3.2.1 || ^4.0.0"
+    yargs-parser "^11.1.1"
 
 yargs@^7.0.0:
   version "7.1.0"
