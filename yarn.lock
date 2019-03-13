@@ -863,12 +863,12 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@data-ui/shared@^0.0.76":
-  version "0.0.76"
-  resolved "https://registry.yarnpkg.com/@data-ui/shared/-/shared-0.0.76.tgz#b577604459d4cf5250d2131e437ee661f3da3d03"
-  integrity sha512-v9H6tanY+LIH0zZ9KqkGlMS7mlocZjlY18VHdCywgNkUtTKnDsoxZH6WTb6Av6fVFt8yKOK2jSxDLPCo60M4WQ==
+"@data-ui/shared@^0.0.77":
+  version "0.0.77"
+  resolved "https://registry.yarnpkg.com/@data-ui/shared/-/shared-0.0.77.tgz#cc821b02baa70066d1b854dbf0c47fa38d352995"
+  integrity sha512-eHS2G3+0UxVNOLZjGMmgGn0ycebydMMZ+3n6Tk2zeg/znfx4JIC/HgmfN3NHlC+ZpDttkDXz+XPCehywUwuclw==
   dependencies:
-    "@data-ui/theme" "^0.0.76"
+    "@data-ui/theme" "^0.0.77"
     "@vx/event" "^0.0.165"
     "@vx/group" "^0.0.165"
     "@vx/shape" "^0.0.168"
@@ -876,12 +876,12 @@
     d3-array "^1.2.1"
     prop-types "^15.5.10"
 
-"@data-ui/sparkline@^0.0.76":
-  version "0.0.76"
-  resolved "https://registry.yarnpkg.com/@data-ui/sparkline/-/sparkline-0.0.76.tgz#66cd49c80c38f0375e117f7e063d98136905f86d"
-  integrity sha512-okwIuiSSm+l/zQVncbDSfDMbjIGGtEhbSFn4SCkiCfOwhIm0JQ+opDYNhqWftlUxycQ1EKZ+jdZZ0IgkCjxR9A==
+"@data-ui/sparkline@^0.0.77":
+  version "0.0.77"
+  resolved "https://registry.yarnpkg.com/@data-ui/sparkline/-/sparkline-0.0.77.tgz#a22accff81c16749c29a7af564bdb6fdab839a0d"
+  integrity sha512-JJrQjhro1BXJL4XdB9JP1h02l5nVJj806wkEAmrGwAQZiZHHqHHS6iCXsYF/g1sMJEhmpZtxk9adTTb/xiJTaA==
   dependencies:
-    "@data-ui/shared" "^0.0.76"
+    "@data-ui/shared" "^0.0.77"
     "@data-ui/theme" "^0.0.8"
     "@vx/axis" "^0.0.179"
     "@vx/curve" "^0.0.165"
@@ -898,10 +898,10 @@
     d3-array "^1.2.0"
     prop-types "^15.5.10"
 
-"@data-ui/theme@^0.0.76":
-  version "0.0.76"
-  resolved "https://registry.yarnpkg.com/@data-ui/theme/-/theme-0.0.76.tgz#8e9e1f7ce9ae45331af21fc296c97c268b06a266"
-  integrity sha512-mJSID/tToZ5jk0PeFoEHJnt3k4oU60D7eSSgngIxkf2yEoXdDjxrlUKGY9ICXgZ0NrMdL5P5JkydOt8HdkoGSA==
+"@data-ui/theme@^0.0.77":
+  version "0.0.77"
+  resolved "https://registry.yarnpkg.com/@data-ui/theme/-/theme-0.0.77.tgz#6cc739b126aa8755636b1f825ca1df859b357ace"
+  integrity sha512-4LA8ElVy50bOIDCdY8Pre6TexHZZ/7DyLSHx3BwFnDeQxqNthPr/amA5xwijAX+6kw0BWaEm+m6nwQyCn6b7tA==
 
 "@data-ui/theme@^0.0.8":
   version "0.0.8"
