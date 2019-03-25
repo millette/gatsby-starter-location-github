@@ -36,7 +36,7 @@
     "gatsby-plugin-purgecss": "^3.1.1",
     "gatsby-plugin-react-helmet": "^3.0.11",
     "gatsby-plugin-sass": "^2.0.11",
-    "gatsby-plugin-sharp": "^2.0.30",
+    "gatsby-plugin-sharp": "^2.0.31",
     "gatsby-remark-external-links": "^0.0.4",
     "gatsby-remark-images": "^3.0.10",
     "gatsby-remark-smartypants": "^2.0.9",
