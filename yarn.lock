@@ -1027,12 +1027,12 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@data-ui/shared@^0.0.77":
-  version "0.0.77"
-  resolved "https://registry.yarnpkg.com/@data-ui/shared/-/shared-0.0.77.tgz#cc821b02baa70066d1b854dbf0c47fa38d352995"
-  integrity sha512-eHS2G3+0UxVNOLZjGMmgGn0ycebydMMZ+3n6Tk2zeg/znfx4JIC/HgmfN3NHlC+ZpDttkDXz+XPCehywUwuclw==
+"@data-ui/shared@^0.0.78":
+  version "0.0.78"
+  resolved "http://localhost:4873/@data-ui%2fshared/-/shared-0.0.78.tgz#19b610bcb64025582c1b64939936c6cceb9ff409"
+  integrity sha512-IetTiW89B7v1BqINN8+0uDnqqF06ulAcPivxgm0WeQOIVsgQdtOxTNfbaeC19reI1UTiF+xm5on0mN4F1At3XQ==
   dependencies:
-    "@data-ui/theme" "^0.0.77"
+    "@data-ui/theme" "^0.0.78"
     "@vx/event" "^0.0.165"
     "@vx/group" "^0.0.165"
     "@vx/shape" "^0.0.168"
@@ -1040,12 +1040,12 @@
     d3-array "^1.2.1"
     prop-types "^15.5.10"
 
-"@data-ui/sparkline@^0.0.77":
-  version "0.0.77"
-  resolved "https://registry.yarnpkg.com/@data-ui/sparkline/-/sparkline-0.0.77.tgz#a22accff81c16749c29a7af564bdb6fdab839a0d"
-  integrity sha512-JJrQjhro1BXJL4XdB9JP1h02l5nVJj806wkEAmrGwAQZiZHHqHHS6iCXsYF/g1sMJEhmpZtxk9adTTb/xiJTaA==
+"@data-ui/sparkline@^0.0.78":
+  version "0.0.78"
+  resolved "http://localhost:4873/@data-ui%2fsparkline/-/sparkline-0.0.78.tgz#2afa6fffa69fcf2893d5480510da60e4fd6c9f98"
+  integrity sha512-EBq2alQWuwwteBqKMgOp6iP7ZagHyUeVx13g+pF3MvRnzxYIsaUhCXUzI5kG5WzNkvzQGSPMEeciteHF9ENY5w==
   dependencies:
-    "@data-ui/shared" "^0.0.77"
+    "@data-ui/shared" "^0.0.78"
     "@data-ui/theme" "^0.0.8"
     "@vx/axis" "^0.0.179"
     "@vx/curve" "^0.0.165"
@@ -1062,10 +1062,10 @@
     d3-array "^1.2.0"
     prop-types "^15.5.10"
 
-"@data-ui/theme@^0.0.77":
-  version "0.0.77"
-  resolved "https://registry.yarnpkg.com/@data-ui/theme/-/theme-0.0.77.tgz#6cc739b126aa8755636b1f825ca1df859b357ace"
-  integrity sha512-4LA8ElVy50bOIDCdY8Pre6TexHZZ/7DyLSHx3BwFnDeQxqNthPr/amA5xwijAX+6kw0BWaEm+m6nwQyCn6b7tA==
+"@data-ui/theme@^0.0.78":
+  version "0.0.78"
+  resolved "http://localhost:4873/@data-ui%2ftheme/-/theme-0.0.78.tgz#fafbf11c479de272b54b21e60b5598aae5caa337"
+  integrity sha512-DyGqH2kIHONvTfg3E810PFSUPDBLgQtZUFOvAMDLrSsO9KClX4XchNzEsewQoKQK4MP/pdxuJuX/LCRglsGj6g==
 
 "@data-ui/theme@^0.0.8":
   version "0.0.8"
@@ -6339,10 +6339,10 @@ gatsby-plugin-sass@^2.0.11:
     "@babel/runtime" "^7.0.0"
     sass-loader "^7.0.1"
 
-gatsby-plugin-sharp@^2.0.32:
-  version "2.0.32"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.0.32.tgz#47ebf2e44ece58560fa8bc604e7904ff9dca1386"
-  integrity sha512-5cLD2VUcKBtIm7QJbSj4fIAv/eqD6KhraHODHjpGwqvwSOdLQB7YcmzSCPnRwxEv+0f2wNrjZYpsd8SmIWfhDw==
+gatsby-plugin-sharp@^2.0.33:
+  version "2.0.33"
+  resolved "http://localhost:4873/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.0.33.tgz#e11d6992d4deec4eda0962cbb22baad02f30c7bc"
+  integrity sha512-iukfJqhZUbjflqpdFWLD86I14/MJD4eQR+TfmQRace+UInSlHfcyxK0f/Oqx/utKh8km/Q/3IKnSjA8QrVTLsA==
   dependencies:
     "@babel/runtime" "^7.0.0"
     async "^2.1.2"
