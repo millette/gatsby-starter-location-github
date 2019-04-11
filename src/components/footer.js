@@ -109,11 +109,10 @@ const Footer = () => (
                   </a>
                 </dd>
 
-                {versionUrl &&
-                  !dev && (
+                {versionUrl && !dev && (
                   <Fragment>
                     <dt className='col-6 text-right'>
-                        Version {`${version}${dev ? ' / dev' : ''}`}
+                      Version {`${version}${dev ? ' / dev' : ''}`}
                     </dt>
                     <dd className='col-6 text-truncate text-right'>
                       <a
@@ -127,11 +126,10 @@ const Footer = () => (
                   </Fragment>
                 )}
 
-                {headUrl &&
-                  dev && (
+                {headUrl && dev && (
                   <Fragment>
                     <dt className='col-6 text-right'>
-                        Version {`${version}${dev ? ' / dev' : ''}`}
+                      Version {`${version}${dev ? ' / dev' : ''}`}
                     </dt>
                     <dd className='col-6 text-truncate text-right'>
                       <a
@@ -149,7 +147,7 @@ const Footer = () => (
                   <FormattedMessage id='footer.license' />
                 </dt>
                 <dd className='col-6 text-truncate text-right'>
-                  AGPL-v3 2018 ©{' '}
+                  AGPL-v3 2018-2019 ©{' '}
                   <a
                     target='_blank'
                     rel='noopener noreferrer'
