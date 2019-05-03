@@ -29,7 +29,7 @@
     "bootstrap": "4.3.1",
     "bootswatch": "4.3.1",
     "browser-lang": "^0.0.1",
-    "gatsby": "^2.4.0",
+    "gatsby": "^2.4.1",
     "gatsby-image": "^2.0.41",
     "gatsby-plugin-catch-links": "^2.0.13",
     "gatsby-plugin-feed": "^2.2.0",
@@ -93,7 +93,7 @@
   "devDependencies": {
     "gh-pages": "^2.0.1",
     "husky": "^2.2.0",
-    "lint-staged": "^8.1.5",
+    "lint-staged": "^8.1.6",
     "prettier-standard": "^9.1.1",
     "standard": "^12.0.1",
     "webpack": "^4.30.0"
