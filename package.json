@@ -29,7 +29,7 @@
     "bootstrap": "4.3.1",
     "bootswatch": "4.3.1",
     "browser-lang": "^0.0.1",
-    "gatsby": "^2.5.5",
+    "gatsby": "^2.5.7",
     "gatsby-image": "^2.1.0",
     "gatsby-plugin-catch-links": "^2.0.14",
     "gatsby-plugin-feed": "^2.2.0",
@@ -40,7 +40,7 @@
     "gatsby-remark-external-links": "^0.0.4",
     "gatsby-remark-images": "^3.0.11",
     "gatsby-remark-smartypants": "^2.0.9",
-    "gatsby-source-filesystem": "^2.0.36",
+    "gatsby-source-filesystem": "^2.0.37",
     "gatsby-transformer-json": "^2.1.11",
     "gatsby-transformer-remark": "^2.3.12",
     "gatsby-transformer-sharp": "^2.1.19",
@@ -96,6 +96,6 @@
     "lint-staged": "^8.1.7",
     "prettier-standard": "^9.1.1",
     "standard": "^12.0.1",
-    "webpack": "^4.31.0"
+    "webpack": "^4.32.0"
   }
 }
