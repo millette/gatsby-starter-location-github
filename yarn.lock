@@ -12081,10 +12081,10 @@ rc@^1.0.1, rc@^1.1.2, rc@^1.1.6, rc@^1.2.7, rc@^1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-bootstrap-typeahead@^3.4.4:
-  version "3.4.4"
-  resolved "http://localhost:4873/react-bootstrap-typeahead/-/react-bootstrap-typeahead-3.4.4.tgz#bb8bdc44c9a9abd66edcbffd6af25f4365fe6875"
-  integrity sha512-9v9l3a+GzwpFgBBwl9Rnvg/65LLyStsPuaFOan+XLrsS9pBOp+ukBwEHhgdkwblsT1snur06R8TB1aUtY7f8lg==
+react-bootstrap-typeahead@^3.4.5:
+  version "3.4.5"
+  resolved "http://localhost:4873/react-bootstrap-typeahead/-/react-bootstrap-typeahead-3.4.5.tgz#634be2f90124b417e15c5f5b8d67ba4e362d00b7"
+  integrity sha512-accbqAcc7YLEiFSr+XfWfk0LamPZ8oU8VgYNcMpxk0Dt1JtctsuMoRQXRDs2JMS5W+g4r5zdx+qyYZ/bPCODoA==
   dependencies:
     classnames "^2.2.0"
     create-react-context "^0.2.3"
