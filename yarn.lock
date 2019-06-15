@@ -942,12 +942,12 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@data-ui/shared@^0.0.78":
-  version "0.0.78"
-  resolved "http://localhost:4873/@data-ui%2fshared/-/shared-0.0.78.tgz#19b610bcb64025582c1b64939936c6cceb9ff409"
-  integrity sha512-IetTiW89B7v1BqINN8+0uDnqqF06ulAcPivxgm0WeQOIVsgQdtOxTNfbaeC19reI1UTiF+xm5on0mN4F1At3XQ==
+"@data-ui/shared@^0.0.79":
+  version "0.0.79"
+  resolved "http://localhost:4873/@data-ui%2fshared/-/shared-0.0.79.tgz#09ad3e0767fce2dd2491b4f99eeda5e6ed578ee9"
+  integrity sha512-K5wNZWm4/URhz3RmY9ippoy0ufJKGCPg6wlY0xCcYHk1M5/H60tEYYJxZy0scS05WFCxty0UsQYgnCP3GYFtfA==
   dependencies:
-    "@data-ui/theme" "^0.0.78"
+    "@data-ui/theme" "^0.0.79"
     "@vx/event" "^0.0.165"
     "@vx/group" "^0.0.165"
     "@vx/shape" "^0.0.168"
@@ -955,12 +955,12 @@
     d3-array "^1.2.1"
     prop-types "^15.5.10"
 
-"@data-ui/sparkline@^0.0.78":
-  version "0.0.78"
-  resolved "http://localhost:4873/@data-ui%2fsparkline/-/sparkline-0.0.78.tgz#2afa6fffa69fcf2893d5480510da60e4fd6c9f98"
-  integrity sha512-EBq2alQWuwwteBqKMgOp6iP7ZagHyUeVx13g+pF3MvRnzxYIsaUhCXUzI5kG5WzNkvzQGSPMEeciteHF9ENY5w==
+"@data-ui/sparkline@^0.0.79":
+  version "0.0.79"
+  resolved "http://localhost:4873/@data-ui%2fsparkline/-/sparkline-0.0.79.tgz#474e1a4bddeb958435aea3b5c76fca21f3fc8b83"
+  integrity sha512-vrWBapirUtSzpn0n+OVpsgGfdf02aNNh/SCmLsyj4BNMEbaANRVQmarGlogQDWunhI6A/Rk/ZpE1tDNAOFUJHw==
   dependencies:
-    "@data-ui/shared" "^0.0.78"
+    "@data-ui/shared" "^0.0.79"
     "@data-ui/theme" "^0.0.8"
     "@vx/axis" "^0.0.179"
     "@vx/curve" "^0.0.165"
@@ -977,10 +977,10 @@
     d3-array "^1.2.0"
     prop-types "^15.5.10"
 
-"@data-ui/theme@^0.0.78":
-  version "0.0.78"
-  resolved "http://localhost:4873/@data-ui%2ftheme/-/theme-0.0.78.tgz#fafbf11c479de272b54b21e60b5598aae5caa337"
-  integrity sha512-DyGqH2kIHONvTfg3E810PFSUPDBLgQtZUFOvAMDLrSsO9KClX4XchNzEsewQoKQK4MP/pdxuJuX/LCRglsGj6g==
+"@data-ui/theme@^0.0.79":
+  version "0.0.79"
+  resolved "http://localhost:4873/@data-ui%2ftheme/-/theme-0.0.79.tgz#e98f065d1f84ed40756b9849581b805c2eef3668"
+  integrity sha512-daM9LA2iPOjKuMjDCr3QqnrM38FFQkT8VvcSY3at3fKrc+j3odvVL4Yc6iXpJskep1AIlxjQo4XF73xVvoOXCg==
 
 "@data-ui/theme@^0.0.8":
   version "0.0.8"
