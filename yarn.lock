@@ -4509,10 +4509,10 @@ del@^3.0.0:
     pify "^3.0.0"
     rimraf "^2.2.8"
 
-delay@^4.2.0:
-  version "4.2.0"
-  resolved "http://localhost:4873/delay/-/delay-4.2.0.tgz#3f6c39dbd28aef50355e670fecee050ef01242ce"
-  integrity sha512-EBX+pZE4qSowGAMr6M0cLiPRQu2Kus/qTNLO7c+EoXpTPJH9ApFdHX+cQU1WsSHXgwhLyidfZ5Hxuq6ctWhSdw==
+delay@^4.3.0:
+  version "4.3.0"
+  resolved "http://localhost:4873/delay/-/delay-4.3.0.tgz#efeebfb8f545579cb396b3a722443ec96d14c50e"
+  integrity sha512-Lwaf3zVFDMBop1yDuFZ19F9WyGcZcGacsbdlZtWjQmM50tOcMntm1njF/Nb/Vjij3KaSvCF+sEYGKrrjObu2NA==
 
 delayed-stream@~1.0.0:
   version "1.0.0"
@@ -6707,9 +6707,9 @@ gaze@^1.0.0:
   dependencies:
     globule "^1.0.0"
 
-get-best-contrast-color@^0.2.2:
+get-best-contrast-color@0.2.2:
   version "0.2.2"
-  resolved "https://registry.yarnpkg.com/get-best-contrast-color/-/get-best-contrast-color-0.2.2.tgz#8eaab0d21046d8acdac9057079422c59bb6f36aa"
+  resolved "http://localhost:4873/get-best-contrast-color/-/get-best-contrast-color-0.2.2.tgz#8eaab0d21046d8acdac9057079422c59bb6f36aa"
   integrity sha512-MbaqKhwqkL9xmklBfTwtip4TdHpbFfuYangE1gSFrdFje2ARKTVn8aFtE+hdQfB6jzg2TZ+NLo6cozy/cLrMiA==
   dependencies:
     get-contrast-ratio "0.1.4"
@@ -6830,15 +6830,15 @@ gh-pages@^2.0.1:
     graceful-fs "^4.1.11"
     rimraf "^2.6.2"
 
-ghraphql@^0.20.0:
-  version "0.20.0"
-  resolved "http://localhost:4873/ghraphql/-/ghraphql-0.20.0.tgz#f24ecf23199ab75e7b76bc4f1b222625dc66e4d6"
-  integrity sha512-ICS0h5qrnVmN+nZ5Tt4JlUBEyo/oeSkIBk9JkpTuPoHVNv9S4UU2eAO/8P1WHIjm7EKBnVXNuouier1h3ftwrw==
+ghraphql@^0.21.0:
+  version "0.21.0"
+  resolved "http://localhost:4873/ghraphql/-/ghraphql-0.21.0.tgz#e68a3ed790a9efb4694b53c9757e4689424c5ed8"
+  integrity sha512-u12XV1UBDQwz4WuJ9zmnlRBEr/HC4uV5sgL1SGsQAnbrJVpONexuKa7QMx8LWNlz9txaKORWTU3JW6aDhUU6xQ==
   dependencies:
     debug "^4.1.1"
-    delay "^4.2.0"
+    delay "^4.3.0"
     franc-min "^4.1.0"
-    get-best-contrast-color "^0.2.2"
+    get-best-contrast-color "0.2.2"
     got "^9.6.0"
     lodash.countby "^4.6.0"
     lodash.deburr "^4.1.0"
@@ -6853,7 +6853,7 @@ ghraphql@^0.20.0:
     marked-terminal "^3.2.0"
     meow "^5.0.0"
     mkdirp "^0.5.1"
-    normalize-email-or-url "^0.1.0"
+    normalize-email-or-url "^0.1.1"
     p-map "^2.1.0"
     progress "^2.0.3"
     rollodeqc-gh-user-streak "^3.0.0"
@@ -10378,13 +10378,13 @@ nopt@^4.0.1:
     abbrev "1"
     osenv "^0.1.4"
 
-normalize-email-or-url@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/normalize-email-or-url/-/normalize-email-or-url-0.1.0.tgz#ac2de3c353ccba5cea9100f0f5c44414a40063da"
-  integrity sha512-BSnRDBu/QO6+R3+UvsjHaAFkteITi5exQbLurQumrtSrh4AaKMt4k849DJsGpr+0SwSilti5hciTOGGPYDOV+g==
+normalize-email-or-url@^0.1.1:
+  version "0.1.1"
+  resolved "http://localhost:4873/normalize-email-or-url/-/normalize-email-or-url-0.1.1.tgz#9042edff902d624cf776b35b179c48d312380a69"
+  integrity sha512-lf/6dDb5yrotszoTEZEHFlgP0j5I4qTnAPnQ/QpNrA/nm9nXVn5GcZEUomQ0cV6tvw767M8Ko64+RftQHLoLGA==
   dependencies:
     normalize-email "^1.1.1"
-    normalize-url "^3.2.0"
+    normalize-url "^4.3.0"
 
 normalize-email@^1.1.1:
   version "1.1.1"
@@ -10447,10 +10447,15 @@ normalize-url@^1.0.0:
     query-string "^4.1.0"
     sort-keys "^1.0.0"
 
-normalize-url@^3.0.0, normalize-url@^3.1.0, normalize-url@^3.2.0:
+normalize-url@^3.0.0, normalize-url@^3.1.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-3.3.0.tgz#b2e1c4dc4f7c6d57743df733a4f5978d18650559"
   integrity sha512-U+JJi7duF1o+u2pynbp2zXDW2/PADgC30f0GsHZtRh+HOcXHnw137TrNlyxxRvWW5fjKd3bcLHPxofWuCjaeZg==
+
+normalize-url@^4.3.0:
+  version "4.3.0"
+  resolved "http://localhost:4873/normalize-url/-/normalize-url-4.3.0.tgz#9c49e10fc1876aeb76dba88bf1b2b5d9fa57b2ee"
+  integrity sha512-0NLtR71o4k6GLP+mr6Ty34c5GA6CMoEsncKJxvQd8NzPxaHRJNnb5gZE8R1XF4CPIS7QPHLJ74IFszwtNVAHVQ==
 
 npm-bundled@^1.0.1:
   version "1.0.5"
