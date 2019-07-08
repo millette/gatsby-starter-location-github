@@ -29,7 +29,7 @@
     "bootstrap": "4.3.1",
     "bootswatch": "4.3.1",
     "browser-lang": "^0.1.0",
-    "gatsby": "^2.13.6",
+    "gatsby": "^2.13.9",
     "gatsby-image": "^2.2.4",
     "gatsby-plugin-catch-links": "^2.1.0",
     "gatsby-plugin-feed": "^2.3.2",
@@ -96,6 +96,6 @@
     "lint-staged": "^9.1.0",
     "prettier-standard": "^9.1.1",
     "standard": "^12.0.1",
-    "webpack": "^4.35.2"
+    "webpack": "^4.35.3"
   }
 }
