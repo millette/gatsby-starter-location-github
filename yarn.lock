@@ -6754,10 +6754,10 @@ gatsby-transformer-sharp@^2.2.4:
     semver "^5.6.0"
     sharp "^0.22.1"
 
-gatsby@^2.13.27:
-  version "2.13.27"
-  resolved "http://localhost:4873/gatsby/-/gatsby-2.13.27.tgz#2a45612924071b2d3201f2ce958f194d892f7d8f"
-  integrity sha512-PVA2+iJYxQfMjCHiGwDpyEk9qsWCQ7rh44Iw1CGogcRtUk/vUD9c1Hw8+1+uTK8x76p9NHiWA3Sl6xrwCjxHog==
+gatsby@^2.13.28:
+  version "2.13.28"
+  resolved "http://localhost:4873/gatsby/-/gatsby-2.13.28.tgz#0d13fb802453666eed5d448078d7b7ddca618012"
+  integrity sha512-WhM40r7PJul+U73lxlSnRxRLse9IQydCQ0xK8cDjRP5zWjy2YeX4yQuKzzbQYjTvSS+pUOSd2odnGAPxOn3l0w==
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -15148,10 +15148,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typeface-roboto@^0.0.54:
-  version "0.0.54"
-  resolved "https://registry.yarnpkg.com/typeface-roboto/-/typeface-roboto-0.0.54.tgz#8f02c9a18d1cfa7f49381a6ff0d21ff061f38ad2"
-  integrity sha512-sOFA1FXgP0gOgBYlS6irwq6hHYA370KE3dPlgYEJHL3PJd5X8gQE0RmL79ONif6fL5JZuGDj+rtOrFeOqz5IZQ==
+typeface-roboto@^0.0.75:
+  version "0.0.75"
+  resolved "http://localhost:4873/typeface-roboto/-/typeface-roboto-0.0.75.tgz#98d5ba35ec234bbc7172374c8297277099cc712b"
+  integrity sha512-VrR/IiH00Z1tFP4vDGfwZ1esNqTiDMchBEXYY9kilT6wRGgFoCAlgkEUMHb1E3mB0FsfZhv756IF0+R+SFPfdg==
 
 ua-parser-js@^0.7.18:
   version "0.7.18"
