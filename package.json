@@ -42,7 +42,7 @@
     "gatsby-remark-smartypants": "^2.1.2",
     "gatsby-source-filesystem": "^2.1.5",
     "gatsby-transformer-json": "^2.2.2",
-    "gatsby-transformer-remark": "^2.6.6",
+    "gatsby-transformer-remark": "^2.6.7",
     "gatsby-transformer-sharp": "^2.2.4",
     "ghraphql": "^1.0.0",
     "intl": "^1.2.5",
