@@ -949,12 +949,12 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@data-ui/shared@^0.0.79":
-  version "0.0.79"
-  resolved "http://localhost:4873/@data-ui%2fshared/-/shared-0.0.79.tgz#09ad3e0767fce2dd2491b4f99eeda5e6ed578ee9"
-  integrity sha512-K5wNZWm4/URhz3RmY9ippoy0ufJKGCPg6wlY0xCcYHk1M5/H60tEYYJxZy0scS05WFCxty0UsQYgnCP3GYFtfA==
+"@data-ui/shared@^0.0.80":
+  version "0.0.80"
+  resolved "http://localhost:4873/@data-ui%2fshared/-/shared-0.0.80.tgz#668d7a5918fccaa2571df72765a9eae25820b4be"
+  integrity sha512-91fEgznr52Q9hAiya99GprA59rELb2O8isAKOTpPoR5lHHGaD8UYQvpzNBOgvB7gwy7+rhZ8dOkgdUpXhoCgXg==
   dependencies:
-    "@data-ui/theme" "^0.0.79"
+    "@data-ui/theme" "^0.0.80"
     "@vx/event" "^0.0.165"
     "@vx/group" "^0.0.165"
     "@vx/shape" "^0.0.168"
@@ -962,12 +962,12 @@
     d3-array "^1.2.1"
     prop-types "^15.5.10"
 
-"@data-ui/sparkline@^0.0.79":
-  version "0.0.79"
-  resolved "http://localhost:4873/@data-ui%2fsparkline/-/sparkline-0.0.79.tgz#474e1a4bddeb958435aea3b5c76fca21f3fc8b83"
-  integrity sha512-vrWBapirUtSzpn0n+OVpsgGfdf02aNNh/SCmLsyj4BNMEbaANRVQmarGlogQDWunhI6A/Rk/ZpE1tDNAOFUJHw==
+"@data-ui/sparkline@^0.0.80":
+  version "0.0.80"
+  resolved "http://localhost:4873/@data-ui%2fsparkline/-/sparkline-0.0.80.tgz#52168ab01298b55deb46e20b74fa051cf561b424"
+  integrity sha512-FstAQh1Vxbne50Gf8P41vxOZfCYDFLRhKJlWNAM+ouBipW7iOhzFLARfYQAeKejWwquPLX75R/kVJtpiMgJDaQ==
   dependencies:
-    "@data-ui/shared" "^0.0.79"
+    "@data-ui/shared" "^0.0.80"
     "@data-ui/theme" "^0.0.8"
     "@vx/axis" "^0.0.179"
     "@vx/curve" "^0.0.165"
@@ -984,15 +984,15 @@
     d3-array "^1.2.0"
     prop-types "^15.5.10"
 
-"@data-ui/theme@^0.0.79":
-  version "0.0.79"
-  resolved "http://localhost:4873/@data-ui%2ftheme/-/theme-0.0.79.tgz#e98f065d1f84ed40756b9849581b805c2eef3668"
-  integrity sha512-daM9LA2iPOjKuMjDCr3QqnrM38FFQkT8VvcSY3at3fKrc+j3odvVL4Yc6iXpJskep1AIlxjQo4XF73xVvoOXCg==
-
 "@data-ui/theme@^0.0.8":
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/@data-ui/theme/-/theme-0.0.8.tgz#3116723d04b99f65c7750f81a500e9608b4837c3"
   integrity sha1-MRZyPQS5n2XHdQ+BpQDpYItIN8M=
+
+"@data-ui/theme@^0.0.80":
+  version "0.0.80"
+  resolved "http://localhost:4873/@data-ui%2ftheme/-/theme-0.0.80.tgz#587561d2fe9684b8b3ed4d5be7f5fd9ad726241b"
+  integrity sha512-xomZD4m1w60mtbIfHklaRZ/xf9EuaP/X5gCASQtNMwmNjW3UWcmnUF/HQFfT0o0RcjZVcDafdtz9HsPatD+IqA==
 
 "@gatsbyjs/relay-compiler@2.0.0-printer-fix.2":
   version "2.0.0-printer-fix.2"
