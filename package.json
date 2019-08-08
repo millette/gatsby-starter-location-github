@@ -91,7 +91,7 @@
     }
   },
   "devDependencies": {
-    "gh-pages": "^2.1.0",
+    "gh-pages": "^2.1.1",
     "husky": "2.7.0",
     "lint-staged": "^9.2.1",
     "prettier-standard": "^9.1.1",
