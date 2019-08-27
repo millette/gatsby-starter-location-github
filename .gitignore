@@ -1,5 +1,6 @@
-.cache
-node_modules
+.cache/
+was-node_modules/
+node_modules/
 yarn-error.log
 custom
 customs

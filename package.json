@@ -58,7 +58,7 @@
     "typeface-roboto": "^0.0.75"
   },
   "engines": {
-    "node": ">= 10.16.0"
+    "node": ">= 10.16.3"
   },
   "keywords": [
     "gatsby",
@@ -67,7 +67,7 @@
   ],
   "lint-staged": {
     "*.{js,json,md}": [
-      "prettier-standard",
+      "prettier --write",
       "git add"
     ]
   },
@@ -81,19 +81,23 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "develop": "gatsby develop --port 8001",
     "dev": "gatsby develop --port 8001",
-    "clean": "rm public/* .cache -fr",
-    "format": "prettier-standard '**/*.+(js|json|md)'"
+    "clean": "rm public/* .cache -fr"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
   },
+  "prettier": {
+    "semi": false,
+    "trailingComma": "es5",
+    "arrowParens": "always"
+  },
   "devDependencies": {
     "gh-pages": "^2.1.1",
     "husky": "2.7.0",
     "lint-staged": "^9.2.5",
-    "prettier-standard": "^11.0.0",
+    "prettier": "^1.18.2",
     "webpack": "^4.39.3"
   }
 }
