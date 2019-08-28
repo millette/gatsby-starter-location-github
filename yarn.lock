@@ -7126,12 +7126,12 @@ gaze@^1.0.0:
   dependencies:
     globule "^1.0.0"
 
-get-best-contrast-color@^0.3.0:
-  version "0.3.0"
-  resolved "http://localhost:4873/get-best-contrast-color/-/get-best-contrast-color-0.3.0.tgz#0be6c57bac7418512097f0afce8809f2c25d53a7"
-  integrity sha512-lxo9pslrX+nnjvMEMq/gpoCmFYkxN+mEh3JNVb4COd24TQ5msfmyRTlWHmGdpvQT+sgY0gEoyZXXGGEOLd/5tw==
+get-best-contrast-color@^0.3.1:
+  version "0.3.1"
+  resolved "http://localhost:4873/get-best-contrast-color/-/get-best-contrast-color-0.3.1.tgz#e13e0ea32d82871ccdfb742ccab1d6e07b137f44"
+  integrity sha512-B88vyjLzu+fDq2mMky/75pg14Pwgb9Zl6RZ3ws43Jyk4tsdvgiF/KAvRkFZAaMEgd1HTuykKg0GaG2KnsBoaCA==
   dependencies:
-    get-contrast-ratio "0.2.0"
+    get-contrast-ratio "0.2.1"
 
 get-caller-file@^1.0.1:
   version "1.0.3"
@@ -7143,12 +7143,12 @@ get-caller-file@^2.0.1:
   resolved "http://localhost:4873/get-caller-file/-/get-caller-file-2.0.5.tgz#4f94412a82db32f36e3b0b9741f8a97feb031f7e"
   integrity sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==
 
-get-contrast-ratio@0.2.0:
-  version "0.2.0"
-  resolved "http://localhost:4873/get-contrast-ratio/-/get-contrast-ratio-0.2.0.tgz#fcac5abf4f44359cf8f53b733dd574ed08f54e31"
-  integrity sha512-DDxjbKHRfCA4awtEhOcaRRNSAu7a2dvwmokg/t+fSNmuxVILUqnaPkB5mItTyzTTcayHRGW68z/od6oY29aWhQ==
+get-contrast-ratio@0.2.1:
+  version "0.2.1"
+  resolved "http://localhost:4873/get-contrast-ratio/-/get-contrast-ratio-0.2.1.tgz#3f8e2a9610df2fb55fc2004bfce002ff0aa25c0a"
+  integrity sha512-lNIpmDIoxlVJsEQ5G/XCxH2YiiXH0ukOZ0ASvPp9ku2f+2AOYG5OXQ9cLgc9p3lNom5gy8JLkfSzi8fZN9LdKg==
   dependencies:
-    get-relative-luminance "0.3.0"
+    get-relative-luminance "0.3.1"
 
 get-own-enumerable-property-symbols@^3.0.0:
   version "3.0.0"
@@ -7174,10 +7174,10 @@ get-proxy@^2.0.0:
   dependencies:
     npm-conf "^1.1.0"
 
-get-relative-luminance@0.3.0:
-  version "0.3.0"
-  resolved "http://localhost:4873/get-relative-luminance/-/get-relative-luminance-0.3.0.tgz#3cb2f74e9044014dde3d049a4f479cc2b8c09bd2"
-  integrity sha512-5lRMk7EPF4hlDl7N0sp0dUAALeAfzIjfYVw0zY2Xoi/wNs3e7sAcyR82cQ/Xd4qJ1gOg8PmNTvW42uvfGv39cQ==
+get-relative-luminance@0.3.1:
+  version "0.3.1"
+  resolved "http://localhost:4873/get-relative-luminance/-/get-relative-luminance-0.3.1.tgz#f86b722194f87f23c9d4df9075e066329001907f"
+  integrity sha512-nLEJhDAPC4anQlFhBxt8lHRwxs5OvOxmN0mHCxOCFDtzy0x5cXTMKNKUycpulsAw1zNOtz6GIRcIaVMcUUcU7Q==
   dependencies:
     parse-color "1.0.0"
 
@@ -7251,15 +7251,15 @@ gh-pages@^2.1.1:
     graceful-fs "^4.1.11"
     rimraf "^2.6.2"
 
-ghraphql@^1.0.0:
-  version "1.0.0"
-  resolved "http://localhost:4873/ghraphql/-/ghraphql-1.0.0.tgz#02c050781200799645c432846d73bf7fb429dd44"
-  integrity sha512-YIhBgLBkPaMlwDBYTvWXvkT4xV82dU88rqaOQ+HzrHzdCS2V0fFxDVn9JQ0l2MYUOLKPTitkcC7R+437ylrsoQ==
+ghraphql@^1.0.1:
+  version "1.0.1"
+  resolved "http://localhost:4873/ghraphql/-/ghraphql-1.0.1.tgz#1d4eb57abdc28a9be41e20235b84fbf1b41ae09a"
+  integrity sha512-3IxSQO7TMs0cyCFHWrN9412IhVHudaa2ZiPF3OsBMKkcG5+rv16BDvkgmv+j9fX6b8PelPZI1hFyc8KIDUOL7g==
   dependencies:
     debug "^4.1.1"
     delay "^4.3.0"
     franc-min "^4.1.0"
-    get-best-contrast-color "^0.3.0"
+    get-best-contrast-color "^0.3.1"
     got "^9.6.0"
     lodash.countby "^4.6.0"
     lodash.deburr "^4.1.0"
@@ -7271,11 +7271,11 @@ ghraphql@^1.0.0:
     lodash.uniqby "^4.7.0"
     lodash.words "^4.2.0"
     marked "^0.7.0"
-    marked-terminal "^3.2.0"
+    marked-terminal "^3.3.0"
     meow "^5.0.0"
     mkdirp "^0.5.1"
     normalize-email-or-url "^1.0.0"
-    p-map "^2.1.0"
+    p-map "^3.0.0"
     progress "^2.0.3"
     rollodeqc-gh-user-streak "^4.0.0"
     stopwords "^0.0.9"
@@ -7986,7 +7986,7 @@ homedir-polyfill@^1.0.1:
   dependencies:
     parse-passwd "^1.0.0"
 
-hosted-git-info@^2.1.4, hosted-git-info@^2.7.1:
+hosted-git-info@^2.1.4:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.7.1.tgz#97f236977bd6e125408930ff6de3eec6281ec047"
   integrity sha512-7T/BxH19zbcCTa8XkMlbK5lTo1WtgkFi3GvdWEyNuc4Vex7/9Dqbnpsf4JMydcfj9HCg4zUWFTL3Za6lapg5/w==
@@ -10138,10 +10138,10 @@ markdown-table@^1.1.0:
   resolved "https://registry.yarnpkg.com/markdown-table/-/markdown-table-1.1.2.tgz#c78db948fa879903a41bce522e3b96f801c63786"
   integrity sha512-NcWuJFHDA8V3wkDgR/j4+gZx+YQwstPgfQDV8ndUeWWzta3dnDTBxpVzqS9lkmJAuV5YX35lmyojl6HO5JXAgw==
 
-marked-terminal@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/marked-terminal/-/marked-terminal-3.2.0.tgz#3fc91d54569332bcf096292af178d82219000474"
-  integrity sha512-Yr1yVS0BbDG55vx7be1D0mdv+jGs9AW563o/Tt/7FTsId2J0yqhrTeXAqq/Q0DyyXltIn6CSxzesQuFqXgafjQ==
+marked-terminal@^3.3.0:
+  version "3.3.0"
+  resolved "http://localhost:4873/marked-terminal/-/marked-terminal-3.3.0.tgz#25ce0c0299285998c7636beaefc87055341ba1bd"
+  integrity sha512-+IUQJ5VlZoAFsM5MHNT7g3RHSkA3eETqhRCdXv4niUMAKHQ7lb1yvAcuGPmm4soxhmtX13u4Li6ZToXtvSEH+A==
   dependencies:
     ansi-escapes "^3.1.0"
     cardinal "^2.1.1"
@@ -11052,12 +11052,12 @@ npm-conf@^1.1.0:
     config-chain "^1.1.11"
     pify "^3.0.0"
 
-npm-git-links@^1.0.0:
-  version "1.0.0"
-  resolved "http://localhost:4873/npm-git-links/-/npm-git-links-1.0.0.tgz#d7b414714f9a65791e4f2cbec9f78bcf04179255"
-  integrity sha512-b1kGRwD6qIvEiAdK8FieR/3uHcVmzOgXdUAldcCP8RB9zL5qh3kiwx1gf9j/N8yMmABXSm1wY+FXdW4FXcbJvA==
+npm-git-links@^1.0.1:
+  version "1.0.1"
+  resolved "http://localhost:4873/npm-git-links/-/npm-git-links-1.0.1.tgz#e2def482f8a6cf9e9b745aa5a55e89d121317342"
+  integrity sha512-fkCVIJ1qfBA1t56eHl7/8zs0gd2no8DJ0vbEmzc0UkiJRPGEnnNnSVxVQkUFUtm6biuSAYdszifn2PBS6ws6uQ==
   dependencies:
-    hosted-git-info "^2.7.1"
+    hosted-git-info "^3.0.0"
 
 npm-packlist@^1.1.6:
   version "1.1.11"
@@ -11533,7 +11533,7 @@ p-map-series@^1.0.0:
   dependencies:
     p-reduce "^1.0.0"
 
-p-map@^2.0.0, p-map@^2.1.0:
+p-map@^2.0.0:
   version "2.1.0"
   resolved "http://localhost:4873/p-map/-/p-map-2.1.0.tgz#310928feef9c9ecc65b68b17693018a665cea175"
   integrity sha512-y3b8Kpd8OAN444hxfBbFfj1FY/RjtTd8tzYwhUqNYXx0fXx2iX4maP4Qr6qhIKbQXI02wTLAda4fYUbDagTUFw==
