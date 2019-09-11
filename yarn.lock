@@ -3670,7 +3670,7 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-create-react-context@^0.2.1, create-react-context@^0.2.3:
+create-react-context@^0.2.1:
   version "0.2.3"
   resolved "http://localhost:4873/create-react-context/-/create-react-context-0.2.3.tgz#9ec140a6914a22ef04b8b09b7771de89567cb6f3"
   integrity sha512-CQBmD0+QGgTaxDL3OX1IDXYqjkp2It4RIbcb99jS6AEg27Ga+a9G3JtK6SIu0HBwPLZlmwt9F7UwWA4Bn92Rag==
@@ -6043,10 +6043,10 @@ gatsby-transformer-sharp@^2.2.14:
     semver "^5.7.1"
     sharp "^0.23.0"
 
-gatsby@^2.15.13:
-  version "2.15.13"
-  resolved "http://localhost:4873/gatsby/-/gatsby-2.15.13.tgz#3de3f2a83ea26f7fdf3bf03f123d29c1acf0225c"
-  integrity sha512-tkAx+inFLRDq8ZeXkUTyJvjL0l+q0s7gpSQzs/98pHrl8OCUz0FPSdmwpMjlAjlfzH9P6+Yf7poxgMWZ4TQEQg==
+gatsby@^2.15.14:
+  version "2.15.14"
+  resolved "http://localhost:4873/gatsby/-/gatsby-2.15.14.tgz#d72444feee88e1da4bfc6f2d45f3e57b03857dc7"
+  integrity sha512-/kSYUldRaVxD1e6WEQYfu1Gj8GMyYAt+Apw2Dm6HVanotf30mLmQulQSZKVd4ObBeXSHJWGaUn1kx7tbEZ+tHQ==
   dependencies:
     "@babel/code-frame" "^7.5.5"
     "@babel/core" "^7.6.0"
@@ -11178,13 +11178,13 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.2.7, rc@^1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-bootstrap-typeahead@^3.4.6:
-  version "3.4.6"
-  resolved "http://localhost:4873/react-bootstrap-typeahead/-/react-bootstrap-typeahead-3.4.6.tgz#8b8adf0c941a7fcea06d6577af66dd4afa204e5b"
-  integrity sha512-4oLosgG1CpPrPWljb755YigymybnghfWL9pRpaU+5uXs+GH3/f/gRMFh/GNLV2egd8iAZgy3MFhyUIKe6WZs2Q==
+react-bootstrap-typeahead@^3.4.7:
+  version "3.4.7"
+  resolved "http://localhost:4873/react-bootstrap-typeahead/-/react-bootstrap-typeahead-3.4.7.tgz#27a3f17c6b1351a0c1b321ac133d5e762cf4dc2a"
+  integrity sha512-eUm3hqX12p+iM+1Y0HKF891/ACbKyGep7PsC2pjFGZL48r25Jlv3X2xmV5D8N0wE/YPFZF7iW913tyAlwqjw1Q==
   dependencies:
     classnames "^2.2.0"
-    create-react-context "^0.2.3"
+    create-react-context "^0.3.0"
     escape-string-regexp "^1.0.5"
     invariant "^2.2.1"
     lodash "^4.17.2"
