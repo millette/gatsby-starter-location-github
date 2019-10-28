@@ -5829,10 +5829,10 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
-franc-min@^4.1.0:
-  version "4.1.0"
-  resolved "http://localhost:4873/franc-min/-/franc-min-4.1.0.tgz#d23e6945fbfe7a1ebcfe61791db904201ac1a793"
-  integrity sha512-Rlkc3QaVNNnvWjEhhcLs6PnwH4CqSAxxStUSSly6XNYWTSRRYqSLvQmIDBOBz6cP5uOKFwU1b7rk8rQDn85IrQ==
+franc-min@^4.1.1:
+  version "4.1.1"
+  resolved "http://localhost:4873/franc-min/-/franc-min-4.1.1.tgz#86da3f70a9094694525df6104ed610f5a9bf9d4e"
+  integrity sha512-7xpOX5GymdaT6d0qmSNFpyFuEd6tPuEHVZpL+KIh9DocVCVn59c2OnUvLn+NcWGGi7btqV1VZ5VbjSox5KbZKA==
   dependencies:
     trigram-utils "^1.0.0"
 
@@ -6512,14 +6512,14 @@ gh-pages@^2.1.1:
     graceful-fs "^4.1.11"
     rimraf "^2.6.2"
 
-ghraphql@^1.0.1:
-  version "1.0.1"
-  resolved "http://localhost:4873/ghraphql/-/ghraphql-1.0.1.tgz#1d4eb57abdc28a9be41e20235b84fbf1b41ae09a"
-  integrity sha512-3IxSQO7TMs0cyCFHWrN9412IhVHudaa2ZiPF3OsBMKkcG5+rv16BDvkgmv+j9fX6b8PelPZI1hFyc8KIDUOL7g==
+ghraphql@^1.0.2:
+  version "1.0.2"
+  resolved "http://localhost:4873/ghraphql/-/ghraphql-1.0.2.tgz#f88c8a486e6600cf392c4b43f8762c9896b7fc9c"
+  integrity sha512-4efV0buUqOOWOHoQF8tq8AJqDbw9tciC9xbkirEbHsEKbXLNrrU/TqbEltRrxSSrzF9m8BrWTBfneRflF2Wl0Q==
   dependencies:
     debug "^4.1.1"
     delay "^4.3.0"
-    franc-min "^4.1.0"
+    franc-min "^4.1.1"
     get-best-contrast-color "^0.3.1"
     got "^9.6.0"
     lodash.countby "^4.6.0"
@@ -6540,7 +6540,7 @@ ghraphql@^1.0.1:
     progress "^2.0.3"
     rollodeqc-gh-user-streak "^4.0.0"
     stopwords "^0.0.9"
-    weeknumber "^1.1.1"
+    weeknumber "^1.1.2"
 
 git-up@4.0.1:
   version "4.0.1"
@@ -14508,10 +14508,10 @@ websocket-extensions@>=0.1.1:
   resolved "http://localhost:4873/websocket-extensions/-/websocket-extensions-0.1.3.tgz#5d2ff22977003ec687a4b87073dfbbac146ccf29"
   integrity sha512-nqHUnMXmBzT0w570r2JpJxfiSD1IzoI+HGVdd3aZ0yNi3ngvQ4jv1dtHt5VGxfI2yj5yqImPhOK4vmIh2xMbGg==
 
-weeknumber@^1.1.1:
-  version "1.1.1"
-  resolved "http://localhost:4873/weeknumber/-/weeknumber-1.1.1.tgz#fc4338dd3c415bbde990610e1d3dfc70ac13d5fb"
-  integrity sha512-zHYSO0sS9bn0a9/Klf9gntliMrcSqT4M3RVHyOtOi7DhERY/Eu6kxrdUVXkfXm1USScApr856KDDeeyDvgHTpw==
+weeknumber@^1.1.2:
+  version "1.1.2"
+  resolved "http://localhost:4873/weeknumber/-/weeknumber-1.1.2.tgz#39bed037d6e2b94ab01b0ec8d11ff3d01d034984"
+  integrity sha512-rDgZQ6tpXEUb4t6t47OP4zXtTGYa8gOoOP2xI55oAv+aaNkvRK+2iuH2sk9eEpRAyDaAuAfy8i1TBfwmcG6Dqw==
 
 whatwg-fetch@2.0.4:
   version "2.0.4"
