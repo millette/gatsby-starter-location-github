@@ -1,24 +1,25 @@
 // npm
-import React, { Fragment } from 'react'
-import { FormattedMessage, FormattedDate } from 'react-intl'
+import React, { Fragment } from "react"
+import { FormattedMessage, FormattedDate } from "react-intl"
 import {
   Label,
   WithTooltip,
   Sparkline,
   LineSeries,
   PointSeries,
-  HorizontalReferenceLine
-} from '@data-ui/sparkline'
+  HorizontalReferenceLine,
+  CrossHair,
+} from "@data-ui/sparkline"
 
 // self
-import { ListKeywords } from '.'
+import { ListKeywords } from "."
 
-const GithubUser = props => {
+const GithubUser = (props) => {
   return (
-    <div className='col-sm-6 col-lg-4 mt-4'>
-      <div className='card'>
+    <div className="col-sm-6 col-lg-4 mt-4">
+      <div className="card">
         <img
-          className='card-img-top img-fluid'
+          className="card-img-top img-fluid"
           src={`https://avatars3.githubusercontent.com/u/${props.databaseId}`}
           alt={`Avatar de ${props.name || props.login}`}
         />
@@ -26,7 +27,7 @@ const GithubUser = props => {
         {props.sparks && (
           <div
             style={{ marginTop: -64, zIndex: 200 }}
-            className='card-img-top text-center rym-with-hover'
+            className="card-img-top text-center rym-with-hover"
           >
             <WithTooltip
               renderTooltip={({ datum: { y } }) => y && `${y} contribs`}
@@ -39,59 +40,59 @@ const GithubUser = props => {
                 ariaLabel={`${props.login} sparkline`}
               >
                 <HorizontalReferenceLine
-                  stroke='#f00'
-                  labelPosition='right'
-                  LabelComponent={<Label strokeWidth={1} fill='#f00' />}
-                  renderLabel={a => Math.round(a) && `${Math.round(a)}/w`}
+                  stroke="#f00"
+                  labelPosition="right"
+                  LabelComponent={<Label strokeWidth={1} fill="#f00" />}
+                  renderLabel={(a) => Math.round(a) && `${Math.round(a)}/w`}
                 />
                 <LineSeries showArea />
-                <PointSeries points={['max']} />
+                <PointSeries points={["max"]} />
+                <CrossHair />
               </Sparkline>
             </WithTooltip>
           </div>
         )}
 
-        <div className='card-body'>
+        <div className="card-body">
           {/* if props.name is falsy, show props.login */}
-          <h3 className='card-title'>{props.name || props.login}</h3>
+          <h3 className="card-title">{props.name || props.login}</h3>
 
           {/* if props.bio is truthy, show it in a paragraph */}
           {props.bio && (
-            <blockquote className='blockquote'>{props.bio}</blockquote>
+            <blockquote className="blockquote">{props.bio}</blockquote>
           )}
-          <dl className='row'>
-            <dt className='col-6 col-xl-5 text-right'>
-              <FormattedMessage id='directory.location' />
+          <dl className="row">
+            <dt className="col-6 col-xl-5 text-right">
+              <FormattedMessage id="directory.location" />
             </dt>
-            <dd className='col-6 col-xl-7'>
+            <dd className="col-6 col-xl-7">
               {props.location
-                .replace(/,/g, ', ')
-                .replace(/\//g, ' / ')
-                .replace(/  +/g, ' ')}
+                .replace(/,/g, ", ")
+                .replace(/\//g, " / ")
+                .replace(/  +/g, " ")}
             </dd>
 
-            {props.sparks &&
-              props.sparks.lastContribDate && (
+            {props.sparks && props.sparks.lastContribDate && (
               <Fragment>
-                <dt className='col-6 col-xl-5 text-right'>
-                  <FormattedMessage id='directory.sum2.label' />
+                <dt className="col-6 col-xl-5 text-right">
+                  <FormattedMessage id="directory.sum2.label" />
                 </dt>
-                <dd className='col-6 col-xl-7'>
+                <dd className="col-6 col-xl-7">
                   <FormattedMessage
-                    id='directory.sum2.value'
+                    id="directory.sum2.value"
                     values={props.sparks}
                   />
                 </dd>
-                <dt className='col-6 col-xl-5 text-right'>
-                  <FormattedMessage id='directory.lastContribDate' />
+                <dt className="col-6 col-xl-5 text-right">
+                  <FormattedMessage id="directory.lastContribDate" />
                 </dt>
-                <dd className='col-6 col-xl-7'>
+                <dd className="col-6 col-xl-7">
                   <FormattedDate
-                    timeZone='utc'
+                    timeZone="utc"
                     value={props.sparks.lastContribDate}
-                    year='numeric'
-                    month='long'
-                    day='numeric'
+                    year="numeric"
+                    month="long"
+                    day="numeric"
                   />
                 </dd>
               </Fragment>
@@ -99,13 +100,13 @@ const GithubUser = props => {
 
             {props.websiteUrl && (
               <Fragment>
-                <dt className='col-6 col-xl-5 text-right'>
-                  <FormattedMessage id='directory.website' />
+                <dt className="col-6 col-xl-5 text-right">
+                  <FormattedMessage id="directory.website" />
                 </dt>
-                <dd className='col-6 col-xl-7 text-truncate'>
+                <dd className="col-6 col-xl-7 text-truncate">
                   <a
-                    target='_blank'
-                    rel='noopener noreferrer'
+                    target="_blank"
+                    rel="noopener noreferrer"
                     href={props.websiteUrl}
                   >
                     {props.websiteUrl}
@@ -115,13 +116,13 @@ const GithubUser = props => {
             )}
             {props.email && (
               <Fragment>
-                <dt className='col-6 col-xl-5 text-right'>
-                  <FormattedMessage id='directory.email' />
+                <dt className="col-6 col-xl-5 text-right">
+                  <FormattedMessage id="directory.email" />
                 </dt>
-                <dd className='col-6 col-xl-7 text-truncate'>
+                <dd className="col-6 col-xl-7 text-truncate">
                   <a
-                    target='_blank'
-                    rel='noopener noreferrer'
+                    target="_blank"
+                    rel="noopener noreferrer"
                     href={`mailto:${props.email}`}
                   >
                     {props.email}
@@ -129,24 +130,24 @@ const GithubUser = props => {
                 </dd>
               </Fragment>
             )}
-            <dt className='col-6 col-xl-5 text-right'>
-              <FormattedMessage id='directory.created' />
+            <dt className="col-6 col-xl-5 text-right">
+              <FormattedMessage id="directory.created" />
             </dt>
-            <dd className='col-6 col-xl-7'>
+            <dd className="col-6 col-xl-7">
               <FormattedDate
-                timeZone='utc'
+                timeZone="utc"
                 value={props.createdAt}
-                year='numeric'
-                month='long'
-                day='numeric'
+                year="numeric"
+                month="long"
+                day="numeric"
               />
             </dd>
             {props.company && (
               <Fragment>
-                <dt className='col-6 col-xl-5 text-right'>
-                  <FormattedMessage id='directory.company' />
+                <dt className="col-6 col-xl-5 text-right">
+                  <FormattedMessage id="directory.company" />
                 </dt>
-                <dd className='col-6 col-xl-7'>{props.company}</dd>
+                <dd className="col-6 col-xl-7">{props.company}</dd>
               </Fragment>
             )}
             {/* Here, we're testing length > 0
@@ -156,12 +157,12 @@ const GithubUser = props => {
 
             {props.starredRepositoriesCount > 0 && (
               <Fragment>
-                <dt className='col-6 col-xl-5 text-right'>
-                  <FormattedMessage id='directory.stars.label' />
+                <dt className="col-6 col-xl-5 text-right">
+                  <FormattedMessage id="directory.stars.label" />
                 </dt>
-                <dd className='col-6 col-xl-7'>
+                <dd className="col-6 col-xl-7">
                   <FormattedMessage
-                    id='directory.repos.value'
+                    id="directory.repos.value"
                     values={{ nStars: props.starredRepositoriesCount }}
                   />
                 </dd>
@@ -169,26 +170,26 @@ const GithubUser = props => {
             )}
             {props.repositoriesContributedToCount > 0 && (
               <Fragment>
-                <dt className='col-6 col-xl-5 text-right'>
-                  <FormattedMessage id='directory.repos.label' />
+                <dt className="col-6 col-xl-5 text-right">
+                  <FormattedMessage id="directory.repos.label" />
                 </dt>
-                <dd className='col-6 col-xl-7'>
+                <dd className="col-6 col-xl-7">
                   <FormattedMessage
-                    id='directory.repos.value'
+                    id="directory.repos.value"
                     values={{ nStars: props.repositoriesContributedToCount }}
                   />
                 </dd>
                 {props.languages && (
                   <Fragment>
-                    <dt className='col-6 col-xl-5 text-right'>
-                      <FormattedMessage id='directory.languages' />
+                    <dt className="col-6 col-xl-5 text-right">
+                      <FormattedMessage id="directory.languages" />
                     </dt>
-                    <dd className='col-6 col-xl-7'>
-                      <ul className='list-inline'>
+                    <dd className="col-6 col-xl-7">
+                      <ul className="list-inline">
                         {props.languages.map(({ name, count, style }) => (
                           <li
                             key={name}
-                            className='list-inline-item badge badge-pill'
+                            className="list-inline-item badge badge-pill"
                             style={style}
                           >
                             {name} ({count})
@@ -203,15 +204,15 @@ const GithubUser = props => {
 
                 {props.licenses && (
                   <Fragment>
-                    <dt className='col-6 col-xl-5 text-right'>
-                      <FormattedMessage id='directory.licenses' />
+                    <dt className="col-6 col-xl-5 text-right">
+                      <FormattedMessage id="directory.licenses" />
                     </dt>
-                    <dd className='col-6 col-xl-7'>
-                      <ul className='list-inline'>
+                    <dd className="col-6 col-xl-7">
+                      <ul className="list-inline">
                         {props.licenses.map(({ license, count }) => (
                           <li
                             key={license}
-                            className='list-inline-item badge badge-info'
+                            className="list-inline-item badge badge-info"
                           >
                             {license} ({count})
                           </li>
@@ -225,18 +226,17 @@ const GithubUser = props => {
           </dl>
         </div>
 
-        <div className='card-footer'>
-          {!props.onlyAvailable &&
-            props.isHireable && (
-            <p className='text-center'>
-              <FormattedMessage id='directory.available' />
+        <div className="card-footer">
+          {!props.onlyAvailable && props.isHireable && (
+            <p className="text-center">
+              <FormattedMessage id="directory.available" />
             </p>
           )}
           <a
-            role='button'
-            className='w-100 btn btn-warning btn-sm'
-            target='_blank'
-            rel='noopener noreferrer'
+            role="button"
+            className="w-100 btn btn-warning btn-sm"
+            target="_blank"
+            rel="noopener noreferrer"
             href={`https://github.com/${props.login}`}
           >
             {props.login} @ GitHub
