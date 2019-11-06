@@ -8,7 +8,6 @@ import {
   LineSeries,
   PointSeries,
   HorizontalReferenceLine,
-  CrossHair,
 } from "@data-ui/sparkline"
 
 // self
@@ -47,7 +46,6 @@ const GithubUser = (props) => {
                 />
                 <LineSeries showArea />
                 <PointSeries points={["max"]} />
-                <CrossHair />
               </Sparkline>
             </WithTooltip>
           </div>
