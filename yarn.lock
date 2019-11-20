@@ -1035,12 +1035,12 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@data-ui/shared@^0.0.82":
-  version "0.0.82"
-  resolved "http://localhost:4873/@data-ui%2fshared/-/shared-0.0.82.tgz#933c7c5b220811b33f5c91c7c7208ceae3ff8730"
-  integrity sha512-Orh1Be8Mwgjr5Q42AH9BOLZ6wV3C/gEbzsRYqkGOaCtWTYJOTmAxlmnlvZe5CAyo7QDXQHiV2Xvk90FQcQ/NYQ==
+"@data-ui/shared@^0.0.84":
+  version "0.0.84"
+  resolved "http://localhost:4873/@data-ui%2fshared/-/shared-0.0.84.tgz#42bd025d677f9be2beada3e1a84a53d33ac0eb10"
+  integrity sha512-MsDLsFzBHFEREr/eF2/RX1o/cXioEg+VQTsM8gViW5ywGQ7Xo5+EqUOaBSrwqKAkvp3e8PaEZVkchPC54IBhrA==
   dependencies:
-    "@data-ui/theme" "^0.0.82"
+    "@data-ui/theme" "^0.0.84"
     "@vx/event" "^0.0.165"
     "@vx/group" "^0.0.165"
     "@vx/shape" "^0.0.168"
@@ -1048,12 +1048,12 @@
     d3-array "^1.2.1"
     prop-types "^15.5.10"
 
-"@data-ui/sparkline@^0.0.82":
-  version "0.0.82"
-  resolved "http://localhost:4873/@data-ui%2fsparkline/-/sparkline-0.0.82.tgz#574e0ae39a907d316003c847570512fe727a7472"
-  integrity sha512-Ri2zr1u43X3vuQj7spEXzRbUw7kGdzvKWGpiYic9ch0n3IR2n0wtVcqd1JSnmdnVA1jB1QiAq0PwIDWizOZXPg==
+"@data-ui/sparkline@^0.0.84":
+  version "0.0.84"
+  resolved "http://localhost:4873/@data-ui%2fsparkline/-/sparkline-0.0.84.tgz#be722bcb6fe4844b26905419ecfb3a727b2d206e"
+  integrity sha512-Ja7T2JjioZtnoy0PEXF72qv/J8xIotu+oS1Z+ygVGZni6aN/DUY35eGpg/DDeemEFDMoifcx+kYa5LU7hQCnJg==
   dependencies:
-    "@data-ui/shared" "^0.0.82"
+    "@data-ui/shared" "^0.0.84"
     "@data-ui/theme" "^0.0.8"
     "@vx/axis" "^0.0.179"
     "@vx/curve" "^0.0.165"
@@ -1063,10 +1063,9 @@
     "@vx/group" "^0.0.170"
     "@vx/pattern" "^0.0.179"
     "@vx/point" "^0.0.165"
-    "@vx/responsive" "^0.0.179"
+    "@vx/responsive" "^0.0.192"
     "@vx/scale" "^0.0.179"
     "@vx/shape" "^0.0.179"
-    "@vx/text" "^0.0.179"
     d3-array "^1.2.0"
     prop-types "^15.5.10"
 
@@ -1075,10 +1074,10 @@
   resolved "http://localhost:4873/@data-ui%2ftheme/-/theme-0.0.8.tgz#3116723d04b99f65c7750f81a500e9608b4837c3"
   integrity sha1-MRZyPQS5n2XHdQ+BpQDpYItIN8M=
 
-"@data-ui/theme@^0.0.82":
-  version "0.0.82"
-  resolved "http://localhost:4873/@data-ui%2ftheme/-/theme-0.0.82.tgz#4fb594473aba036941d755c6f073829aa6b89b89"
-  integrity sha512-h7lE+jRmkIfKhePvfbpHy+2TcfxTVcffxqV4LubcdzAT7pue/mR90T9NBXwidMSGs2eo2fBl2QJGNICDFT7miA==
+"@data-ui/theme@^0.0.84":
+  version "0.0.84"
+  resolved "http://localhost:4873/@data-ui%2ftheme/-/theme-0.0.84.tgz#b75c23d7f38c582adbb8d2159d0d703159f8e3b2"
+  integrity sha512-jIoHftC/5c/LVJYF4VSBjjVjrjc0yj4mLkGe8p0eVO7qUYKVvlWx7PrpM7ucyefvuAaKIwlr+Nh2xPGPdADjaA==
 
 "@gatsbyjs/relay-compiler@2.0.0-printer-fix.4":
   version "2.0.0-printer-fix.4"
@@ -1736,10 +1735,10 @@
   resolved "http://localhost:4873/@vx%2fpoint/-/point-0.0.165.tgz#7ebde5da3d86954fe31a56f923f31550f0b4b867"
   integrity sha512-spoHilhjcWNgccrSzBUPw+PXV81tYxeyEWBkgr35aGVU4m7YT86Ywvfemwp7AVVGPn+XJHrhB0ujAhDoyqFPoA==
 
-"@vx/responsive@^0.0.179":
-  version "0.0.179"
-  resolved "http://localhost:4873/@vx%2fresponsive/-/responsive-0.0.179.tgz#0603ab2d0a055dc84d9d2d4f6da1c8434a56eab2"
-  integrity sha512-7lhpJ3c1rqdq5UhaRyUZhJAHv2x6mJjh5kYPr5yxvkXlQQh25HF0LXbcTJWPrh8KTGSNdV/vh329t1OalaH3pQ==
+"@vx/responsive@^0.0.192":
+  version "0.0.192"
+  resolved "http://localhost:4873/@vx%2fresponsive/-/responsive-0.0.192.tgz#721d032bec38b9e3ff5fde2e4d5d8ee5a81cc517"
+  integrity sha512-HaXVwhSJXUfRbzRV+glxsX0ki2Hi1mdpz42iuGArVQgDPJEmBHjkXyoiXU8U6v66M7FAH+OyKgtc5j2bfhyYzA==
   dependencies:
     lodash "^4.17.10"
     prop-types "^15.6.1"
@@ -1778,7 +1777,7 @@
     d3-shape "^1.2.0"
     prop-types "^15.5.10"
 
-"@vx/text@0.0.179", "@vx/text@^0.0.179":
+"@vx/text@0.0.179":
   version "0.0.179"
   resolved "http://localhost:4873/@vx%2ftext/-/text-0.0.179.tgz#820328086c22a83cd9e4a5373f4c7f4223db3a74"
   integrity sha512-UD3/8o15+AQfjDI8LQ1Zj3EdQCwA3cfuQMR/M2F/Le4+JXQNMheeWz4xGyF4ZDs6r7c5cUI9Cd1RaPmGhYsX9g==
