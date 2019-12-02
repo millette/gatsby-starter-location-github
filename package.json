@@ -26,8 +26,8 @@
   },
   "dependencies": {
     "@data-ui/sparkline": "^0.0.84",
-    "bootstrap": "4.4.0",
-    "bootswatch": "4.4.0",
+    "bootstrap": "4.4.1",
+    "bootswatch": "4.4.1",
     "browser-lang": "^0.1.0",
     "gatsby": "^2.18.5",
     "gatsby-image": "^2.2.34",
