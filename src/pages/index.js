@@ -1,8 +1,8 @@
 // npm
-import React, { Fragment, Component } from 'react'
-import { FormattedMessage } from 'react-intl'
-import { graphql } from 'gatsby'
-import deburr from 'lodash.deburr'
+import React, { Fragment, Component } from "react"
+import { FormattedMessage } from "react-intl"
+import { graphql } from "gatsby"
+import deburr from "lodash.deburr"
 
 // self
 import {
@@ -13,23 +13,23 @@ import {
   Layout,
   GithubUser,
   Footer,
-  Ads
-} from '../components'
-import { withIntl } from '../i18n'
+  Ads,
+} from "../components"
+import { withIntl } from "../i18n"
 
-let config = { location: 'UNDEFINED' }
+let config = { location: "UNDEFINED" }
 
 try {
-  config = { ...config, ...require('../../custom/config') }
+  config = { ...config, ...require("../../custom/config") }
 } catch (e) {
   // expected if there is no custom config
 }
 
 const PER_PAGE = 12
 
-const BUTTONCOLORS = ['primary', 'info', 'success', 'danger', 'warning', 'info']
+const BUTTONCOLORS = ["primary", "info", "success", "danger", "warning", "info"]
 
-const normalize = loc => deburr((loc || '').trim()).toLowerCase()
+const normalize = (loc) => deburr((loc || "").trim()).toLowerCase()
 
 const sortFns = {
   joined: (a, b) => {
@@ -65,71 +65,71 @@ const sortFns = {
       return -1
     }
     return 0
-  }
+  },
 }
 
 const maybeMap = {
-  available: 'maybeFilterAvailable',
-  minDepots: 'maybeFilterMinDepots',
-  minContribs: 'maybeFilterMinContribs',
-  web: 'maybeFilterWeb',
-  email: 'maybeFilterEmail',
-  company: 'maybeFilterCompany'
+  available: "maybeFilterAvailable",
+  minDepots: "maybeFilterMinDepots",
+  minContribs: "maybeFilterMinContribs",
+  web: "maybeFilterWeb",
+  email: "maybeFilterEmail",
+  company: "maybeFilterCompany",
 }
 
 const maybeMapFns = {
   available: {
     dontCare: () => true,
-    yes: x => x.isHireable,
-    no: x => !x.isHireable
+    yes: (x) => x.isHireable,
+    no: (x) => !x.isHireable,
   },
   minDepots: {
     dontCare: () => true,
-    yes: x => x.repositoriesContributedToCount,
-    no: x => !x.repositoriesContributedToCount
+    yes: (x) => x.repositoriesContributedToCount,
+    no: (x) => !x.repositoriesContributedToCount,
   },
   minContribs: {
     dontCare: () => true,
-    yes: x => x.sparks.sum2,
-    no: x => !x.sparks.sum2
+    yes: (x) => x.sparks.sum2,
+    no: (x) => !x.sparks.sum2,
   },
   web: {
     dontCare: () => true,
-    yes: x => x.websiteUrl,
-    no: x => !x.websiteUrl
+    yes: (x) => x.websiteUrl,
+    no: (x) => !x.websiteUrl,
   },
   email: {
     dontCare: () => true,
-    yes: x => x.email,
-    no: x => !x.email
+    yes: (x) => x.email,
+    no: (x) => !x.email,
   },
   company: {
     dontCare: () => true,
-    yes: x => x.company,
-    no: x => !x.company
-  }
+    yes: (x) => x.company,
+    no: (x) => !x.company,
+  },
 }
 
 class FrontPage extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
-      maybeFilterAvailable: 'dontCare',
-      maybeFilterMinDepots: 'dontCare',
-      maybeFilterMinContribs: 'dontCare',
-      maybeFilterWeb: 'dontCare',
-      maybeFilterEmail: 'dontCare',
-      maybeFilterCompany: 'dontCare',
+      maybeFilterAvailable: "dontCare",
+      maybeFilterMinDepots: "dontCare",
+      maybeFilterMinContribs: "dontCare",
+      maybeFilterWeb: "dontCare",
+      maybeFilterEmail: "dontCare",
+      maybeFilterCompany: "dontCare",
       languageFilter: [],
       licenseFilter: [],
       keywordFilter: [],
       last: PER_PAGE,
-      location: '',
-      deburredLocation: '',
-      name: '',
-      deburredName: '',
-      sort: 'nRepos',
-      reverse: true
+      location: "",
+      deburredLocation: "",
+      name: "",
+      deburredName: "",
+      sort: "nRepos",
+      reverse: true,
     }
 
     const userSparks = {}
@@ -139,7 +139,7 @@ class FrontPage extends Component {
         userSparks[login] = {
           output,
           sum2,
-          lastContribDate
+          lastContribDate,
         }
       })
 
@@ -156,13 +156,13 @@ class FrontPage extends Component {
       // but no repos starred or contributed to,
       // it's probably a spammer.
       .filter(
-        x =>
+        (x) =>
           !x.location.match(/[0-9]/) ||
           !x.websiteUrl ||
           x.starredRepositoriesCount ||
           x.repositoriesContributedToCount
       )
-      .map(x => ({
+      .map((x) => ({
         ...x,
         sparks: userSparks[x.login],
         languages:
@@ -173,15 +173,15 @@ class FrontPage extends Component {
               const { bg, fg } = this.allLanguageColors[name]
               ret.style = { background: bg, color: fg }
             } else {
-              ret.style = { background: '#fff', color: '#000' }
+              ret.style = { background: "#fff", color: "#000" }
             }
             return ret
-          })
+          }),
       }))
-      .map(x => ({
+      .map((x) => ({
         ...x,
         deburredName: `${normalize(x.name)} ${normalize(x.login)}`,
-        deburredLocation: normalize(x.location)
+        deburredLocation: normalize(x.location),
       }))
 
     this.click = this.click.bind(this)
@@ -199,17 +199,17 @@ class FrontPage extends Component {
     this.changeOrderReverse = this.changeOrderReverse.bind(this)
   }
 
-  componentDidMount (prevProps, prevState, snapshot) {
+  componentDidMount(prevProps, prevState, snapshot) {
     this.setState({ ping: true })
   }
 
-  radioChange (x, value) {
+  radioChange(x, value) {
     const obj = {}
     obj[maybeMap[x]] = value
     this.setState(obj)
   }
 
-  changeOrder ({ target }) {
+  changeOrder({ target }) {
     target.blur()
     const sort = target.value
     if (sort === this.state.sort) {
@@ -217,65 +217,65 @@ class FrontPage extends Component {
     }
     const obj = {
       sort,
-      reverse: sort === 'nRepos' || sort === 'joined' || sort === 'contribs'
+      reverse: sort === "nRepos" || sort === "joined" || sort === "contribs",
     }
     this.setState(obj)
   }
 
-  changeOrderReverse ({ target: { checked } }) {
+  changeOrderReverse({ target: { checked } }) {
     const obj = {
-      reverse: checked
+      reverse: checked,
     }
     this.setState(obj)
   }
 
-  nameFilter ({ target: { value } }) {
+  nameFilter({ target: { value } }) {
     const obj = {
       name: value,
-      deburredName: normalize(value)
+      deburredName: normalize(value),
     }
     this.setState(obj)
   }
 
-  locationFilter ({ target: { value } }) {
+  locationFilter({ target: { value } }) {
     const obj = {
       location: value,
-      deburredLocation: normalize(value)
+      deburredLocation: normalize(value),
     }
     this.setState(obj)
   }
 
-  clickMore () {
+  clickMore() {
     this.setState({
-      last: this.state.last + PER_PAGE
+      last: this.state.last + PER_PAGE,
     })
   }
 
-  click (languageFilter) {
+  click(languageFilter) {
     const obj = {
       last: PER_PAGE,
-      languageFilter
+      languageFilter,
     }
     this.setState(obj)
   }
 
-  click2 (licenseFilter) {
+  click2(licenseFilter) {
     const obj = {
       last: PER_PAGE,
-      licenseFilter
+      licenseFilter,
     }
     this.setState(obj)
   }
 
-  click3 (keywordFilter) {
+  click3(keywordFilter) {
     const obj = {
       last: PER_PAGE,
-      keywordFilter
+      keywordFilter,
     }
     this.setState(obj)
   }
 
-  keywordFiltering (x) {
+  keywordFiltering(x) {
     if (!this.state.keywordFilter.length) {
       return true
     }
@@ -286,13 +286,13 @@ class FrontPage extends Component {
     }
 
     let langKeywords = []
-    x.keywords.forEach(y => {
+    x.keywords.forEach((y) => {
       if (y.language === lang) {
         langKeywords = y.keywords
       }
     })
 
-    langKeywords.forEach(y => {
+    langKeywords.forEach((y) => {
       if (y.word === this.state.keywordFilter[0].word) {
         ok = true
       }
@@ -300,7 +300,7 @@ class FrontPage extends Component {
     return ok
   }
 
-  licenseFiltering (x) {
+  licenseFiltering(x) {
     if (!this.state.licenseFilter.length) {
       return true
     }
@@ -308,7 +308,7 @@ class FrontPage extends Component {
     if (!x.licenses) {
       return false
     }
-    x.licenses.forEach(y => {
+    x.licenses.forEach((y) => {
       if (y.license === this.state.licenseFilter[0]) {
         ok = true
       }
@@ -316,7 +316,7 @@ class FrontPage extends Component {
     return ok
   }
 
-  languageFiltering (x) {
+  languageFiltering(x) {
     if (!this.state.languageFilter.length) {
       return true
     }
@@ -324,7 +324,7 @@ class FrontPage extends Component {
     if (!x.repoLanguages) {
       return false
     }
-    x.repoLanguages.forEach(y => {
+    x.repoLanguages.forEach((y) => {
       if (y.name === this.state.languageFilter[0].name) {
         ok = true
       }
@@ -332,23 +332,23 @@ class FrontPage extends Component {
     return ok
   }
 
-  locationFiltering (x) {
+  locationFiltering(x) {
     if (!this.state.deburredLocation) {
       return true
     }
     return x.deburredLocation.indexOf(this.state.deburredLocation) !== -1
   }
 
-  nameFiltering (x) {
+  nameFiltering(x) {
     if (!this.state.deburredName) {
       return true
     }
     return x.deburredName.indexOf(this.state.deburredName) !== -1
   }
 
-  render () {
+  render() {
     const availableLicenses = this.props.data.allDataJson.edges[0].node.licenses.map(
-      x => x.spdxId
+      (x) => x.spdxId
     )
 
     let availableKeywords = []
@@ -383,9 +383,9 @@ class FrontPage extends Component {
       : usersImp.slice(0, this.state.last)
 
     const AllRadios = ({ radios }) => (
-      <div className='row'>
+      <div className="row">
         {radios.map((key, i) => (
-          <div key={key} className='col-sm-6 col-md-4'>
+          <div key={key} className="col-sm-6 col-md-4">
             <Radios
               color={BUTTONCOLORS[i % 6]}
               active={this.state[maybeMap[key]]}
@@ -399,72 +399,72 @@ class FrontPage extends Component {
 
     return (
       <Layout header messages={this.props.messages}>
-        <div className='container'>
+        <div className="container">
           {config.withAds && <Ads />}
-          <section className='mt-3 py-2 jumbotron'>
-            <h2 className='jumbotron-heading'>
-              <FormattedMessage id='index.search' />{' '}
-              <small className='text-muted'>
-                <FormattedMessage id='title' />
+          <section className="mt-3 py-2 jumbotron">
+            <h2 className="jumbotron-heading">
+              <FormattedMessage id="index.search" />{" "}
+              <small className="text-muted">
+                <FormattedMessage id="title" />
               </small>
             </h2>
 
             <AllRadios radios={Object.keys(maybeMap)} />
 
-            <div className='form-group row'>
+            <div className="form-group row">
               <label
-                htmlFor='input-order'
-                className='col-sm-5 col-form-label text-right'
+                htmlFor="input-order"
+                className="col-sm-5 col-form-label text-right"
               >
-                <FormattedMessage id='index.order' />
+                <FormattedMessage id="index.order" />
               </label>
-              <div className='col-sm-5'>
+              <div className="col-sm-5">
                 <select
-                  className='form-control'
-                  id='input-order'
+                  className="form-control"
+                  id="input-order"
                   defaultValue={this.state.sort}
-                  onChange={this.changeOrder}
+                  onBlur={this.changeOrder}
                 >
-                  <FormattedMessage id='index.order.joined'>
-                    {txt => <option value='joined'>{txt}</option>}
+                  <FormattedMessage id="index.order.joined">
+                    {(txt) => <option value="joined">{txt}</option>}
                   </FormattedMessage>
-                  <FormattedMessage id='index.order.contribs'>
-                    {txt => <option value='contribs'>{txt}</option>}
+                  <FormattedMessage id="index.order.contribs">
+                    {(txt) => <option value="contribs">{txt}</option>}
                   </FormattedMessage>
-                  <FormattedMessage id='index.order.name'>
-                    {txt => <option value='name'>{txt}</option>}
+                  <FormattedMessage id="index.order.name">
+                    {(txt) => <option value="name">{txt}</option>}
                   </FormattedMessage>
-                  <FormattedMessage id='index.order.nRepos'>
-                    {txt => <option value='nRepos'>{txt}</option>}
+                  <FormattedMessage id="index.order.nRepos">
+                    {(txt) => <option value="nRepos">{txt}</option>}
                   </FormattedMessage>
                 </select>
               </div>
-              <div className='col-sm-2'>
-                <div className='form-check'>
+              <div className="col-sm-2">
+                <div className="form-check">
                   <input
-                    className='form-check-input'
-                    type='checkbox'
-                    id='input-reverse'
+                    className="form-check-input"
+                    type="checkbox"
+                    id="input-reverse"
                     checked={this.state.reverse}
                     onChange={this.changeOrderReverse}
                   />
-                  <label className='form-check-label' htmlFor='input-reverse'>
-                    <FormattedMessage id='index.order.reverse' />
+                  <label className="form-check-label" htmlFor="input-reverse">
+                    <FormattedMessage id="index.order.reverse" />
                   </label>
                 </div>
               </div>
             </div>
 
-            <div className='form-group row'>
+            <div className="form-group row">
               <label
-                htmlFor='input-language'
-                className='col-sm-5 col-form-label text-right'
+                htmlFor="input-language"
+                className="col-sm-5 col-form-label text-right"
               >
-                <FormattedMessage id='index.progLanguage' />
+                <FormattedMessage id="index.progLanguage" />
               </label>
-              <div className='col-sm-7'>
+              <div className="col-sm-7">
                 <ProgLanguages
-                  id='input-language'
+                  id="input-language"
                   languageFilter={this.state.languageFilter}
                   click={this.click}
                   availableLanguages={availableLanguages}
@@ -473,16 +473,16 @@ class FrontPage extends Component {
               </div>
             </div>
 
-            <div className='form-group row'>
+            <div className="form-group row">
               <label
-                htmlFor='input-license'
-                className='col-sm-5 col-form-label text-right'
+                htmlFor="input-license"
+                className="col-sm-5 col-form-label text-right"
               >
-                <FormattedMessage id='index.license' />
+                <FormattedMessage id="index.license" />
               </label>
-              <div className='col-sm-7'>
+              <div className="col-sm-7">
                 <Licenses
-                  id='input-license'
+                  id="input-license"
                   licenseFilter={this.state.licenseFilter}
                   click={this.click2}
                   availableLicenses={availableLicenses}
@@ -490,16 +490,16 @@ class FrontPage extends Component {
               </div>
             </div>
 
-            <div className='form-group row'>
+            <div className="form-group row">
               <label
-                htmlFor='input-keyword'
-                className='col-sm-5 col-form-label text-right'
+                htmlFor="input-keyword"
+                className="col-sm-5 col-form-label text-right"
               >
-                <FormattedMessage id='index.keyword' />
+                <FormattedMessage id="index.keyword" />
               </label>
-              <div className='col-sm-7'>
+              <div className="col-sm-7">
                 <Keywords
-                  id='input-keyword'
+                  id="input-keyword"
                   keywordFilter={this.state.keywordFilter}
                   click={this.click3}
                   availableKeywords={availableKeywords}
@@ -507,36 +507,36 @@ class FrontPage extends Component {
               </div>
             </div>
 
-            <div className='form-group row'>
+            <div className="form-group row">
               <label
-                htmlFor='input-name'
-                className='col-sm-5 col-form-label text-right'
+                htmlFor="input-name"
+                className="col-sm-5 col-form-label text-right"
               >
-                <FormattedMessage id='index.search.name' />
+                <FormattedMessage id="index.search.name" />
               </label>
-              <div className='col-sm-7'>
+              <div className="col-sm-7">
                 <input
-                  className='form-control'
-                  id='input-name'
-                  type='text'
+                  className="form-control"
+                  id="input-name"
+                  type="text"
                   value={this.state.name}
                   onChange={this.nameFilter}
                 />
               </div>
             </div>
 
-            <div className='form-group row'>
+            <div className="form-group row">
               <label
-                htmlFor='input-location'
-                className='col-sm-5 col-form-label text-right'
+                htmlFor="input-location"
+                className="col-sm-5 col-form-label text-right"
               >
-                <FormattedMessage id='index.search.location' />
+                <FormattedMessage id="index.search.location" />
               </label>
-              <div className='col-sm-7'>
+              <div className="col-sm-7">
                 <input
-                  className='form-control'
-                  id='input-location'
-                  type='text'
+                  className="form-control"
+                  id="input-location"
+                  type="text"
                   value={this.state.location}
                   onChange={this.locationFilter}
                 />
@@ -546,19 +546,19 @@ class FrontPage extends Component {
 
           <h4>
             <FormattedMessage
-              id='index.resultsSummary'
+              id="index.resultsSummary"
               values={{
                 nDisplayed: users.length,
                 nSelected: usersImp.length,
                 nTotal: this.allUsers.length,
-                location: config.location
+                location: config.location,
               }}
             />
           </h4>
           {users.length ? (
             <Fragment>
-              <div className='row card-group'>
-                {users.map(x => (
+              <div className="row card-group">
+                {users.map((x) => (
                   <GithubUser
                     {...x}
                     lang={this.props.pageContext.locale}
@@ -570,28 +570,28 @@ class FrontPage extends Component {
               {usersImp.length > this.state.last && (
                 <button
                   onClick={this.clickMore}
-                  className='mt-4 w-100 btn btn-info'
-                  type='button'
+                  className="mt-4 w-100 btn btn-info"
+                  type="button"
                 >
-                  <FormattedMessage id='index.more' />
+                  <FormattedMessage id="index.more" />
                 </button>
               )}
 
               <h4>
                 <FormattedMessage
-                  id='index.resultsSummary'
+                  id="index.resultsSummary"
                   values={{
                     nDisplayed: users.length,
                     nSelected: usersImp.length,
                     nTotal: this.allUsers.length,
-                    location: config.location
+                    location: config.location,
                   }}
                 />
               </h4>
             </Fragment>
           ) : (
             <p>
-              <FormattedMessage id='index.noResults' />
+              <FormattedMessage id="index.noResults" />
             </p>
           )}
         </div>
