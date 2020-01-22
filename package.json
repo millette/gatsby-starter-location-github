@@ -67,8 +67,7 @@
   ],
   "lint-staged": {
     "*.{js,json,md}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   },
   "scripts": {
@@ -95,8 +94,8 @@
   },
   "devDependencies": {
     "gh-pages": "^2.2.0",
-    "husky": "^4.0.10",
-    "lint-staged": "^9.5.0",
+    "husky": "^4.2.0",
+    "lint-staged": "^10.0.2",
     "prettier": "^1.19.1"
   }
 }
