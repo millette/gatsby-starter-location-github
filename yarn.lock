@@ -6319,10 +6319,10 @@ gh-pages@^2.2.0:
     fs-extra "^8.1.0"
     globby "^6.1.0"
 
-ghraphql@^1.0.2:
-  version "1.0.2"
-  resolved "http://localhost:4873/ghraphql/-/ghraphql-1.0.2.tgz#f88c8a486e6600cf392c4b43f8762c9896b7fc9c"
-  integrity sha512-4efV0buUqOOWOHoQF8tq8AJqDbw9tciC9xbkirEbHsEKbXLNrrU/TqbEltRrxSSrzF9m8BrWTBfneRflF2Wl0Q==
+ghraphql@^1.0.3:
+  version "1.0.3"
+  resolved "http://localhost:4873/ghraphql/-/ghraphql-1.0.3.tgz#04d204eb692fb07b9fdcbb5aa1208e38fbd72e5f"
+  integrity sha512-O3fLXOuYLOhYw9sXX8KOkvjPPWvinE+zlQadOh5SuBMKbIx8SKdi6EUJcNfNf2S0Uqj++nMOuGmTnJ/gmorcoQ==
   dependencies:
     debug "^4.1.1"
     delay "^4.3.0"
@@ -6342,7 +6342,7 @@ ghraphql@^1.0.2:
     marked-terminal "^3.3.0"
     meow "^5.0.0"
     mkdirp "^0.5.1"
-    normalize-email-or-url "^1.0.0"
+    normalize-email-or-url "^1.0.1"
     p-map "^3.0.0"
     progress "^2.0.3"
     rollodeqc-gh-user-streak "^4.0.0"
@@ -9533,13 +9533,13 @@ nopt@^4.0.1:
     abbrev "1"
     osenv "^0.1.4"
 
-normalize-email-or-url@^1.0.0:
-  version "1.0.0"
-  resolved "http://localhost:4873/normalize-email-or-url/-/normalize-email-or-url-1.0.0.tgz#ab324bd24aa5a85bf1f53fff57eb32256bef69ae"
-  integrity sha512-n6hsITw8/AJtLZSC49JwYtnk9IG2bSJmPH40cT1v1Vh+cdHQmp2ePf6Mvq7eBTPQZBTJ7xmNYO5UKFuUt4AjUw==
+normalize-email-or-url@^1.0.1:
+  version "1.0.1"
+  resolved "http://localhost:4873/normalize-email-or-url/-/normalize-email-or-url-1.0.1.tgz#a8ef9e2b73a94ca951797e66d1d6faaed2bb1f57"
+  integrity sha512-hX9oEXQpF+l2zTxUaWLTwWUEdbkzfLRII7Y0RCZXr6i43yh+v3W7dCN3cmEq3Pz6gQb4JIE/tatQKJw9QOusHw==
   dependencies:
     normalize-email "^1.1.1"
-    normalize-url "^4.3.0"
+    normalize-url "^5.0.0"
 
 normalize-email@^1.1.1:
   version "1.1.1"
@@ -9597,10 +9597,15 @@ normalize-url@^3.0.0, normalize-url@^3.3.0:
   resolved "http://localhost:4873/normalize-url/-/normalize-url-3.3.0.tgz#b2e1c4dc4f7c6d57743df733a4f5978d18650559"
   integrity sha512-U+JJi7duF1o+u2pynbp2zXDW2/PADgC30f0GsHZtRh+HOcXHnw137TrNlyxxRvWW5fjKd3bcLHPxofWuCjaeZg==
 
-normalize-url@^4.1.0, normalize-url@^4.3.0:
+normalize-url@^4.1.0:
   version "4.5.0"
   resolved "http://localhost:4873/normalize-url/-/normalize-url-4.5.0.tgz#453354087e6ca96957bd8f5baf753f5982142129"
   integrity sha512-2s47yzUxdexf1OhyRi4Em83iQk0aPvwTddtFz4hnSSw9dCEsLEGf6SwIO8ss/19S9iBb5sJaOuTvTGDeZI00BQ==
+
+normalize-url@^5.0.0:
+  version "5.0.0"
+  resolved "http://localhost:4873/normalize-url/-/normalize-url-5.0.0.tgz#f46c9dc20670495e4e18fbd1b4396e41d199f63c"
+  integrity sha512-bAEm2fx8Dq/a35Z6PIRkkBBJvR56BbEJvhpNtvCZ4W9FyORSna77fn+xtYFjqk5JpBS+fMnAOG/wFgkQBmB7hw==
 
 npm-bundled@^1.0.1:
   version "1.1.0"
