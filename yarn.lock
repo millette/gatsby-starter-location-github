@@ -6460,10 +6460,10 @@ gh-pages@^2.2.0:
     fs-extra "^8.1.0"
     globby "^6.1.0"
 
-ghraphql@^1.0.3:
-  version "1.0.3"
-  resolved "http://localhost:4873/ghraphql/-/ghraphql-1.0.3.tgz#04d204eb692fb07b9fdcbb5aa1208e38fbd72e5f"
-  integrity sha512-O3fLXOuYLOhYw9sXX8KOkvjPPWvinE+zlQadOh5SuBMKbIx8SKdi6EUJcNfNf2S0Uqj++nMOuGmTnJ/gmorcoQ==
+ghraphql@^1.0.5:
+  version "1.0.5"
+  resolved "http://localhost:4873/ghraphql/-/ghraphql-1.0.5.tgz#f1b80b2f74a6bd9e075e2d72017769bfedb83885"
+  integrity sha512-gDCH71LkTeOAIFzD+5a7jLIr11DWgsqEyFjD0yntL/XynMoWsktXAtywq6J83SfAqO4ImDFp7UxnLIJ51FLhYQ==
   dependencies:
     debug "^4.1.1"
     delay "^4.3.0"
@@ -6482,11 +6482,11 @@ ghraphql@^1.0.3:
     marked "^0.7.0"
     marked-terminal "^3.3.0"
     meow "^5.0.0"
-    mkdirp "^0.5.1"
-    normalize-email-or-url "^1.0.1"
+    mkdirp "^0.5.5"
+    normalize-email-or-url "^1.0.2"
     p-map "^3.0.0"
     progress "^2.0.3"
-    rollodeqc-gh-user-streak "^4.0.0"
+    rollodeqc-gh-user-streak "^4.0.1"
     stopwords "^0.0.9"
     weeknumber "^1.1.2"
 
@@ -9344,6 +9344,11 @@ minimist@^1.1.3, minimist@^1.2.0:
   resolved "http://localhost:4873/minimist/-/minimist-1.2.0.tgz#a35008b20f41383eec1fb914f4cd5df79a264284"
   integrity sha1-o1AIsg9BOD7sH7kU9M1d95omQoQ=
 
+minimist@^1.2.5:
+  version "1.2.5"
+  resolved "http://localhost:4873/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
+  integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
+
 minipass@^2.6.0, minipass@^2.8.6, minipass@^2.9.0:
   version "2.9.0"
   resolved "http://localhost:4873/minipass/-/minipass-2.9.0.tgz#e713762e7d3e32fed803115cf93e04bca9fcc9a6"
@@ -9409,6 +9414,13 @@ mkdirp@0.5.1, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.1:
   integrity sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=
   dependencies:
     minimist "0.0.8"
+
+mkdirp@^0.5.5:
+  version "0.5.5"
+  resolved "http://localhost:4873/mkdirp/-/mkdirp-0.5.5.tgz#d91cefd62d1436ca0f41620e251288d420099def"
+  integrity sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==
+  dependencies:
+    minimist "^1.2.5"
 
 moment@^2.24.0:
   version "2.24.0"
@@ -9724,10 +9736,10 @@ nopt@^4.0.1:
     abbrev "1"
     osenv "^0.1.4"
 
-normalize-email-or-url@^1.0.1:
-  version "1.0.1"
-  resolved "http://localhost:4873/normalize-email-or-url/-/normalize-email-or-url-1.0.1.tgz#a8ef9e2b73a94ca951797e66d1d6faaed2bb1f57"
-  integrity sha512-hX9oEXQpF+l2zTxUaWLTwWUEdbkzfLRII7Y0RCZXr6i43yh+v3W7dCN3cmEq3Pz6gQb4JIE/tatQKJw9QOusHw==
+normalize-email-or-url@^1.0.2:
+  version "1.0.2"
+  resolved "http://localhost:4873/normalize-email-or-url/-/normalize-email-or-url-1.0.2.tgz#a305cdd90f652d2fd8ba8a211574b418ae4dacfd"
+  integrity sha512-oUqBcT9VCjBdAb7rD2wThQFrzRJGkBxIJkO2cpqmBSw1RDOIXUT/6Y7sknj1Y0hLMJWGuxR7r1ovRhx6pMLRlA==
   dependencies:
     normalize-email "^1.1.1"
     normalize-url "^5.0.0"
@@ -12340,10 +12352,10 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
-rollodeqc-gh-user-streak@^4.0.0:
-  version "4.0.0"
-  resolved "http://localhost:4873/rollodeqc-gh-user-streak/-/rollodeqc-gh-user-streak-4.0.0.tgz#64e013d0cc635065964f60b36bf801f54564998f"
-  integrity sha512-meRBXcHK9EovScRdOmwntLlyip819gS0X1WKtYpSM+7fBOMORVSjhiCw9SwMjKtjYRPhwMd0+UdrwMtV36aRmA==
+rollodeqc-gh-user-streak@^4.0.1:
+  version "4.0.1"
+  resolved "http://localhost:4873/rollodeqc-gh-user-streak/-/rollodeqc-gh-user-streak-4.0.1.tgz#ebe645036665f5568b705fdfced6dce85bd3ebdf"
+  integrity sha512-hA+KFw64gmtv8b5R2dyQpc4kiuOsBHFiIopGGuCPuwAE/6T8yD5siDjKVen4Lh/YEd4hxWW2zPv4U03YWHA3yQ==
   dependencies:
     chalk "^2.4.2"
     got "^9.6.0"
